@@ -7,7 +7,10 @@ public class TrickSystem : ScriptableObject
 {
     // Start is called before the first frame update
     [SerializeField] private Trick[] trickQueue;
+    public TrickUI ui;
     private int depretiation = 0;
+    private int chainAmount;
+    
 
 
     public void InputTrick(Trick trick)
