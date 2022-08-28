@@ -26,7 +26,7 @@ public class AdventureControls : MonoBehaviour
         jumpsLeft = numberOfJumps;
     }
 
-    public void MovePlayer(Vector3 playerInput, float horizontalInput, float verticalInput)
+    public void MovePlayer(Vector3 playerInput)
     {
         //Store the player's current Y position
         float yStore = movementDirection.y;
@@ -50,7 +50,6 @@ public class AdventureControls : MonoBehaviour
                 movementDirection.y = jumpHeight / doubleJumpModifier;
                 jumpsLeft -= 1;
             }
-            Debug.Log("jumps left = " + jumpsLeft);
         }
 
         

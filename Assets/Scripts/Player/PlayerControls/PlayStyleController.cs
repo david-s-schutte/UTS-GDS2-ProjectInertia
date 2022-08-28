@@ -10,18 +10,22 @@ public class PlayStyleController : MonoBehaviour
     private AdventureControls adventureControls;
     private CharacterController characterController;
     //Surfer Style Control Components
+    private SurferControls surferControls;
     [SerializeField] private Collider capsuleCollider;
     [SerializeField] private float rotateSpeed;
     private Rigidbody rb;
     [Header("Child References")]
     [SerializeField] private Transform playerModel;
+    public Animator animator;
 
     private void Start()
     {
         cam = Camera.main;
         adventureControls = GetComponent<AdventureControls>();
+        surferControls = GetComponent<SurferControls>();
         characterController = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
+        surferControls.InitialiaseSurferControls(capsuleCollider);
     }
 
     // Update is called once per frame
@@ -32,6 +36,7 @@ public class PlayStyleController : MonoBehaviour
         {
             //Swap its value
             isPlatforming = !isPlatforming;
+            animator.SetBool("isPlatforming", isPlatforming);
             //If the player wants to use the adventure control scheme
             if (isPlatforming)
             {
@@ -40,6 +45,7 @@ public class PlayStyleController : MonoBehaviour
                 characterController.enabled = true;
                 //Disable surfer control scheme components
                 rb.useGravity = false;
+                rb.angularVelocity = Vector3.zero;
                 capsuleCollider.enabled = false;
             }
             //If the player wants to use the surfer control scheme
@@ -67,23 +73,29 @@ public class PlayStyleController : MonoBehaviour
         cameraRight = cameraRight.normalized;
 
 
-        //Rotate the player's model in their given direction accounting for camera placement
-        Vector3 movementDirection = (cameraRight * horizontalInput) + (cameraForward * verticalInput); 
-        if(movementDirection != Vector3.zero)
-        {
-            Quaternion rot = Quaternion.LookRotation(movementDirection);
-            playerModel.rotation = Quaternion.Slerp(playerModel.rotation, rot, rotateSpeed * Time.deltaTime);
-
-        }
-
         //Execute the player's movement based on their chosen control scheme
         if (isPlatforming)
         {
-            adventureControls.MovePlayer(movementDirection, horizontalInput, verticalInput);
+            //Rotate the player's model in their given direction accounting for camera placement
+            Vector3 movementDirection = (cameraRight * horizontalInput) + (cameraForward * verticalInput);
+            if (movementDirection != Vector3.zero)
+            {
+                Quaternion rot = Quaternion.LookRotation(movementDirection);
+                playerModel.rotation = Quaternion.Slerp(playerModel.rotation, rot, rotateSpeed * Time.deltaTime);
+            }
+
+            adventureControls.MovePlayer(movementDirection);
         }
         else
         {
-
+            //Rotate the player's model in their given direction accounting for camera placement
+            Vector3 movementDirection = (cameraRight * horizontalInput) + (cameraForward * verticalInput);
+            surferControls.MovePlayer(movementDirection, playerModel);
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 }

@@ -23,6 +23,5 @@ public class PlayerAnimationController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
         //Set playerInput in animatorController
-        animator.SetFloat("playerInput", movementDirection.magnitude);
     }
 }
