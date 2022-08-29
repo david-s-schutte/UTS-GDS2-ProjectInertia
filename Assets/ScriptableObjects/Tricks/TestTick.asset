@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2915d0b56b7bdc048a65375d08f008b9, type: 3}
   m_Name: TestTick
   m_EditorClassIdentifier: 
-  TrickName: 
+  TrickName: TestTrick
   Type: 0
-  BaseScore: 0
+  BaseScore: 100
   TrickAnim: {fileID: 0}
