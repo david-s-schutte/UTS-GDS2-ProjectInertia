@@ -9,18 +9,27 @@ public class TrickSystem : ScriptableObject
     [SerializeField] private Trick[] trickQueue;
     public TrickUI ui;
     private int depretiation = 0;
-    private int chainAmount;
+    private float chainTime;
+    private int chainamount;
+
     
 
 
     public void InputTrick(Trick trick)
     {
-        foreach (Trick TRK in trickQueue)
+
+        if(ui.timeSinceTrick > chainTime)
         {
-            if (TRK != null && TRK == trick)
+            ResetQueue();
+        }
+        else{
+            foreach (Trick TRK in trickQueue)
             {
-                depretiation++;
-                break;
+                if (TRK != null && TRK == trick)
+                {
+                    depretiation++;
+                    break;
+                }
             }
         }
         AppendTrick(trick);
@@ -33,7 +42,7 @@ public class TrickSystem : ScriptableObject
 
     private void AppendTrick(Trick trick)
     {
-        for (int x = 0; x < trickQueue.Length - 1; x++)
+        for (int x = 0; x < trickQueue.Length - 2; x++)
         {
             trickQueue[x] = trickQueue[x + 1];
         }
@@ -41,6 +50,11 @@ public class TrickSystem : ScriptableObject
         //trickQueue.Append(trick); .append is a function ???????
     }
     
-    
+    private void ResetQueue(){
+        for (int x = 0; x < trickQueue.Length - 1; x++)
+        {
+            trickQueue[x] = null;
+        }
+    }
 
 }

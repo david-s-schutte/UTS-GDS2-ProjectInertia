@@ -19,7 +19,8 @@ public class TrickText : MonoBehaviour
     {
         start = _transform.position;
         end = _transform.position + lerpDistance;
-        text.color = new Color(text.color.r, text.color.g, text.color.b, 0);
+
+        text.fontMaterial.color = new Color(text.color.r, text.color.g, text.color.b, 0);
 
     }
 
@@ -30,7 +31,7 @@ public class TrickText : MonoBehaviour
         {
             timeElasped += Time.deltaTime;
             _transform.position = Vector3.Lerp(start, end, timeElasped/journeyTime);
-            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + timeElasped/journeyTime);
+            text.fontMaterial.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + timeElasped/journeyTime);
             if (timeElasped / journeyTime > 1f)
             {
                 Destroy(this.gameObject);
