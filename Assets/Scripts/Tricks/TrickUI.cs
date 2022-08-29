@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +10,9 @@ public class TrickUI : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private Image flow;
     [SerializeField] private Image stage;
-    [SerializeField] private TextMeshPro name;
-    [SerializeField] private TextMeshPro value;
+    [SerializeField] private GameObject textPrefab;
+    [SerializeField] private RectTransform textStart;
+    [SerializeField] private RectTransform scoreStart;
     public float timeSinceTrick;
     //public float chainTimeLimit;
     [SerializeField] private Sprite[] stageLabels;
@@ -20,10 +22,18 @@ public class TrickUI : MonoBehaviour
     public float decrementAmount;
     public float fillspeed;
     public float bufferamounts;
+    public bool test;
+    
     
     // Update is called once per frame
     void Update()
     {
+
+        if (test)
+        {
+            UpdateScore("testTrick", 100f);
+            test = false;
+        }
         
         timeSinceTrick += Time.deltaTime;
         score -= 100f * Time.deltaTime * decrementAmount;
@@ -44,10 +54,10 @@ public class TrickUI : MonoBehaviour
         //flow.fillAmount = score / trickStage[currentStage];
     }
 
-    public void UpdateScore(Trick trick)
+    public void UpdateScore(string name, float addScore)
     {
         timeSinceTrick = 0f;
-        score += trick.BaseScore;
+        score += addScore;
         if (score > trickStage[currentStage])
         {
             if (currentStage < trickStage.Length - 1)
@@ -58,8 +68,10 @@ public class TrickUI : MonoBehaviour
             }
         }
 
-        name.text = trick.name;
-        value.text = trick.BaseScore.ToString();
+        TrickText text = Instantiate(textPrefab,textStart.position,Quaternion.identity, textStart).GetComponent<TrickText>();
+        text.CreateText(name);
+        text = Instantiate(textPrefab,scoreStart.position,Quaternion.identity,scoreStart).GetComponent<TrickText>();
+        text.CreateText("+" + addScore.ToString());
     }
 
     private void StageChange()
