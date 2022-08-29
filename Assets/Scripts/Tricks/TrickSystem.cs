@@ -6,14 +6,11 @@ using UnityEngine;
 public class TrickSystem : ScriptableObject
 {
     // Start is called before the first frame update
-    [SerializeField] private Trick[] trickQueue;
+    [SerializeField] private Trick[] trickQueue = new Trick[3];
     public TrickUI ui;
     private int depretiation = 0;
-    private float chainTime;
-    private int chainamount;
-
-    
-
+    private float chainTime = 3f;
+    private int chainamount = 0;
 
     public void InputTrick(Trick trick)
     {
@@ -21,32 +18,43 @@ public class TrickSystem : ScriptableObject
         if(ui.timeSinceTrick > chainTime)
         {
             ResetQueue();
+            depretiation = 0;
+            chainamount = 0;
         }
-        else{
+        else
+        {
+            bool reset = true;
             foreach (Trick TRK in trickQueue)
             {
                 if (TRK != null && TRK == trick)
                 {
                     depretiation++;
+                    reset = false;
                     break;
                 }
             }
+
+            if (reset)
+            {
+                depretiation = 0;
+            }
+            chainamount++;
         }
         AppendTrick(trick);
         
         
-        
+        ui.UpdateScore(trick.name, Mathf.Floor(trick.BaseScore * Depretiate(depretiation) * Chain(chainamount)));
     }
 
 
 
     private void AppendTrick(Trick trick)
     {
-        for (int x = 0; x < trickQueue.Length - 2; x++)
+        for (int x = 0; x < trickQueue.Length - 1; x++)
         {
             trickQueue[x] = trickQueue[x + 1];
         }
-        trickQueue[trickQueue.Length - 1] = trick;
+        trickQueue[trickQueue.Length-1] = trick;
         //trickQueue.Append(trick); .append is a function ???????
     }
     
@@ -56,5 +64,22 @@ public class TrickSystem : ScriptableObject
             trickQueue[x] = null;
         }
     }
+
+    private float Depretiate(float dep)
+    {
+        if (dep > 0)
+        {
+            return 1/dep;
+        }
+
+        return 1;
+    }
+    
+    private float Chain(float chain)
+    {
+        return 1f + 0.5f*Mathf.Floor(chain / 5f);
+    }
+    
+    
 
 }
