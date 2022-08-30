@@ -398,10 +398,10 @@ MonoBehaviour:
   - 300
   - 800
   score: 0
+  currentFill: 0
   decrementAmount: 0.25
-  fillspeed: 10
+  fillspeed: 5
   bufferamounts: 25
-  test: 0
 --- !u!1 &8044030285407759214
 GameObject:
   m_ObjectHideFlags: 0

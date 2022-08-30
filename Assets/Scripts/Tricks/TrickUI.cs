@@ -19,54 +19,74 @@ public class TrickUI : MonoBehaviour
     public float[] trickStage;
     private int currentStage = 0;
     public float score;
+    public float currentFill;
     public float decrementAmount;
     public float fillspeed;
     public float bufferamounts;
-    public bool test;
-    
-    
+
+
     // Update is called once per frame
     void Update()
     {
-
-        if (test)
-        {
-            UpdateScore("testTrick", 100f);
-            test = false;
-        }
-        
         timeSinceTrick += Time.deltaTime;
         score -= 100f * Time.deltaTime * decrementAmount;
-        if (score < 0)
+        /*if (score < 0)
         {
             if (currentStage > 0)
             {
-                currentStage--;
-                score = trickStage[currentStage];
-                StageChange();
+                //currentStage--;
+                score = trickStage[currentStage] - Mathf.Abs(score);
+                //StageChange();
             }
             else
             {
                 score = 0;
             }
-        }
-        flow.fillAmount += Lerp(flow.fillAmount,score/trickStage[currentStage]);
+        }*/
+        //flow.fillAmount += Lerp(flow.fillAmount,score/trickStage[currentStage]);
         //flow.fillAmount = score / trickStage[currentStage];
+        currentFill += (score-currentFill) * fillspeed * Time.deltaTime;
+        flow.fillAmount = currentFill / trickStage[currentStage];
+        if (currentFill > trickStage[currentStage])
+        {
+            if (currentStage < trickStage.Length - 1)
+            {
+                currentFill -= (trickStage[currentStage]);
+                score -= (trickStage[currentStage]- bufferamounts);
+                currentStage++;
+                StageChange();
+            }
+        }
+        else if(currentFill < 0)
+        {
+            if (currentStage > 0)
+            {
+                currentStage--;
+                currentFill = trickStage[currentStage];
+                score = trickStage[currentStage] - Mathf.Abs(score);
+                StageChange();
+            }
+            else
+            {
+                currentFill = 0;
+                score = 0;
+            }
+        }
     }
 
     public void UpdateScore(string name, float addScore)
     {
         timeSinceTrick = 0f;
         score += addScore;
-        if (score > trickStage[currentStage])
+        /*if (score > trickStage[currentStage])
         {
             if (currentStage < trickStage.Length - 1)
             {
                 score -= (trickStage[currentStage]- bufferamounts);
-                currentStage++;
-                StageChange();
+                //currentStage++;
+                //StageChange();
             }
-        }
+        }*/
 
         TrickText text = Instantiate(textPrefab,textStart.position,Quaternion.identity, textStart).GetComponent<TrickText>();
         text.CreateText(name);
