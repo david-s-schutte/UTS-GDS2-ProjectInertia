@@ -72,12 +72,14 @@ public class PlayStyleController : MonoBehaviour
         cameraForward = cameraForward.normalized;
         cameraRight = cameraRight.normalized;
 
+        Vector3 movementDirection = (cameraRight * horizontalInput) + (cameraForward * verticalInput);
+        movementDirection.Normalize();
 
         //Execute the player's movement based on their chosen control scheme
         if (isPlatforming)
         {
             //Rotate the player's model in their given direction accounting for camera placement
-            Vector3 movementDirection = (cameraRight * horizontalInput) + (cameraForward * verticalInput);
+            //Vector3 movementDirection = (cameraRight * horizontalInput) + (cameraForward * verticalInput);
             if (movementDirection != Vector3.zero)
             {
                 Quaternion rot = Quaternion.LookRotation(movementDirection);
@@ -89,7 +91,7 @@ public class PlayStyleController : MonoBehaviour
         else
         {
             //Rotate the player's model in their given direction accounting for camera placement
-            Vector3 movementDirection = (cameraRight * horizontalInput) + (cameraForward * verticalInput);
+            //Vector3 movementDirection = (cameraRight * horizontalInput) + (cameraForward * verticalInput);
             surferControls.MovePlayer(movementDirection, playerModel);
         }
     }
