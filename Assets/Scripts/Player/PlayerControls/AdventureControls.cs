@@ -4,88 +4,64 @@ using UnityEngine;
 
 public class AdventureControls : MonoBehaviour
 {
-    [Header("External Game Objects")]
-    [SerializeField] private Camera camera;
-    private Vector3 cameraForward;
-    private Vector3 cameraRight;
-
-    [Header("Movement Variables")]
+    [Header("Control Variables")]
+    private Vector3 movementDirection;
     [SerializeField] private float movementSpeed;
-    [SerializeField] private float rotationSpeed;
     [SerializeField] private float jumpHeight;
+    [SerializeField] private float doubleJumpModifier;
     [SerializeField] private int numberOfJumps;
-    [SerializeField] private float gravity;
-    private bool isGrounded;
+    
+    [Header("Physics Variables")]
+    [SerializeField] private float gravityScale;
+
+    //Variables used for calculations
     private int jumpsLeft;
 
     [Header("Component References")]
-    [SerializeField] private Rigidbody rb;
+    [SerializeField] private CharacterController controller;
 
     private void Start()
     {
-        camera = Camera.main;
-        isGrounded = true;
+        controller = GetComponent<CharacterController>();
         jumpsLeft = numberOfJumps;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MovePlayer(Vector3 playerInput)
     {
-        //Determine direction from player input
-        Vector3 movementDirection = GetDirectionFromInput(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        //Store the player's current Y position
+        float yStore = movementDirection.y;
 
-        //Move and rotate the player
-        MovePlayer(movementDirection);
-        //Let them jump if they input a jump
-        PlayerJump();
-
-    }
-
-    public Vector3 GetDirectionFromInput(float horizontalInput, float verticalInput)
-    {
-        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
-        movementDirection.Normalize();
-        return movementDirection;
-    }
-
-    public void MovePlayer(Vector3 movementDirection)
-    {
-        //Determine the transform of the camera
-        Vector3 cameraForward = camera.transform.forward;
-        Vector3 cameraRight = camera.transform.right;
-        cameraForward.y = 0;
-        cameraRight.y = 0;
-        cameraForward = cameraForward.normalized;
-        cameraRight = cameraRight.normalized;
-
-        //Move the player based on input and camera transform
-        transform.position += (cameraForward * movementDirection.z + cameraRight * movementDirection.x) * Time.deltaTime * movementSpeed;
-
-        //If the given direction isn't zero
-        if (movementDirection != Vector3.zero)
-        {
-            //Rotate the player to face ther given direction
-            Quaternion toRotation = Quaternion.LookRotation(cameraForward * movementDirection.z + cameraRight * movementDirection.x, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-        }
-    }
-
-    public void PlayerJump()
-    {
+        //Apply movement speed to the given input and reapply the player's current Y position
+        movementDirection = playerInput * movementSpeed;
+        movementDirection.y = yStore;
+        
+        //Check if the player wants to jump
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Jump!");
-            if (isGrounded)
+            //If they're grounded let them jump
+            if (controller.isGrounded)
             {
-                rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
-                isGrounded = false;
-                jumpsLeft--;
+                movementDirection.y = jumpHeight;
+                jumpsLeft -= 1;
             }
-            else if(numberOfJumps > 0)
+            //If they're mid-air let them double jump if they have some jumps left
+            else if (jumpsLeft > 0)
             {
-                rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
-                jumpsLeft--;
+                movementDirection.y = jumpHeight / doubleJumpModifier;
+                jumpsLeft -= 1;
             }
         }
+
+        
+
+        //Reset jump count after landing
+        if (controller.isGrounded)
+            jumpsLeft = numberOfJumps;
+        //Apply gravity to the player
+        else
+            movementDirection.y = movementDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
+
+        //Move the player
+        controller.Move(movementDirection * Time.deltaTime);
     }
 }
