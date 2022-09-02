@@ -284,7 +284,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9749105, y: 1}
+    m_SensorSize: {x: 2.3404255, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9749105, y: 1}
+    m_SensorSize: {x: 2.3404255, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -445,7 +445,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141134799}
-  m_LocalRotation: {x: 0.124577105, y: 0.18926618, z: -0.024215331, w: 0.97369015}
+  m_LocalRotation: {x: 0.124577105, y: 0.18926619, z: -0.024215333, w: 0.97369015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -621,7 +621,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9749105, y: 1}
+    m_SensorSize: {x: 2.3404255, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -637,7 +637,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242021315}
-  m_LocalRotation: {x: 0.10099093, y: 0.1897965, z: -0.019630652, w: 0.9764183}
+  m_LocalRotation: {x: 0.100990936, y: 0.1897965, z: -0.01963065, w: 0.9764183}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -826,7 +826,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9749105, y: 1}
+    m_SensorSize: {x: 2.3404255, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1284,7 +1284,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.14820133, y: 0.18862188, z: -0.028807415, w: 0.97037536}
+  m_LocalRotation: {x: 0.14820133, y: 0.18862188, z: -0.028807407, w: 0.97037536}
   m_LocalPosition: {x: 3.489244, y: 8.23, z: -7.255869}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   jumpHeight: 5
-  doubleJumpModifier: 1.5
+  doubleJumpModifier: 1
   numberOfJumps: 1
   gravityScale: 1
   controller: {fileID: 0}
@@ -1883,8 +1883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc701fdc79e17e449a82229742e1b72c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfSpeed: 6
-  steerForce: 5
+  surfSpeed: 10
+  rotationRate: 75
   brakeForce: 3
   ollieHeight: 3
   playerLayer:

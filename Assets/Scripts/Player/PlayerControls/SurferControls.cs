@@ -6,7 +6,7 @@ public class SurferControls : MonoBehaviour
 {
     [Header("Control Variables")]
     [SerializeField] private float surfSpeed;
-    [SerializeField] private float steerForce;
+    [SerializeField] private float rotationRate;
     [SerializeField] private float brakeForce;
     [SerializeField] private float ollieHeight;
 
@@ -31,12 +31,18 @@ public class SurferControls : MonoBehaviour
     {
         //Don't allow the player to accelerate if they input forward
         float yStore = rb.velocity.y;
-        if (moveDirection.z > 0)
-            moveDirection.z = 0;
-        //Move the player forward automatically
-        Vector3 newVel = new Vector3(playerModel.forward.x * surfSpeed, yStore, playerModel.forward.z);
+        Vector3 currentTrajectory = new Vector3(playerModel.forward.x * surfSpeed, yStore, playerModel.forward.z * surfSpeed);
+        if(moveDirection.x != 0)
+        {
+            //newRot.y *= moveDirection.x;
+        }    
+        else
+        {
+            rb.angularVelocity = Vector3.zero;
+        }
+        playerModel.Rotate(0, moveDirection.x * rotationRate * Time.deltaTime, 0, Space.World);
+        Vector3 newVel = new Vector3(playerModel.forward.x * surfSpeed, yStore, playerModel.forward.z * surfSpeed);
         rb.velocity = newVel;
-        //rb.AddForce(playerModel.forward * surfSpeed);
         //if (isGrounded())
         //{
         //    Debug.Log("Surfer is grounded");
@@ -45,8 +51,6 @@ public class SurferControls : MonoBehaviour
         //{
         //    Debug.Log("Surfer is mid-air");
         //}
-        //Steer the player once they've started moving
-        rb.AddForce(moveDirection * steerForce);
 
         
     }
