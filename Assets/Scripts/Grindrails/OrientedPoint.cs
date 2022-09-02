@@ -6,7 +6,7 @@ public struct OrientedPoint
 {
     public Vector3 pos;
     public Quaternion rot;
-    
+
     public OrientedPoint(Vector3 pos, Quaternion rot)
     {
         this.pos = pos;
@@ -22,5 +22,10 @@ public struct OrientedPoint
     public Vector3 LocalToWorld(Vector3 localSpacePos)
     {
         return pos + rot * localSpacePos;
+    }
+
+    public Vector3 LocalToWorldVector(Vector3 localSpacePos)
+    {
+        return rot * localSpacePos;
     }
 }

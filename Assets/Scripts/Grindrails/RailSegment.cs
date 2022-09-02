@@ -12,9 +12,73 @@ public class RailSegment : MonoBehaviour
     [SerializeField] Transform[] controlPoints = new Transform[4];
 
     [SerializeField] RailMesh2D shape2D;
+
+    [Range(2, 32)]
+    [SerializeField] int edgeCount = 4;
+
     Vector3 GetPos(int i) => controlPoints[i].position;
 
+    Mesh mesh;
 
+    private void Awake()
+    {
+        mesh = new Mesh();
+        mesh.name = "Rail";
+        GetComponent<MeshFilter>().sharedMesh = mesh;
+    }
+
+    private void Update()
+    {
+        GenerateMesh();
+    }
+
+    void GenerateMesh()
+    {
+        mesh.Clear();
+
+        //Vertices
+        List<Vector3> verts = new List<Vector3>();
+        for(int i = 0; i < edgeCount; i++)
+        {
+            float t = i / (edgeCount - 1f);
+            OrientedPoint op = GetBezierOP(t);
+            for(int j = 0; j < shape2D.vertices.Length; j++)
+            {
+                verts.Add(op.LocalToWorld(shape2D.vertices[i].vert));
+            }
+        }
+
+        //Tris
+        List<int> tris = new List<int>();
+        for(int i = 0; i < edgeCount - 1; i++)
+        {
+            int rootIndex = i * shape2D.vertices.Length;
+            int nextIndex = (i + 1) * shape2D.vertices.Length;
+
+            for(int j = 0; j < shape2D.lineIndices.Length; j+=2)
+            {
+                int lineIndexA = shape2D.lineIndices[j];
+                int lineIndexB = shape2D.lineIndices[j + 1];
+
+                int currentA = rootIndex + lineIndexA;
+                int currentB = rootIndex + lineIndexB;
+                int nextA = nextIndex + lineIndexA;
+                int nextB = nextIndex + lineIndexB;
+
+                tris.Add(currentA);
+                tris.Add(nextA);
+                tris.Add(nextB);
+
+                tris.Add(currentA);
+                tris.Add(nextB);
+                tris.Add(currentB);
+            }
+        }
+
+        mesh.SetVertices(verts);
+        mesh.SetTriangles(tris, 0);
+        
+    }
 
     public void OnDrawGizmos()
     {

@@ -323,13 +323,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402dc256f6890dd4198e0a4f338b0ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t: 0.777
+  t: 0.449
   controlPoints:
   - {fileID: 9045776}
   - {fileID: 1647054292}
   - {fileID: 1196939652}
   - {fileID: 1612040692}
   shape2D: {fileID: 11400000, guid: daa129172929b35499b10410258ea33a, type: 2}
+  edgeCount: 4
 --- !u!33 &1377180254
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -37,4 +37,4 @@ MonoBehaviour:
   - vert: {x: -1, y: 0}
     normal: {x: 0, y: 0}
     uvs: 0
-  lineIndices: 
+  lineIndices: 0700000000000000010000000200000003000000040000000500000006000000
