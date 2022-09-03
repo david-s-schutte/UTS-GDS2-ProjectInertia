@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Linq;
 
 [RequireComponent(typeof(MeshFilter))]
+[ExecuteInEditMode]
 public class RailSegment : MonoBehaviour
 {
     [Range(0, 1)]
@@ -14,7 +16,7 @@ public class RailSegment : MonoBehaviour
     [SerializeField] RailMesh2D shape2D;
 
     [Range(2, 32)]
-    [SerializeField] int edgeCount = 4;
+    [SerializeField] int edgeCount = 16;
 
     Vector3 GetPos(int i) => controlPoints[i].position;
 
@@ -22,7 +24,7 @@ public class RailSegment : MonoBehaviour
 
     private void Awake()
     {
-        mesh = new Mesh();
+        mesh = new();
         mesh.name = "Rail";
         GetComponent<MeshFilter>().sharedMesh = mesh;
     }
@@ -37,19 +39,20 @@ public class RailSegment : MonoBehaviour
         mesh.Clear();
 
         //Vertices
-        List<Vector3> verts = new List<Vector3>();
+        List<Vector3> verts = new();
         for(int i = 0; i < edgeCount; i++)
         {
             float t = i / (edgeCount - 1f);
             OrientedPoint op = GetBezierOP(t);
             for(int j = 0; j < shape2D.vertices.Length; j++)
             {
-                verts.Add(op.LocalToWorld(shape2D.vertices[i].vert));
+                //Debug.Log(shape2D.vertices[j].vert);
+                verts.Add(op.LocalToWorld(shape2D.vertices[j].vert));
             }
         }
 
         //Tris
-        List<int> tris = new List<int>();
+        List<int> tris = new();
         for(int i = 0; i < edgeCount - 1; i++)
         {
             int rootIndex = i * shape2D.vertices.Length;
@@ -93,9 +96,14 @@ public class RailSegment : MonoBehaviour
 
         void DrawPoint(Vector2 localPos) => Gizmos.DrawSphere(testPoint.LocalToWorld(localPos), 0.1f);
 
-        for(int i = 0; i < shape2D.vertices.Length; i++)
+        Vector3[] verts = shape2D.vertices.Select(v => testPoint.LocalToWorld(v.vert)).ToArray();
+        
+        for(int i = 0; i < shape2D.vertices.Length; i+=2)
         {
-            DrawPoint(shape2D.vertices[i].vert);
+
+            Vector3 a = verts[shape2D.lineIndices[i]];
+            Vector3 b = verts[shape2D.lineIndices[i + 1]];
+            Gizmos.DrawLine(a, b);
         }
 
         Gizmos.color = Color.red;

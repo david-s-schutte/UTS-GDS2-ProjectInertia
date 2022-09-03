@@ -10,7 +10,7 @@ public class RailMesh2D : ScriptableObject
     {
         public Vector2 vert;
         public Vector2 normal;
-        public float uvs;
+        public float  uvs;
     }
 
     public Vertex[] vertices;
