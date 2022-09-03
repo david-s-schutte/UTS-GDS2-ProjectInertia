@@ -6,7 +6,6 @@ using UnityEditor;
 using System.Linq;
 
 [RequireComponent(typeof(MeshFilter))]
-[ExecuteInEditMode]
 public class RailSegment : MonoBehaviour
 {
     [Range(0, 1)]
@@ -21,17 +20,22 @@ public class RailSegment : MonoBehaviour
     Vector3 GetPos(int i) => controlPoints[i].position;
 
     Mesh mesh;
+    MeshCollider collider;
 
     private void Awake()
     {
         mesh = new();
-        mesh.name = "Rail";
+        mesh.name = "Rail";   
         GetComponent<MeshFilter>().sharedMesh = mesh;
+        collider = new();
+        GetComponent<MeshCollider>().sharedMesh = mesh;
     }
 
     private void Update()
     {
         GenerateMesh();
+        transform.position -= gameObject.GetComponentInParent<Transform>().position;
+       
     }
 
     void GenerateMesh()
@@ -47,6 +51,7 @@ public class RailSegment : MonoBehaviour
             for(int j = 0; j < shape2D.vertices.Length; j++)
             {
                 //Debug.Log(shape2D.vertices[j].vert);
+                
                 verts.Add(op.LocalToWorld(shape2D.vertices[j].vert));
             }
         }
@@ -94,7 +99,7 @@ public class RailSegment : MonoBehaviour
         Handles.DrawBezier(GetPos(0), GetPos(3), GetPos(1), GetPos(2),
             Color.white, EditorGUIUtility.whiteTexture, 2f);
 
-        void DrawPoint(Vector2 localPos) => Gizmos.DrawSphere(testPoint.LocalToWorld(localPos), 0.1f);
+        //void DrawPoint(Vector2 localPos) => Gizmos.DrawSphere(testPoint.LocalToWorld(localPos), 0.1f);
 
         Vector3[] verts = shape2D.vertices.Select(v => testPoint.LocalToWorld(v.vert)).ToArray();
         
