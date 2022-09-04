@@ -98,14 +98,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t: 0
+  nodeCount: 16
   controlPoints:
   - {fileID: 7308029881073709367}
   - {fileID: 7308029882727971827}
   - {fileID: 7308029882100576163}
   - {fileID: 7308029882691846099}
   shape2D: {fileID: 11400000, guid: daa129172929b35499b10410258ea33a, type: 2}
-  edgeCount: 16
-  isEditing: 1
+  edgeCount: 24
+  nodes: {fileID: 6369677160944570566}
+  railNode: {fileID: 3152227492862729987, guid: 9dccc9fcb845abf43b20a7bbcd6cc974, type: 3}
+  isEditing: 0
 --- !u!64 &1192244160501655979
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -120,6 +123,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &6369677160944570566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3372685518391618714}
+  m_Layer: 0
+  m_Name: RailNodes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3372685518391618714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369677160944570566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7308029882457042040}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7308029881073709352
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +249,7 @@ Transform:
   - {fileID: 7308029882100576163}
   - {fileID: 7308029882691846099}
   - {fileID: 4132794679604607284}
+  - {fileID: 3372685518391618714}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
