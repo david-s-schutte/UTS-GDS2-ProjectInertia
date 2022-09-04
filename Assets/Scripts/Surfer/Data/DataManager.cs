@@ -1,23 +1,13 @@
 using System;
 using System.IO;
-using Surfer.Data;
+using Surfer.Managers;
 using UnityEngine;
 
-namespace Surfer.Managers
+namespace Surfer.Data
 {
     public class DataManager : Manager
     {
-        private string dataPath;
-        private string dataName;
-
-        public DataManager(string path, string name)
-        {
-            dataName = path;
-            dataName = name;
-        }
-
-
-        public virtual T LoadData<T>() where T : BaseData
+        public virtual T LoadData<T>(string dataPath, string dataName) where T : BaseData
         {
             string fullPath = Path.Combine(dataPath, dataName);
             T data = null;
@@ -43,7 +33,7 @@ namespace Surfer.Managers
             return data;
         }
 
-        public virtual void SaveData<T>(T data) where T : BaseData
+        public virtual void SaveData<T>(T data, string dataPath, string dataName) where T : BaseData
         {
             string fullPath = Path.Combine(dataPath, dataName);
 

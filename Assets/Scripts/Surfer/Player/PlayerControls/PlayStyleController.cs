@@ -14,6 +14,7 @@ public class PlayStyleController : MonoBehaviour
     [SerializeField] private Collider capsuleCollider;
     [SerializeField] private float rotateSpeed;
     private Rigidbody rb;
+    
     [Header("Child References")]
     [SerializeField] private Transform playerModel;
     public Animator animator;
