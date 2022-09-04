@@ -40,7 +40,7 @@ public class SurferControls : MonoBehaviour
         {
             rb.angularVelocity = Vector3.zero;
         }
-        playerModel.Rotate(0, moveDirection.x * rotationRate * Time.deltaTime, 0, Space.World);
+        playerModel.Rotate(0, /*moveDirection.x*/Input.GetAxis("Horizontal") * rotationRate * Time.deltaTime, 0, Space.World);
         Vector3 newVel = new Vector3(playerModel.forward.x * surfSpeed, yStore, playerModel.forward.z * surfSpeed);
         rb.velocity = newVel;
         //if (isGrounded())
