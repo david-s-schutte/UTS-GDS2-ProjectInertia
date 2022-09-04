@@ -31,7 +31,9 @@ public class TrickText : MonoBehaviour
         {
             timeElasped += Time.deltaTime;
             _transform.position = Vector3.Lerp(start, end, timeElasped/journeyTime);
-            text.fontMaterial.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + timeElasped/journeyTime);
+            float opacity = 1 - timeElasped/journeyTime;
+            Debug.Log("Opacity: " + opacity);
+            text.color = new Color(text.color.r, text.color.g, text.color.b, opacity);
             if (timeElasped / journeyTime > 1f)
             {
                 Destroy(this.gameObject);
