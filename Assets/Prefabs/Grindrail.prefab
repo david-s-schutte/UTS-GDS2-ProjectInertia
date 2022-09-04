@@ -105,6 +105,7 @@ MonoBehaviour:
   - {fileID: 7308029882691846099}
   shape2D: {fileID: 11400000, guid: daa129172929b35499b10410258ea33a, type: 2}
   edgeCount: 16
+  isEditing: 1
 --- !u!64 &1192244160501655979
 MeshCollider:
   m_ObjectHideFlags: 0

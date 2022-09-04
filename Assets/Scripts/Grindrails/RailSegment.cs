@@ -6,10 +6,12 @@ using UnityEditor;
 using System.Linq;
 
 [RequireComponent(typeof(MeshFilter))]
+//[ExecuteInEditMode]
 public class RailSegment : MonoBehaviour
 {
     [Range(0, 1)]
     [SerializeField] float t = 0;
+    [SerializeField] int nodeCount = 16;
     [SerializeField] Transform[] controlPoints = new Transform[4];
 
     [SerializeField] RailMesh2D shape2D;
@@ -22,6 +24,11 @@ public class RailSegment : MonoBehaviour
     Mesh mesh;
     MeshCollider collider;
 
+    [SerializeField] GameObject nodes;
+    List<Collider> railNodes;
+    [SerializeField] Collider railNode;
+
+    [SerializeField] bool isEditing = false;
     private void Awake()
     {
         mesh = new();
@@ -29,18 +36,25 @@ public class RailSegment : MonoBehaviour
         GetComponent<MeshFilter>().sharedMesh = mesh;
         collider = new();
         GetComponent<MeshCollider>().sharedMesh = mesh;
+        if (!isEditing)
+            GenerateMesh();
+            transform.position -= gameObject.GetComponentInParent<Transform>().position;
+       
     }
 
     private void Update()
-    {
-        GenerateMesh();
-        transform.position -= gameObject.GetComponentInParent<Transform>().position;
+    {   
+        if(isEditing)
+            GenerateMesh();
+            transform.position -= gameObject.GetComponentInParent<Transform>().position;
        
     }
 
     void GenerateMesh()
     {
+        railNodes = new();
         mesh.Clear();
+        railNodes.Clear();
 
         //Vertices
         List<Vector3> verts = new();
@@ -48,6 +62,9 @@ public class RailSegment : MonoBehaviour
         {
             float t = i / (edgeCount - 1f);
             OrientedPoint op = GetBezierOP(t);
+            Collider node = Instantiate(railNode, op.pos, op.rot);
+            node.transform.parent = nodes.transform;
+            railNodes.Add(node);
             for(int j = 0; j < shape2D.vertices.Length; j++)
             {
                 //Debug.Log(shape2D.vertices[j].vert);
@@ -56,9 +73,15 @@ public class RailSegment : MonoBehaviour
             }
         }
 
+        //Rail nodes
+        for(int i = 0; i < nodeCount; i++)
+        {
+            OrientedPoint op = GetBezierOP(1/nodeCount);
+        }
         //Tris
         List<int> tris = new();
-        for(int i = 0; i < edgeCount - 1; i++)
+        
+        for (int i = 0; i < edgeCount - 1; i++)
         {
             int rootIndex = i * shape2D.vertices.Length;
             int nextIndex = (i + 1) * shape2D.vertices.Length;
@@ -80,12 +103,23 @@ public class RailSegment : MonoBehaviour
                 tris.Add(currentA);
                 tris.Add(nextB);
                 tris.Add(currentB);
+
+                /**Debug.Log(currentA);
+                Debug.Log(nextA);
+                Debug.Log(nextB);
+
+                Debug.Log(currentA);
+                Debug.Log(nextB);
+                Debug.Log(currentB);
+                **/
             }
         }
-
+        
         mesh.SetVertices(verts);
         mesh.SetTriangles(tris, 0);
-        
+        collider = new();
+        GetComponent<MeshCollider>().sharedMesh = mesh;
+
     }
 
     public void OnDrawGizmos()
