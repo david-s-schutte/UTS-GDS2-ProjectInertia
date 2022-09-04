@@ -1,41 +1,46 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Surfer.Input;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-
-[RequireComponent(typeof(CapsuleCollider), typeof(Rigidbody))]
-public class CharacterPhysics : MonoBehaviour
+namespace Surfer.Player
 {
-    [Header("Control Variables")]
-    private Vector3 movementDirection;
-    [SerializeField] private float movementSpeed;
-    [SerializeField] private float jumpHeight;
-    [SerializeField] private float doubleJumpModifier;
-    [SerializeField] private int numberOfJumps;
-    
-    [Header("Physics Variables")]
-    [SerializeField] private float gravityScale;
-
-    [Header("Component References")]
-    [SerializeField] private CharacterController controller;
-    
-    
-    private CapsuleCollider _collider;
-    private Rigidbody _rb;
-
-    private void OnEnable()
+    [RequireComponent(typeof(CapsuleCollider), typeof(Rigidbody))]
+    public class CharacterPhysics : MonoBehaviour
     {
-        _collider = GetComponent<CapsuleCollider>();
-        _rb = GetComponent<Rigidbody>();
-    }
+        [Header("Control Variables")] internal Vector3 movementDirection;
+        [SerializeField] internal float movementSpeed;
+        [SerializeField] internal float jumpHeight;
+        [SerializeField] internal float doubleJumpModifier;
+        [SerializeField] internal int numberOfJumps;
 
-    public void MoveCharacter()
-    {
-        
+        [Header("Physics Variables")] [SerializeField]
+        private float gravityScale;
+
+        [Header("Component References")] [SerializeField]
+        private CharacterController controller;
+
+        private CapsuleCollider _collider;
+        private Rigidbody _rb;
+
+        private void OnEnable()
+        {
+            _collider = GetComponent<CapsuleCollider>();
+            _rb = GetComponent<Rigidbody>();
+        }
+
+        protected virtual void MoveCharacter(InputAction.CallbackContext ctx)
+        {
+            ctx.ReadValue<Vector2>();
+            MoveCharacter();
+        }
+
+        protected virtual void MoveCharacter()
+        {
+            controller.Move(movementDirection * Time.deltaTime);
+        }
+
+        protected virtual void Jump()
+        {
+        }
     }
-    
-    
-    
-    
 }
