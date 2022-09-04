@@ -244,10 +244,22 @@ PrefabInstance:
     - target: {fileID: 1025607562929720341, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11500000, guid: 468a3de99337eff46aa01c8e0cd3d6ec, type: 3}
+      objectReference: {fileID: 1577503523}
     - target: {fileID: 1025607562929720341, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025607562929720341, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025607562929720341, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuButtons, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025607562929720341, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1154396392104387814, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
       propertyPath: m_Name
@@ -446,6 +458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 583947624}
   - component: {fileID: 583947623}
+  - component: {fileID: 583947625}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -530,6 +543,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &583947625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583947622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1302864930
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +631,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1577503519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1154396392104387814, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
+  m_PrefabInstance: {fileID: 332664573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1577503523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577503519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468a3de99337eff46aa01c8e0cd3d6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1810775157
 GameObject:
   m_ObjectHideFlags: 0
