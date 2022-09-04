@@ -1,34 +1,41 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using Surfer.Managers;
 using UnityEngine;
 
 namespace Managers
 {
-    public interface IManager {}
-    
     public class ManagerLocator
     {
         private readonly Dictionary<string, Manager> managers = new Dictionary<string, Manager>();
         
         public static ManagerLocator Current { get; private set; }
         
-        private ManagerLocator()
-        {
-            Debug.Log($"Initialized ManagerLocator.");
-        }
+        private ManagerLocator() {}
         
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void Initialize()
         {
             Current = new ManagerLocator();
+
+            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            List<Type> types = new List<Type>();
+            foreach (Assembly assembly in assemblies)
+                types.AddRange(assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(Manager))));
             
-            //---- REGISTER MANAGERS HERE----
-        
-            foreach (var manager in Current.managers.Values)
+            foreach (Type type in types)
             {
-                manager.ManagerStart();
+                if (type.ContainsGenericParameters)
+                    continue;
+                
+                dynamic manager = Convert.ChangeType(Activator.CreateInstance(type), type);
+                Register(manager);
             }
+                
+            foreach (var manager in Current.managers.Values)
+                manager.ManagerStart();
         }
         
         public static T Get<T>() where T : Manager
@@ -38,7 +45,7 @@ namespace Managers
             if (!Current.managers.ContainsKey(key))
                 throw new Exception($"{key} not registered with {Current.GetType()}.Name");
 
-            return (T) Current.managers[key];
+            return Current.managers[key] as T;
         }
 
         public static void Register<T>(T service) where T : Manager
@@ -50,8 +57,6 @@ namespace Managers
                 Debug.Log($"Attempted to register service of type {key} which is already registered with the {Current.GetType().Name}.");
                 return;
             }
-
-            Debug.Log($"Registered {key}!");
             
             Current.managers.Add(key, service);
         }
