@@ -10,37 +10,23 @@ namespace Surfer.Player
         [Header("Control Variables")] internal Vector3 movementDirection;
         [SerializeField] internal float movementSpeed;
         [SerializeField] internal float jumpHeight;
-        [SerializeField] internal float doubleJumpModifier;
-        [SerializeField] internal int numberOfJumps;
+
 
         [Header("Physics Variables")] [SerializeField]
         private float gravityScale;
 
         [Header("Component References")] [SerializeField]
-        private CharacterController controller;
+        protected CharacterController _controller;
 
         private CapsuleCollider _collider;
         private Rigidbody _rb;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             _collider = GetComponent<CapsuleCollider>();
             _rb = GetComponent<Rigidbody>();
         }
-
-        protected virtual void MoveCharacter(InputAction.CallbackContext ctx)
-        {
-            ctx.ReadValue<Vector2>();
-            MoveCharacter();
-        }
-
-        protected virtual void MoveCharacter()
-        {
-            controller.Move(movementDirection * Time.deltaTime);
-        }
-
-        protected virtual void Jump()
-        {
-        }
+        
+    
     }
 }

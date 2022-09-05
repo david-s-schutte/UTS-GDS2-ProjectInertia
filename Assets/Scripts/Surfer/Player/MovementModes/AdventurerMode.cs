@@ -1,19 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
-using Surfer.Player.MovementModes;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-public class AdventurerMode : MovementMode
+namespace Surfer.Player.MovementModes
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "AdventureMde",menuName = "Surfer/AdventureMode")]
+    public class AdventurerMode : MovementMode, IMode
     {
-        
-    }
+        [SerializeField] internal float doubleJumpModifier;
+        [SerializeField] internal int numberOfJumps;
+    
+    
+        protected override async UniTask OnModeChanged()
+        {
+            await base.OnModeChanged();
+            await DelayModeChange(_cancellationSource.Token);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        protected async void OnModeChanged(Rigidbody rb, CapsuleCollider capsuleCollider)
+        {
+            rb.useGravity = true;
+            rb.angularVelocity = Vector3.zero;
+            capsuleCollider.enabled = false;
+            await OnModeChanged();
+        }
+
+        public void MovePlayer(CharacterController controller, Vector2 direction, float movementSpeed)
+        {
+            controller.Move(new Vector3(direction.x,controller.velocity.y,direction.y) * movementSpeed * Time.deltaTime);
+            Debug.Log("Adventure mode");
+        }
+
+        public void Jump()
+        {
+            
+            
+            
+        }
     }
-}
+} 
