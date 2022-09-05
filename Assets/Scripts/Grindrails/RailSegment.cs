@@ -6,7 +6,7 @@ using UnityEditor;
 using System.Linq;
 
 [RequireComponent(typeof(MeshFilter))]
-//[ExecuteInEditMode]
+[ExecuteInEditMode]
 public class RailSegment : MonoBehaviour
 {
     [Range(0, 1)]
