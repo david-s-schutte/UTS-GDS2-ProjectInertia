@@ -40,7 +40,8 @@ public class SurferControls : MonoBehaviour
         {
             rb.angularVelocity = Vector3.zero;
         }
-        playerModel.Rotate(0, moveDirection.x * rotationRate * Time.deltaTime, 0, Space.World);
+
+        playerModel.Rotate(0, /*moveDirection.x*/Input.GetAxis("Horizontal") * rotationRate * Time.deltaTime, 0, Space.World);
         Vector3 newVel = new Vector3(playerModel.forward.x * surfSpeed, yStore, playerModel.forward.z * surfSpeed);
         rb.velocity = newVel;
         //if (isGrounded())
@@ -52,7 +53,7 @@ public class SurferControls : MonoBehaviour
         //    Debug.Log("Surfer is mid-air");
         //}
 
-        
+
     }
 
     private void FixedUpdate()
@@ -60,7 +61,7 @@ public class SurferControls : MonoBehaviour
         //Test to see if there is a hit using a BoxCast
         //Calculate using the center of the GameObject's Collider(could also just use the GameObject's position), half the GameObject's size, the direction, the GameObject's rotation, and the maximum distance as variables.
         //Also fetch the hit data
-        m_HitDetect = Physics.BoxCast(col.bounds.center, transform.localScale, -transform.up, out m_Hit, transform.rotation, m_MaxDistance, groundLayer);
+        m_HitDetect = Physics.BoxCast(col.bounds.center, transform.localScale, Vector3.down, out m_Hit, transform.rotation, m_MaxDistance, groundLayer);
         if (m_HitDetect)
         {
             //Output the name of the Collider your Box hit

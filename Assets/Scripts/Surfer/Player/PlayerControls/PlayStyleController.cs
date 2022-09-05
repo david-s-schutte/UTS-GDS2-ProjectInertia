@@ -14,10 +14,13 @@ public class PlayStyleController : MonoBehaviour
     [SerializeField] private Collider capsuleCollider;
     [SerializeField] private float rotateSpeed;
     private Rigidbody rb;
+    Vector3 respawnPos;
     
     [Header("Child References")]
     [SerializeField] private Transform playerModel;
     public Animator animator;
+
+    public Canvas endCanvas;
 
     private void Start()
     {
@@ -27,6 +30,7 @@ public class PlayStyleController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
         surferControls.InitialiaseSurferControls(capsuleCollider);
+        respawnPos = transform.position;
     }
 
     // Update is called once per frame
@@ -58,8 +62,14 @@ public class PlayStyleController : MonoBehaviour
                 //Disable adventure control scheme components
                 adventureControls.enabled = false;
                 characterController.enabled = false;
+                animator.SetBool("walking", false);
             }
         }
+
+        if ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) && isPlatforming)
+            animator.SetBool("walking", true);
+        else
+            animator.SetBool("walking", false);
 
         //Get the player's input
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -75,6 +85,7 @@ public class PlayStyleController : MonoBehaviour
 
         Vector3 movementDirection = (cameraRight * horizontalInput) + (cameraForward * verticalInput);
         movementDirection.Normalize();
+        
 
         //Execute the player's movement based on their chosen control scheme
         if (isPlatforming)
@@ -97,8 +108,30 @@ public class PlayStyleController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.tag == "KillPlane")
+        {
+            isPlatforming = true;
+            animator.SetBool("isPlatforming", isPlatforming);
+            transform.position = respawnPos;
+
+        }
+
+        if(other.tag == "Checkpoint")
+        {
+            respawnPos = other.transform.position;
+        }
+
+        if(other.tag == "Goal")
+        {
+            Invoke("EndDemo", 4.0f);
+        }
+    }
+
+    private void EndDemo()
+    {
+        endCanvas.enabled = true;
+        //Time.timeScale = 0.0f;
     }
 }
