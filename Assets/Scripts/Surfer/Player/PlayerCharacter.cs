@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Surfer.Input;
@@ -39,6 +38,7 @@ namespace Surfer.Player
         private void Awake()
         {
             _controls = new PlayerControls();
+            movementDirection = Vector2.zero;
         }
 
         protected override void OnEnable()
@@ -47,7 +47,7 @@ namespace Surfer.Player
             _modeIndex = 0;
             _movementModes = _modes.AsReadOnly();
             _controls.Enable();
-           RegisterInputs();
+            RegisterInputs();
         }
 
         private void OnDisable()
@@ -57,10 +57,8 @@ namespace Surfer.Player
 
         private void RegisterInputs()
         {
-            _controls.Player.Move.started += MovePlayer;
-            _controls.Player.Move.canceled += MovePlayer;
+            _controls.Player.Move.canceled += MoveCancelled;
             _controls.Player.Move.performed += MovePlayer;
-
             _controls.Player.Jump.performed += Jump;
         }
 
@@ -73,8 +71,14 @@ namespace Surfer.Player
         //called by the new input system
         public void MovePlayer(InputAction.CallbackContext ctx)
         {
+            if (ctx.canceled)
+                return;
+            
+            Debug.Log($"Movement direction: {movementDirection}");
             movementDirection = ctx.ReadValue<Vector2>();
         }
+
+        public void MoveCancelled(InputAction.CallbackContext ctx) => movementDirection = Vector2.zero;
 
         public void Jump(InputAction.CallbackContext ctx)
         {

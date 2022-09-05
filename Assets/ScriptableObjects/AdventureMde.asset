@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doubleJumpModifier: 2
   numberOfJumps: 2
+  smoothSpeed: 0.1

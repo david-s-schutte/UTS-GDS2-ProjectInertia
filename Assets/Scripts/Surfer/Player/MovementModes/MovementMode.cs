@@ -9,21 +9,21 @@ namespace Surfer.Player.MovementModes
     public class MovementMode : ScriptableObject
     {
         public UnityAction OnChangedMode;
-        
+
         protected CancellationTokenSource _cancellationSource;
 
-        private void OnEnable() 
+        private void OnEnable()
         {
-            OnChangedMode += UniTask.UnityAction(async() => await OnModeChanged());
+            OnChangedMode += UniTask.UnityAction(async () => await OnModeChanged());
         }
 
         private void OnDisable()
         {
-            OnChangedMode -= UniTask.UnityAction(async() => await OnModeChanged());
+            OnChangedMode -= UniTask.UnityAction(async () => await OnModeChanged());
         }
 
         protected virtual async UniTask OnModeChanged() => _cancellationSource = new CancellationTokenSource();
-        
+
         protected void CancelDelay() => _cancellationSource.Cancel();
 
         protected async UniTask DelayModeChange(CancellationToken token)
@@ -34,14 +34,8 @@ namespace Surfer.Player.MovementModes
             }
             catch (OperationCanceledException e)
             {
-                Debug.LogWarning($"Warning trying to cancel the delay was unsuccessful");
+                Debug.LogWarning($"Warning trying to cancel the delay was unsuccessful: {e}");
             }
-
         }
-        
-        
-
-        // protected virtual void MovePlayer(CharacterController controller, float direction, float movementSpeed) {}
-        
     }
 }

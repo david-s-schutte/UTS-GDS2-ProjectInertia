@@ -3,13 +3,16 @@ using UnityEngine;
 
 namespace Surfer.Player.MovementModes
 {
-    [CreateAssetMenu(fileName = "AdventureMde",menuName = "Surfer/AdventureMode")]
+    [CreateAssetMenu(fileName = "AdventureMde", menuName = "Surfer/AdventureMode")]
     public class AdventurerMode : MovementMode, IMode
     {
         [SerializeField] internal float doubleJumpModifier;
         [SerializeField] internal int numberOfJumps;
-    
-    
+        [SerializeField] internal float smoothSpeed = .2f;
+
+        private Vector2 _currentInputVector;
+        private Vector2 _smoothInputVelocity;
+
         protected override async UniTask OnModeChanged()
         {
             await base.OnModeChanged();
@@ -26,15 +29,12 @@ namespace Surfer.Player.MovementModes
 
         public void MovePlayer(CharacterController controller, Vector2 direction, float movementSpeed)
         {
-            controller.Move(new Vector3(direction.x,controller.velocity.y,direction.y) * movementSpeed * Time.deltaTime);
-            Debug.Log("Adventure mode");
+           // _currentInputVector = Vector2.SmoothDamp(_currentInputVector, direction, ref _smoothInputVelocity, smoothSpeed, 1 );
+            controller.Move(new Vector3(direction.x, controller.velocity.y, direction.y) * movementSpeed * Time.deltaTime);
         }
 
         public void Jump()
         {
-            
-            
-            
         }
     }
-} 
+}
