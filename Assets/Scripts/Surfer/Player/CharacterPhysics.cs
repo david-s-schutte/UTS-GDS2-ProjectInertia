@@ -13,8 +13,10 @@ namespace Surfer.Player
 
 
         [Header("Physics Variables")] [SerializeField]
-        private float gravityScale;
+        internal float gravityScale;
 
+        internal float groundedGravityScale = -.05f;
+        
         [Header("Component References")] [SerializeField]
         protected CharacterController _controller;
 

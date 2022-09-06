@@ -8,9 +8,24 @@ namespace Surfer.Player.MovementModes
 {
     public class MovementMode : ScriptableObject
     {
-        public UnityAction OnChangedMode;
+        [Header("Jump Variables")] [SerializeField]
+        internal float _maxJumpTime = 0.5f;
+
+        [SerializeField] internal float _maxJumpHeight = 1;
+        [SerializeField] internal float _multiJumpModifier;
+        [SerializeField] internal int _numberOfJumps;
+
+        [Header("Gravity")] [SerializeField] internal int fallMultipler;
+
 
         protected CancellationTokenSource _cancellationSource;
+
+        internal float _initialJumpVelocity;
+        internal bool _isJumping = false;
+        internal int _currentJumpNumber = 0;
+
+        public UnityAction OnChangedMode;
+
 
         private void OnEnable()
         {
@@ -36,6 +51,16 @@ namespace Surfer.Player.MovementModes
             {
                 Debug.LogWarning($"Warning trying to cancel the delay was unsuccessful: {e}");
             }
+        }
+
+
+        // Returns the gravity to be set to the player
+        protected float Initialise()
+        {
+            float timeToApex = _maxJumpTime / 2;
+            var gravity = (-2 * _maxJumpHeight) / Mathf.Pow(timeToApex, 2);
+            _initialJumpVelocity = (2 * _maxJumpHeight) / timeToApex;
+            return gravity;
         }
     }
 }

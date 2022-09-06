@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae71cf1c4159c9448180edaf573d965, type: 3}
   m_Name: AdventureMde
   m_EditorClassIdentifier: 
-  doubleJumpModifier: 2
-  numberOfJumps: 2
-  smoothSpeed: 0.1
+  _maxJumpTime: 0.65
+  _maxJumpHeight: 0.15
+  _multiJumpModifier: 0.75
+  _numberOfJumps: 1
+  fallMultipler: 2

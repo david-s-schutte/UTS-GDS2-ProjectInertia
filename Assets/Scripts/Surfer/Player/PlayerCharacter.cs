@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Text;
 using Surfer.Input;
 using Surfer.Player.MovementModes;
 using UnityEngine;
@@ -16,16 +17,19 @@ namespace Surfer.Player
             Grinding
         };
 
-        private PlayerControls _controls;
-
         [SerializeField] private List<MovementMode> _modes;
 
+        [Header("Camera Reference")] [SerializeField]
+        private Transform _camera;
+
         private ReadOnlyCollection<MovementMode> _movementModes;
-
-
+        private PlayerControls _controls;
         private PlayerState _currentState;
-
         private int _modeIndex;
+        private bool _isMoving = false;
+        private bool _isJumping = false;
+        private Vector3 _cameraRelativeMovement;
+        private bool canJumpAgain = false; //refers for multiple jumps
 
         public PlayerState CurrentState
         {
@@ -44,10 +48,11 @@ namespace Surfer.Player
         protected override void OnEnable()
         {
             base.OnEnable();
-            _modeIndex = 0;
-            _movementModes = _modes.AsReadOnly();
             _controls.Enable();
             RegisterInputs();
+            _modeIndex = 0;
+            _movementModes = _modes.AsReadOnly();
+            gravityScale = CurrentMode.Initialise();
         }
 
         private void OnDisable()
@@ -58,40 +63,134 @@ namespace Surfer.Player
         private void RegisterInputs()
         {
             _controls.Player.Move.canceled += MoveCancelled;
-            _controls.Player.Move.performed += MovePlayer;
-            _controls.Player.Jump.performed += Jump;
+            // _controls.Player.Move.performed += MovePlayer;
+            _controls.Player.Jump.started += Jump;
+            _controls.Player.Jump.canceled += Jump;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            CurrentMode.MovePlayer(_controller, movementDirection, movementSpeed);
+            // if (_isMoving)
+            //     _cameraRelativeMovement =  RotateCharacterWithCamera(_camera);
+
+            //   RotateCharacterWithCamera(_camera);
+            //  
+            UpdateCameraRelativeMovement();
+
+
+            CurrentMode.MovePlayer(_controller,
+                new Vector3(movementDirection.x, _cameraRelativeMovement.y, movementDirection.z), movementSpeed);
+
+            UpdateGravity();
+
+            movementDirection = CurrentMode.Jump(_controller,
+                new Vector3(movementDirection.x, _cameraRelativeMovement.y, movementDirection.z), _isJumping,
+                canJumpAgain, ref _cameraRelativeMovement);
+
+            //UpdateCameraRelativeMovement();
+
+            Debug.Log(movementDirection);
+
+            if (_controller.isGrounded)
+            {
+                CurrentMode.ResetJump();
+                canJumpAgain = false;
+            }
         }
 
 
-        //called by the new input system
-        public void MovePlayer(InputAction.CallbackContext ctx)
-        {
-            if (ctx.canceled)
-                return;
-            
-            Debug.Log($"Movement direction: {movementDirection}");
-            movementDirection = ctx.ReadValue<Vector2>();
-        }
-
-        public void MoveCancelled(InputAction.CallbackContext ctx) => movementDirection = Vector2.zero;
-
-        public void Jump(InputAction.CallbackContext ctx)
-        {
-            CurrentMode.Jump();
-        }
-
-
-        // protected override void MoveCharacter(InputAction.CallbackContext ctx)
+        //TODO: Would love to get the movement in this callback but not sure how with camera-relative movement
+        // public void MovePlayer(InputAction.CallbackContext ctx)
         // {
-        //     movementDirection = ctx.ReadValue<Vector2>();
-        //     float yStore = movementDirection.y;
-        //     movementDirection.y = yStore;
-        //     base.MoveCharacter(ctx);
+        //     if (ctx.canceled)
+        //         return;
+        //
+        //     var inputValue = ctx.ReadValue<Vector2>();
+        //     movementDirection.x = inputValue.x;
+        //     movementDirection.z = inputValue.y;
+        //     
+        //     Vector3 forward = _camera.forward;
+        //     Vector3 right = _camera.right;
+        //     forward.y = 0;
+        //     right.y = 0;
+        //     forward = forward.normalized;
+        //     right = right.normalized;
+        //
+        //     Vector3 forwardRelativeVerticalInput = movementDirection.z * forward;
+        //     Vector3 rightRelativeVerticalInput = movementDirection.x * right;
+        //
+        //     Vector3 cameraRelativeDirection = forwardRelativeVerticalInput + rightRelativeVerticalInput;
+        //     movementDirection = new Vector3(cameraRelativeDirection.x,movementDirection.y,cameraRelativeDirection.z);
+        //     _cameraRelativeMovement = new Vector3(cameraRelativeDirection.x,movementDirection.y,cameraRelativeDirection.z);
+        //     
+        //     _isMoving = true;
         // }
+
+        private void UpdateCameraRelativeMovement()
+        {
+            if (_controls.Player.Move.IsPressed())
+            {
+                var inputValue = _controls.Player.Move.ReadValue<Vector2>();
+                Vector3 forward = _camera.forward;
+                Vector3 right = _camera.right;
+                forward.y = 0;
+                right.y = 0;
+                forward = forward.normalized;
+                right = right.normalized;
+
+
+                Vector3 forwardRelativeVerticalInput = inputValue.y * forward;
+                Vector3 rightRelativeVerticalInput = inputValue.x * right;
+
+                Vector3 cameraRelativeDirection = forwardRelativeVerticalInput + rightRelativeVerticalInput;
+                movementDirection = new Vector3(cameraRelativeDirection.x, movementDirection.y,
+                    cameraRelativeDirection.z);
+                _cameraRelativeMovement = new Vector3(cameraRelativeDirection.x, movementDirection.y,
+                    cameraRelativeDirection.z);
+            }
+        }
+
+
+        public void MoveCancelled(InputAction.CallbackContext ctx)
+        {
+            _isMoving = false;
+            movementDirection = new Vector3(0, movementDirection.y, 0);
+            _cameraRelativeMovement = new Vector3(0, _cameraRelativeMovement.y, 0);
+        }
+
+        private void Jump(InputAction.CallbackContext ctx)
+        {
+            _isJumping = ctx.ReadValueAsButton();
+
+            if (ctx.canceled)
+                canJumpAgain = true;
+        }
+
+        private void UpdateGravity()
+        {
+            var isFalling = movementDirection.y <= 0f || !_isJumping;
+            var fallMultiplier = CurrentMode.GetFallMultipler();
+
+            if (_controller.isGrounded && _controller.velocity.y < 0)
+            {
+                movementDirection.y = groundedGravityScale;
+                _cameraRelativeMovement.y = groundedGravityScale;
+                return;
+            }
+
+            float oldYVelocity = movementDirection.y;
+
+            if (isFalling)
+            {
+                movementDirection.y = movementDirection.y + (gravityScale * fallMultiplier * Time.deltaTime);
+                _cameraRelativeMovement.y = Mathf.Max((oldYVelocity + movementDirection.y) * 0.5f, -20f);
+            }
+            else
+            {
+                fallMultiplier = 1;
+                movementDirection.y = movementDirection.y + (gravityScale * fallMultiplier * Time.deltaTime);
+                _cameraRelativeMovement.y = (oldYVelocity + movementDirection.y) * 0.5f;
+            }
+        }
     }
 }
