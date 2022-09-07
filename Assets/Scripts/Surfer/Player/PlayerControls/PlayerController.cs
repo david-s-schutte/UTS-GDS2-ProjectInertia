@@ -81,20 +81,19 @@ public class PlayerController : MonoBehaviour {
 
 
         // Apply gravity
+        velocity += Physics.gravity * Time.deltaTime;
         if (cc.isGrounded) {
             velocity.y = 0;
-        } else {
-            velocity += Physics.gravity * Time.deltaTime;
         }
 
-        // Input Jumping - not yet working
-        // if (Input.GetButtonDown("Jump")) {
-        //     if (currentStyle == ControlStyle.Adventure) {
-        //         velocity += AdventureStyle.Jump(moveInput) * advJumpVelocity;
-        //     }
-        // }
+        // Input Jumping
+        if (Input.GetButtonDown("Jump")) {
+            if (currentStyle == ControlStyle.Adventure) {
+                velocity = AdventureStyle.Jump(moveInput) * advJumpVelocity;
+            }
+        }
 
-        cc.Move(movement * Time.deltaTime + velocity);
+        cc.Move(movement * Time.deltaTime + velocity * Time.deltaTime);
 
     }
 
