@@ -8,6 +8,10 @@ namespace Surfer.Player.MovementModes
 {
     public class MovementMode : ScriptableObject
     {
+        [Header("Movement Speed")]
+        internal float _movementSpeed = 10;
+
+        
         [Header("Jump Variables")] [SerializeField]
         internal float _maxJumpTime = 0.5f;
 
@@ -15,7 +19,8 @@ namespace Surfer.Player.MovementModes
         [SerializeField] internal float _multiJumpModifier;
         [SerializeField] internal int _numberOfJumps;
 
-        [Header("Gravity")] [SerializeField] internal int fallMultipler;
+        [Header("Gravity")] 
+        [SerializeField] internal int fallMultipler;
 
 
         protected CancellationTokenSource _cancellationSource;
@@ -37,7 +42,11 @@ namespace Surfer.Player.MovementModes
             OnChangedMode -= UniTask.UnityAction(async () => await OnModeChanged());
         }
 
-        protected virtual async UniTask OnModeChanged() => _cancellationSource = new CancellationTokenSource();
+        protected virtual async UniTask OnModeChanged()
+        {
+            _cancellationSource = new CancellationTokenSource();
+            Initialise();
+        }
 
         protected void CancelDelay() => _cancellationSource.Cancel();
 
@@ -46,10 +55,11 @@ namespace Surfer.Player.MovementModes
             try
             {
                 await UniTask.Delay(1000, false, PlayerLoopTiming.Update, token);
+                Debug.Log("Delay Completed!");
             }
             catch (OperationCanceledException e)
             {
-                Debug.LogWarning($"Warning trying to cancel the delay was unsuccessful: {e}");
+                Debug.Log($"Delay Cancel was successful!: {e}");
             }
         }
 

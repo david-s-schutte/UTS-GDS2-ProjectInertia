@@ -17,18 +17,11 @@ namespace Surfer.Player.MovementModes
             await DelayModeChange(_cancellationSource.Token);
         }
 
-        protected async void OnModeChanged(Rigidbody rb, CapsuleCollider capsuleCollider)
-        {
-            rb.useGravity = true;
-            rb.angularVelocity = Vector3.zero;
-            capsuleCollider.enabled = false;
-            await OnModeChanged();
-        }
 
-        public void MovePlayer(CharacterController controller, Vector3 direction, float movementSpeed)
+        public void MovePlayer(CharacterController controller, Vector3 direction)
         {
             // _currentInputVector = Vector2.SmoothDamp(_currentInputVector, direction, ref _smoothInputVelocity, smoothSpeed, 1 );
-            controller.Move(direction * movementSpeed * Time.deltaTime);
+            controller.Move(direction * _movementSpeed * Time.deltaTime);
         }
 
         /// <summary>
@@ -40,7 +33,8 @@ namespace Surfer.Player.MovementModes
         /// <param name="canDoubleJump"></param>
         /// <param name="appliedMovement"></param>
         /// <returns>Returns the updated movementDirection</returns>
-        public Vector3 Jump(CharacterController controller, Vector3 direction,  bool jumpPressed,bool canDoubleJump ,ref Vector3 appliedMovement)
+        public Vector3 Jump(CharacterController controller, Vector3 direction, bool jumpPressed, bool canDoubleJump,
+            ref Vector3 appliedMovement)
         {
             if (jumpPressed && controller.isGrounded && !_isJumping)
             {
@@ -49,9 +43,10 @@ namespace Surfer.Player.MovementModes
                 direction.y = _initialJumpVelocity;
                 appliedMovement.y = direction.y;
                 return direction;
-            } 
+            }
 
-            if (canDoubleJump && !controller.isGrounded&&  _currentJumpNumber < _numberOfJumps && !controller.isGrounded && jumpPressed)
+            if (canDoubleJump && !controller.isGrounded && _currentJumpNumber < _numberOfJumps &&
+                !controller.isGrounded && jumpPressed)
             {
                 _currentJumpNumber++;
                 _isJumping = true;
@@ -70,7 +65,9 @@ namespace Surfer.Player.MovementModes
         public float GetFallMultipler() => fallMultipler;
         public float ResetJump() => _currentJumpNumber = 0;
 
-
-
+        public virtual async void BeginModeChange()
+        {
+            await OnModeChanged();
+        }
     }
 }

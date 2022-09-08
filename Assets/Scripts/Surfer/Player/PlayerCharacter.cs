@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using PlasticGui.WorkspaceWindow.PendingChanges;
 using Surfer.Input;
 using Surfer.Player.MovementModes;
 using UnityEngine;
@@ -66,6 +67,7 @@ namespace Surfer.Player
             // _controls.Player.Move.performed += MovePlayer;
             _controls.Player.Jump.started += Jump;
             _controls.Player.Jump.canceled += Jump;
+            _controls.Player.ChangeMode.started += ChangeMode;
         }
 
         private void FixedUpdate()
@@ -79,7 +81,7 @@ namespace Surfer.Player
 
 
             CurrentMode.MovePlayer(_controller,
-                new Vector3(movementDirection.x, _cameraRelativeMovement.y, movementDirection.z), movementSpeed);
+                new Vector3(movementDirection.x, _cameraRelativeMovement.y, movementDirection.z));
 
             UpdateGravity();
 
@@ -148,6 +150,18 @@ namespace Surfer.Player
                 _cameraRelativeMovement = new Vector3(cameraRelativeDirection.x, movementDirection.y,
                     cameraRelativeDirection.z);
             }
+        }
+
+        private void ChangeMode(InputAction.CallbackContext ctx)
+        {
+            if (_modeIndex == _modes.Capacity - 1)
+            {
+                _modeIndex = 0;
+                return;
+            }
+
+            _modeIndex++;
+            CurrentMode.BeginModeChange();
         }
 
 
