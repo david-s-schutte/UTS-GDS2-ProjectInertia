@@ -51,6 +51,9 @@ ModelImporter:
   - first:
       74: -5982456141437518127
     second: rig.001|Trick_ToeGrab
+  - first:
+      74: 5073694015551532729
+    second: BlackBody|Board_Idle
   externalObjects: {}
   materials:
     materialImportMode: 2
