@@ -15,9 +15,9 @@ namespace Surfer.Player.MovementModes
         {
             await base.OnModeChanged();
             await DelayModeChange(_cancellationSource.Token);
-        }
-
-
+        }   
+        
+            
         public void MovePlayer(CharacterController controller, Vector3 direction)
         {
             // _currentInputVector = Vector2.SmoothDamp(_currentInputVector, direction, ref _smoothInputVelocity, smoothSpeed, 1 );
