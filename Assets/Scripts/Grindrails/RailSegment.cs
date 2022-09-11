@@ -29,6 +29,7 @@ public class RailSegment : MonoBehaviour
     [SerializeField] Collider railNode;
 
     [SerializeField] bool isEditing = false;
+    [SerializeField] bool regenerateNodes = false;
     private void Awake()
     {
         mesh = new();
@@ -46,15 +47,15 @@ public class RailSegment : MonoBehaviour
     {   
         if(isEditing)
             GenerateMesh();
+            GenerateNodes();
             transform.position -= gameObject.GetComponentInParent<Transform>().position;
        
     }
 
     void GenerateMesh()
     {
-        railNodes = new();
+        
         mesh.Clear();
-        railNodes.Clear();
 
         //Vertices
         List<Vector3> verts = new();
@@ -62,9 +63,9 @@ public class RailSegment : MonoBehaviour
         {
             float t = i / (edgeCount - 1f);
             OrientedPoint op = GetBezierOP(t);
-            Collider node = Instantiate(railNode, op.pos, op.rot);
-            node.transform.parent = nodes.transform;
-            railNodes.Add(node);
+            //Collider node = Instantiate(railNode, op.pos, op.rot);
+            //node.transform.parent = nodes.transform;
+            //railNodes.Add(node);
             for(int j = 0; j < shape2D.vertices.Length; j++)
             {
                 //Debug.Log(shape2D.vertices[j].vert);
@@ -73,11 +74,6 @@ public class RailSegment : MonoBehaviour
             }
         }
 
-        //Rail nodes
-        for(int i = 0; i < nodeCount; i++)
-        {
-            OrientedPoint op = GetBezierOP(1/nodeCount);
-        }
         //Tris
         List<int> tris = new();
         
@@ -156,7 +152,28 @@ public class RailSegment : MonoBehaviour
 
     }
 
-
+    public void GenerateNodes()
+    {
+        if (regenerateNodes)
+        {
+            railNodes = new();
+            railNodes.Clear();
+            int children = nodes.transform.childCount;
+            for(int i = 0; i < children - 1; i++)
+            {
+                Destroy(nodes.transform.GetChild(i));
+            }
+            for (int i = 0; i < edgeCount; i++)
+            {
+                float t = i / (edgeCount - 1f);
+                OrientedPoint op = GetBezierOP(t);
+                Collider node = Instantiate(railNode, op.pos, op.rot);
+                node.transform.parent = nodes.transform;
+                railNodes.Add(node);
+            }
+            regenerateNodes = false;
+        }
+    }
 
     OrientedPoint GetBezierOP(float t) //oriented point
     {
