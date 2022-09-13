@@ -18,7 +18,7 @@ MonoBehaviour:
   _numberOfJumps: 2
   fallMultipler: 2
   _smoothDamping: 0.4
-  _baseMoveSpeed: 0.1
+  _baseMoveSpeed: 0.5
   brakeForce: 5
   ollieHeight: 5
   playerLayer:

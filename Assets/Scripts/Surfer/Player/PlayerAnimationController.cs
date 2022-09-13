@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     [Header("Component References")]
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator cinemachineController;
 
     [Header("Adventure Control Animations")]
     [SerializeField] private AnimationClip idleAnim;
@@ -13,15 +13,11 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void Start()
     {
-        animator = GameObject.FindWithTag("Player").GetComponent<Animator>();
+        
     }
     // Update is called once per frame
     void Update()
     {
-        //Get player input
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
-        //Set playerInput in animatorController
+        
     }
 }
