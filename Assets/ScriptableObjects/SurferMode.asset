@@ -15,7 +15,7 @@ MonoBehaviour:
   _maxJumpTime: 0.65
   _maxJumpHeight: 0.15
   _multiJumpModifier: 0.75
-  _numberOfJumps: 2
+  _numberOfJumps: 1
   fallMultipler: 2
   _smoothDamping: 0.4
   _baseMoveSpeed: 0.5

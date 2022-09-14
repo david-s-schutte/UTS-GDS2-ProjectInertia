@@ -91,7 +91,7 @@ namespace Surfer.Player
 
             //UpdateCameraRelativeMovement();
 
-            Debug.Log(movementDirection);
+            //Debug.Log(movementDirection);
 
             if (_controller.isGrounded)
             {
@@ -205,6 +205,13 @@ namespace Surfer.Player
                 movementDirection.y = movementDirection.y + (gravityScale * fallMultiplier * Time.deltaTime);
                 _cameraRelativeMovement.y = (oldYVelocity + movementDirection.y) * 0.5f;
             }
+        }
+
+
+        /*CUSTOM FUNCTIONS ADDED BY DAVID*/
+        public Vector3 GetCameraRelevantInput()
+        {
+            return _cameraRelativeMovement;
         }
     }
 }
