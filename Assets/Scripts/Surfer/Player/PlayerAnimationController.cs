@@ -61,7 +61,6 @@ namespace Surfer.Player
 
         private void SwitchCamera(InputAction.CallbackContext ctx)
         {
-            Debug.Log("LLL");
             isPlatforming = !isPlatforming;
             cinemachineController.SetBool("isPlatforming", isPlatforming);
         }

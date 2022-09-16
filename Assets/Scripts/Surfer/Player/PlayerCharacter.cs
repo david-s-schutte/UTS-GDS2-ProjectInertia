@@ -32,6 +32,11 @@ namespace Surfer.Player
         private Vector3 _cameraRelativeMovement;
         private bool canJumpAgain = false; //refers for multiple jumps
 
+        /*ADDITIONS MADE BY DAVID IM SORRY FRANCISCO*/
+        private Vector3 relativeForward; //store the relative forward direction
+        private bool isAutoMove; //bool that controls whether to move the player forward automatically
+        private InputAction switchedModes; //
+
         public PlayerState CurrentState
         {
             get => _currentState;
@@ -44,6 +49,12 @@ namespace Surfer.Player
         {
             _controls = new PlayerControls();
             movementDirection = Vector2.zero;
+
+            //Added by David
+            isAutoMove = true;
+            switchedModes = _controls.Player.ChangeMode;
+            switchedModes.Enable();
+            switchedModes.performed += SwitchAutoMove;
         }
 
         protected override void OnEnable()
@@ -78,10 +89,17 @@ namespace Surfer.Player
             //   RotateCharacterWithCamera(_camera);
             //  
             UpdateCameraRelativeMovement();
+            relativeForward = new Vector3(gameObject.transform.forward.x,
+                /*_cameraRelativeMovement.y*/
+                gameObject.transform.forward.y
+                , gameObject.transform.forward.z);
 
-
-            CurrentMode.MovePlayer(_controller,
-                new Vector3(movementDirection.x, _cameraRelativeMovement.y, movementDirection.z));
+            if(isAutoMove)
+                CurrentMode.MovePlayer(_controller,
+                    new Vector3(movementDirection.x, _cameraRelativeMovement.y, movementDirection.z));
+            else
+                CurrentMode.MovePlayer(_controller,
+                    new Vector3(relativeForward.x, relativeForward.y, relativeForward.z));
 
             UpdateGravity();
 
@@ -90,8 +108,6 @@ namespace Surfer.Player
                 canJumpAgain, ref _cameraRelativeMovement);
 
             //UpdateCameraRelativeMovement();
-
-            //Debug.Log(movementDirection);
 
             if (_controller.isGrounded)
             {
@@ -161,6 +177,7 @@ namespace Surfer.Player
             }
 
             _modeIndex++;
+            Debug.Log(isAutoMove);
             CurrentMode.BeginModeChange();
         }
 
@@ -212,6 +229,11 @@ namespace Surfer.Player
         public Vector3 GetCameraRelevantInput()
         {
             return _cameraRelativeMovement;
+        }
+
+        public void SwitchAutoMove(InputAction.CallbackContext ctx)
+        {
+            isAutoMove = !isAutoMove;
         }
     }
 }

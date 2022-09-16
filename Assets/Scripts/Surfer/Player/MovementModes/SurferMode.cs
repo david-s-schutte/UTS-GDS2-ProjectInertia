@@ -44,12 +44,12 @@ public class SurferMode : MovementMode, IMode
             _smoothDamping, _movementSpeed);
         Vector3 smoothedDirection = new Vector3(_currentInputVector.x, direction.y, _currentInputVector.z);
 
-        if (smoothedDirection.x != 0 && smoothedDirection.y != 0)
-        {
-            smoothedDirection = smoothedDirection.x > smoothedDirection.z
-                ? new Vector3(smoothedDirection.x, smoothedDirection.y, smoothedDirection.z + _baseMoveSpeed)
-                : new Vector3(smoothedDirection.x + _baseMoveSpeed, smoothedDirection.y, smoothedDirection.z);
-        }
+        //if (smoothedDirection.x != 0 && smoothedDirection.y != 0)
+        //{
+        //    smoothedDirection = smoothedDirection.x > smoothedDirection.z
+        //        ? new Vector3(smoothedDirection.x, smoothedDirection.y, smoothedDirection.z + _baseMoveSpeed)
+        //        : new Vector3(smoothedDirection.x + _baseMoveSpeed, smoothedDirection.y, smoothedDirection.z);
+        //}
 
         controller.Move(
             new Vector3(smoothedDirection.x, smoothedDirection.y, smoothedDirection.z + _baseMoveSpeed) *
