@@ -222,7 +222,18 @@
                 {
                     "name": "",
                     "id": "f735f81c-41ce-4b91-a0bb-6cd26e8008e8",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f47a689-d0d3-47f0-b52c-7e4294be6d7c",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

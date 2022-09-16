@@ -1,4 +1,3 @@
-
 using Surfer.Player;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
@@ -27,10 +26,8 @@ public class Character<T> : CharacterPhysics where T : CharacterData
         transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationPerFrame * Time.fixedDeltaTime);
     }
 
-    internal Vector3 RotateCharacterWithCamera( Transform cam, float rotationPerFrame = 1)
+    internal Vector3 RotateCharacterWithCamera(Transform cam, float rotationPerFrame = 1)
     {
         return Vector3.zero;
     }
-    
-    
 }
