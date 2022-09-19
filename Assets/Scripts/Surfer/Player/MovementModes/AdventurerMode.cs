@@ -9,7 +9,7 @@ namespace Surfer.Player.MovementModes
     {
         private Vector2 _currentInputVector;
         private Vector2 _smoothInputVelocity;
-
+        
 
         protected override async UniTask OnModeChanged()
         {
