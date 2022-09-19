@@ -53,10 +53,7 @@ namespace Surfer.Player
                 Quaternion rot = Quaternion.LookRotation(movementDirection);
                 gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, rot, rotateSpeed * Time.deltaTime);
             }
-            if (controls.Player.ChangeMode.IsPressed())
-            {
-                
-            }
+            
         }
 
         private void SwitchCamera(InputAction.CallbackContext ctx)
