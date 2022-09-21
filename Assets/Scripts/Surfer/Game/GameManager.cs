@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
+using Surfer.Managers;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace Surfer.Game
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameManager : Manager
     {
+        [SerializeField] 
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        
+        public override void ManagerStart()
+        {
+            
+        }
+        
+        
+        
+        
+        
+        
+        
         
     }
 }
