@@ -60,6 +60,16 @@
         "com.unity.testtools.codecoverage": "1.0.1"
       }
     },
+    "com.unity.formats.fbx": {
+      "version": "4.1.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.5.2",
+        "com.autodesk.fbx": "4.1.1"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.ide.rider": {
       "version": "3.0.15",
       "depth": 0,

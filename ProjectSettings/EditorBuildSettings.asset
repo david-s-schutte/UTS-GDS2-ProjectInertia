@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialLevel.unity
     guid: d1d6ad51f0aa9f94da081b4b4fe3cc19
+  - enabled: 1
+    path: Assets/Scenes/loadingTEszxt.unity
+    guid: 863b25c928a1b1045829d20c96bcb80f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bea5cee43396226459ceb67aa8384e1d, type: 2}
