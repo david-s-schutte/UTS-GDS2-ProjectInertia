@@ -81,8 +81,13 @@ public class ScoreSystem : MonoBehaviour
                 DecayTimeBonus();
         }
         else
-            CalculateFinalRank(currentScore);
+            CalculateFinalRank(CalculateFinalScore());
         
+    }
+
+    private float CalculateFinalScore()
+    {
+        return currentScore += trickBonusMultiplier * noOfTrickChains;
     }
 
     public void CalculateFinalRank(float finalScore)

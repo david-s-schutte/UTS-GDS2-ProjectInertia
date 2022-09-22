@@ -45,7 +45,6 @@ public class ObjectMover : MonoBehaviour
 
     private void CheckNode()
     {
-        Debug.Log(gameObject.name + ", " + startPosition + ", " + currentPosition + ", " + currentNodeIndex);
         timer = 0f;
         startPosition = gameObject.transform.position;
         currentPosition = nodes[currentNodeIndex].position;

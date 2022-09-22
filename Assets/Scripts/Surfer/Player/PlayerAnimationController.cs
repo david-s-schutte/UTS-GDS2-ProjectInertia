@@ -14,13 +14,18 @@ namespace Surfer.Player
         [SerializeField] private Animator cinemachineController;
         private bool isPlatforming;
         private PlayerControls controls;
+        private CharacterController controller;
 
         [Header("Model Controls")]
         private Vector3 movementDirection;
         [SerializeField] private float rotateSpeed;
+        [SerializeField] private Animator playerAnimationController;
+
 
         //Input Actions
         private InputAction switchCameras;
+        private InputAction jumping;
+        private InputAction running;
 
         private void OnEnable()
         {
@@ -28,10 +33,16 @@ namespace Surfer.Player
             switchCameras = controls.Player.ChangeMode;
             switchCameras.Enable();
             switchCameras.performed += SwitchCamera;
+            jumping = controls.Player.Jump;
+            jumping.Enable();
+            jumping.performed += Jump;
+            running = controls.Player.Move;
+            running.Enable();
 
             isPlatforming = true;
             movementDirection = Vector3.zero;
             playerCharacter = GetComponent<PlayerCharacter>();
+            controller = GetComponent<CharacterController>();
         }
 
         private void OnDisable()
@@ -42,6 +53,16 @@ namespace Surfer.Player
         private void Awake()
         {
             controls = new PlayerControls();
+        }
+
+        private void Update()
+        {
+            //Set InTheAir parameter
+            playerAnimationController.SetBool("InTheAir", !controller.isGrounded);
+            if (isPlatforming)
+            {
+                playerAnimationController.SetBool("Running", running.IsInProgress());
+            }
         }
 
         private void FixedUpdate()
@@ -59,7 +80,24 @@ namespace Surfer.Player
         private void SwitchCamera(InputAction.CallbackContext ctx)
         {
             isPlatforming = !isPlatforming;
+            //Change camera
             cinemachineController.SetBool("isPlatforming", isPlatforming);
+            //Update player state
+            if (!isPlatforming)
+            {
+                playerAnimationController.SetBool("Running", false);
+                playerAnimationController.SetBool("Boarding", true);
+            }
+            else
+            {
+                playerAnimationController.SetBool("Running", true);
+                playerAnimationController.SetBool("Boarding", false);
+            }
+        }
+
+        private void Jump(InputAction.CallbackContext ctx)
+        {
+            playerAnimationController.SetBool("Jumping", true);
         }
     }
 }
