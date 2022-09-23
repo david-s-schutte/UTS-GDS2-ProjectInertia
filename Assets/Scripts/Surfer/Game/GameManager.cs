@@ -8,10 +8,7 @@ namespace Surfer.Game
         [SerializeField] 
         
         
-        public override void ManagerStart()
-        {
-            
-        }
+        public override void ManagerStart() { }
         
         
         

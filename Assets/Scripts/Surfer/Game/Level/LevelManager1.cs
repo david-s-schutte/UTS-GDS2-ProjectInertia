@@ -7,6 +7,7 @@ namespace Surfer.Game
     /// </summary>
     public abstract class LevelManager<T> : LevelManager where T : LevelSceneReference
     {
+
         public abstract void OnLevelLoaded();
         public abstract void OnLevelUnloaded();
     }

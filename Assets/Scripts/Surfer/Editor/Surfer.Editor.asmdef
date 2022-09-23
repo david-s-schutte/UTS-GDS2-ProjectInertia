@@ -1,0 +1,16 @@
+{
+    "name": "Surfer.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f9a1c73a7107d00498b3511926e1cd4c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
