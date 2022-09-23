@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     // Speed carried between frames
     float surferModeCarriedSpeed = 0;
     float surferModeCurrentThrust = 0;
+    [SerializeField] float surferModeThrustEaseOff = 0.95f;
     // Speed to accelerate the player in surfer mode (units/s^2)
     [SerializeField] float surferModeAcceleration = 2.0f;
     // Amount to slow surfer mode speed over time
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
     // Double-Jumping
     // Number of jumps allowed (set in inspector)
     [SerializeField] int maxJumps = 2;
+    [SerializeField] bool onlySingleJumpInSurfer = true;
     // The jump we're currently on
     int jumpCount = 0;
     
@@ -124,6 +126,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             mode = (IsWalkingMode()) ? MovementMode.Surfer : MovementMode.Walking;
             if (IsSurferMode()) EnterSurfer();
+            if (IsWalkingMode()) EnterWalking();
         }
 
         // MOVEMENT HANDLING
@@ -213,6 +216,13 @@ public class PlayerController : MonoBehaviour
     
     #region Walking
 
+    void EnterWalking() {
+        // If we aren't grounded then act like a liftoff so that momentum is properly carried 
+        if (!cc.isGrounded) {
+            HandleLiftoff();
+        }
+    }
+
     // Movement function for adventure mode to be run on Update
     // TODO: trajectory doesn't change over the course of the flight as a result of held input - i.e. you let go and keep going the direction you were
     // should be solvable by making input hold to a cumulative value somehow
@@ -261,6 +271,8 @@ public class PlayerController : MonoBehaviour
     
     void EnterSurfer () {
         surferModeCarriedSpeed = velocity.magnitude;
+        surferModeCurrentThrust = 0;
+        Debug.Log("entered surfer mode at " + surferModeCarriedSpeed);
     }
 
     // WARNING: THIS BIT IS VERY IN PROGRESS
@@ -269,7 +281,8 @@ public class PlayerController : MonoBehaviour
     // I'M WORKING ON IT SMH
     void MoveSurfer(Vector2 input) {
 
-        Vector3 motionUnprojected = new();
+        // Vector3 motionUnprojected = new();
+
 
         if (floorCast.transform != null) {
             Vector3 groundNormal = floorCast.normal;
@@ -282,25 +295,56 @@ public class PlayerController : MonoBehaviour
 
             forwardDirection = Quaternion.LookRotation(groundForward, groundNormal);
 
-            //add a force to slide downhill
-            motionUnprojected += downhillDirection * slideAmount;
+            //add a force to slide downhill - disabled to get something workable for the sprint submission
+            // motionUnprojected += downhillDirection * slideAmount;
         }
+
         
         forwardDirection *= Quaternion.Euler(0, input.x * surferTurnRate * Time.deltaTime, 0);
-        motionUnprojected += forwardDirection * Vector3.forward * input.y * surferModeAcceleration* Time.deltaTime;
+        Debug.DrawRay(transform.position, forwardDirection * Vector3.forward, Color.green);
+
+        Vector3 lateralForward = forwardDirection * Vector3.forward;
+        lateralForward.y = 0;
+        lateralForward.Normalize();
+        // motionUnprojected += forwardDirection * Vector3.forward * input.y * surferModeAcceleration* Time.deltaTime;
+
+        // This is a total mess due to getting it workable for sprint 3
+
+        Vector3 motion = new();
+        motion += lateralForward * surferModeCurrentThrust;
+        
+        surferModeCurrentThrust *= Mathf.Lerp(Mathf.Pow(surferModeThrustEaseOff, Time.deltaTime), 1, Mathf.Abs(input.y));
+        
 
         if (cc.isGrounded){
+            if (surferModeCarriedSpeed > 0) {
+                Debug.Log("applied carried speed of " + surferModeCarriedSpeed);
+                surferModeCurrentThrust = surferModeCarriedSpeed;
+                surferModeCarriedSpeed = 0;
+            }
             surferModeCurrentThrust += input.y * surferModeAcceleration * Time.deltaTime;
             velocity = Vector3.MoveTowards(velocity, Vector3.zero, surferModeFriction * Time.deltaTime);
-            motionUnprojected.x += velocity.x;
-            motionUnprojected.z += velocity.z;
+            // motionUnprojected.x += velocity.x;
+            // motionUnprojected.y += velocity.y;
+            // motionUnprojected.z += velocity.z;
             velocity.x = 0;
+            velocity.y = -groundStickingForce;
             velocity.z = 0;
         } else {
             Debug.DrawRay(transform.position, Vector3.up * 2, Color.magenta);
         }
 
-        Vector3 motion = Vector3.Project(motionUnprojected, forwardDirection * Vector3.forward);
+        // motion += Vector3.Project(motionUnprojected, lateralForward);
+
+        if (cc.isGrounded) {
+            motion = Vector3.Project(motion, forwardDirection * Vector3.forward);
+            // this is dreadful BUT
+            // applies the speed when we switched to surfer mode then immediately resets that speed so it's only applied once 8-)
+        } else {
+            // if we haven't jumped, use last liftoff as the motion direction
+            if (jumpCount == 0)
+                motion = Vector3.Project(motion, lastLiftoffDirection);
+        }
 
         velocity += motion;
         // Drag - apply constant drag
@@ -370,6 +414,10 @@ public class PlayerController : MonoBehaviour
     }
 
     void TryJump () {
+        // Disable multi-jumping if in surfer mode
+        if (IsSurferMode() && onlySingleJumpInSurfer) {
+            if (jumpCount > 0) return;
+        }
         if (jumpCount < maxJumps) {
             jumpCount++;
             Jump();
