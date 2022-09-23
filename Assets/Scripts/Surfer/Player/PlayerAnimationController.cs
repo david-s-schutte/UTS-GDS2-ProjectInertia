@@ -9,7 +9,7 @@ namespace Surfer.Player
     public class PlayerAnimationController : MonoBehaviour
     {
         [Header("Component References")]
-        [SerializeField] private PlayerCharacter playerCharacter;
+        //[SerializeField] private PlayerCharacter playerCharacter;
         [Header("Cinemachine Controls")]
         [SerializeField] private Animator cinemachineController;
         private bool isPlatforming;
@@ -20,6 +20,12 @@ namespace Surfer.Player
         private Vector3 movementDirection;
         [SerializeField] private float rotateSpeed;
         [SerializeField] private Animator playerAnimationController;
+
+
+        [Header("TEMPORARY DEFAULT UNITY AUDIO SHIT")]
+        [SerializeField] private AudioSource playerAudio;
+        [SerializeField] private AudioClip walkSFX;
+        [SerializeField] private AudioClip jumpSFX;
 
 
         //Input Actions
@@ -36,12 +42,14 @@ namespace Surfer.Player
             jumping = controls.Player.Jump;
             jumping.Enable();
             jumping.performed += Jump;
+            jumping.performed += PlayJumpSFX;
             running = controls.Player.Move;
             running.Enable();
+            running.performed += PlayWalkSFX;
 
             isPlatforming = true;
             movementDirection = Vector3.zero;
-            playerCharacter = GetComponent<PlayerCharacter>();
+            //playerCharacter = GetComponent<PlayerCharacter>();
             controller = GetComponent<CharacterController>();
         }
 
@@ -67,13 +75,13 @@ namespace Surfer.Player
 
         private void FixedUpdate()
         {
-            movementDirection = playerCharacter.GetCameraRelevantInput();
-            movementDirection.y = 0;
-            if (movementDirection != Vector3.zero)
-            {
-                Quaternion rot = Quaternion.LookRotation(movementDirection);
-                gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, rot, rotateSpeed * Time.deltaTime);
-            }
+            //movementDirection = playerCharacter.GetCameraRelevantInput();
+            //movementDirection.y = 0;
+            //if (movementDirection != Vector3.zero)
+            //{
+            //    Quaternion rot = Quaternion.LookRotation(movementDirection);
+            //    gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, rot, rotateSpeed * Time.deltaTime);
+            //}
             
         }
 
@@ -98,6 +106,31 @@ namespace Surfer.Player
         private void Jump(InputAction.CallbackContext ctx)
         {
             playerAnimationController.SetBool("Jumping", true);
+        }
+
+        /*TEMP FUNCTIONS - BASIC UNITY AUDIO FOR NOW*/
+        private void PlayWalkSFX(InputAction.CallbackContext ctx)
+        {
+            if (controller.isGrounded)
+            {
+                if (!playerAudio.isPlaying)
+                {
+                    playerAudio.clip = walkSFX;
+                    playerAudio.Play();
+                }
+            }
+        }
+
+        private void PlayJumpSFX(InputAction.CallbackContext ctx)
+        {
+            if (controller.isGrounded)
+            {
+                if ((!playerAudio.isPlaying) || (playerAudio.isPlaying && playerAudio.clip == walkSFX))
+                {
+                    playerAudio.clip = jumpSFX;
+                    playerAudio.Play();
+                }
+            }
         }
     }
 }
