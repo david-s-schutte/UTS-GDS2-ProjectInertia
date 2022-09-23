@@ -65,6 +65,7 @@ namespace Surfer.Player
         private void Awake()
         {
             controls = new PlayerControls();
+            controller = GetComponent<CharacterController>();
         }
 
         private void Update()
@@ -115,8 +116,7 @@ namespace Surfer.Player
         /*TEMP FUNCTIONS - BASIC UNITY AUDIO FOR NOW*/
         private void PlayWalkSFX(InputAction.CallbackContext ctx)
         {
-            if (controller.isGrounded && isPlatforming
-                )
+            if (controller.isGrounded && isPlatforming)
             {
                 if (!playerAudio.isPlaying)
                 {

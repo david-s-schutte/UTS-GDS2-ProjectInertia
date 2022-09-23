@@ -1,37 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Sprint3Demo: MonoBehaviour
 {
-    Vector3 respawnPos;
+    public Vector3 respawnPos;
+    public GameObject player;
 
-    private void Start()
+    private void Update()
     {
-        respawnPos = gameObject.transform.position;
+        if (Input.GetKeyDown(KeyCode.R))
+            ResetLevel();
+    }
+
+    private void ResetLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "KillPlane")
+        if (other.tag == "KillPlane")
         {
-            transform.position = respawnPos;
+            player.transform.position = respawnPos;
+            Debug.Log("fucl");
         }
 
-        if(other.tag == "Checkpoint")
+        if (other.tag == "Checkpoint")
         {
             respawnPos = other.transform.position;
         }
 
-        if(other.tag == "Goal")
+        if (other.tag == "Goal")
         {
-            Invoke("EndDemo", 4.0f);
+            Invoke("EndDemo", 2.0f);
         }
     }
 
+    //private void OnControllerColliderHit(ControllerColliderHit hit)
+    //{
+    //    Rigidbody other = hit.collider.attachedRigidbody;
+
+    //    if (other)
+    //    {
+    //        if (other.tag == "KillPlane")
+    //        {
+    //            transform.position = respawnPos;
+    //        }
+
+    //        if (other.tag == "Checkpoint")
+    //        {
+    //            respawnPos = other.transform.position;
+    //        }
+
+    //        if (other.tag == "Goal")
+    //        {
+    //            Invoke("EndDemo", 4.0f);
+    //        }
+    //    }
+    //}
+
     private void EndDemo()
     {
-        
-        //Time.timeScale = 0.0f;
+        SceneManager.LoadScene(2);
     }
 }
