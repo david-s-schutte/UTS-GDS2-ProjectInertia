@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
     // Double-Jumping
     // Number of jumps allowed (set in inspector)
     [SerializeField] int maxJumps = 2;
+    [SerializeField] bool onlySingleJumpInSurfer = true;
     // The jump we're currently on
     int jumpCount = 0;
     
@@ -405,7 +406,10 @@ public class PlayerController : MonoBehaviour
     }
 
     void TryJump () {
-        if (IsSurferMode()) return;
+        // Disable multi-jumping if in surfer mode
+        if (IsSurferMode() && onlySingleJumpInSurfer) {
+            if (jumpCount > 0) return;
+        }
         if (jumpCount < maxJumps) {
             jumpCount++;
             Jump();
