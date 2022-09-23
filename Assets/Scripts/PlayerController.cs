@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public enum MovementMode {Walking, Surfer, Stopped};
+    public enum MovementMode {Walking, Surfer, Grinding, Stopped};
 
     /*ADDITIONS MADE BY DAVID - new Inputs*/
     PlayerControls playerControls;
@@ -32,6 +32,13 @@ public class PlayerController : MonoBehaviour
     Vector3 lastFrameVelocity = new Vector3();
 
     [SerializeField] float groundStickingForce = 4.0f;
+
+    // Railgrind stuff
+    // TODO: I reckon this should be somewhere else and this script should mostly be reserved for direct player movement
+    [SerializeField] Vector3 railOffset = new(0, 1, 0);
+    [SerializeField] float boxCastDistance = 3;
+    [SerializeField] float railSpeed = 5;
+    [SerializeField] float railLeaveBoost = 5;
 
     // Speed carried between frames
     float surferModeCarriedSpeed = 0;
@@ -105,12 +112,15 @@ public class PlayerController : MonoBehaviour
         cc = GetComponent<CharacterController>();
         playerCamera = Camera.main;
         velocity = Vector3.zero;
-        mode = MovementMode.Walking;
+        SetMovementMode(MovementMode.Walking);
     }
 
     private void Update() {
         // Perform ground raycast at start of frame so it is only performed once.
         Physics.Raycast(transform.position, -transform.up, out floorCast, cc.height / 2 + floorCastDist);
+        // Perform box cast for floor obstacles omg what a sick function name
+        if (IsSurferMode() || IsWalkingMode())
+            BoxCastForFloorObstacles();
 
 
         // INPUT COLLECTION
@@ -176,6 +186,20 @@ public class PlayerController : MonoBehaviour
         // Apply final movement
         cc.Move(velocity * Time.deltaTime);
         
+    }
+
+    void SetMovementMode (MovementMode newMode) {
+        mode = newMode;
+        switch (mode) {
+            case MovementMode.Walking : 
+                EnterWalking(); break;
+            case MovementMode.Surfer : 
+                EnterSurfer(); break;
+            case MovementMode.Grinding : 
+                break;
+            case MovementMode.Stopped : 
+                break;
+        }
     }
 
     #region Static motion functions
@@ -438,8 +462,8 @@ public class PlayerController : MonoBehaviour
     Vector2 CreateCameraRelativeMotionVector (float x, float y) {
         // Get camera right and forward vectors to be used to determine the forward vector relative to the camera
         // For both of these vectors, we want to ignore the y axis and normalise
-        Vector2 forward =       FlattenAndNormaliseTo2D(Vector3.ProjectOnPlane(GetCameraForwardVector(), Vector3.up));
-        Vector2 right =         FlattenAndNormaliseTo2D(GetCameraRightVector());
+        Vector2 forward =       FlattenAndNormalise2D(Vector3.ProjectOnPlane(GetCameraForwardVector(), Vector3.up));
+        Vector2 right =         FlattenAndNormalise2D(GetCameraRightVector());
         // Create lateral motion vector
         Vector2 motion = forward * y + right * x;
         return motion;
@@ -455,9 +479,61 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    #region Interaction
+
+    void BoxCastForFloorObstacles() {
+        RaycastHit boxHit;
+        if (Physics.BoxCast(transform.position - Vector3.up * cc.height/2, new(0.2f, 0.2f, 0.2f), Vector3.down, out boxHit, forwardDirection, boxCastDistance)) {
+            if (boxHit.transform.tag == "GrindrailNode") {
+                GrindRailController grindRailController = boxHit.collider.gameObject.GetComponentInParent<GrindRailController>();
+                if (grindRailController) StartCoroutine(RailGrindCoroutine(grindRailController));
+            }
+        }
+    }
+
+    // alpha - this is probs not how it'll work in the final game
+    // hi me in six months finding this comment and facepalming :D
+    IEnumerator RailGrindCoroutine(GrindRailController grindRail) {
+        SetMovementMode(MovementMode.Grinding);
+        velocity = Vector3.zero;
+
+        List<Transform> railPoints = grindRail.GetRemainingNodes(transform);
+        Debug.Log("landed on grindrail with " + railPoints.Count + " nodes");
+
+        int node = 0;
+
+
+        while (node < railPoints.Count) {
+            Vector3 startPosition = transform.position;
+            float t = 0;
+            Transform target = railPoints[node];
+            Debug.Log("on my way to node number " + node + " at " + target.position);
+            while (t < 1) {
+                transform.position = Vector3.Lerp(startPosition, target.position + railOffset, t);
+                forwardDirection = Quaternion.LookRotation(FlattenAndNormalise3D(target.position - transform.position), Vector3.up);
+                t += Time.deltaTime * railSpeed;
+                yield return null;
+            }
+            transform.position = target.position + railOffset;
+            node++;
+        }
+
+        SetMovementMode(MovementMode.Surfer);
+        surferModeCarriedSpeed = railLeaveBoost;
+
+    }
+
+    #endregion
+
+
+    Vector3 FlattenAndNormalise3D (Vector3 v) {
+        v.y = 0;
+        v.Normalize();
+        return v;
+    }
     // Ignores the y component and normalizes to a VECTOR 2.
     // DOES NOT apply a max value - watch out for sqrt(2) diagonal motion
-    Vector2 FlattenAndNormaliseTo2D (Vector3 v) {
+    Vector2 FlattenAndNormalise2D (Vector3 v) {
         v.y = 0;
         v.Normalize();
         return new(v.x, v.z);
