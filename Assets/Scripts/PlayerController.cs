@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
+using Surfer.Input;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public enum MovementMode {Walking, Surfer, Stopped};
+
+    /*ADDITIONS MADE BY DAVID - new Inputs*/
+    PlayerControls playerControls;
+    InputAction leftStickMove;
+    InputAction jump;
+    InputAction switchStyles;
 
     // # Components    
     CharacterController cc;
@@ -427,6 +435,14 @@ public class PlayerController : MonoBehaviour
     // Gets right stick / mouse equivalent input as a Vector2.
     Vector2 GetLookInput() {
         return new Vector2(Input.GetAxis("Cam X"), -Input.GetAxis("Cam Y"));
+    }
+
+    /*ADDITIONS - initiate new input system*/
+    private void InitiateInputActions()
+    {
+        leftStickMove = playerControls.Player.Move;
+        leftStickMove.Enable();
+        //leftStickMove.performed += SwitchCamera;
     }
 
     #endregion
