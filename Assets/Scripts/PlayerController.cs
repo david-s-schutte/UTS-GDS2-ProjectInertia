@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     Camera playerCamera;
     [Header("Components")]
     [SerializeField] GameObject characterObject;
-    [SerializeField] Transform cameraPivotTransform;
 
     // # Movement
     [Header("Movement")]
@@ -114,7 +113,7 @@ public class PlayerController : MonoBehaviour
         Vector2 lookInput = GetLookInput();
 
         // TODO: this is placeholder, we're obvs using the new input system and stuffs
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
             mode = (IsWalkingMode()) ? MovementMode.Surfer : MovementMode.Walking;
             if (IsSurferMode()) EnterSurfer();
         }
@@ -147,8 +146,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             TryJump();
         }
-        // FIXME: remove this once there are proper camera controls
-        RotateCamera(lookInput);
         // Slowly rotate character towards forward motion direction
         characterObject.transform.rotation = Quaternion.RotateTowards(characterObject.transform.rotation, forwardDirection, characterModelTurnRate * Time.deltaTime);
         
@@ -379,12 +376,6 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Camera
-
-    // Placeholder - basic camera rotation system    
-    // TODO: delet this
-    public void RotateCamera(Vector2 input) {
-        cameraPivotTransform.transform.Rotate(new(input.y * mouseSensitivity, input.x * mouseSensitivity, 0), Space.World);
-    }
 
     // Converts user-relative input (e.g. wsad) to a world-space vector that compensates for the angle of both the camera and character
     Vector2 CreateCameraRelativeMotionVector (Vector2 input) { return CreateCameraRelativeMotionVector(input.x, input.y); }
