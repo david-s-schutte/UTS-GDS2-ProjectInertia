@@ -353,7 +353,7 @@ public class PlayerController : MonoBehaviour
 
         if (cc.isGrounded){
             if (surferModeCarriedSpeed > 0) {
-                Debug.Log("applied carried speed of " + surferModeCarriedSpeed);
+                // Debug.Log("applied carried speed of " + surferModeCarriedSpeed);
                 surferModeCurrentThrust = surferModeCarriedSpeed;
                 surferModeCarriedSpeed = 0;
             }
@@ -511,7 +511,7 @@ public class PlayerController : MonoBehaviour
         velocity = Vector3.zero;
 
         List<Transform> railPoints = grindRail.GetRemainingNodes(transform);
-        Debug.Log("landed on grindrail with " + railPoints.Count + " nodes");
+        // Debug.Log("landed on grindrail with " + railPoints.Count + " nodes");
 
         int node = 0;
 
@@ -520,7 +520,7 @@ public class PlayerController : MonoBehaviour
             Vector3 startPosition = transform.position;
             float t = 0;
             Transform target = railPoints[node];
-            Debug.Log("on my way to node number " + node + " at " + target.position);
+            // Debug.Log("on my way to node number " + node + " at " + target.position);
             while (t < 1) {
                 transform.position = Vector3.Lerp(startPosition, target.position + railOffset, t);
                 forwardDirection = Quaternion.LookRotation(FlattenAndNormalise3D(target.position - transform.position), Vector3.up);
