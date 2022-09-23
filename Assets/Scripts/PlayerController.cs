@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     // # Components    
     CharacterController cc;
     Camera playerCamera;
+    [SerializeField] Animator animator; // TODO: THIS IS LAST DITCH SHIT FROM SPRINT 3 FIX FIX FIX
     [Header("Components")]
     [SerializeField] GameObject characterObject;
 
@@ -116,6 +117,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update() {
+
         // Perform ground raycast at start of frame so it is only performed once.
         Physics.Raycast(transform.position, -transform.up, out floorCast, cc.height / 2 + floorCastDist);
         // Perform box cast for floor obstacles omg what a sick function name
@@ -131,6 +133,10 @@ public class PlayerController : MonoBehaviour
         movementInput.y = Mathf.MoveTowards(movementInput.y, directMovementInput.y, inputGravity * Time.deltaTime);
         // Get right stick / mouse input
         Vector2 lookInput = GetLookInput();
+
+        // FIXME: last ditch animator stuff
+        if (IsWalkingMode()) animator.SetBool("Running", movementInput.sqrMagnitude > characterTurnThreshold);
+        animator.SetBool("InTheAir", !cc.isGrounded);
 
         // TODO: this is placeholder, we're obvs using the new input system and stuffs
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
@@ -199,7 +205,9 @@ public class PlayerController : MonoBehaviour
                 break;
             case MovementMode.Stopped : 
                 break;
-        }
+        }        
+        // FIXME: last ditch animator stuff
+        animator.SetBool("Boarding", IsSurferMode() || mode == MovementMode.Grinding);
     }
 
     #region Static motion functions
@@ -245,6 +253,8 @@ public class PlayerController : MonoBehaviour
         if (!cc.isGrounded) {
             HandleLiftoff();
         }
+        // FIXME: last ditch animator stuff
+        animator.SetBool("Boarding", IsSurferMode());
     }
 
     // Movement function for adventure mode to be run on Update
@@ -296,7 +306,8 @@ public class PlayerController : MonoBehaviour
     void EnterSurfer () {
         surferModeCarriedSpeed = velocity.magnitude;
         surferModeCurrentThrust = 0;
-        Debug.Log("entered surfer mode at " + surferModeCarriedSpeed);
+        // FIXME: last ditch animator stuff
+        animator.SetBool("Boarding", IsSurferMode());
     }
 
     // WARNING: THIS BIT IS VERY IN PROGRESS
@@ -450,6 +461,8 @@ public class PlayerController : MonoBehaviour
 
     void Jump() {
         velocity.y = jumpImpulse;
+        // FIXME: last ditch animator stuff
+        animator.SetBool("Jumping", true);
         HandleLiftoff();
     }
 

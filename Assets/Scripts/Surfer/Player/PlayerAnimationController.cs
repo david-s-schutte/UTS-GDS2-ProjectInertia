@@ -33,6 +33,10 @@ namespace Surfer.Player
         private InputAction jumping;
         private InputAction running;
 
+        public void SetIsPlatforming(bool walkingMode) {
+            isPlatforming = walkingMode;
+        }
+
         private void OnEnable()
         {
             //controls.Player.ChangeMode.started += ChangeCamera;
@@ -66,10 +70,10 @@ namespace Surfer.Player
         private void Update()
         {
             //Set InTheAir parameter
-            playerAnimationController.SetBool("InTheAir", !controller.isGrounded);
+            // playerAnimationController.SetBool("InTheAir", !controller.isGrounded);
             if (isPlatforming)
             {
-                playerAnimationController.SetBool("Running", running.IsInProgress());
+                // playerAnimationController.SetBool("Running", running.IsInProgress());
             }
         }
 
@@ -87,25 +91,25 @@ namespace Surfer.Player
 
         private void SwitchCamera(InputAction.CallbackContext ctx)
         {
-            isPlatforming = !isPlatforming;
+            // isPlatforming = !isPlatforming;
             //Change camera
             cinemachineController.SetBool("isPlatforming", isPlatforming);
             //Update player state
             if (!isPlatforming)
             {
-                playerAnimationController.SetBool("Running", false);
-                playerAnimationController.SetBool("Boarding", true);
+                // playerAnimationController.SetBool("Running", false);
+                // playerAnimationController.SetBool("Boarding", true);
             }
             else
             {
-                playerAnimationController.SetBool("Running", true);
-                playerAnimationController.SetBool("Boarding", false);
+                // playerAnimationController.SetBool("Running", true);
+                // playerAnimationController.SetBool("Boarding", false);
             }
         }
 
         private void Jump(InputAction.CallbackContext ctx)
         {
-            playerAnimationController.SetBool("Jumping", true);
+            // playerAnimationController.SetBool("Jumping", true);
         }
 
         /*TEMP FUNCTIONS - BASIC UNITY AUDIO FOR NOW*/
