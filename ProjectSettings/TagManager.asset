@@ -7,11 +7,12 @@ TagManager:
   - KillPlane
   - Checkpoint
   - Goal
+  - GrindrailNode
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - CC
   - Water
   - UI
   - Ground

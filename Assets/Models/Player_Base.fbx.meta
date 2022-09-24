@@ -54,7 +54,47 @@ ModelImporter:
   - first:
       74: 5073694015551532729
     second: BlackBody|Board_Idle
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Back_Pattern
+    second: {fileID: 2100000, guid: 4d69a96c82ee146428ceeb8d45481cde, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: f93baf8b205bf8e4ca659cd3f3851181, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Handle
+    second: {fileID: 2100000, guid: 124d5634c4e49bf4d987a9a8bce6119c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Neon Blue
+    second: {fileID: 2100000, guid: b0f8477fce91c0e41945073eea73cd37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Neon Dark Blue
+    second: {fileID: 2100000, guid: 81ae81c6006197c4c91bc0e552f73e29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Neon Light Blue
+    second: {fileID: 2100000, guid: d06918aa770f4f24381745a49b6187de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sword Colour
+    second: {fileID: 2100000, guid: daf4f057b21f27b4780075eea7c566aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Texture
+    second: {fileID: 2100000, guid: b778a378bf13f354d8f6883f3dfe0eaa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
