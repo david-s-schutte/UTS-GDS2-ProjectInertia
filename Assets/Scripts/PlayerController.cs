@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public enum MovementMode {Walking, Surfer, Stopped};
+    public enum MovementMode {Walking, Surfer, Grinding, Stopped};
 
     /*ADDITIONS MADE BY DAVID - new Inputs*/
     PlayerControls playerControls;
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     // # Components    
     CharacterController cc;
     Camera playerCamera;
+    [SerializeField] Animator animator; // TODO: THIS IS LAST DITCH SHIT FROM SPRINT 3 FIX FIX FIX
     [Header("Components")]
     [SerializeField] GameObject characterObject;
 
@@ -33,9 +34,17 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float groundStickingForce = 4.0f;
 
+    // Railgrind stuff
+    // TODO: I reckon this should be somewhere else and this script should mostly be reserved for direct player movement
+    [SerializeField] Vector3 railOffset = new(0, 1, 0);
+    [SerializeField] float boxCastDistance = 3;
+    [SerializeField] float railSpeed = 5;
+    [SerializeField] float railLeaveBoost = 5;
+
     // Speed carried between frames
     float surferModeCarriedSpeed = 0;
     float surferModeCurrentThrust = 0;
+    [SerializeField] float surferModeThrustEaseOff = 0.95f;
     // Speed to accelerate the player in surfer mode (units/s^2)
     [SerializeField] float surferModeAcceleration = 2.0f;
     // Amount to slow surfer mode speed over time
@@ -64,6 +73,7 @@ public class PlayerController : MonoBehaviour
     // Double-Jumping
     // Number of jumps allowed (set in inspector)
     [SerializeField] int maxJumps = 2;
+    [SerializeField] bool onlySingleJumpInSurfer = true;
     // The jump we're currently on
     int jumpCount = 0;
     
@@ -103,12 +113,16 @@ public class PlayerController : MonoBehaviour
         cc = GetComponent<CharacterController>();
         playerCamera = Camera.main;
         velocity = Vector3.zero;
-        mode = MovementMode.Walking;
+        SetMovementMode(MovementMode.Walking);
     }
 
     private void Update() {
+
         // Perform ground raycast at start of frame so it is only performed once.
         Physics.Raycast(transform.position, -transform.up, out floorCast, cc.height / 2 + floorCastDist);
+        // Perform box cast for floor obstacles omg what a sick function name
+        if (IsSurferMode() || IsWalkingMode())
+            BoxCastForFloorObstacles();
 
 
         // INPUT COLLECTION
@@ -120,10 +134,15 @@ public class PlayerController : MonoBehaviour
         // Get right stick / mouse input
         Vector2 lookInput = GetLookInput();
 
+        // FIXME: last ditch animator stuff
+        if (IsWalkingMode()) animator.SetBool("Running", movementInput.sqrMagnitude > characterTurnThreshold);
+        animator.SetBool("InTheAir", !cc.isGrounded);
+
         // TODO: this is placeholder, we're obvs using the new input system and stuffs
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             mode = (IsWalkingMode()) ? MovementMode.Surfer : MovementMode.Walking;
             if (IsSurferMode()) EnterSurfer();
+            if (IsWalkingMode()) EnterWalking();
         }
 
         // MOVEMENT HANDLING
@@ -175,6 +194,22 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    void SetMovementMode (MovementMode newMode) {
+        mode = newMode;
+        switch (mode) {
+            case MovementMode.Walking : 
+                EnterWalking(); break;
+            case MovementMode.Surfer : 
+                EnterSurfer(); break;
+            case MovementMode.Grinding : 
+                break;
+            case MovementMode.Stopped : 
+                break;
+        }        
+        // FIXME: last ditch animator stuff
+        animator.SetBool("Boarding", IsSurferMode() || mode == MovementMode.Grinding);
+    }
+
     #region Static motion functions
 
     public static void ApplyVelocity(Vector3 v) {
@@ -212,6 +247,15 @@ public class PlayerController : MonoBehaviour
     #endregion
     
     #region Walking
+
+    void EnterWalking() {
+        // If we aren't grounded then act like a liftoff so that momentum is properly carried 
+        if (!cc.isGrounded) {
+            HandleLiftoff();
+        }
+        // FIXME: last ditch animator stuff
+        animator.SetBool("Boarding", IsSurferMode());
+    }
 
     // Movement function for adventure mode to be run on Update
     // TODO: trajectory doesn't change over the course of the flight as a result of held input - i.e. you let go and keep going the direction you were
@@ -261,6 +305,9 @@ public class PlayerController : MonoBehaviour
     
     void EnterSurfer () {
         surferModeCarriedSpeed = velocity.magnitude;
+        surferModeCurrentThrust = 0;
+        // FIXME: last ditch animator stuff
+        animator.SetBool("Boarding", IsSurferMode());
     }
 
     // WARNING: THIS BIT IS VERY IN PROGRESS
@@ -269,7 +316,8 @@ public class PlayerController : MonoBehaviour
     // I'M WORKING ON IT SMH
     void MoveSurfer(Vector2 input) {
 
-        Vector3 motionUnprojected = new();
+        // Vector3 motionUnprojected = new();
+
 
         if (floorCast.transform != null) {
             Vector3 groundNormal = floorCast.normal;
@@ -282,25 +330,56 @@ public class PlayerController : MonoBehaviour
 
             forwardDirection = Quaternion.LookRotation(groundForward, groundNormal);
 
-            //add a force to slide downhill
-            motionUnprojected += downhillDirection * slideAmount;
+            //add a force to slide downhill - disabled to get something workable for the sprint submission
+            // motionUnprojected += downhillDirection * slideAmount;
         }
+
         
         forwardDirection *= Quaternion.Euler(0, input.x * surferTurnRate * Time.deltaTime, 0);
-        motionUnprojected += forwardDirection * Vector3.forward * input.y * surferModeAcceleration* Time.deltaTime;
+        Debug.DrawRay(transform.position, forwardDirection * Vector3.forward, Color.green);
+
+        Vector3 lateralForward = forwardDirection * Vector3.forward;
+        lateralForward.y = 0;
+        lateralForward.Normalize();
+        // motionUnprojected += forwardDirection * Vector3.forward * input.y * surferModeAcceleration* Time.deltaTime;
+
+        // This is a total mess due to getting it workable for sprint 3
+
+        Vector3 motion = new();
+        motion += lateralForward * surferModeCurrentThrust;
+        
+        surferModeCurrentThrust *= Mathf.Lerp(Mathf.Pow(surferModeThrustEaseOff, Time.deltaTime), 1, Mathf.Abs(input.y));
+        
 
         if (cc.isGrounded){
+            if (surferModeCarriedSpeed > 0) {
+                // Debug.Log("applied carried speed of " + surferModeCarriedSpeed);
+                surferModeCurrentThrust = surferModeCarriedSpeed;
+                surferModeCarriedSpeed = 0;
+            }
             surferModeCurrentThrust += input.y * surferModeAcceleration * Time.deltaTime;
             velocity = Vector3.MoveTowards(velocity, Vector3.zero, surferModeFriction * Time.deltaTime);
-            motionUnprojected.x += velocity.x;
-            motionUnprojected.z += velocity.z;
+            // motionUnprojected.x += velocity.x;
+            // motionUnprojected.y += velocity.y;
+            // motionUnprojected.z += velocity.z;
             velocity.x = 0;
+            velocity.y = -groundStickingForce;
             velocity.z = 0;
         } else {
             Debug.DrawRay(transform.position, Vector3.up * 2, Color.magenta);
         }
 
-        Vector3 motion = Vector3.Project(motionUnprojected, forwardDirection * Vector3.forward);
+        // motion += Vector3.Project(motionUnprojected, lateralForward);
+
+        if (cc.isGrounded) {
+            motion = Vector3.Project(motion, forwardDirection * Vector3.forward);
+            // this is dreadful BUT
+            // applies the speed when we switched to surfer mode then immediately resets that speed so it's only applied once 8-)
+        } else {
+            // if we haven't jumped, use last liftoff as the motion direction
+            if (jumpCount == 0)
+                motion = Vector3.Project(motion, lastLiftoffDirection);
+        }
 
         velocity += motion;
         // Drag - apply constant drag
@@ -370,6 +449,10 @@ public class PlayerController : MonoBehaviour
     }
 
     void TryJump () {
+        // Disable multi-jumping if in surfer mode
+        if (IsSurferMode() && onlySingleJumpInSurfer) {
+            if (jumpCount > 0) return;
+        }
         if (jumpCount < maxJumps) {
             jumpCount++;
             Jump();
@@ -378,6 +461,8 @@ public class PlayerController : MonoBehaviour
 
     void Jump() {
         velocity.y = jumpImpulse;
+        // FIXME: last ditch animator stuff
+        animator.SetBool("Jumping", true);
         HandleLiftoff();
     }
 
@@ -390,8 +475,8 @@ public class PlayerController : MonoBehaviour
     Vector2 CreateCameraRelativeMotionVector (float x, float y) {
         // Get camera right and forward vectors to be used to determine the forward vector relative to the camera
         // For both of these vectors, we want to ignore the y axis and normalise
-        Vector2 forward =       FlattenAndNormaliseTo2D(Vector3.ProjectOnPlane(GetCameraForwardVector(), Vector3.up));
-        Vector2 right =         FlattenAndNormaliseTo2D(GetCameraRightVector());
+        Vector2 forward =       FlattenAndNormalise2D(Vector3.ProjectOnPlane(GetCameraForwardVector(), Vector3.up));
+        Vector2 right =         FlattenAndNormalise2D(GetCameraRightVector());
         // Create lateral motion vector
         Vector2 motion = forward * y + right * x;
         return motion;
@@ -407,9 +492,61 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    #region Interaction
+
+    void BoxCastForFloorObstacles() {
+        RaycastHit boxHit;
+        if (Physics.BoxCast(transform.position - Vector3.up * cc.height/2, new(0.2f, 0.2f, 0.2f), Vector3.down, out boxHit, forwardDirection, boxCastDistance)) {
+            if (boxHit.transform.tag == "GrindrailNode") {
+                GrindRailController grindRailController = boxHit.collider.gameObject.GetComponentInParent<GrindRailController>();
+                if (grindRailController) StartCoroutine(RailGrindCoroutine(grindRailController));
+            }
+        }
+    }
+
+    // alpha - this is probs not how it'll work in the final game
+    // hi me in six months finding this comment and facepalming :D
+    IEnumerator RailGrindCoroutine(GrindRailController grindRail) {
+        SetMovementMode(MovementMode.Grinding);
+        velocity = Vector3.zero;
+
+        List<Transform> railPoints = grindRail.GetRemainingNodes(transform);
+        // Debug.Log("landed on grindrail with " + railPoints.Count + " nodes");
+
+        int node = 0;
+
+
+        while (node < railPoints.Count) {
+            Vector3 startPosition = transform.position;
+            float t = 0;
+            Transform target = railPoints[node];
+            // Debug.Log("on my way to node number " + node + " at " + target.position);
+            while (t < 1) {
+                transform.position = Vector3.Lerp(startPosition, target.position + railOffset, t);
+                forwardDirection = Quaternion.LookRotation(FlattenAndNormalise3D(target.position - transform.position), Vector3.up);
+                t += Time.deltaTime * railSpeed;
+                yield return null;
+            }
+            transform.position = target.position + railOffset;
+            node++;
+        }
+
+        SetMovementMode(MovementMode.Surfer);
+        surferModeCarriedSpeed = railLeaveBoost;
+
+    }
+
+    #endregion
+
+
+    Vector3 FlattenAndNormalise3D (Vector3 v) {
+        v.y = 0;
+        v.Normalize();
+        return v;
+    }
     // Ignores the y component and normalizes to a VECTOR 2.
     // DOES NOT apply a max value - watch out for sqrt(2) diagonal motion
-    Vector2 FlattenAndNormaliseTo2D (Vector3 v) {
+    Vector2 FlattenAndNormalise2D (Vector3 v) {
         v.y = 0;
         v.Normalize();
         return new(v.x, v.z);

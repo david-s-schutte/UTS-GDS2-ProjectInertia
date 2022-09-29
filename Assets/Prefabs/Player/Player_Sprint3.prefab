@@ -984,13 +984,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterObject: {fileID: 941791117265253048}
-  cameraPivotTransform: {fileID: 3312920436875779107}
   walkSpeed: 10
   groundStickingForce: 4
-  surferModeAcceleration: 10
+  surferModeThrustEaseOff: 0.5
+  surferModeAcceleration: 5
   surferModeDrag: 2
-  surferModeFriction: 0.2
-  surferSlideAmount: 1
+  surferModeFriction: 54
+  surferSlideAmount: -1
   surferGroundClearance: 0.2
   surferTurnRate: 300
   characterModelTurnRate: 500
