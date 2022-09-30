@@ -227,8 +227,10 @@ namespace FMODUnity
         private FMOD.RESULT Initialize()
         {
             #if UNITY_EDITOR
+            AssemblyReloadEvents.beforeAssemblyReload += Destroy;
+           // AppDomain.CurrentDomain.DomainUnload += HandleDomainUnload;
             EditorApplication.playModeStateChanged += HandlePlayModeStateChange;
-            AppDomain.CurrentDomain.DomainUnload += HandleDomainUnload;
+
             #endif // UNITY_EDITOR
 
             FMOD.RESULT result = FMOD.RESULT.OK;
