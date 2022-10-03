@@ -86,9 +86,11 @@ public class PlayerController : MonoBehaviour
     bool wasGrounded;
     [Header("Air Control (WALKING)")]
     // Mutliplier for maneuverability whilst in mid-air 
-    [SerializeField] float airControl = 1.0f;
-    // Minimum air maneuverability - this means you can still move when you jump from a stand-still
-    [SerializeField] float minAirControl = 0.2f;
+    [SerializeField] float airControl = 6;
+    // Speed that air control builds up when you hold a key
+    [SerializeField] float airControlSpeed = 12.0f;
+    // Direct input transfered to air movement - this means you can still move when you jump from a stand-still
+    [SerializeField] float directAirControl = 3;
     // Speed at which initial jump/fall momentum "wears off"
     [SerializeField] float airSlowTime = 0.5f;
     // Time that the player has been in the air (not grounded)
@@ -159,13 +161,12 @@ public class PlayerController : MonoBehaviour
             airHorizontalMomentumVel.x = Mathf.MoveTowards(airHorizontalMomentumVel.x, 0, airSlowTime * Time.deltaTime);
             airHorizontalMomentumVel.y = Mathf.MoveTowards(airHorizontalMomentumVel.y, 0, airSlowTime * Time.deltaTime);
             
-            cumulativeAirControl += movementInput * Time.deltaTime;
             // movementInput = cumulativeAirControl;
         }
         // Apply movement functions for each mode
         ApplyGravity();
         if (IsWalkingMode()) {
-            MoveWalking(movementInput * (cc.isGrounded ? 1 : airControl));
+            MoveWalking(movementInput);
         } else if (IsSurferMode()) { // redundancy here in case there is eventually a "null" mode where movement is stopped entirely
             MoveSurfer(movementInput);
         }
@@ -266,14 +267,21 @@ public class PlayerController : MonoBehaviour
         // Start by applying friction if we're on the ground
         if (cc.isGrounded) {
             WalkApplyFriction();
+        } else {
+            // cumulativeAirControl = CreateCameraRelativeMotionVector(input) * airControlSpeed;
+            cumulativeAirControl += CreateCameraRelativeMotionVector(input) * Time.deltaTime * airControlSpeed;
         }
 
         // Create motion vector
         Vector2 motion = CreateCameraRelativeMotionVector(input) * walkSpeed;
+        if (!cc.isGrounded) {
+            motion *= directAirControl;
+            motion += cumulativeAirControl * airControl;
+        }
         Vector3 motion3d = new Vector3(motion.x, 0, motion.y);
         // Set target forward quaternion for character model to rotate towards
         // Only do this when magnitude is non-zero so that the rotation doesn't reset to world forward
-        if (motion.sqrMagnitude > characterTurnThreshold)
+        if (input.sqrMagnitude > characterTurnThreshold)
             forwardDirection = Quaternion.LookRotation(motion3d, Vector3.up); 
         
         if (cc.isGrounded) {
@@ -434,7 +442,7 @@ public class PlayerController : MonoBehaviour
         // Set air horizontal momentum vel to the current velocity
         airHorizontalMomentumVel = new(lastFrameVelocity.x, lastFrameVelocity.z);
         // Set last grounded speed to either the actual speed we last left the ground, or the min air control value
-        lastGroundedSpeed = Mathf.Max(new Vector2(airHorizontalMomentumVel.x, airHorizontalMomentumVel.y).magnitude, minAirControl);
+        lastGroundedSpeed = Mathf.Max(new Vector2(airHorizontalMomentumVel.x, airHorizontalMomentumVel.y).magnitude, directAirControl);
 
         lastLiftoffDirection = lastFrameVelocity.normalized;
 
