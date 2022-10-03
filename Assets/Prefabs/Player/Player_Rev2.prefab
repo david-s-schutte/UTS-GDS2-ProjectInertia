@@ -3265,7 +3265,7 @@ GameObject:
   - component: {fileID: 2112063438}
   - component: {fileID: 2112063439}
   - component: {fileID: 2112063437}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player_Sprint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3350,9 +3350,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d25ebcfa1edda44fa5770bfbc0f3311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 553473503001598791}
   characterObject: {fileID: 6486776999037492103}
   walkSpeed: 10
   groundStickingForce: 4
+  railOffset: {x: 0, y: 1, z: 0}
+  boxCastDistance: 3
+  railSpeed: 5
+  railLeaveBoost: 5
+  surferModeThrustEaseOff: 0.95
   surferModeAcceleration: 10
   surferModeDrag: 2
   surferModeFriction: 0.2
@@ -3363,8 +3369,10 @@ MonoBehaviour:
   characterTurnThreshold: 0.2
   jumpImpulse: 8
   maxJumps: 2
-  airControl: 1
-  minAirControl: 0.2
+  onlySingleJumpInSurfer: 1
+  airControl: 6
+  airControlSpeed: 12
+  directAirControl: 3
   airSlowTime: 0.5
   inputGravity: 5
   mouseSensitivity: 1
