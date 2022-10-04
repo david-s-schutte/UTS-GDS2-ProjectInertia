@@ -7,11 +7,8 @@ public class ObjectMover : MonoBehaviour
     //Modifiable variables
     [SerializeField] private Transform[] nodes;
     [SerializeField] private float moveSpeed;
-    //[SerializeField] private float delayBetweenNodes;
+    [SerializeField] private float distToChange;
 
-    //Functionality stuff
-    private float timer;
-    private Vector3 startPosition;
     static Vector3 currentPosition;
     private int currentNodeIndex;
 
@@ -19,34 +16,28 @@ public class ObjectMover : MonoBehaviour
     void Start()
     {
         currentNodeIndex = 0;
-        CheckNode();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime * moveSpeed;
-        if (gameObject.transform.position != currentPosition)
-            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, currentPosition, timer);
-        else
+        if (nodes.Length > 0)
         {
-            if(currentNodeIndex < nodes.Length - 1)
+            if (Vector3.Distance(nodes[currentNodeIndex].transform.position, transform.position) < distToChange)
             {
-                currentNodeIndex++;
-                CheckNode();
+                GetNextNode();
             }
-            else
-            {
-                currentNodeIndex = 0;
-                CheckNode();
-            }
+            gameObject.transform.position = Vector3.MoveTowards(transform.position, nodes[currentNodeIndex].position, Time.deltaTime * moveSpeed);
         }
+        else
+            Debug.Log("ERROR: " + gameObject.name + "'s Object Mover Component does not have any nodes");
+        //Debug.Log("Moving towards: " + nodes[currentNodeIndex].position);
     }
 
-    private void CheckNode()
+    private void GetNextNode()
     {
-        timer = 0f;
-        startPosition = gameObject.transform.position;
-        currentPosition = nodes[currentNodeIndex].position;
+        currentNodeIndex++;
+        if (currentNodeIndex >= nodes.Length)
+            currentNodeIndex = 0;
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Checkpoint
   - Goal
   - GrindrailNode
+  - GameCamera
   layers:
   - Default
   - TransparentFX
