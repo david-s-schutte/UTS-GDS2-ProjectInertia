@@ -100,21 +100,6 @@ namespace Surfer.UI
         
 
         /// <summary>
-        /// Moves the desired UI to a desired layer
-        /// </summary>
-        /// <param name="uiController">The UI controller that you want to update</param>
-        /// <param name="layer">The layer </param>
-        public void MoveUILayer<T>(T uiController, int layer) where T : MonoUI
-        {
-            
-            
-            
-            
-            
-            
-        }
-
-        /// <summary>
         /// Brings the desired UI to the front layer
         /// </summary>
         /// <param name="uiController"> The UI Controller to be moved to the front</param>
