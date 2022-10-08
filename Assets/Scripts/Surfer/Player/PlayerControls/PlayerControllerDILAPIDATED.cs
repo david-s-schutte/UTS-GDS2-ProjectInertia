@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum ControlStyle {Surfer, Adventure}
-public class PlayerController : MonoBehaviour {
+public class PlayerControllerDILAPIDATED : MonoBehaviour {
     // Static variables
     public static ControlStyle currentStyle;
 
