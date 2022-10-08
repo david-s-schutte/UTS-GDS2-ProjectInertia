@@ -1,14 +1,20 @@
+using Codice.CM.Client.Differences.Graphic;
 using Surfer.Input;
+using UnityEngine;
 
 namespace Surfer.UI
 {
-    public interface IInteractable
+    public interface IInteractable 
     {
         public PlayerControls Controls { get; set; }
 
-        protected void EnableControls() => Controls.Enable();
-        
-        protected void DisableControls() => Controls.Disable();
+        public void EnableControls() => Controls.Enable();
+
+        public void DisableControls()
+        {
+            Debug.Log("Test");
+            Controls.Disable();
+        } 
         
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using Managers;
 using UnityEngine;
 
 namespace Surfer.UI
@@ -10,12 +11,33 @@ namespace Surfer.UI
     public abstract class MonoUI : MonoBehaviour
     {
         internal Canvas canvas;
+        internal UIManager _uiManager;
+
         
         public GameObject Instance => gameObject;
+
+        private bool _initialiseFlag;
         
-        private void Awake()
+        protected virtual void Awake()
         {
-            canvas = GetComponent<Canvas>();
+            _uiManager = ManagerLocator.Get<UIManager>();
+            canvas = gameObject.GetComponent<Canvas>();
+
+            if (canvas != null) // Hack to ensure that awake occurs first 
+            {
+                _initialiseFlag = true;
+                OnInitialised();
+            } 
+            
+        }
+
+        protected virtual void OnEnable()
+        {
+            if (canvas != null && !_initialiseFlag)
+                OnInitialised();
+            else
+                _initialiseFlag = false;
+                
         }
 
         /// <summary>
@@ -24,18 +46,30 @@ namespace Surfer.UI
         /// <param name="sortingOrderIndex"></param>
         public void SetSortingOrder(int sortingOrderIndex)
         {
+            if (canvas.sortingOrder == sortingOrderIndex) // guard clause to check if they are the same value already, therefore do nothing
+                return;
+            
             canvas.sortingOrder = sortingOrderIndex;
+            
+            if (canvas.sortingOrder == 0)
+                OnFront();
         }
         
+        protected abstract void OnInitialised();
+        
+        /// <summary>
+        /// Called when the UI is moved to the front
+        /// </summary>
+        public abstract void OnFront();
+
         /// <summary>
         /// Called when the UI is first registered from UIManager
         /// </summary>
-        public virtual void OnRegistered() {}
-        
+        public abstract void OnRegistered();
+
         /// <summary>
         /// Called before the UI is UnRegistered from UIManager
         /// </summary>
-        public virtual void OnUnregistered() {}
-        
+        public abstract void OnUnregistered();
     }
 }

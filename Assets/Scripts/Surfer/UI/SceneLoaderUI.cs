@@ -34,7 +34,7 @@ namespace Surfer.UI
         private PlayerControls _playerControls;
         private bool loadingCompletedFlag = false;
 
-        public void OnEnable()
+        protected override void OnInitialised()
         {
             DontDestroyOnLoad(gameObject);
             _playerControls = new PlayerControls();
@@ -54,8 +54,15 @@ namespace Surfer.UI
             _playerControls.Enable();
             _pressAnyButtonText.gameObject.SetActive(false);
             
-            ManagerLocator.Get<UIManager>().RegisterUI(this,true);
+            ManagerLocator.Get<UIManager>().RegisterUI(this,false);
         }
+
+        public override void OnFront() { }
+
+        public override void OnRegistered() { }
+
+        public override void OnUnregistered() { }
+
 
         private void Start()
         {

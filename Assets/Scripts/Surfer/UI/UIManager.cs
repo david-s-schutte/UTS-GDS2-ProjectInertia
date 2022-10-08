@@ -3,6 +3,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using Surfer.Managers;
+using Surfer.Utilities;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,12 +15,12 @@ namespace Surfer.UI
     public class UIManager : Manager
     {
         //TODO: Probably a Queue would have been better here so a refactor should be done here to make runtime calculations shorter
-        public IDictionary<int, MonoUI> UI = new Dictionary<int, MonoUI>();
+        public Dictionary<int, MonoUI> UI = new Dictionary<int, MonoUI>();
 
         /// <summary>
         /// The current UI that is in front of the screen
         /// </summary>
-        public MonoUI GetCurrent() => UI.Aggregate((x, y) => x.Key < y.Key ? x : y).Value;
+        public MonoUI GetCurrent() => UI[UI.GetLowestKey()];
 
 
         /// <summary>
@@ -37,8 +38,7 @@ namespace Surfer.UI
             }
             else
             {
-                //Aggregate finds the max value by comparing the x with the y then choosing based on the desired bool and then moving onto the next one
-                maxValue = UI.Aggregate((x, y) => x.Key > y.Key ? x : y).Key;
+                maxValue = UI.GetHighestKey();
                 UI.Add(maxValue + 1, uiController);
             }
 
@@ -97,7 +97,6 @@ namespace Surfer.UI
 
             Debug.LogError($"Warning, the UI {uiController.name} does not exist and cannot be unregistered!");
         }
-        
 
         /// <summary>
         /// Brings the desired UI to the front layer
@@ -118,7 +117,7 @@ namespace Surfer.UI
                     break;
                 }
             }
-
+            
             adjustedDict.Add(0, uiController);
 
             int length = UI.Count;
@@ -138,27 +137,32 @@ namespace Surfer.UI
                 UI.Remove(lowestValue);
             }
 
-            DebugToFrontValues(adjustedDict);
+            DebugValues(adjustedDict);
+            ForceUpdateUI();
             UI = adjustedDict;
 
             //Makes sure that any layer changes done are properly updated during runtime
             ForceUpdateUI();
         }
 
+
         public void BringUIToBack<T>(T uiController) where T : MonoUI
         {
             Dictionary<int, MonoUI> leftAdjustedDict = new Dictionary<int, MonoUI>();
             Dictionary<int, MonoUI> rightAdjustedDict = new Dictionary<int, MonoUI>();
 
-
+            int highestValue = UI.GetHighestKey();
             int target = 0;
+            MonoUI targetUI = null;
 
             //Finding the target uiController to unregister
             foreach (int key in UI.Keys)
             {
                 if (UI[key] == uiController)
                 {
+                    
                     target = key;
+                    targetUI = UI[key];
                     break;
                 }
             }
@@ -166,7 +170,14 @@ namespace Surfer.UI
             leftAdjustedDict = UI.Where(x => x.Key < target) as Dictionary<int, MonoUI>;
             rightAdjustedDict = UI.Where(x => x.Key > target) as Dictionary<int, MonoUI>;
 
-            if (leftAdjustedDict != null && rightAdjustedDict != null)
+            //If there is no values on the right of the target, we can assume its already on the back
+            if (leftAdjustedDict != null && rightAdjustedDict == null)
+            {
+                Debug.LogWarning($"The ui controller {uiController.name} was already moved to the back");
+                return;
+            }
+            
+            if (leftAdjustedDict != null)
             {
                 UI.Remove(target);
                 
@@ -180,14 +191,28 @@ namespace Surfer.UI
                 });
 
                 UI = leftAdjustedDict.Concat(rightAdjustedDict) as Dictionary<int, MonoUI>;
+                
+                //Adds the desired UI to the back
+                UI.Add(highestValue, targetUI );
                 return;
             }
 
-
-            //We can assume if the rightAdjustedDict is empty then its at the end, therefore it can be removed safely
-            if (UI.Any(x => x.Key == target))
+            //If the left is null but the right is not null, we can assume it is the first value in the dictionary
+            if (rightAdjustedDict != null)
             {
-                UI.Remove(target);
+                //Simply adds and re-adds the key to shift the value
+                rightAdjustedDict.ToList().ForEach(x =>
+                {
+                    int key = x.Key;
+
+                    if (UI.Remove(key, out MonoUI value))
+                        rightAdjustedDict.Add(key - 1, value);
+                });
+                
+                //Adds the desired UI to the back
+                UI.Add(highestValue, targetUI );
+                DebugValues(UI);
+                ForceUpdateUI();
                 return;
             }
 
@@ -205,7 +230,7 @@ namespace Surfer.UI
         #region Debug
 
 #if UNITY_EDITOR
-        public void DebugToFrontValues(Dictionary<int, MonoUI> dict)
+        public void DebugValues(Dictionary<int, MonoUI> dict)
         {
             dict.ToList().ForEach(x => { Debug.Log($"Key: {x.Key} | Value: {x.Value}"); });
         }
