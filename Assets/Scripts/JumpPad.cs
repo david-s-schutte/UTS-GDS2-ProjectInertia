@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class JumpPad : MonoBehaviour
 {
+    [SerializeField] bool ignorePlayerEnterVelocity;
+    [SerializeField] float strength = 20.0f;
     private void OnTriggerEnter(Collider other) {
         if (other.GetComponent<PlayerController>()) {
-            PlayerController.SetVelocity(new(0, 20, 0));
+            if (ignorePlayerEnterVelocity) {
+                PlayerController.SetVelocity(new(0, strength, 0));
+            } else {
+                PlayerController.ApplyVelocity(new(0, strength, 0));
+            }
         }
     }
 }
