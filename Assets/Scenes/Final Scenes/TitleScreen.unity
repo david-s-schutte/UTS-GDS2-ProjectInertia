@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 4fac01c8a03928f4187af88959cc2088, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e93940c73ecb675489b13187f8c952d2, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -790,6 +790,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -33.7
       objectReference: {fileID: 0}
+    - target: {fileID: 4917115623280324572, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d03d34837f273f4e904915cdc1166ec, type: 3}
     - target: {fileID: 5370870728582785041, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1841,6 +1845,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howtoPlay: {fileID: 1030175433}
   menuCanvas: {fileID: 65887149}
+  sfx: {fileID: 806280357}
+--- !u!82 &806280357 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4917115623280324572, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
+  m_PrefabInstance: {fileID: 806280350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &846468994
 GameObject:
   m_ObjectHideFlags: 0
@@ -3304,6 +3314,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howtoPlay: {fileID: 0}
   menuCanvas: {fileID: 0}
+  sfx: {fileID: 1577503527}
+--- !u!82 &1577503527 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4917115623280324572, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
+  m_PrefabInstance: {fileID: 332664573}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1595831769
 GameObject:
   m_ObjectHideFlags: 0
@@ -4588,3 +4604,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howtoPlay: {fileID: 1030175433}
   menuCanvas: {fileID: 65887149}
+  sfx: {fileID: 1053981111597123719}
+--- !u!82 &1053981111597123719 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4917115623280324572, guid: 777ecb9302074de4fa24615f8efa7185, type: 3}
+  m_PrefabInstance: {fileID: 1053981111597123712}
+  m_PrefabAsset: {fileID: 0}

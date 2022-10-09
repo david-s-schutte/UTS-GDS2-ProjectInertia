@@ -26,5 +26,7 @@ public class JumpPad : MonoBehaviour
         {
             PlayerController.ApplyVelocity(new(0, strength, 0));
         }
+        if(!GetComponent<AudioSource>().isPlaying) 
+            GetComponent<AudioSource>().Play();
     }
 }

@@ -17,7 +17,11 @@ public class PlayerTriggerChecker : MonoBehaviour
         {
             Transform animator = hit.gameObject.transform.Find("C");
             animator.GetComponent<Animator>().SetBool("isActivated", true);
-            respawnPos = hit.gameObject.transform.Find("RespawnPos").position;
+            if(!hit.gameObject.GetComponent<AudioSource>().isPlaying && respawnPos != hit.gameObject.transform.Find("RespawnPos").position)
+            {
+                hit.gameObject.GetComponent<AudioSource>().Play();
+                respawnPos = hit.gameObject.transform.Find("RespawnPos").position;
+            }
         }
         
         if(hit.gameObject.tag == "KillPlane")
@@ -29,7 +33,11 @@ public class PlayerTriggerChecker : MonoBehaviour
         if(hit.gameObject.tag == "JumpPad")
         {
             hit.gameObject.GetComponent<JumpPad>().LaunchPlayer();
-            gameObject.transform.Find("Bouncepad").transform.Find("Pattern").gameObject.GetComponent<Animator>().SetBool("isActivated", true);
+            if (!hit.gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                hit.gameObject.GetComponent<AudioSource>().Play();
+            }
+            //gameObject.transform.Find("Bouncepad").transform.Find("Pattern").gameObject.GetComponent<Animator>().SetBool("isActivated", true);
         }
 
         if(hit.gameObject.tag == "Goal")

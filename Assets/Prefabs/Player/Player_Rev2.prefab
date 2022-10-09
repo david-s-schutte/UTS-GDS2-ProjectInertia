@@ -2278,7 +2278,9 @@ GameObject:
   - component: {fileID: 6725002459627622633}
   - component: {fileID: 6725002459627622634}
   - component: {fileID: 2112063438}
+  - component: {fileID: 3666168805404461047}
   - component: {fileID: 7073503466272688077}
+  - component: {fileID: 1306443610187945938}
   m_Layer: 3
   m_Name: Player_Logic
   m_TagString: Untagged
@@ -2417,7 +2419,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6725002459627622639}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -2506,6 +2508,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3666168805404461047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725002459627622639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37e9fecf03c8114a9b5a19d91920038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSFX: {fileID: 8300000, guid: 70c14d8db1b33ff43bc879574942b7ed, type: 3}
+  surfSFX: {fileID: 8300000, guid: 81a81983351ec7e49a9b9b9006ad7397, type: 3}
+  jumpSFX: {fileID: 8300000, guid: 013c39c281922b44cad5c734e39a8d86, type: 3}
+  switchSFX: {fileID: 8300000, guid: e1c2c2b42bd90414b93474b673d0aeb0, type: 3}
+  source: {fileID: 2112063438}
 --- !u!114 &7073503466272688077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2519,6 +2538,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 553473503001598791}
+--- !u!114 &1306443610187945938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725002459627622639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 0e3dbafae1dd49f4787e93a963b504b3, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &6880227610220671689
 GameObject:
   m_ObjectHideFlags: 0
