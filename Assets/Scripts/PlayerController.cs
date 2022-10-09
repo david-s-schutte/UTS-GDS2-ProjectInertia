@@ -292,7 +292,7 @@ public class PlayerController : MonoBehaviour
             forwardDirection = Quaternion.LookRotation(motion3d, Vector3.up); 
         
         if (cc.isGrounded) {
-            velocity.y = 0;
+            if (velocity.y <= 0) velocity.y = 0;
             if (floorCast.transform != null) {
                 motion3d = Vector3.ProjectOnPlane(motion3d, floorCast.normal);
                 velocity.y -= groundStickingForce;
