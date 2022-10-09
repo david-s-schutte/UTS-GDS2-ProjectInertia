@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     // Velocity we were travelling at last frame
     Vector3 lastFrameVelocity = new Vector3();
 
+    [SerializeField] float runningStartBoost = 1.5f;
+
     [SerializeField] float groundStickingForce = 4.0f;
 
     // Railgrind stuff
@@ -151,7 +153,7 @@ public class PlayerController : MonoBehaviour
         // TODO: this is placeholder, we're obvs using the new input system and stuffs
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             SetMovementMode((IsWalkingMode()) ? MovementMode.Surfer : MovementMode.Walking);
-            if (IsSurferMode()) EnterSurfer();
+            if (IsSurferMode()) EnterSurfer(velocity.magnitude * (1 + runningStartBoost / 10.0f));
             if (IsWalkingMode()) EnterWalking();
         }
 
@@ -316,7 +318,10 @@ public class PlayerController : MonoBehaviour
     #region Surfing
     
     void EnterSurfer () {
-        surferModeCarriedSpeed = velocity.magnitude;
+        EnterSurfer(velocity.magnitude);
+    }
+    void EnterSurfer (float overrideCarriedSpeed) {
+        surferModeCarriedSpeed = overrideCarriedSpeed;
         surferModeCurrentThrust = 0;
     }
 
@@ -541,7 +546,7 @@ public class PlayerController : MonoBehaviour
                 t += Time.deltaTime * railSpeed;
                 // Allow jumps to cancel the whole Coroutine
                 if (GetJumpDown()) {
-                    velocity = Vector3.zero;
+                    velocity = Vector3.zero;    
                     HandleLiftoff();
                     Jump();
                     break;

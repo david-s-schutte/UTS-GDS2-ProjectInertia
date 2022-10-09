@@ -2366,6 +2366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterObject: {fileID: 6486776999037492103}
   walkSpeed: 10
+  runningStartBoost: 5
   groundStickingForce: 4
   railOffset: {x: 0, y: 1.2, z: 0}
   boxCastDistance: 3
