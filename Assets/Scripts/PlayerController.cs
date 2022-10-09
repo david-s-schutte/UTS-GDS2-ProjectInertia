@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     // Railgrind stuff
     // TODO: I reckon this should be somewhere else and this script should mostly be reserved for direct player movement
     [SerializeField] Vector3 railOffset = new(0, 1, 0);
+    [SerializeField] float boxCastSize = 0.5f;
     [SerializeField] float boxCastDistance = 3;
     [SerializeField] float railSpeed = 5;
     [SerializeField] float railLeaveBoost = 5;
@@ -116,6 +117,10 @@ public class PlayerController : MonoBehaviour
         cc = GetComponent<CharacterController>();
         playerCamera = Camera.main;
         velocity = Vector3.zero;
+    }
+
+    private void Start() {
+        GameCameraController.InitialiseGameCamera();
         SetMovementMode(MovementMode.Walking);
     }
 
@@ -261,6 +266,7 @@ public class PlayerController : MonoBehaviour
     #region Walking
 
     void EnterWalking() {
+        GameCameraController.EnterWalkCam();
         // If we aren't grounded then act like a liftoff so that momentum is properly carried 
         if (!cc.isGrounded) {
             HandleLiftoff();
@@ -291,7 +297,7 @@ public class PlayerController : MonoBehaviour
             forwardDirection = Quaternion.LookRotation(motion3d, Vector3.up); 
         
         if (cc.isGrounded) {
-            velocity.y = 0;
+            if (velocity.y <= 0) velocity.y = 0;
             if (floorCast.transform != null) {
                 motion3d = Vector3.ProjectOnPlane(motion3d, floorCast.normal);
                 velocity.y -= groundStickingForce;
@@ -321,6 +327,7 @@ public class PlayerController : MonoBehaviour
         EnterSurfer(velocity.magnitude);
     }
     void EnterSurfer (float overrideCarriedSpeed) {
+        GameCameraController.EnterSurfCam();
         surferModeCarriedSpeed = overrideCarriedSpeed;
         surferModeCurrentThrust = 0;
     }
@@ -359,6 +366,8 @@ public class PlayerController : MonoBehaviour
         // motionUnprojected += forwardDirection * Vector3.forward * input.y * surferModeAcceleration* Time.deltaTime;
 
         // This is a total mess due to getting it workable for sprint 3
+
+        if (!cc.isGrounded) lateralForward = FlattenAndNormalise3D(lastLiftoffDirection);
 
         Vector3 motion = new();
         motion += lateralForward * surferModeCurrentThrust;
@@ -511,7 +520,7 @@ public class PlayerController : MonoBehaviour
 
     void BoxCastForFloorObstacles() {
         RaycastHit boxHit;
-        if (Physics.BoxCast(transform.position - Vector3.up * cc.height/2, new(0.2f, 0.2f, 0.2f), Vector3.down, out boxHit, forwardDirection, boxCastDistance)) {
+        if (Physics.BoxCast(transform.position - Vector3.up * cc.height/2, new(boxCastSize, boxCastSize, boxCastSize), Vector3.down, out boxHit, forwardDirection, boxCastDistance)) {
             if (boxHit.transform.tag == "GrindrailNode") {
                 GrindRailController grindRailController = boxHit.collider.gameObject.GetComponentInParent<GrindRailController>();
                 if (grindRailController) StartCoroutine(RailGrindCoroutine(grindRailController));
@@ -521,8 +530,10 @@ public class PlayerController : MonoBehaviour
 
     // alpha - this is probs not how it'll work in the final game
     // hi me in six months finding this comment and facepalming :D
+    // me later: actually this is kinda valid i might keep it like this........
     IEnumerator RailGrindCoroutine(GrindRailController grindRail) {
         SetMovementMode(MovementMode.Grinding);
+        GameCameraController.EnterSurfCam();
         velocity = Vector3.zero;
 
         List<Transform> railPoints = grindRail.GetRemainingNodes(transform);
@@ -546,7 +557,7 @@ public class PlayerController : MonoBehaviour
                 t += Time.deltaTime * railSpeed;
                 // Allow jumps to cancel the whole Coroutine
                 if (GetJumpDown()) {
-                    velocity = Vector3.zero;    
+                    velocity = lastFrameVelocity = Vector3.zero;
                     HandleLiftoff();
                     Jump();
                     break;
