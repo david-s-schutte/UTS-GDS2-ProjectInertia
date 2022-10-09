@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557695671619949843}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.0158864}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6609609869365848229}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
 --- !u!33 &4276553207616978956
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94,6 +94,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6609609869365848229}
+  - component: {fileID: 1486961468620525756}
+  - component: {fileID: 5159559816962604804}
   m_Layer: 0
   m_Name: Boostpad
   m_TagString: Untagged
@@ -110,10 +112,36 @@ Transform:
   m_GameObject: {fileID: 6343475829264396625}
   m_LocalRotation: {x: -0.4733008, y: 0.52534413, z: 0.5253436, w: 0.4733011}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 237.29942, y: 237.29942, z: 7.5396657}
+  m_LocalScale: {x: 0.99886465, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 934081233013329833}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 95.966}
+--- !u!114 &1486961468620525756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343475829264396625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0ab2dc27158d246b3d5890deea3517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boostSpeed: 20
+--- !u!65 &5159559816962604804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343475829264396625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 1, z: 3.5}
+  m_Center: {x: 0, y: 0, z: -0.5}
