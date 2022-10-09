@@ -123,96 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &12187887
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 12187888}
-  - component: {fileID: 12187889}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &12187888
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12187887}
-  m_LocalRotation: {x: -0, y: 0.11072222, z: -0, w: 0.9938514}
-  m_LocalPosition: {x: -1.842496, y: 1.4, z: -0.7416632}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &12187889
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12187887}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &45849540
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 45849541}
-  - component: {fileID: 45849542}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &45849541
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45849540}
-  m_LocalRotation: {x: -0, y: -0.789897, z: -0, w: 0.6132396}
-  m_LocalPosition: {x: 1.53, y: 1.4, z: -4.12}
-  m_LocalScale: {x: 1.1000003, y: 1.1, z: 1.1000003}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 71
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &45849542
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45849540}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &103241086
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &103241087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -446,96 +356,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110952715}
   m_Mesh: {fileID: -478882678752539408, guid: aa9c9613f608928498e1a69732ebdb1a, type: 3}
---- !u!1 &117329175
+--- !u!1 &129963906 stripped
 GameObject:
+  m_CorrespondingSourceObject: {fileID: -1018664272722485354, guid: b37364128041e004a8771acd173aea0c, type: 3}
+  m_PrefabInstance: {fileID: 803775989}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &129963910
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 117329176}
-  - component: {fileID: 117329177}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &117329176
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117329175}
-  m_LocalRotation: {x: -0, y: 0.33502558, z: -0, w: 0.94220906}
-  m_LocalPosition: {x: -1.0814308, y: 1.4, z: 0.825185}
-  m_LocalScale: {x: 1.1000001, y: 1.1, z: 1.1000001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &117329177
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117329175}
+  m_GameObject: {fileID: 129963906}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &123661405
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 123661406}
-  - component: {fileID: 123661407}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &123661406
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123661405}
-  m_LocalRotation: {x: -0, y: -0.57195437, z: -0, w: 0.8202855}
-  m_LocalPosition: {x: -0.2766426, y: 1.4, z: -3.8917134}
-  m_LocalScale: {x: 1.1000001, y: 1.1, z: 1.1000001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &123661407
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123661405}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4711208715938537054, guid: b37364128041e004a8771acd173aea0c, type: 3}
 --- !u!64 &160738081
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -648,6 +487,80 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -478882678752539408, guid: aa9c9613f608928498e1a69732ebdb1a, type: 3}
+--- !u!1001 &190412598
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5525415704695432618}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2216
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 299
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 655.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7069834
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7072302
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_Name
+      value: bench (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+--- !u!4 &190412599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+  m_PrefabInstance: {fileID: 190412598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &198559362
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,141 +757,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224637489}
   m_Mesh: {fileID: 8733429697405204941, guid: aa9c9613f608928498e1a69732ebdb1a, type: 3}
---- !u!1 &238551681
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 238551682}
-  - component: {fileID: 238551683}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &238551682
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238551681}
-  m_LocalRotation: {x: -0, y: -0.33386877, z: -0, w: 0.94261956}
-  m_LocalPosition: {x: -1.3891896, y: 1.4, z: -3.1201427}
-  m_LocalScale: {x: 1.0999999, y: 1.1, z: 1.0999999}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &238551683
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238551681}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &290865216
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 290865217}
-  - component: {fileID: 290865218}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &290865217
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290865216}
-  m_LocalRotation: {x: -0, y: 0.22369917, z: -0, w: 0.97465825}
-  m_LocalPosition: {x: -1.5529573, y: 1.4, z: 0.082876414}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 38
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &290865218
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290865216}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &292130787
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 292130788}
-  - component: {fileID: 292130789}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &292130788
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292130787}
-  m_LocalRotation: {x: 0.0015151616, y: 0.9811078, z: 0.00769018, w: -0.19330327}
-  m_LocalPosition: {x: 4.2157054, y: 1.3748697, z: -2.2611344}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 64
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &292130789
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292130787}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &315780792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,17 +782,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315780792}
-  m_LocalRotation: {x: 0.051608127, y: 0.1807551, z: 0.009497933, w: -0.9821273}
-  m_LocalPosition: {x: 0, y: 0, z: 13.37}
+  m_LocalRotation: {x: 0.025119646, y: -0.39336777, z: 0.0069050984, w: -0.91901207}
+  m_LocalPosition: {x: 0, y: 0, z: 5.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1206311381}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.335, y: 46.383, z: -1.861}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -653.02045, y: -359.4799}
+  m_AnchoredPosition: {x: -640.03, y: -358.86}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315780794
@@ -1531,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3501183314846978505, guid: ed40d4732ce8c7c47b147a277a904e68, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3501183314846978505, guid: ed40d4732ce8c7c47b147a277a904e68, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2271,260 +2049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPos: {x: 0, y: 0, z: 0}
---- !u!43 &339325114
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Rail
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 552
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 192
-    localAABB:
-      m_Center: {x: 2.9435406, y: 1.1211517, z: -1.0913771}
-      m_Extent: {x: 1.4809289, y: 0.2788483, z: 3.2693691}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 07000f000800070008000000010009000a0001000a00020003000b000c0003000c00040005000d000e0005000e0006000f00170010000f0010000800090011001200090012000a000b00130014000b0014000c000d00150016000d0016000e0017001f001800170018001000110019001a0011001a00120013001b001c0013001c00140015001d001e0015001e0016001f00270020001f0020001800190021002200190022001a001b00230024001b0024001c001d00250026001d0026001e0027002f002800270028002000210029002a0021002a00220023002b002c0023002c00240025002d002e0025002e0026002f00370030002f0030002800290031003200290032002a002b00330034002b0034002c002d00350036002d0036002e0037003f003800370038003000310039003a0031003a00320033003b003c0033003c00340035003d003e0035003e0036003f00470040003f0040003800390041004200390042003a003b00430044003b0044003c003d00450046003d0046003e0047004f004800470048004000410049004a0041004a00420043004b004c0043004c00440045004d004e0045004e0046004f00570050004f0050004800490051005200490052004a004b00530054004b0054004c004d00550056004d0056004e0057005f005800570058005000510059005a0051005a00520053005b005c0053005c00540055005d005e0055005e0056005f00670060005f0060005800590061006200590062005a005b00630064005b0064005c005d00650066005d0066005e0067006f006800670068006000610069006a0061006a00620063006b006c0063006c00640065006d006e0065006e0066006f00770070006f0070006800690071007200690072006a006b00730074006b0074006c006d00750076006d0076006e0077007f007800770078007000710079007a0071007a00720073007b007c0073007c00740075007d007e0075007e0076007f00870080007f0080007800790081008200790082007a007b00830084007b0084007c007d00850086007d0086007e0087008f008800870088008000810089008a0081008a00820083008b008c0083008c00840085008d008e0085008e0086008f00970090008f0090008800890091009200890092008a008b00930094008b0094008c008d00950096008d0096008e0097009f009800970098009000910099009a0091009a00920093009b009c0093009c00940095009d009e0095009e0096009f00a700a0009f00a00098009900a100a2009900a2009a009b00a300a4009b00a4009c009d00a500a6009d00a6009e00a700af00a800a700a800a000a100a900aa00a100aa00a200a300ab00ac00a300ac00a400a500ad00ae00a500ae00a600af00b700b000af00b000a800a900b100b200a900b200aa00ab00b300b400ab00b400ac00ad00b500b600ad00b600ae00b700bf00b800b700b800b000b100b900ba00b100ba00b200b300bb00bc00b300bc00b400b500bd00be00b500be00b600
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 192
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 2304
-    _typelessdata: 84e5d03f3333b33f55e6d63f84e5d03f3333b33f55e6d63f1ad2cc3f7eaa663fc786d73f1ad2cc3f7eaa663fc786d73f2f8cd63f7eaa663f39640b402f8cd63f7eaa663f39640b409a9fda3f3333b33f00140b409a9fda3f3333b33f00140b400483ed3fd536b13fd309d03f0483ed3fd536b13fd309d03fca6aea3ff697623f9c08d13fca6aea3ff697623f9c08d13fe902fe3ff697623fedfa0640e902fe3ff697623fedfa0640928d0040d536b13f887b0640928d0040d536b13f887b064035b20540cc94af3f5a11c43f35b20540cc94af3f5a11c43fe491044086425f3fa624c53fe491044086425f3fa624c53f525b124086425f3f0ce6fe3f525b124086425f3f0ce6fe3fa37b1340cc94af3fc0d2fd3fa37b1340cc94af3fc0d2fd3fb4ed1440c946ae3f2a38b33fb4ed1440c946ae3f2a38b33f0d2414406b9b5c3f8235b43f0d2414406b9b5c3f8235b43fa12925406b9b5c3f4867ea3fa12925406b9b5c3f4867ea3f48f32540c946ae3ff069e93f48f32540c946ae3ff069e93f201d24408146ad3fa9d89d3f201d24408146ad3fa9d89d3f0397234013945a3f04aa9e3f0397234013945a3f04aa9e3f6147374013945a3fad1dd13f6147374013945a3fad1dd13f7ecd37408146ad3f534cd03f7ecd37408146ad3f534cd03f3fee3240a58dac3fc55f843f3fee3240a58dac3fc55f843fe49b32406a1e593fe3fa843fe49b32406a1e593fe3fa843f408c48406a1e593f3992b33f408c48406a1e593f3992b33f9bde4840a58dac3f1bf7b23f9bde4840a58dac3f1bf7b23fe6134140e815ac3f44894e3fe6134140e815ac3f44894e3fa3e84040d82c583f524b4f3fa3e84040d82c583f524b4f3fa8ca5840d82c583f453e923fa8ca5840d82c583f453e923fecf55840e815ac3f3edd913fecf55840e815ac3f3edd913f48454e40fcd8ab3f58080e3f48454e40fcd8ab3f58080e3fde364e401cb2573f35550e3fde364e401cb2573f35550e3ff4cf67401cb2573fc1245b3ff4cf67401cb2573fc1245b3f5ede6740fcd8ab3fe4d75a3f5ede6740fcd8ab3fe4d75a3f353d5a4095d0ab3f767b903e353d5a4095d0ab3f767b903e1d435a4032a1573fe62f903e1d435a4032a1573fe62f903e2665754032a1573fddf30b3f2665754032a1573fddf30b3f3f5f754095d0ab3fa5190c3f3f5f754095d0ab3fa5190c3fbeb9644065f6ab3fe045e8bbbeb9644065f6ab3fe045e8bb8ecc644036ed573f380d19bc8ecc644036ed573f380d19bcb4a7804036ed573f62e95e3eb4a7804036ed573f62e95e3e4c9e804065f6ab3f0638613e4c9e804065f6ab3f0638613e3b7c6d401f44ac3ff2319ebe3b7c6d401f44ac3ff2319ebe2f956d405a89583f6627a0be2f956d405a89583f6627a0be15a885405a89583f42ec02be15a885405a89583f42ec02be9b9b85401f44ac3fb602febd9b9b85401f44ac3fb602febda349744075b3ac3fd4901ebfa349744075b3ac3fd4901ebf51627440df68593f0ee91fbf51627440df68593f0ee91fbf75928940df68593f4f40f9be75928940df68593f4f40f9be1e86894075b3ac3fdc8ff6be1e86894075b3ac3fdc8ff6be35eb78401a3ead3fa6306fbf35eb78401a3ead3fa6306fbf72fd7840077f5a3fabd870bf72fd7840077f5a3fabd870bf66438c40077f5a3fee235bbf66438c40077f5a3fee235bbf483a8c401a3ead3fe87b59bf483a8c401a3ead3fe87b59bfdc2e7b40c1ddad3f67fe9fbfdc2e7b40c1ddad3f67fe9fbffd347b4018bf5b3f85f0a0bffd347b4018bf5b3f85f0a0bf41958d4018bf5b3ffcb39dbf41958d4018bf5b3ffcb39dbf30928d40c1ddad3fdfc19cbf30928d40c1ddad3fdfc19cbfa2e67a401d8cae3f3d09c8bfa2e67a401d8cae3f3d09c8bf21dc7a40581c5d3f0b0cc9bf21dc7a40581c5d3f0b0cc9bfa2608d40581c5d3fd439cebfa2608d40581c5d3fd439cebfe3658d401d8cae3f0537cdbfe3658d401d8cae3f0537cdbfe6e57740df42af3f6e5befbfe6e57740df42af3f6e5befbf73c877400a8a5e3f1c5ef0bf73c877400a8a5e3f1c5ef0bf047e8b400a8a5e3f5f93febf047e8b400a8a5e3f5f93febfbd8c8b40df42af3fb090fdbfbd8c8b40df42af3fb090fdbf9ffb7140bbfbaf3f11d80ac09ffb7140bbfbaf3f11d80ac043cc714088fb5f3f2e500bc043cc714088fb5f3f2e500bc0a9c8874088fb5f3fe70c17c0a9c8874088fb5f3fe70c17c057e08740bbfbaf3fc99416c057e08740bbfbaf3fc99416c008eb684064b0b03f2e6b1dc008eb684064b0b03f2e6b1dc096ae68404064613ff3d11dc096ae68404064613ff3d11dc0e52182404064613f0d0b2ec0e52182404064613f0d0b2ec01e40824064b0b03f48a42dc01e40824064b0b03f48a42dc021675c408b5ab13f2c502fc021675c408b5ab13f2c502fc050255c40b8b7623f7ba02fc050255c40b8b7623f7ba02fc078e57440b8b7623ffae843c078e57440b8b7623ffae843c0492775408b5ab13faa9843c0492775408b5ab13faa9843c023154c40e6f3b13f1a6740c023154c40e6f3b13f1a6740c089d64b408ae9633fd89f40c089d64b408ae9633fd89f40c0215461408ae9633f8e5558c0215461408ae9633f8e5558c0bb926140e6f3b13fd01c58c0bb926140e6f3b13fd01c58c0369537402376b23f7b8050c0369537402376b23f7b8050c02c6137403eed643f0ea450c02c6137403eed643f0ea450c07d7049403eed643fbc0e6bc07d7049403eed643fbc0e6bc086a449402376b23f29eb6ac086a449402376b23f29eb6ac0b38b1e40f8dab23f185e5fc0b38b1e40f8dab23f185e5fc02e671e405ab6653ff3705fc02e671e405ab6653ff3705fc0e8152d405ab6653fbedf7bc0e8152d405ab6653fbedf7bc06d3a2d40f8dab23fe2cc7bc06d3a2d40f8dab23fe2cc7bc024a60040181cb33f9eb86cc024a60040181cb33f9eb86cc09b9300404838663fc3bf6cc09b9300404838663fc3bf6cc083160c404838663faf4d85c083160c404838663faf4d85c00c290c40181cb33f1c4a85c00c290c40181cb33f1c4a85c0db36bb3f3333b33fb04578c0db36bb3f3333b33fb04578c0db36bb3f6666663fb04578c0db36bb3f6666663fb04578c03977cc3f6666663f3c8b8bc03977cc3f6666663f3c8b8bc03977cc3f3333b33f3c8b8bc03977cc3f3333b33f3c8b8bc0
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 2.9435406, y: 1.1211517, z: -1.0913771}
-    m_Extent: {x: 1.4809289, y: 0.2788483, z: 3.2693691}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
---- !u!1 &344656891
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 344656892}
-  - component: {fileID: 344656893}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &344656892
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344656891}
-  m_LocalRotation: {x: 0.006905145, y: 0.8691143, z: -0.012138326, w: 0.49441412}
-  m_LocalPosition: {x: 2.4913545, y: 1.3615352, z: 1.6118485}
-  m_LocalScale: {x: 1.1, y: 1.0999998, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 51
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &344656893
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344656891}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &358384622
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 358384623}
-  - component: {fileID: 358384624}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &358384623
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358384622}
-  m_LocalRotation: {x: -0, y: -0.4197112, z: -0, w: 0.90765774}
-  m_LocalPosition: {x: -1.0906706, y: 1.4, z: -3.4254367}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 29
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &358384624
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358384622}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  playerCam: {fileID: 0}
 --- !u!1 &378078492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,7 +2068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &378078493
 Transform:
   m_ObjectHideFlags: 0
@@ -2623,51 +2148,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378078492}
   m_Mesh: {fileID: -8116138440861595531, guid: aa9c9613f608928498e1a69732ebdb1a, type: 3}
---- !u!1 &389383691
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 389383692}
-  - component: {fileID: 389383693}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &389383692
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389383691}
-  m_LocalRotation: {x: -0.00062943686, y: 0.9669688, z: 0.0023879425, w: 0.25488296}
-  m_LocalPosition: {x: 3.9370058, y: 1.3434569, z: 0.10642593}
-  m_LocalScale: {x: 1.0999999, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 57
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &389383693
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389383691}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &392575301
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2696,141 +2176,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4711208715938537054, guid: f4aa85d693e9045408322c7e98980468, type: 3}
---- !u!1 &404367550
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 404367551}
-  - component: {fileID: 404367552}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &404367551
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404367550}
-  m_LocalRotation: {x: -0, y: -0.24730848, z: -0, w: 0.9689368}
-  m_LocalPosition: {x: -1.6192118, y: 1.4, z: -2.7765534}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &404367552
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404367550}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &419646857
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 419646858}
-  - component: {fileID: 419646859}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &419646858
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419646857}
-  m_LocalRotation: {x: 0.0019693684, y: 0.9614944, z: 0.0068923235, w: -0.27473128}
-  m_LocalPosition: {x: 4.048994, y: 1.380383, z: -2.5864093}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.0999999}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 65
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &419646859
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419646857}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &419960692
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 419960693}
-  - component: {fileID: 419960694}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &419960693
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419960692}
-  m_LocalRotation: {x: -0, y: -0.68351203, z: -0, w: 0.7299393}
-  m_LocalPosition: {x: 0.84587234, y: 1.4, z: -4.1165304}
-  m_LocalScale: {x: 1.1000001, y: 1.1, z: 1.1000001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &419960694
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419960692}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &420410013
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2871,15 +2216,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424546584}
-  m_LocalRotation: {x: -0, y: -0.87654936, z: -0, w: 0.48131207}
-  m_LocalPosition: {x: 719.55, y: 13.730001, z: 0.47}
-  m_LocalScale: {x: 158.62035, y: 158.62035, z: 158.62035}
+  m_LocalRotation: {x: -0, y: -0.96255267, z: -0, w: 0.27109483}
+  m_LocalPosition: {x: 715.5, y: 1.1, z: 22.7}
+  m_LocalScale: {x: 158.62035, y: 263.3, z: 216.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 378078493}
   m_Father: {fileID: 5525415704695432618}
   m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 180, y: 57.542, z: 180}
+  m_LocalEulerAnglesHint: {x: 180, y: 31.459, z: 180}
 --- !u!64 &424546586
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2944,96 +2289,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424546584}
   m_Mesh: {fileID: -8116138440861595531, guid: aa9c9613f608928498e1a69732ebdb1a, type: 3}
---- !u!1 &426004541
+--- !u!1 &439245107 stripped
 GameObject:
+  m_CorrespondingSourceObject: {fileID: -7640558969779515294, guid: b37364128041e004a8771acd173aea0c, type: 3}
+  m_PrefabInstance: {fileID: 803775989}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &439245111
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 426004542}
-  - component: {fileID: 426004543}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &426004542
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 426004541}
-  m_LocalRotation: {x: 0.000477053, y: 0.94169784, z: -0.0013352077, w: 0.33645684}
-  m_LocalPosition: {x: 3.5256932, y: 1.3425593, z: 0.7048358}
-  m_LocalScale: {x: 1.0999999, y: 1.0999998, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 55
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &426004543
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 426004541}
+  m_GameObject: {fileID: 439245107}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &430466318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 430466319}
-  - component: {fileID: 430466320}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &430466319
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430466318}
-  m_LocalRotation: {x: 0.00090555166, y: 0.9936925, z: 0.008045301, w: -0.11184664}
-  m_LocalPosition: {x: 4.3219194, y: 1.3692282, z: -1.9254779}
-  m_LocalScale: {x: 1.1000003, y: 1.1000005, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 63
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &430466320
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430466318}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5053925668127403250, guid: b37364128041e004a8771acd173aea0c, type: 3}
 --- !u!1 &457705236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3247,186 +2521,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &510449202
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 510449203}
-  - component: {fileID: 510449204}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &510449203
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510449202}
-  m_LocalRotation: {x: -0.0008457503, y: 0.97788525, z: 0.0039552078, w: 0.20910324}
-  m_LocalPosition: {x: 4.1006813, y: 1.3458289, z: -0.21650171}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1000003}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 58
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &510449204
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510449202}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &526205003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 526205004}
-  - component: {fileID: 526205005}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &526205004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526205003}
-  m_LocalRotation: {x: -0.00019611172, y: 0.9549028, z: 0.00063070504, w: 0.29691792}
-  m_LocalPosition: {x: 3.7438655, y: 1.3423029, z: 0.41472912}
-  m_LocalScale: {x: 1.1, y: 1.1000003, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 56
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &526205005
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526205003}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &528348368
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 528348369}
-  - component: {fileID: 528348370}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &528348369
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528348368}
-  m_LocalRotation: {x: -0, y: -0.24730848, z: -0, w: 0.9689368}
-  m_LocalPosition: {x: -1.6192118, y: 1.4, z: -2.7765534}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 31
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &528348370
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528348368}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &533755116
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 533755117}
-  - component: {fileID: 533755118}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &533755117
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533755116}
-  m_LocalRotation: {x: -0, y: 0.7095846, z: -0, w: 0.7046203}
-  m_LocalPosition: {x: 1.1950729, y: 1.4, z: 1.9701902}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &533755118
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533755116}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &539373739
 GameObject:
   m_ObjectHideFlags: 0
@@ -3640,51 +2734,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &578333550
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 578333551}
-  - component: {fileID: 578333552}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &578333551
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578333550}
-  m_LocalRotation: {x: -0, y: 0.27892002, z: -0, w: 0.9603144}
-  m_LocalPosition: {x: -1.3385049, y: 1.4, z: 0.4679883}
-  m_LocalScale: {x: 1.1000001, y: 1.1, z: 1.1000001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 39
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &578333552
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578333550}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &580124288
 GameObject:
   m_ObjectHideFlags: 0
@@ -3749,7 +2798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &590987633
 Transform:
   m_ObjectHideFlags: 0
@@ -3829,51 +2878,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590987632}
   m_Mesh: {fileID: -8116138440861595531, guid: aa9c9613f608928498e1a69732ebdb1a, type: 3}
---- !u!1 &684827437
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 684827438}
-  - component: {fileID: 684827439}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &684827438
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684827437}
-  m_LocalRotation: {x: -0, y: 0.05008865, z: -0, w: 0.9987448}
-  m_LocalPosition: {x: -1.9118328, y: 1.4, z: -1.1663783}
-  m_LocalScale: {x: 1.1000001, y: 1.1, z: 1.1000001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &684827439
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684827437}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &699454145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,7 +2895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &699454146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4222,51 +3226,80 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717132358}
   m_Mesh: {fileID: -8116138440861595531, guid: aa9c9613f608928498e1a69732ebdb1a, type: 3}
---- !u!1 &726934802
-GameObject:
+--- !u!1001 &730908543
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 726934803}
-  - component: {fileID: 726934804}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &726934803
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726934802}
-  m_LocalRotation: {x: -0, y: -0.57195437, z: -0, w: 0.8202855}
-  m_LocalPosition: {x: -0.2766426, y: 1.4, z: -3.8917134}
-  m_LocalScale: {x: 1.1000001, y: 1.1, z: 1.1000001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 27
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &726934804
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726934802}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Modification:
+    m_TransformParent: {fileID: 5525415704695432618}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2216
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 299
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 652.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 109.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000030908616
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000030908623
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_Name
+      value: bench
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+--- !u!4 &730908544 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+  m_PrefabInstance: {fileID: 730908543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &741086155
 GameObject:
   m_ObjectHideFlags: 0
@@ -4394,53 +3427,8 @@ Transform:
   m_Children:
   - {fileID: 1560672610}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &767861906
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 767861907}
-  - component: {fileID: 767861908}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &767861907
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767861906}
-  m_LocalRotation: {x: -0.0006610888, y: 0.9948331, z: 0.006491437, w: 0.10131394}
-  m_LocalPosition: {x: 4.3219047, y: 1.3534577, z: -0.8919415}
-  m_LocalScale: {x: 1.0999998, y: 1.1000003, z: 1.0999998}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 60
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &767861908
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767861906}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &786580159
 GameObject:
   m_ObjectHideFlags: 0
@@ -4458,7 +3446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &786580160
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4576,96 +3564,91 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786580159}
   m_CullTransparentMesh: 1
---- !u!1 &802505604
-GameObject:
+--- !u!1001 &803775989
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 802505605}
-  - component: {fileID: 802505606}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &802505605
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 802505604}
-  m_LocalRotation: {x: 0.0045101303, y: 0.89178175, z: -0.0088913385, w: 0.4523561}
-  m_LocalPosition: {x: 2.7653203, y: 1.3537141, z: 1.4302518}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 52
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &802505606
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 802505604}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &813074153
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 813074154}
-  - component: {fileID: 813074155}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &813074154
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813074153}
-  m_LocalRotation: {x: -0, y: 0.5820241, z: -0, w: 0.8131716}
-  m_LocalPosition: {x: 0.31558365, y: 1.4, z: 1.8276945}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 44
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &813074155
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813074153}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.69
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9990612
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.043321256
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -4.966
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1018664272722485354, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_Name
+      value: hub level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202271454713460447, guid: b37364128041e004a8771acd173aea0c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: aa9c9613f608928498e1a69732ebdb1a, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b37364128041e004a8771acd173aea0c, type: 3}
 --- !u!1 &822618706
 GameObject:
   m_ObjectHideFlags: 0
@@ -4806,7 +3789,7 @@ Transform:
   m_GameObject: {fileID: 845511917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1.0392}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7308029881654728909}
@@ -4814,7 +3797,7 @@ Transform:
   - {fileID: 543450651619655732}
   - {fileID: 1657502238}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &856668452
 MeshCollider:
@@ -4830,51 +3813,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: f4aa85d693e9045408322c7e98980468, type: 3}
---- !u!1 &861419832
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 861419833}
-  - component: {fileID: 861419834}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &861419833
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861419832}
-  m_LocalRotation: {x: -0.0012534746, y: -0.8453068, z: -0.0019831893, w: 0.53427607}
-  m_LocalPosition: {x: 2.6885006, y: 1.3973074, z: -3.712249}
-  m_LocalScale: {x: 1.0999999, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 69
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &861419834
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861419832}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &904821630
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4889,411 +3827,189 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3329902420748629119, guid: f4aa85d693e9045408322c7e98980468, type: 3}
---- !u!1 &943729366
+--- !u!1 &951850806 stripped
 GameObject:
+  m_CorrespondingSourceObject: {fileID: -1599826595754709761, guid: b37364128041e004a8771acd173aea0c, type: 3}
+  m_PrefabInstance: {fileID: 803775989}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &951850810
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 943729367}
-  - component: {fileID: 943729368}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &943729367
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943729366}
-  m_LocalRotation: {x: -0, y: 0.64713097, z: -0, w: 0.7623789}
-  m_LocalPosition: {x: 0.7426425, y: 1.4, z: 1.9349695}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 45
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &943729368
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943729366}
+  m_GameObject: {fileID: 951850806}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &964947167
-GameObject:
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2212009239438826721, guid: b37364128041e004a8771acd173aea0c, type: 3}
+--- !u!43 &993550075
+Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 964947168}
-  - component: {fileID: 964947169}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &964947168
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964947167}
-  m_LocalRotation: {x: -0, y: 0.11072222, z: -0, w: 0.9938514}
-  m_LocalPosition: {x: -1.842496, y: 1.4, z: -0.7416632}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 36
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &964947169
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964947167}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1014828406
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1014828407}
-  - component: {fileID: 1014828408}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1014828407
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1014828406}
-  m_LocalRotation: {x: -0, y: 0.5820241, z: -0, w: 0.8131716}
-  m_LocalPosition: {x: 0.31558365, y: 1.4, z: 1.8276945}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1014828408
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1014828406}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1015529356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1015529357}
-  - component: {fileID: 1015529358}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1015529357
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015529356}
-  m_LocalRotation: {x: -0, y: 0.7095846, z: -0, w: 0.7046203}
-  m_LocalPosition: {x: 1.1950729, y: 1.4, z: 1.9701902}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 46
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1015529358
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015529356}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1023850993
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1023850994}
-  - component: {fileID: 1023850995}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1023850994
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023850993}
-  m_LocalRotation: {x: 0.0020863945, y: 0.9066358, z: 0.004483685, w: -0.42188513}
-  m_LocalPosition: {x: 3.5163436, y: 1.3902557, z: -3.1915257}
-  m_LocalScale: {x: 1.1, y: 1.0999995, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 67
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1023850995
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023850993}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1039609062
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1039609063}
-  - component: {fileID: 1039609064}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1039609063
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039609062}
-  m_LocalRotation: {x: -0, y: -0.16402924, z: -0, w: 0.9864555}
-  m_LocalPosition: {x: -1.7836123, y: 1.4, z: -2.402026}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1039609064
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039609062}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1054780629
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1054780630}
-  - component: {fileID: 1054780631}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1054780630
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054780629}
-  m_LocalRotation: {x: -0, y: -0.7246399, z: -0, w: 0.68912774}
-  m_LocalPosition: {x: 1.53, y: 1.4, z: -4.12}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 24
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1054780631
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054780629}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1094082959
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1094082960}
-  - component: {fileID: 1094082961}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1094082960
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094082959}
-  m_LocalRotation: {x: -0, y: 0.22369917, z: -0, w: 0.97465825}
-  m_LocalPosition: {x: -1.5529573, y: 1.4, z: 0.082876414}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1094082961
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094082959}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1105652182
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1105652183}
-  - component: {fileID: 1105652184}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1105652183
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105652182}
-  m_LocalRotation: {x: -0, y: 0.39305294, z: -0, w: 0.9195159}
-  m_LocalPosition: {x: -0.78461, y: 1.4, z: 1.1471106}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 41
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1105652184
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105652182}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Name: Rail
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 552
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 192
+    localAABB:
+      m_Center: {x: -5.978595, y: 3.11986, z: -5.5617666}
+      m_Extent: {x: 1.4963903, y: 0.25, z: 2.622857}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 07000f000800070008000000010009000a0001000a00020003000b000c0003000c00040005000d000e0005000e0006000f00170010000f0010000800090011001200090012000a000b00130014000b0014000c000d00150016000d0016000e0017001f001800170018001000110019001a0011001a00120013001b001c0013001c00140015001d001e0015001e0016001f00270020001f0020001800190021002200190022001a001b00230024001b0024001c001d00250026001d0026001e0027002f002800270028002000210029002a0021002a00220023002b002c0023002c00240025002d002e0025002e0026002f00370030002f0030002800290031003200290032002a002b00330034002b0034002c002d00350036002d0036002e0037003f003800370038003000310039003a0031003a00320033003b003c0033003c00340035003d003e0035003e0036003f00470040003f0040003800390041004200390042003a003b00430044003b0044003c003d00450046003d0046003e0047004f004800470048004000410049004a0041004a00420043004b004c0043004c00440045004d004e0045004e0046004f00570050004f0050004800490051005200490052004a004b00530054004b0054004c004d00550056004d0056004e0057005f005800570058005000510059005a0051005a00520053005b005c0053005c00540055005d005e0055005e0056005f00670060005f0060005800590061006200590062005a005b00630064005b0064005c005d00650066005d0066005e0067006f006800670068006000610069006a0061006a00620063006b006c0063006c00640065006d006e0065006e0066006f00770070006f0070006800690071007200690072006a006b00730074006b0074006c006d00750076006d0076006e0077007f007800770078007000710079007a0071007a00720073007b007c0073007c00740075007d007e0075007e0076007f00870080007f0080007800790081008200790082007a007b00830084007b0084007c007d00850086007d0086007e0087008f008800870088008000810089008a0081008a00820083008b008c0083008c00840085008d008e0085008e0086008f00970090008f0090008800890091009200890092008a008b00930094008b0094008c008d00950096008d0096008e0097009f009800970098009000910099009a0091009a00920093009b009c0093009c00940095009d009e0095009e0096009f00a700a0009f00a00098009900a100a2009900a2009a009b00a300a4009b00a4009c009d00a500a6009d00a6009e00a700af00a800a700a800a000a100a900aa00a100aa00a200a300ab00ac00a300ac00a400a500ad00ae00a500ae00a600af00b700b000af00b000a800a900b100b200a900b200aa00ab00b300b400ab00b400ac00ad00b500b600ad00b600ae00b700bf00b800b700b800b000b100b900ba00b100ba00b200b300bb00bc00b300bc00b400b500bd00be00b500be00b600
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 192
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 2304
+    _typelessdata: 89a994c0c9ab574003eef5c089a994c0c9ab574003eef5c089a994c0c9ab374003eef5c089a994c0c9ab374003eef5c0d9d393c0c9ab374038f402c1d9d393c0c9ab374038f402c1d9d393c0c9ab574038f402c1d9d393c0c9ab574038f402c1c51da4c0c9ab5740d7d9f5c0c51da4c0c9ab5740d7d9f5c0c51da4c0c9ab3740d7d9f5c0c51da4c0c9ab3740d7d9f5c00d35a5c0c9ab374027e802c10d35a5c0c9ab374027e802c10d35a5c0c9ab574027e802c10d35a5c0c9ab574027e802c10671b1c0c9ab5740940bf4c00671b1c0c9ab5740940bf4c00671b1c0c9ab3740940bf4c00671b1c0c9ab3740940bf4c00cbdb4c0c9ab3740d6d901c10cbdb4c0c9ab3740d6d901c10cbdb4c0c9ab5740d6d901c10cbdb4c0c9ab5740d6d901c1e3bcbcc0c9ab574043c1f0c0e3bcbcc0c9ab574043c1f0c0e3bcbcc0c9ab374043c1f0c0e3bcbcc0c9ab374043c1f0c08f75c2c0c9ab37406fb2ffc08f75c2c0c9ab37406fb2ffc08f75c2c0c9ab57406fb2ffc08f75c2c0c9ab57406fb2ffc02125c6c0c9ab5740d835ecc02125c6c0c9ab5740d835ecc02125c6c0c9ab3740d835ecc02125c6c0c9ab3740d835ecc0275ecec0c9ab37408aeff9c0275ecec0c9ab37408aeff9c0275ecec0c9ab57408aeff9c0275ecec0c9ab57408aeff9c008d6cdc0c9ab5740459ae6c008d6cdc0c9ab5740459ae6c008d6cdc0c9ab3740459ae6c008d6cdc0c9ab3740459ae6c0da6dd8c0c9ab37400198f2c0da6dd8c0c9ab37400198f2c0da6dd8c0c9ab57400198f2c0da6dd8c0c9ab57400198f2c083fcd3c0c9ab57401c11e0c083fcd3c0c9ab57401c11e0c083fcd3c0c9ab37401c11e0c083fcd3c0c9ab37401c11e0c0159be0c0c9ab37402ce7e9c0159be0c0c9ab37402ce7e9c0159be0c0c9ab57402ce7e9c0159be0c0c9ab57402ce7e9c0e7bbd8c0c9ab57400db2d8c0e7bbd8c0c9ab57400db2d8c0e7bbd8c0c9ab37400db2d8c0e7bbd8c0c9ab37400db2d8c0d3e5e6c0c9ab37404923e0c0d3e5e6c0c9ab37404923e0c0d3e5e6c0c9ab57404923e0c0d3e5e6c0c9ab57404923e0c07629dcc0c9ab57407093d0c07629dcc0c9ab57407093d0c07629dcc0c9ab37407093d0c07629dcc0c9ab37407093d0c0285cebc0c9ab3740f093d5c0285cebc0c9ab3740f093d5c0285cebc0c9ab5740f093d5c0285cebc0c9ab5740f093d5c0ac4fdec0c9ab57405ed2c7c0ac4fdec0c9ab57405ed2c7c0ac4fdec0c9ab37405ed2c7c0ac4fdec0c9ab37405ed2c7c0e616eec0c9ab3740f479cac0e616eec0c9ab3740f479cac0e616eec0c9ab5740f479cac0e616eec0c9ab5740f479cac0d634dfc0c9ab5740ff94bec0d634dfc0c9ab5740ff94bec0d634dfc0c9ab3740ff94bec0d634dfc0c9ab3740ff94bec01433efc0c9ab37401b0dbfc01433efc0c9ab37401b0dbfc01433efc0c9ab57401b0dbfc01433efc0c9ab57401b0dbfc002e0dec0c9ab57409308b5c002e0dec0c9ab57409308b5c002e0dec0c9ab37409308b5c002e0dec0c9ab37409308b5c0f8cceec0c9ab3740137eb3c0f8cceec0c9ab3740137eb3c0f8cceec0c9ab5740137eb3c0f8cceec0c9ab5740137eb3c02c5bddc0c9ab5740745eabc02c5bddc0c9ab5740745eabc02c5bddc0c9ab3740745eabc02c5bddc0c9ab3740745eabc0ecfdecc0c9ab374070f9a7c0ecfdecc0c9ab374070f9a7c0ecfdecc0c9ab574070f9a7c0ecfdecc0c9ab574070f9a7c09eb3dac0c9ab5740b1c9a1c09eb3dac0c9ab5740b1c9a1c09eb3dac0c9ab3740b1c9a1c09eb3dac0c9ab3740b1c9a1c0f0dbe9c0c9ab374011aa9cc0f0dbe9c0c9ab374011aa9cc0f0dbe9c0c9ab574011aa9cc0f0dbe9c0c9ab574011aa9cc0b7f9d6c0c9ab5740917d98c0b7f9d6c0c9ab5740917d98c0b7f9d6c0c9ab3740917d98c0b7f9d6c0c9ab3740917d98c0ff79e5c0c9ab37409dba91c0ff79e5c0c9ab37409dba91c0ff79e5c0c9ab57409dba91c0ff79e5c0c9ab57409dba91c06c40d2c0c9ab5740abac8fc06c40d2c0c9ab5740abac8fc06c40d2c0c9ab3740abac8fc06c40d2c0c9ab3740abac8fc072e8dfc0c9ab3740695687c072e8dfc0c9ab3740695687c072e8dfc0c9ab5740695687c072e8dfc0c9ab5740695687c0f89cccc0c9ab5740278887c0f89cccc0c9ab5740278887c0f89cccc0c9ab3740278887c0f89cccc0c9ab3740278887c06635d9c0c9ab37407a547bc06635d9c0c9ab37407a547bc06635d9c0c9ab57407a547bc06635d9c0c9ab57407a547bc05d26c6c0c9ab5740ed3e80c05d26c6c0c9ab5740ed3e80c05d26c6c0c9ab3740ed3e80c05d26c6c0c9ab3740ed3e80c0276dd1c0c9ab374040ca69c0276dd1c0c9ab374040ca69c0276dd1c0c9ab574040ca69c0276dd1c0c9ab574040ca69c092f4bec0c9ab57400ef973c092f4bec0c9ab57400ef973c092f4bec0c9ab37400ef973c092f4bec0c9ab37400ef973c0149bc8c0c9ab3740e6725ac0149bc8c0c9ab3740e6725ac0149bc8c0c9ab5740e6725ac0149bc8c0c9ab5740e6725ac0a31eb7c0c9ab574018d069c0a31eb7c0c9ab574018d069c0a31eb7c0c9ab374018d069c0a31eb7c0c9ab374018d069c071cbbec0c9ab37401ebc4dc071cbbec0c9ab37401ebc4dc071cbbec0c9ab57401ebc4dc071cbbec0c9ab57401ebc4dc08bb7aec0c9ab5740804762c08bb7aec0c9ab5740804762c08bb7aec0c9ab3740804762c08bb7aec0c9ab3740804762c0990eb4c0c9ab37403a1d44c0990eb4c0c9ab37403a1d44c0990eb4c0c9ab57403a1d44c0990eb4c0c9ab57403a1d44c036caa5c0c9ab5740049e5dc036caa5c0c9ab5740049e5dc036caa5c0c9ab3740049e5dc036caa5c0c9ab3740049e5dc0ee7ca8c0c9ab374056133ec0ee7ca8c0c9ab374056133ec0ee7ca8c0c9ab574056133ec0ee7ca8c0c9ab574056133ec028579cc0c9ab5740df165cc028579cc0c9ab5740df165cc028579cc0c9ab3740df165cc028579cc0c9ab3740df165cc046399cc0c9ab374017173cc046399cc0c9ab374017173cc046399cc0c9ab574017173cc046399cc0c9ab574017173cc0145792c0c9ab5740e8065ec0145792c0c9ab5740e8065ec0145792c0c9ab3740e8065ec0145792c0c9ab3740e8065ec0386e8fc0c9ab37407e8f3ec0386e8fc0c9ab37407e8f3ec0386e8fc0c9ab57407e8f3ec0386e8fc0c9ab57407e8f3ec0
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: -5.978595, y: 3.11986, z: -5.5617666}
+    m_Extent: {x: 1.4963903, y: 0.25, z: 2.622857}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &1125224664
 GameObject:
   m_ObjectHideFlags: 0
@@ -5312,7 +4028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1125224665
 Transform:
   m_ObjectHideFlags: 0
@@ -5393,51 +4109,99 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125224664}
   m_Mesh: {fileID: -8116138440861595531, guid: aa9c9613f608928498e1a69732ebdb1a, type: 3}
---- !u!1 &1168342733
-GameObject:
+--- !u!1001 &1150047905
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1168342734}
-  - component: {fileID: 1168342735}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1168342734
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5525415704695432618}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2216
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 299
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 695
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 59.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.49991274
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.49991274
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+      propertyPath: m_Name
+      value: bench (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+--- !u!4 &1150047906 stripped
 Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0bec87aa7b9bc1141b90f6eb1945fc1f, type: 3}
+  m_PrefabInstance: {fileID: 1150047905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1151852346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: b37364128041e004a8771acd173aea0c, type: 3}
+  m_PrefabInstance: {fileID: 803775989}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1151852350
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168342733}
-  m_LocalRotation: {x: -0, y: 0.33502558, z: -0, w: 0.94220906}
-  m_LocalPosition: {x: -1.0814308, y: 1.4, z: 0.825185}
-  m_LocalScale: {x: 1.1000001, y: 1.1, z: 1.1000001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 40
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1168342735
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168342733}
+  m_GameObject: {fileID: 1151852346}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: b37364128041e004a8771acd173aea0c, type: 3}
 --- !u!1 &1177357284
 GameObject:
   m_ObjectHideFlags: 0
@@ -5679,103 +4443,13 @@ RectTransform:
   - {fileID: 699454146}
   - {fileID: 103241087}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 647.6667, y: 364.5}
   m_SizeDelta: {x: 1295.3334, y: 729}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1228720701
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1228720702}
-  - component: {fileID: 1228720703}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1228720702
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228720701}
-  m_LocalRotation: {x: -0, y: -0.6330084, z: -0, w: 0.77414495}
-  m_LocalPosition: {x: 0.24461654, y: 1.4, z: -4.0379825}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1228720703
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228720701}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1255995203
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1255995204}
-  - component: {fileID: 1255995205}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1255995204
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255995203}
-  m_LocalRotation: {x: -0, y: -0.4197112, z: -0, w: 0.90765774}
-  m_LocalPosition: {x: -1.0906706, y: 1.4, z: -3.4254367}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1255995205
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255995203}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1282201564
 GameObject:
   m_ObjectHideFlags: 0
@@ -5891,51 +4565,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &1321759458
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1321759459}
-  - component: {fileID: 1321759460}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1321759459
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321759458}
-  m_LocalRotation: {x: -0, y: -0.50027853, z: -0, w: 0.8658645}
-  m_LocalPosition: {x: -0.72077996, y: 1.4, z: -3.685079}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1321759460
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321759458}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1323165949
 GameObject:
   m_ObjectHideFlags: 0
@@ -6105,12 +4734,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357809358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -500, y: 0, z: -500}
+  m_LocalPosition: {x: -500, y: 0, z: -504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1376900319
 GameObject:
@@ -6210,322 +4839,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376900319}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1388117131
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1388117132}
-  - component: {fileID: 1388117133}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1388117132
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388117131}
-  m_LocalRotation: {x: -0, y: 0.39305294, z: -0, w: 0.9195159}
-  m_LocalPosition: {x: -0.78461, y: 1.4, z: 1.1471106}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1388117133
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388117131}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1482833372
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1482833373}
-  - component: {fileID: 1482833374}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1482833373
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482833372}
-  m_LocalRotation: {x: -0, y: 0.76655215, z: -0, w: 0.6421822}
-  m_LocalPosition: {x: 1.67, y: 1.4, z: 1.926}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 47
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1482833374
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482833372}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1506261188
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1506261189}
-  - component: {fileID: 1506261190}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1506261189
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506261188}
-  m_LocalRotation: {x: 0.01461066, y: 0.8050399, z: -0.019844761, w: 0.5927087}
-  m_LocalPosition: {x: 1.9392611, y: 1.3844858, z: 1.8632948}
-  m_LocalScale: {x: 1.1000003, y: 1.1000003, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 49
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1506261190
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506261188}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1511626145
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1511626146}
-  - component: {fileID: 1511626147}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1511626146
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511626145}
-  m_LocalRotation: {x: -0, y: -0.015238109, z: -0, w: 0.9998839}
-  m_LocalPosition: {x: -1.9270477, y: 1.4, z: -1.5895818}
-  m_LocalScale: {x: 1.0999999, y: 1.1, z: 1.0999999}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1511626147
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511626145}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1518276504
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1518276505}
-  - component: {fileID: 1518276506}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1518276505
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518276504}
-  m_LocalRotation: {x: 0.0027405706, y: 0.91074115, z: -0.00604457, w: 0.41292438}
-  m_LocalPosition: {x: 3.0319874, y: 1.3480726, z: 1.2161694}
-  m_LocalScale: {x: 1.1000003, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 53
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1518276506
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518276504}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1535087065
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1535087066}
-  - component: {fileID: 1535087067}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1535087066
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535087065}
-  m_LocalRotation: {x: -0, y: -0.50027853, z: -0, w: 0.8658645}
-  m_LocalPosition: {x: -0.72077996, y: 1.4, z: -3.685079}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 28
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1535087067
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535087065}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1536024046
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1536024047}
-  - component: {fileID: 1536024048}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1536024047
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536024046}
-  m_LocalRotation: {x: -0, y: 0.64713097, z: -0, w: 0.7623789}
-  m_LocalPosition: {x: 0.7426425, y: 1.4, z: 1.9349695}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1536024048
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536024046}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!43 &1539398126
+--- !u!43 &1442685939
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6542,8 +4856,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 192
     localAABB:
-      m_Center: {x: -0.2315653, y: 1.15, z: -1.0747503}
-      m_Extent: {x: 1.9453664, y: 0.25, z: 3.2949343}
+      m_Center: {x: -3.5510178, y: 3.0982265, z: -5.573203}
+      m_Extent: {x: 1.1514624, y: 0.27163327, z: 2.6018105}
   m_Shapes:
     vertices: []
     shapes: []
@@ -6622,7 +4936,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 2304
-    _typelessdata: c03bc23f3333b33f3eb377c0c03bc23f3333b33f3eb377c0c03bc23f6666663f3eb377c0c03bc23f6666663f3eb377c05472c53f6666663f75d48bc05472c53f6666663f75d48bc05472c53f3333b33f75d48bc05472c53f3333b33f75d48bc040be5c3f3333b33f107e77c040be5c3f3333b33f107e77c040be5c3f6666663f107e77c040be5c3f6666663f107e77c0ee57543f6666663f34b68bc0ee57543f6666663f34b68bc0ee57543f3333b33f34b68bc0ee57543f3333b33f34b68bc020aa963e3333b33fe5bf72c020aa963e3333b33fe5bf72c020aa963e6666663fe5bf72c020aa963e6666663fe5bf72c044a5473e6666663f5b0e89c044a5473e6666663f5b0e89c044a5473e3333b33f5b0e89c044a5473e3333b33f5b0e89c004c642be3333b33f6d0e6ac004c642be3333b33f6d0e6ac004c642be6666663f6d0e6ac004c642be6666663f6d0e6ac030e5b9be6666663f9f0a84c030e5b9be6666663f9f0a84c030e5b9be3333b33f9f0a84c030e5b9be3333b33f9f0a84c02a8e18bf3333b33fc8fb5dc02a8e18bf3333b33fc8fb5dc02a8e18bf6666663fc8fb5dc02a8e18bf6666663fc8fb5dc0e87b58bf6666663fe4b479c0e87b58bf6666663fe4b479c0e87b58bf3333b33fe4b479c0e87b58bf3333b33fe4b479c084c26dbf3333b33f94094fc084c26dbf3333b33f94094fc084c26dbf6666663f94094fc084c26dbf6666663f94094fc0ee54a0bf6666663f226b67c0ee54a0bf6666663f226b67c0ee54a0bf3333b33f226b67c0ee54a0bf3333b33f226b67c043f398bf3333b33f4e9e3dc043f398bf3333b33f4e9e3dc043f398bf6666663f4e9e3dc043f398bf6666663f4e9e3dc0abaecabf6666663f88c251c0abaecabf6666663f88c251c0abaecabf3333b33f88c251c0abaecabf3333b33f88c251c0672cb3bf3333b33f08082ac0672cb3bf3333b33f08082ac0672cb3bf6666663f08082ac0672cb3bf6666663f08082ac04358ebbf6666663f125e39c04358ebbf6666663f125e39c04358ebbf3333b33f125e39c04358ebbf3333b33f125e39c03a06c6bf3333b33f448d14c03a06c6bf3333b33f448d14c03a06c6bf6666663f448d14c03a06c6bf6666663f448d14c04b4a01c06666663f52e81ec04b4a01c06666663f52e81ec04b4a01c03333b33f52e81ec04b4a01c03333b33f52e81ec0cfcad1bf3333b33f6ffdfabfcfcad1bf3333b33f6ffdfabfcfcad1bf6666663f6ffdfabfcfcad1bf6666663f6ffdfabffe6a08c06666663f9c0103c0fe6a08c06666663f9c0103c0fe6a08c03333b33f9c0103c0fe6a08c03333b33f9c0103c04eadd6bf3333b33fc97dcabf4eadd6bf3333b33fc97dcabf4eadd6bf6666663fc97dcabf4eadd6bf6666663fc97dcabfd9520bc06666663f0d71ccbfd9520bc06666663f0d71ccbfd9520bc03333b33f0d71ccbfd9520bc03333b33f0d71ccbf0be0d4bf3333b33f817f98bf0be0d4bf3333b33f817f98bf0be0d4bf6666663f817f98bf0be0d4bf6666663f817f98bfea460ac06666663f431892bfea460ac06666663f431892bfea460ac03333b33f431892bfea460ac03333b33f431892bfc59fccbf3333b33f7af34bbfc59fccbf3333b33f7af34bbfc59fccbf6666663f7af34bbfc59fccbf6666663f7af34bbf078705c06666663fcec72fbf078705c06666663fcec72fbf078705c03333b33fcec72fbf078705c03333b33fcec72fbf9b36bebf3333b33ffab0cfbe9b36bebf3333b33ffab0cfbe9b36bebf6666663ffab0cfbe9b36bebf6666663ffab0cfbea798fabf6666663f6bb275bea798fabf6666663f6bb275bea798fabf3333b33f6bb275bea798fabf3333b33f6bb275be2efba9bf3333b33fd820d6bc2efba9bf3333b33fd820d6bc2efba9bf6666663fd820d6bc2efba9bf6666663fd820d6bc6e93e3bf6666663f377f443e6e93e3bf6666663f377f443e6e93e3bf3333b33f377f443e6e93e3bf3333b33f377f443ebf4e90bf3333b33f4a0aab3ebf4e90bf3333b33f4a0aab3ebf4e90bf6666663f4a0aab3ebf4e90bf6666663f4a0aab3e8359c6bf6666663f05171a3f8359c6bf6666663f05171a3f8359c6bf3333b33f05171a3f8359c6bf3333b33f05171a3f993663bf3333b33fa4d72a3f993663bf3333b33fa4d72a3f993663bf6666663fa4d72a3f993663bf6666663fa4d72a3f593da3bf6666663f02a77b3f593da3bf6666663f02a77b3f593da3bf3333b33f02a77b3f593da3bf3333b33f02a77b3f8ca21cbf3333b33f1466773f8ca21cbf3333b33f1466773f8ca21cbf6666663f1466773f8ca21cbf6666663f1466773fda1575bf6666663f00f6a93fda1575bf6666663f00f6a93fda1575bf3333b33f00f6a93fda1575bf3333b33f00f6a93fbe8e9bbe3333b33f9ab49c3fbe8e9bbe3333b33f9ab49c3fbe8e9bbe6666663f9ab49c3fbe8e9bbe6666663f9ab49c3f411719bf6666663f8274d03f411719bf6666663f8274d03f411719bf3333b33f8274d03f411719bf3333b33f8274d03f96d9073d3333b33fb89cb73f96d9073d3333b33fb89cb73f96d9073d6666663fb89cb73f96d9073d6666663fb89cb73fb2694cbe6666663fae40f03fb2694cbe6666663fae40f03fb2694cbe3333b33fae40f03fb2694cbe3333b33fae40f03fbadbca3e3333b33f96a7cb3fbadbca3e3333b33f96a7cb3fbadbca3e6666663f96a7cb3fbadbca3e6666663f96a7cb3f4599703e6666663f1a1e04404599703e6666663f1a1e04404599703e3333b33f1a1e04404599703e3333b33f1a1e04404a83483f3333b33fe419d83f4a83483f3333b33fe419d83f4a83483f6666663fe419d83f4a83483f6666663fe419d83f5ab8333f6666663f23a00b405ab8333f6666663f23a00b405ab8333f3333b33f23a00b405ab8333f3333b33f23a00b40a3be983f3333b33f642fdc3fa3be983f3333b33f642fdc3fa3be983f6666663f642fdc3fa3be983f6666663f642fdc3fa931993f6666663f7f170e40a931993f6666663f7f170e40a931993f3333b33f7f170e40a931993f3333b33f7f170e404927d03f3333b33fe105d73f4927d03f3333b33fe105d73f4927d03f6666663fe105d73f4927d03f6666663fe105d73fd55ddb3f6666663f3a040b40d55ddb3f6666663f3a040b40d55ddb3f3333b33f3a040b40d55ddb3f3333b33f3a040b40
+    _typelessdata: d02592c0c9ab5740e2175ec0d02592c0c9ab5740e2175ec0302a93c0c7bc3740acc45dc0302a93c0c7bc3740acc45dc0dca390c0c7bc37404d2b3ec0dca390c0c7bc37404d2b3ec07c9f8fc0c9ab5740847e3ec07c9f8fc0c9ab5740847e3ec0ae218dc02ced56409b9860c0ae218dc02ced56409b9860c044e68dc0abf73640341560c044e68dc0abf73640341560c0eed388c0abf73640a2bb41c0eed388c0abf73640a2bb41c0580f88c02ced5640093f42c0580f88c02ced5640093f42c02ecd87c06e505640460965c02ecd87c06e505640460965c03b5b88c092563640527c64c03b5b88c092563640527c64c0cb3e81c092563640ded147c0cb3e81c092563640ded147c0beb080c06e505640d25e48c0beb080c06e505640d25e48c01a4d82c032d35540285c6bc01a4d82c032d35540285c6bc0b2af82c095d635406edb6ac0b2af82c095d635406edb6ac05ce173c095d63540b00f50c05ce173c095d63540b00f50c02b1c73c032d355406a9050c02b1c73c032d355406a9050c0378c79c01a7355400c7273c0378c79c01a7355400c7273c0640e7ac0d1743540760873c0640e7ac0d1743540760873c0f2e565c0d17435402e2e5ac0f2e565c0d17435402e2e5ac0c56365c01a735540c4975ac0c56365c01a735540c4975ac07fb46ec0c92d5540a7217dc07fb46ec0c92d5540a7217dc0de036fc08a2e3540f9d37cc0de036fc08a2e3540f9d37cc0ffa158c08a2e354047f565c0ffa158c08a2e354047f565c09f5258c0c92d5540f54266c09f5258c0c92d5540f54266c07a5164c0e4005540261e84c07a5164c0e4005540261e84c0e57a64c023013540040684c0e57a64c023013540040684c01b324cc023013540333573c01b324cc023013540333573c0b0084cc0e4005540776573c0b0084cc0e4005540776573c0db9c5ac00cea544032488ac0db9c5ac00cea544032488ac092aa5ac015ea3440b33e8ac092aa5ac015ea3440b33e8ac05db840c015ea34404ee180c05db840c015ea34404ee180c0a7aa40c00cea5440ceea80c0a7aa40c00cea5440ceea80c080cc51c0e6e654405ff590c080cc51c0e6e654405ff590c0ebc651c0e8e6344004fa90c0ebc651c0e8e6344004fa90c07c5b36c0e8e634405bba88c07c5b36c0e8e634405bba88c0126136c0e6e65440b7b588c0126136c0e6e65440b7b588c0f5124ac014f554407d0b98c0f5124ac014f554407d0b98c044014ac02df53440871d98c044014ac02df53440871d98c015462dc02df534400c1291c015462dc02df534400c1291c0c5572dc014f55440030091c0c5572dc014f55440030091c0989f43c03812554000709fc0989f43c03812554000709fc0408843c07a123540788e9fc0408843c07a123540788e9fc070a625c07a12354019d599c070a625c07a12354019d599c0c8bd25c038125540a2b699c0c8bd25c038125540a2b699c0619e3ec0f73b55403c08a7c0619e3ec0f73b55403c08a7c066873ec06c3c3540e031a7c066873ec06c3c3540e031a7c090ae1fc06c3c354049f0a2c090ae1fc06c3c354049f0a2c08bc51fc0f73b5540a6c6a2c08bc51fc0f73b5540a6c6a2c05c373bc0f36f5540deb9aec05c373bc0f36f5540deb9aec06f263bc09b703540fbecaec06f263bc09b703540fbecaec079941bc09b703540e14facc079941bc09b703540e14facc066a51bc0f36f5540c41cacc066a51bc0f36f5540c41cacc04a8e39c0d0ab5540cf6bb6c04a8e39c0d0ab5540cf6bb6c09c8839c0a5ac354011a6b6c09c8839c0a5ac354011a6b6c0519219c0a5ac3540badeb5c0519219c0a5ac3540badeb5c0fe9719c0d0ab554079a4b5c0fe9719c0d0ab554079a4b5c001c339c030ed55409807bec001c339c030ed55409807bec0bccc39c024ee3540e345bec0bccc39c024ee3540e345bec09fe519c024ee3540e884bfc09fe519c024ee3540e884bfc0e3db19c030ed55409e46bfc0e3db19c030ed55409e46bfc098f33bc0b6315640197bc5c098f33bc0b6315640197bc5c0f60e3cc0b63236408fb9c5c0f60e3cc0b63236408fb9c5c0c5cc1cc0b63236402c26c9c0c5cc1cc0b63236402c26c9c066b11cc0b6315640b7e7c8c066b11cc0b6315640b7e7c8c0214140c006775640c4b9ccc0214140c006775640c4b9ccc06c6d40c0fa77364024f4ccc06c6d40c0fa77364024f4ccc0228222c0fa77364015a1d2c0228222c0fa77364015a1d2c0d75522c006775640b666d2c0d75522c006775640b666d2c048d646c0c4ba564009bcd3c048d646c0c4ba564009bcd3c0570f47c096bb364071eed3c0570f47c096bb364071eed3c0fe352bc096bb3640f3cfdbc0fe352bc096bb3640f3cfdbc0f0fc2ac0c4ba56408b9ddbc0f0fc2ac0c4ba56408b9ddbc054ec4fc090fa56401b7cdac054ec4fc090fa56401b7cdac0242b50c031fb3640eea3dac0242b50c031fb3640eea3dac09e0a37c031fb36403e8ce4c09e0a37c031fb36403e8ce4c0cecb36c090fa56406b64e4c0cecb36c090fa56406b64e4c084ca5bc0103457400ef1e0c084ca5bc0103457400ef1e0c0f0065cc07c343740840de1c0f0065cc07c343740840de1c00b1646c07c34374019b3ecc00b1646c07c34374019b3ecc09ed945c010345740a496ecc09ed945c010345740a496ecc010bf6ac0e6645740300be7c010bf6ac0e6645740300be7c0cef16ac022653740371de7c0cef16ac022653740371de7c0476958c0226537405028f4c0476958c0226537405028f4c0883658c0e66457404a16f4c0883658c0e66457404a16f4c046167dc0b48a574091b3ecc046167dc0b48a574091b3ecc0303a7dc0ce8a374034bdecc0303a7dc0ce8a374034bdecc093186ec0ce8a37405cd6fac093186ec0ce8a37405cd6fac0a8f46dc0b48a5740b9ccfac0a8f46dc0b48a5740b9ccfac04e8a89c01fa3574025cef1c04e8a89c01fa3574025cef1c07a9389c025a33740d2d1f1c07a9389c025a33740d2d1f1c020a083c025a33740015600c120a083c025a33740015600c1f49683c01fa357402a5400c1f49683c01fa357402a5400c1b87a96c0c9ab5740bb3cf6c0b87a96c0c9ab5740bb3cf6c0b87a96c0c9ab3740bb3cf6c0b87a96c0c9ab3740bb3cf6c0aa0292c0c9ab3740dbcc02c1aa0292c0c9ab3740dbcc02c1aa0292c0c9ab5740dbcc02c1aa0292c0c9ab5740dbcc02c1
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -6676,8 +4990,8 @@ Mesh:
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
-    m_Center: {x: -0.2315653, y: 1.15, z: -1.0747503}
-    m_Extent: {x: 1.9453664, y: 0.25, z: 3.2949343}
+    m_Center: {x: -3.5510178, y: 3.0982265, z: -5.573203}
+    m_Extent: {x: 1.1514624, y: 0.27163327, z: 2.6018105}
   m_MeshUsageFlags: 0
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
@@ -6689,51 +5003,25 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1544227099
+--- !u!1 &1530868219 stripped
 GameObject:
+  m_CorrespondingSourceObject: {fileID: -6733177361254619370, guid: b37364128041e004a8771acd173aea0c, type: 3}
+  m_PrefabInstance: {fileID: 803775989}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1530868223
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1544227100}
-  - component: {fileID: 1544227101}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1544227100
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544227099}
-  m_LocalRotation: {x: 0.020621596, y: 0.757597, z: -0.023963042, w: 0.6519565}
-  m_LocalPosition: {x: 1.67, y: 1.4, z: 1.926}
-  m_LocalScale: {x: 1.1, y: 1.1000003, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 48
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1544227101
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544227099}
+  m_GameObject: {fileID: 1530868219}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8691780276856062721, guid: b37364128041e004a8771acd173aea0c, type: 3}
 --- !u!1 &1560672609
 GameObject:
   m_ObjectHideFlags: 0
@@ -6759,14 +5047,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560672609}
-  m_LocalRotation: {x: -0, y: -0.19841811, z: -0, w: 0.9801175}
-  m_LocalPosition: {x: -10.857483, y: -2.82, z: 7.9908323}
-  m_LocalScale: {x: 3.6200004, y: 3.736124, z: 2.22}
+  m_LocalRotation: {x: -0, y: 0.4255366, z: -0, w: 0.9049413}
+  m_LocalPosition: {x: 2.27, y: -2.82, z: -2.04}
+  m_LocalScale: {x: 10.51, y: 3.736124, z: 2.22}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 748854977}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -22.889, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 50.369, z: 0}
 --- !u!65 &1560672611
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6794,6 +5082,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneIndex: 2
   levelTransition: {fileID: 0}
+--- !u!1 &1574640394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8416272007918961125, guid: b37364128041e004a8771acd173aea0c, type: 3}
+  m_PrefabInstance: {fileID: 803775989}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1574640398
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574640394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1550514412580984892, guid: b37364128041e004a8771acd173aea0c, type: 3}
 --- !u!1 &1578121113
 GameObject:
   m_ObjectHideFlags: 0
@@ -6895,96 +5202,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1581716314
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1581716315}
-  - component: {fileID: 1581716316}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1581716315
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1581716314}
-  m_LocalRotation: {x: -0, y: 0.05008865, z: -0, w: 0.9987448}
-  m_LocalPosition: {x: -1.9118328, y: 1.4, z: -1.1663783}
-  m_LocalScale: {x: 1.1000001, y: 1.1, z: 1.1000001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 35
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1581716316
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1581716314}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1602559834
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1602559835}
-  - component: {fileID: 1602559836}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1602559835
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602559834}
-  m_LocalRotation: {x: -0, y: -0.086437635, z: -0, w: 0.9962573}
-  m_LocalPosition: {x: -1.885266, y: 1.4, z: -2.0039163}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 33
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1602559836
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602559834}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1606103240
 GameObject:
   m_ObjectHideFlags: 0
@@ -7002,7 +5219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1606103241
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7120,51 +5337,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606103240}
   m_CullTransparentMesh: 1
---- !u!1 &1631705189
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1631705190}
-  - component: {fileID: 1631705191}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1631705190
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631705189}
-  m_LocalRotation: {x: 0.0014325726, y: 0.9271308, z: -0.0035444815, w: 0.37471834}
-  m_LocalPosition: {x: 3.286923, y: 1.3444185, z: 0.97317314}
-  m_LocalScale: {x: 1.1000001, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 54
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1631705191
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631705189}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &1638597210
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7216,276 +5388,6 @@ Transform:
   m_Father: {fileID: 845511918}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1658072865
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1658072866}
-  - component: {fileID: 1658072867}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1658072866
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658072865}
-  m_LocalRotation: {x: -0, y: -0.33386877, z: -0, w: 0.94261956}
-  m_LocalPosition: {x: -1.3891896, y: 1.4, z: -3.1201427}
-  m_LocalScale: {x: 1.0999999, y: 1.1, z: 1.0999999}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 30
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1658072867
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658072865}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1673362425
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1673362426}
-  - component: {fileID: 1673362427}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1673362426
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673362425}
-  m_LocalRotation: {x: 0.001757172, y: 0.8757774, z: 0.0031880818, w: -0.48270142}
-  m_LocalPosition: {x: 3.1415381, y: 1.3942302, z: -3.4642224}
-  m_LocalScale: {x: 1.1, y: 1.0999998, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 68
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1673362427
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673362425}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1693928118
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1693928119}
-  - component: {fileID: 1693928120}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1693928119
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693928118}
-  m_LocalRotation: {x: -0, y: -0.68351203, z: -0, w: 0.7299393}
-  m_LocalPosition: {x: 0.84587234, y: 1.4, z: -4.1165304}
-  m_LocalScale: {x: 1.1000001, y: 1.1, z: 1.1000001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1693928120
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693928118}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1728623589
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1728623590}
-  - component: {fileID: 1728623591}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1728623590
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728623589}
-  m_LocalRotation: {x: -0, y: 0.1681008, z: -0, w: 0.9857698}
-  m_LocalPosition: {x: -1.7219125, y: 1.4, z: -0.32279277}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 37
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1728623591
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728623589}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1735081765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1735081766}
-  - component: {fileID: 1735081767}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1735081766
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735081765}
-  m_LocalRotation: {x: -0, y: 0.45366547, z: -0, w: 0.8911721}
-  m_LocalPosition: {x: -0.45091724, y: 1.4, z: 1.4264085}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1735081767
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735081765}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1741045459
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1741045460}
-  - component: {fileID: 1741045461}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1741045460
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741045459}
-  m_LocalRotation: {x: -0.0006485122, y: -0.81646776, z: -0.00091703946, w: 0.57738996}
-  m_LocalPosition: {x: 2.1527994, y: 1.3992949, z: -3.9320323}
-  m_LocalScale: {x: 1.1000003, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 70
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1741045461
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741045459}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1743261073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7535,7 +5437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920282442185074558, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00027381323
+      value: -0.00027381317
       objectReference: {fileID: 0}
     - target: {fileID: 1920282442185074558, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -7543,7 +5445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920282442185074558, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0022877355
+      value: -0.002287735
       objectReference: {fileID: 0}
     - target: {fileID: 1920282442185074559, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_Lens.FieldOfView
@@ -7635,11 +5537,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920282442521438966, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.11881341
+      value: -0.1188134
       objectReference: {fileID: 0}
     - target: {fileID: 1920282442521438966, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0024828147
+      value: 0.0024828145
       objectReference: {fileID: 0}
     - target: {fileID: 1920282442521438966, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -7667,7 +5569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920282442753782450, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0041726194
+      value: 0.0041726185
       objectReference: {fileID: 0}
     - target: {fileID: 1920282442753782450, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -7675,7 +5577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920282442753782450, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.06644806
+      value: -0.066448055
       objectReference: {fileID: 0}
     - target: {fileID: 1920282442753782451, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
@@ -7767,7 +5669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920282443051943265, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0030422618
+      value: -0.0030422602
       objectReference: {fileID: 0}
     - target: {fileID: 1920282443051943265, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -7775,7 +5677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920282443051943265, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.025418386
+      value: -0.025418367
       objectReference: {fileID: 0}
     - target: {fileID: 1920282443051943270, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_Lens.FieldOfView
@@ -7803,11 +5705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920282443271008675, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.062612645
+      value: 0.062612675
       objectReference: {fileID: 0}
     - target: {fileID: 1920282443271008675, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0027210056
+      value: 0.0027210077
       objectReference: {fileID: 0}
     - target: {fileID: 1920282443271008675, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -7815,7 +5717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1920282443271008675, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.04333144
+      value: -0.043331444
       objectReference: {fileID: 0}
     - target: {fileID: 1920282443545535744, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_Follow
@@ -7863,7 +5765,7 @@ PrefabInstance:
       objectReference: {fileID: 1743261074}
     - target: {fileID: 1920282443545535745, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1920282443545535745, guid: e447eb43d8a54a14585c74103248b91c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7933,96 +5835,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 319d2fe34a804e245819465c9505ea59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1757063806
+--- !u!1 &1772787934 stripped
 GameObject:
+  m_CorrespondingSourceObject: {fileID: 8513859187771203891, guid: b37364128041e004a8771acd173aea0c, type: 3}
+  m_PrefabInstance: {fileID: 803775989}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1772787938
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1757063807}
-  - component: {fileID: 1757063808}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1757063807
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757063806}
-  m_LocalRotation: {x: -0, y: -0.6330084, z: -0, w: 0.77414495}
-  m_LocalPosition: {x: 0.24461654, y: 1.4, z: -4.0379825}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 26
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1757063808
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757063806}
+  m_GameObject: {fileID: 1772787934}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1764060072
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1764060073}
-  - component: {fileID: 1764060074}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1764060073
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764060072}
-  m_LocalRotation: {x: -0, y: -0.7246399, z: -0, w: 0.68912774}
-  m_LocalPosition: {x: 1.53, y: 1.4, z: -4.12}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1764060074
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764060072}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387706064836869012, guid: b37364128041e004a8771acd173aea0c, type: 3}
 --- !u!1 &1779074216
 GameObject:
   m_ObjectHideFlags: 0
@@ -8089,7 +5920,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1780368151
 GameObject:
@@ -8175,7 +6006,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1780368155
 MonoBehaviour:
@@ -8244,51 +6075,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!1 &1801463844
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1801463845}
-  - component: {fileID: 1801463846}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1801463845
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801463844}
-  m_LocalRotation: {x: 0.00216956, y: 0.9359776, z: 0.005768824, w: -0.3520058}
-  m_LocalPosition: {x: 3.817351, y: 1.3855757, z: -2.8977306}
-  m_LocalScale: {x: 1.1, y: 1.1000003, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 66
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1801463846
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801463844}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1818620824
 GameObject:
   m_ObjectHideFlags: 0
@@ -8430,148 +6216,13 @@ RectTransform:
   m_Children:
   - {fileID: 1578121117}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1880042471
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1880042472}
-  - component: {fileID: 1880042473}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1880042472
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880042471}
-  m_LocalRotation: {x: -0.00027496967, y: 0.9992798, z: 0.0073822727, w: 0.037220467}
-  m_LocalPosition: {x: 4.370585, y: 1.3583299, z: -1.2373089}
-  m_LocalScale: {x: 1.1000003, y: 1.1, z: 1.0999998}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 61
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1880042473
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880042471}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1917242561
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1917242562}
-  - component: {fileID: 1917242563}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1917242562
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917242561}
-  m_LocalRotation: {x: -0, y: -0.086437635, z: -0, w: 0.9962573}
-  m_LocalPosition: {x: -1.885266, y: 1.4, z: -2.0039163}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1917242563
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917242561}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1944280855
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1944280856}
-  - component: {fileID: 1944280857}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1944280856
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944280855}
-  m_LocalRotation: {x: 0.00027100174, y: 0.99938476, z: 0.007927242, w: -0.034165107}
-  m_LocalPosition: {x: 4.372068, y: 1.3636509, z: -1.5830117}
-  m_LocalScale: {x: 1.1000003, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 62
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1944280857
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944280855}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1945003970
 GameObject:
   m_ObjectHideFlags: 0
@@ -8590,7 +6241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1945003971
 Transform:
   m_ObjectHideFlags: 0
@@ -8787,7 +6438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1950468152
 Transform:
   m_ObjectHideFlags: 0
@@ -8868,321 +6519,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950468151}
   m_Mesh: {fileID: -8116138440861595531, guid: aa9c9613f608928498e1a69732ebdb1a, type: 3}
---- !u!1 &1952159110
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1952159111}
-  - component: {fileID: 1952159112}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1952159111
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952159110}
-  m_LocalRotation: {x: -0, y: 0.1681008, z: -0, w: 0.9857698}
-  m_LocalPosition: {x: -1.7219125, y: 1.4, z: -0.32279277}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1952159112
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952159110}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2006852657
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2006852658}
-  - component: {fileID: 2006852659}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2006852658
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006852657}
-  m_LocalRotation: {x: -0.0008548226, y: 0.98737454, z: 0.0053314627, w: 0.15831114}
-  m_LocalPosition: {x: 4.2304587, y: 1.3492266, z: -0.55048186}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 59
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2006852659
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006852657}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2018077331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2018077332}
-  - component: {fileID: 2018077333}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2018077332
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018077331}
-  m_LocalRotation: {x: -0, y: 0.45366547, z: -0, w: 0.8911721}
-  m_LocalPosition: {x: -0.45091724, y: 1.4, z: 1.4264085}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 42
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2018077333
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018077331}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2033435110
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2033435111}
-  - component: {fileID: 2033435112}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2033435111
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033435110}
-  m_LocalRotation: {x: -0, y: 0.5169251, z: -0, w: 0.8560307}
-  m_LocalPosition: {x: -0.08322773, y: 1.4, z: 1.655722}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 43
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2033435112
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033435110}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2034693473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2034693474}
-  - component: {fileID: 2034693475}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2034693474
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034693473}
-  m_LocalRotation: {x: -0, y: -0.16402924, z: -0, w: 0.9864555}
-  m_LocalPosition: {x: -1.7836123, y: 1.4, z: -2.402026}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 32
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2034693475
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034693473}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2070313983
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2070313984}
-  - component: {fileID: 2070313985}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2070313984
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070313983}
-  m_LocalRotation: {x: 0.010163803, y: 0.8410361, z: -0.01581076, w: 0.5406524}
-  m_LocalPosition: {x: 2.2145238, y: 1.3717284, z: 1.7573868}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 50
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2070313985
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070313983}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2072003501
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2072003502}
-  - component: {fileID: 2072003503}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2072003502
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072003501}
-  m_LocalRotation: {x: -0, y: 0.5169251, z: -0, w: 0.8560307}
-  m_LocalPosition: {x: -0.08322773, y: 1.4, z: 1.655722}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2072003503
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072003501}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2082629559
 GameObject:
   m_ObjectHideFlags: 0
@@ -9312,96 +6648,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7387706064836869012, guid: f4aa85d693e9045408322c7e98980468, type: 3}
---- !u!1 &2103925687
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2103925688}
-  - component: {fileID: 2103925689}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2103925688
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103925687}
-  m_LocalRotation: {x: -0, y: 0.76655215, z: -0, w: 0.6421822}
-  m_LocalPosition: {x: 1.67, y: 1.4, z: 1.926}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 23
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2103925689
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103925687}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2108693650
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2108693651}
-  - component: {fileID: 2108693652}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2108693651
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108693650}
-  m_LocalRotation: {x: -0, y: -0.015238109, z: -0, w: 0.9998839}
-  m_LocalPosition: {x: -1.9270477, y: 1.4, z: -1.5895818}
-  m_LocalScale: {x: 1.0999999, y: 1.1, z: 1.0999999}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 34
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2108693652
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108693650}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &2115815077
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9416,51 +6662,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8552134717624371188, guid: f4aa85d693e9045408322c7e98980468, type: 3}
---- !u!1 &2140859214
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2140859215}
-  - component: {fileID: 2140859216}
-  m_Layer: 0
-  m_Name: GrindrailNode(Clone)
-  m_TagString: GrindrailNode
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2140859215
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140859214}
-  m_LocalRotation: {x: -0, y: 0.27892002, z: -0, w: 0.9603144}
-  m_LocalPosition: {x: -1.3385049, y: 1.4, z: 0.4679883}
-  m_LocalScale: {x: 1.1000001, y: 1.1, z: 1.1000001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3372685519734757423}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2140859216
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140859214}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &109310094676585513
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9468,7 +6669,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813935078463930305}
-  m_Mesh: {fileID: 1539398126}
+  m_Mesh: {fileID: 993550075}
 --- !u!33 &215592837070545696
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9574,7 +6775,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 339325114}
+  m_Mesh: {fileID: 1442685939}
 --- !u!1 &813935078463930305
 GameObject:
   m_ObjectHideFlags: 0
@@ -9610,7 +6811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &1067066239356197349
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9689,7 +6890,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1539398126}
+  m_Mesh: {fileID: 993550075}
 --- !u!23 &1350815228647813658
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9832,7 +7033,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365420433315913203}
-  m_Mesh: {fileID: 339325114}
+  m_Mesh: {fileID: 1442685939}
 --- !u!33 &2050809774867906656
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9849,7 +7050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365420433315913203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.7076945, y: -3.093746, z: 6.06222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10129,79 +7330,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1764060073}
-  - {fileID: 1693928119}
-  - {fileID: 1228720702}
-  - {fileID: 123661406}
-  - {fileID: 1321759459}
-  - {fileID: 1255995204}
-  - {fileID: 238551682}
-  - {fileID: 404367551}
-  - {fileID: 1039609063}
-  - {fileID: 1917242562}
-  - {fileID: 1511626146}
-  - {fileID: 684827438}
-  - {fileID: 12187888}
-  - {fileID: 1952159111}
-  - {fileID: 1094082960}
-  - {fileID: 2140859215}
-  - {fileID: 117329176}
-  - {fileID: 1388117132}
-  - {fileID: 1735081766}
-  - {fileID: 2072003502}
-  - {fileID: 1014828407}
-  - {fileID: 1536024047}
-  - {fileID: 533755117}
-  - {fileID: 2103925688}
-  - {fileID: 1054780630}
-  - {fileID: 419960693}
-  - {fileID: 1757063807}
-  - {fileID: 726934803}
-  - {fileID: 1535087066}
-  - {fileID: 358384623}
-  - {fileID: 1658072866}
-  - {fileID: 528348369}
-  - {fileID: 2034693474}
-  - {fileID: 1602559835}
-  - {fileID: 2108693651}
-  - {fileID: 1581716315}
-  - {fileID: 964947168}
-  - {fileID: 1728623590}
-  - {fileID: 290865217}
-  - {fileID: 578333551}
-  - {fileID: 1168342734}
-  - {fileID: 1105652183}
-  - {fileID: 2018077332}
-  - {fileID: 2033435111}
-  - {fileID: 813074154}
-  - {fileID: 943729367}
-  - {fileID: 1015529357}
-  - {fileID: 1482833373}
-  - {fileID: 1544227100}
-  - {fileID: 1506261189}
-  - {fileID: 2070313984}
-  - {fileID: 344656892}
-  - {fileID: 802505605}
-  - {fileID: 1518276505}
-  - {fileID: 1631705190}
-  - {fileID: 426004542}
-  - {fileID: 526205004}
-  - {fileID: 389383692}
-  - {fileID: 510449203}
-  - {fileID: 2006852658}
-  - {fileID: 767861907}
-  - {fileID: 1880042472}
-  - {fileID: 1944280856}
-  - {fileID: 430466319}
-  - {fileID: 292130788}
-  - {fileID: 419646858}
-  - {fileID: 1801463845}
-  - {fileID: 1023850994}
-  - {fileID: 1673362426}
-  - {fileID: 861419833}
-  - {fileID: 1741045460}
-  - {fileID: 45849541}
+  m_Children: []
   m_Father: {fileID: 7308029881654728909}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10370,7 +7499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813935078463930305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.7076945, y: -3.093746, z: 6.06222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10525,8 +7654,11 @@ Transform:
   - {fileID: 1950468152}
   - {fileID: 424546585}
   - {fileID: 1945003971}
+  - {fileID: 730908544}
+  - {fileID: 190412599}
+  - {fileID: 1150047906}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &5636500078511548947
 MeshRenderer:
@@ -11065,8 +8197,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7308029881654728905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.7799997, y: 2.32, z: -4.5460587}
+  m_LocalScale: {x: 0.7499, y: 0.7499, z: 0.7499}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7308029882953647490}
@@ -11620,8 +8752,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8994261813611789051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.7799997, y: 2.32, z: -4.5460587}
+  m_LocalScale: {x: 0.7499, y: 0.7499, z: 0.7499}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8994261812848158640}
