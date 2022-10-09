@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     // Railgrind stuff
     // TODO: I reckon this should be somewhere else and this script should mostly be reserved for direct player movement
     [SerializeField] Vector3 railOffset = new(0, 1, 0);
+    [SerializeField] float boxCastSize = 0.5f;
     [SerializeField] float boxCastDistance = 3;
     [SerializeField] float railSpeed = 5;
     [SerializeField] float railLeaveBoost = 5;
@@ -511,7 +512,7 @@ public class PlayerController : MonoBehaviour
 
     void BoxCastForFloorObstacles() {
         RaycastHit boxHit;
-        if (Physics.BoxCast(transform.position - Vector3.up * cc.height/2, new(0.2f, 0.2f, 0.2f), Vector3.down, out boxHit, forwardDirection, boxCastDistance)) {
+        if (Physics.BoxCast(transform.position - Vector3.up * cc.height/2, new(boxCastSize, boxCastSize, boxCastSize), Vector3.down, out boxHit, forwardDirection, boxCastDistance)) {
             if (boxHit.transform.tag == "GrindrailNode") {
                 GrindRailController grindRailController = boxHit.collider.gameObject.GetComponentInParent<GrindRailController>();
                 if (grindRailController) StartCoroutine(RailGrindCoroutine(grindRailController));
@@ -521,6 +522,7 @@ public class PlayerController : MonoBehaviour
 
     // alpha - this is probs not how it'll work in the final game
     // hi me in six months finding this comment and facepalming :D
+    // me later: actually this is kinda valid i might keep it like this........
     IEnumerator RailGrindCoroutine(GrindRailController grindRail) {
         SetMovementMode(MovementMode.Grinding);
         velocity = Vector3.zero;
@@ -546,7 +548,7 @@ public class PlayerController : MonoBehaviour
                 t += Time.deltaTime * railSpeed;
                 // Allow jumps to cancel the whole Coroutine
                 if (GetJumpDown()) {
-                    velocity = Vector3.zero;    
+                    velocity = lastFrameVelocity = Vector3.zero;
                     HandleLiftoff();
                     Jump();
                     break;
