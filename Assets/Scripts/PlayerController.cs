@@ -117,6 +117,10 @@ public class PlayerController : MonoBehaviour
         cc = GetComponent<CharacterController>();
         playerCamera = Camera.main;
         velocity = Vector3.zero;
+    }
+
+    private void Start() {
+        GameCameraController.InitialiseGameCamera();
         SetMovementMode(MovementMode.Walking);
     }
 
@@ -262,6 +266,7 @@ public class PlayerController : MonoBehaviour
     #region Walking
 
     void EnterWalking() {
+        GameCameraController.EnterWalkCam();
         // If we aren't grounded then act like a liftoff so that momentum is properly carried 
         if (!cc.isGrounded) {
             HandleLiftoff();
@@ -322,6 +327,7 @@ public class PlayerController : MonoBehaviour
         EnterSurfer(velocity.magnitude);
     }
     void EnterSurfer (float overrideCarriedSpeed) {
+        GameCameraController.EnterSurfCam();
         surferModeCarriedSpeed = overrideCarriedSpeed;
         surferModeCurrentThrust = 0;
     }
@@ -527,6 +533,7 @@ public class PlayerController : MonoBehaviour
     // me later: actually this is kinda valid i might keep it like this........
     IEnumerator RailGrindCoroutine(GrindRailController grindRail) {
         SetMovementMode(MovementMode.Grinding);
+        GameCameraController.EnterSurfCam();
         velocity = Vector3.zero;
 
         List<Transform> railPoints = grindRail.GetRemainingNodes(transform);
