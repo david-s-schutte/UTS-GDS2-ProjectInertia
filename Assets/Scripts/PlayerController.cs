@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    static PlayerController Instance;
     public enum MovementMode {Walking, Surfer, Grinding, Stopped};
 
     /*ADDITIONS MADE BY DAVID - new Inputs*/
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
     // Current velocity. Modifying this value will instantly change velocity (but please use static function SetVelocity)
     private static Vector3 velocity;
     // Velocity we were travelling at last frame
-    Vector3 lastFrameVelocity = new Vector3();
+    static Vector3 lastFrameVelocity = new Vector3();
 
     [SerializeField] float runningStartBoost = 1.5f;
 
@@ -114,9 +115,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float floorCastDist = 4;
 
     private void Awake() {
+        Instance = this;
         cc = GetComponent<CharacterController>();
         playerCamera = Camera.main;
-        velocity = Vector3.zero;
+        velocity = lastFrameVelocity = Vector3.zero;
     }
 
     private void Start() {
@@ -232,6 +234,15 @@ public class PlayerController : MonoBehaviour
     }
     public static void SetYVelocity(float yVel) {
         velocity.y = yVel;
+    }
+
+    public static void SurfBoost (float boostSpeed, Quaternion forward) {
+        if (!IsSurferMode()) {
+            Instance.SetMovementMode(MovementMode.Surfer);
+        }
+        Instance.forwardDirection = forward;
+        velocity = lastFrameVelocity = Vector3.zero;
+        Instance.surferModeCurrentThrust = boostSpeed;
     }
 
     public static bool IsFalling () {
