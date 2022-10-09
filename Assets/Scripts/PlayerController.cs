@@ -361,6 +361,8 @@ public class PlayerController : MonoBehaviour
 
         // This is a total mess due to getting it workable for sprint 3
 
+        if (!cc.isGrounded) lateralForward = FlattenAndNormalise3D(lastLiftoffDirection);
+
         Vector3 motion = new();
         motion += lateralForward * surferModeCurrentThrust;
         
