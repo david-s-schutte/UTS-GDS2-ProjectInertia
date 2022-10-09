@@ -22,10 +22,19 @@ public class PlayerAudioTemp : MonoBehaviour
     private CharacterController cc;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         InitiateInputActions();
         cc = GetComponent<CharacterController>();
+    }
+
+    private void OnDisable()
+    {
+        leftStickMove.Disable();
+        jump.Disable();
+        jump.performed -= PlayJumpSFX;
+        switchStyles.Disable();
+        switchStyles.performed -= PlaySwitchSFX;
     }
 
     private void Update()

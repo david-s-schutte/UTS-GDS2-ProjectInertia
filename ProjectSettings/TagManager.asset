@@ -11,6 +11,7 @@ TagManager:
   - GameCamera
   - JumpPad
   - BoostPad
+  - ScoreManager
   layers:
   - Default
   - TransparentFX
