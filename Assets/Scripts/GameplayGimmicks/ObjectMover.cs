@@ -23,15 +23,15 @@ public class ObjectMover : MonoBehaviour
     {
         if (nodes.Length > 0)
         {
-            if (Vector3.Distance(nodes[currentNodeIndex].transform.position, transform.position) < distToChange)
+            if (Vector3.Distance(transform.position, nodes[currentNodeIndex].transform.position) < distToChange)
             {
                 GetNextNode();
             }
             gameObject.transform.position = Vector3.MoveTowards(transform.position, nodes[currentNodeIndex].position, Time.deltaTime * moveSpeed);
+            //gameObject.transform.Translate((transform.position - nodes[currentNodeIndex].position) * moveSpeed * Time.deltaTime, Space.World);
         }
         else
             Debug.Log("ERROR: " + gameObject.name + "'s Object Mover Component does not have any nodes");
-        //Debug.Log("Moving towards: " + nodes[currentNodeIndex].position);
     }
 
     private void GetNextNode()

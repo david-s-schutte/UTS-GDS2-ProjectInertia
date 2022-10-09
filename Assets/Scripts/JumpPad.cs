@@ -15,4 +15,16 @@ public class JumpPad : MonoBehaviour
             }
         }
     }
+
+    public void LaunchPlayer()
+    {
+        if (ignorePlayerEnterVelocity)
+        {
+            PlayerController.SetVelocity(new(0, strength, 0));
+        }
+        else
+        {
+            PlayerController.ApplyVelocity(new(0, strength, 0));
+        }
+    }
 }
