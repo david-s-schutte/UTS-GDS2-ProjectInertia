@@ -43,12 +43,13 @@ namespace Surfer.UI
             }
 
             uiController.OnRegistered();
+            DebugValues(UI);
 
             if (bringToFront && UI.Count > 1)
                 BringUIToFront(uiController);
         }
 
-        
+
         public void UnRegisterUI<T>(T uiController) where T : MonoUI
         {
             Dictionary<int, MonoUI> leftAdjustedDict = new Dictionary<int, MonoUI>();
@@ -73,7 +74,7 @@ namespace Surfer.UI
             if (leftAdjustedDict != null && rightAdjustedDict != null)
             {
                 UI.Remove(target);
-                
+
                 //Simply adds and re-adds the key to shift the value
                 rightAdjustedDict.ToList().ForEach(x =>
                 {
@@ -84,6 +85,7 @@ namespace Surfer.UI
                 });
 
                 UI = leftAdjustedDict.Concat(rightAdjustedDict) as Dictionary<int, MonoUI>;
+                DebugValues(UI);
                 return;
             }
 
@@ -117,7 +119,7 @@ namespace Surfer.UI
                     break;
                 }
             }
-            
+
             adjustedDict.Add(0, uiController);
 
             int length = UI.Count;
@@ -148,82 +150,52 @@ namespace Surfer.UI
 
         public void BringUIToBack<T>(T uiController) where T : MonoUI
         {
-            Dictionary<int, MonoUI> leftAdjustedDict = new Dictionary<int, MonoUI>();
-            Dictionary<int, MonoUI> rightAdjustedDict = new Dictionary<int, MonoUI>();
+            Dictionary<int, MonoUI> adjustedDict = new Dictionary<int, MonoUI>();
 
             int highestValue = UI.GetHighestKey();
-            int target = 0;
             MonoUI targetUI = null;
 
-            //Finding the target uiController to unregister
+            //Finding the target uiController and removing it
             foreach (int key in UI.Keys)
             {
                 if (UI[key] == uiController)
                 {
-                    
-                    target = key;
                     targetUI = UI[key];
+                    UI.Remove(key);
                     break;
                 }
             }
 
-            leftAdjustedDict = UI.Where(x => x.Key < target) as Dictionary<int, MonoUI>;
-            rightAdjustedDict = UI.Where(x => x.Key > target) as Dictionary<int, MonoUI>;
+            adjustedDict.Add(highestValue, targetUI);
 
-            //If there is no values on the right of the target, we can assume its already on the back
-            if (leftAdjustedDict != null && rightAdjustedDict == null)
+            int length = UI.Count;
+            //Shifting the dictionary forward (ex. Target = 2, 1 => 2 => 3 => 4, Changed To:  1 => 3 => 4 => 2
+            for (int i = length; i != 0; i--)
             {
-                Debug.LogWarning($"The ui controller {uiController.name} was already moved to the back");
-                return;
-            }
-            
-            if (leftAdjustedDict != null)
-            {
-                UI.Remove(target);
-                
-                //Simply adds and re-adds the key to shift the value
-                rightAdjustedDict.ToList().ForEach(x =>
+                var currentHighestValue = UI.GetHighestKey();
+
+                MonoUI currentUI = null;
+                if (UI.TryGetValue(currentHighestValue, out MonoUI ui))
                 {
-                    int key = x.Key;
+                    currentUI = ui;
+                }
+                else
+                    continue;
 
-                    if (UI.Remove(key, out MonoUI value))
-                        rightAdjustedDict.Add(key - 1, value);
-                });
-
-                UI = leftAdjustedDict.Concat(rightAdjustedDict) as Dictionary<int, MonoUI>;
-                
-                //Adds the desired UI to the back
-                UI.Add(highestValue, targetUI );
-                return;
+                adjustedDict.Add(i - 1, currentUI);
+                UI.Remove(currentHighestValue);
             }
 
-            //If the left is null but the right is not null, we can assume it is the first value in the dictionary
-            if (rightAdjustedDict != null)
-            {
-                //Simply adds and re-adds the key to shift the value
-                rightAdjustedDict.ToList().ForEach(x =>
-                {
-                    int key = x.Key;
-
-                    if (UI.Remove(key, out MonoUI value))
-                        rightAdjustedDict.Add(key - 1, value);
-                });
-                
-                //Adds the desired UI to the back
-                UI.Add(highestValue, targetUI );
-                DebugValues(UI);
-                ForceUpdateUI();
-                return;
-            }
-
-            Debug.LogError($"Warning, the UI {uiController.name} does not exist and cannot be unregistered!");
+            DebugValues(adjustedDict);
+            ForceUpdateUI();
+            UI = adjustedDict;
+            ForceUpdateUI();
         }
 
         public void ForceUpdateUI()
         {
             foreach (var kv in UI)
                 kv.Value.SetSortingOrder(kv.Key);
-            
         }
 
 

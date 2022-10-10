@@ -12,7 +12,6 @@ namespace Surfer.UI
     {
         internal Canvas canvas;
         internal UIManager _uiManager;
-
         
         public GameObject Instance => gameObject;
 
@@ -55,12 +54,16 @@ namespace Surfer.UI
                 OnFront();
         }
         
-        protected abstract void OnInitialised();
-        
         /// <summary>
         /// Called when the UI is moved to the front
         /// </summary>
         public abstract void OnFront();
+        
+        
+        /// <summary>
+        /// Event function called when the canvas has been correctly referenced (NOTE: Should be used instead of OnEnable)
+        /// </summary>
+        protected abstract void OnInitialised();
 
         /// <summary>
         /// Called when the UI is first registered from UIManager
@@ -68,7 +71,7 @@ namespace Surfer.UI
         public abstract void OnRegistered();
 
         /// <summary>
-        /// Called before the UI is UnRegistered from UIManager
+        /// Called when the UI is UnRegistered from UIManager
         /// </summary>
         public abstract void OnUnregistered();
     }

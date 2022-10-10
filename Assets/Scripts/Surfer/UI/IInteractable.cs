@@ -8,13 +8,10 @@ namespace Surfer.UI
     {
         public PlayerControls Controls { get; set; }
 
-        public void EnableControls() => Controls.Enable();
+        public void EnableControls();
 
-        public void DisableControls()
-        {
-            Debug.Log("Test");
-            Controls.Disable();
-        } 
-        
+        public void DisableControls();
+
+
     }
 }

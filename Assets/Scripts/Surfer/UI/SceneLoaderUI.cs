@@ -23,6 +23,7 @@ namespace Surfer.UI
 
         [Header("Components")]
         [SerializeField] private GameObject loadingScreenPrefab;
+        [SerializeField] private GameObject transitionGameObject;
         [SerializeField] private Image progress;
         [SerializeField] private TextMeshProUGUI percentage;
         [SerializeField] private TextMeshProUGUI _pressAnyButtonText;
@@ -45,6 +46,7 @@ namespace Surfer.UI
             {
                 loaderManager.LoadingStarted += BeginLoadingTransition;
                 loaderManager.ProgressUpdated += UpdateLoadingUI;
+                loaderManager.LoadingCompleted += LoadingCompleted;
             }
 
             if (_animator == null)
@@ -57,7 +59,10 @@ namespace Surfer.UI
             ManagerLocator.Get<UIManager>().RegisterUI(this,false);
         }
 
-        public override void OnFront() { }
+        public override void OnFront()
+        {
+            EnableControls();
+        }
 
         public override void OnRegistered() { }
 
@@ -82,6 +87,7 @@ namespace Surfer.UI
             {
                 loaderManager.LoadingStarted -= BeginLoadingTransition;
                 loaderManager.ProgressUpdated -= UpdateLoadingUI;
+                loaderManager.LoadingCompleted -= LoadingCompleted;
             }
             
             _playerControls.Disable();
@@ -92,10 +98,12 @@ namespace Surfer.UI
         private void UpdateLoadingUI(float value)
         {
             progress.fillAmount = value;
+            percentage.text = (value * 100) + "%";
         }
 
         private void BeginLoadingTransition()
         {
+            transitionGameObject.SetActive(true);
             _animator.SetTrigger(BeginTransition);
         }
 
@@ -113,14 +121,24 @@ namespace Surfer.UI
 
         public void TransitionCompleted()
         {
+            transitionGameObject.SetActive(false);
             loadingScreenPrefab.SetActive(true);
             loaderManager.OnTransitionCompleted();
         }
+        
+        public void EnableControls()
+        {
+            Controls = new PlayerControls();
+            Controls.Enable();
+        }
+
+        public void DisableControls() => Controls.Disable();
 
 
 #if UNITY_EDITOR
         public void ForceLoad()
         {
+            _uiManager.BringUIToFront(this);
             loaderManager.LoadSceneAsync(_reference);
         }
 #endif

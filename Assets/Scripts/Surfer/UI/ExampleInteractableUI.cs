@@ -20,19 +20,29 @@ namespace Surfer.UI
             _uiManager.UnRegisterUI(this);
         }
 
-     
+        [ContextMenu("Bring To Back")]
+        public void BringToBack()
+        {
+            _uiManager.BringUIToBack(this);
+        }
+
+        [ContextMenu("Bring to Front")]
+        public void BringToFront()
+        {
+            _uiManager.BringUIToFront(this);
+        }
 
         protected override void OnInitialised()
         {
             //Gets the UIManager and registers this MonoUI, you can set the second parameter to true if you want it to immediately go to front on registration
             // Registration simply refers to the UIManager caching a UIController so that it can update the layering for it.
             //This process should be done onEnable
-            _uiManager.RegisterUI(this, true);
+            _uiManager.RegisterUI(this, false);
         }
 
         public override void OnFront()
         {
-            DisableControls();
+            EnableControls();
         }
 
         //This is an event function that occurs once the UIManager successfully registers the ui controller
@@ -50,7 +60,22 @@ namespace Surfer.UI
             Destroy(gameObject);
         }
 
-        public void DisableControls() {Debug.Log("test1");}
+        #region IInteractable
+
+        /// <summary>
+        /// Enables the new input system (Must be called onFront)
+        /// </summary>
+        public void EnableControls()
+        {
+            Controls = new PlayerControls();
+            Controls.Enable();
+        }
+
+        //Disables the new input system (Must be called if UI is disabled or moved away from front)
+        public void DisableControls() => Controls.Disable();
+        
+
+        #endregion
     }
 }
 #endif

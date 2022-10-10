@@ -6,13 +6,11 @@ namespace Surfer.UI
 {
     public class PauseMenuUI : MonoUI, IInteractable
     {
-        
         public PlayerControls Controls { get; set; }
+
 
         private UIManager uiManager;
 
-
-    
 
         protected override void OnEnable()
         {
@@ -20,9 +18,13 @@ namespace Surfer.UI
             uiManager.RegisterUI(this);
         }
 
-        protected override void OnInitialised() { }
+        protected override void OnInitialised()
+        {
+        }
 
-        public override void OnFront() { }
+        public override void OnFront()
+        {
+        }
 
 
         public override void OnRegistered()
@@ -34,5 +36,20 @@ namespace Surfer.UI
         {
             throw new NotImplementedException();
         }
+
+        #region IInteractable
+
+        public void EnableControls()
+        {
+            Controls = new PlayerControls();
+            Controls.Enable();
+        }
+
+        public void DisableControls()
+        {
+            Controls.Disable();
+        }
+
+        #endregion
     }
 }
