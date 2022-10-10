@@ -19,6 +19,4 @@ public class LevelTransition : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(sceneIndex);
     }
-
-  
 }

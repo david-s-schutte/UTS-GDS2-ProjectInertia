@@ -9,6 +9,9 @@ TagManager:
   - Goal
   - GrindrailNode
   - GameCamera
+  - JumpPad
+  - BoostPad
+  - ScoreManager
   layers:
   - Default
   - TransparentFX

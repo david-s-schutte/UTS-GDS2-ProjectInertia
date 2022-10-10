@@ -58,8 +58,11 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-# Never ignore DLLs in the FMOD subfolder.
-!/[Aa]ssets/Plugins/FMOD/**/lib/*
+UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+UserSettings/Layouts/default-2021.dwlt
+UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+UserSettings/Layouts/CurrentMaximizeLayout.dwlt
 
 # Don't ignore images and gizmos used by FMOD in the Unity Editor.
 !/[Aa]ssets/Gizmos/FMOD/*

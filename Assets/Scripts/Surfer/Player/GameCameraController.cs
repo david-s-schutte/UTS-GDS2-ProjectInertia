@@ -19,7 +19,7 @@ public class GameCameraController : MonoBehaviour
     private void Start()
     {
         InitialiseGameCamera();
-        DebugVariables();
+        //DebugVariables();
         isWalkingDebug = true;
     }
 
@@ -37,7 +37,7 @@ public class GameCameraController : MonoBehaviour
             else
                 EnterSurfCam();
         }
-        Debug.Log("Current Active Camera: " + stateDrivenCamera.LiveChild);
+        //Debug.Log("Current Active Camera: " + stateDrivenCamera.LiveChild);
     }
 
     public static void InitialiseGameCamera()
@@ -64,10 +64,10 @@ public class GameCameraController : MonoBehaviour
     {
         SwitchCameras(false);
     }
-
     //Call this when entering to the walking camera
     public static void EnterWalkCam()
     {
+        walkingCamera.ForceCameraPosition(surfingCamera.gameObject.transform.position, surfingCamera.gameObject.transform.rotation);
         SwitchCameras(true);
     }
 
@@ -80,8 +80,7 @@ public class GameCameraController : MonoBehaviour
 
     private static void ResetCamera()
     {
-        walkingCamera.ForceCameraPosition(cameraResetPos, Quaternion.identity);
-        surfingCamera.ForceCameraPosition(cameraResetPos, Quaternion.identity);
+        //surfingCamera.ForceCameraPosition(cameraResetPos, Quaternion.identity);
     }
 
     private static void DebugVariables()

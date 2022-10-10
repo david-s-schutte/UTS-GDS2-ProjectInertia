@@ -10,6 +10,10 @@ public class ScoreUI : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI timer;
     [SerializeField] private TextMeshProUGUI currentScore;
+    [SerializeField] private TextMeshProUGUI rank;
+
+    [SerializeField] private Canvas ingameUI;
+    [SerializeField] private Canvas rankUI;
 
 
     void Start()
@@ -38,5 +42,12 @@ public class ScoreUI : MonoBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
         timer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+    }
+
+    public void ShowRankScreen()
+    {
+        ingameUI.enabled = false;
+        rankUI.enabled = true;
+        //rank.text = GetComponent<ScoreSystem>().GetFinalRank();
     }
 }
