@@ -2,7 +2,9 @@
     "name": "Surfer.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:f9a1c73a7107d00498b3511926e1cd4c"
+        "GUID:f9a1c73a7107d00498b3511926e1cd4c",
+        "GUID:4b37f40c868130348817bc901a34fea0",
+        "GUID:aab3caaf43456d6449a3e035348ff798"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

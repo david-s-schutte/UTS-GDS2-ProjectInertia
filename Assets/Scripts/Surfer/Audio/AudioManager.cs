@@ -1,18 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
+using Surfer.Audio;
 using Surfer.Managers;
 using UnityEngine;
 
 public class AudioManager : Manager
 {
-   // private static FMOD.Studio.EventInstance _music;
+
+    private EventInstance _currentBackgroundMusic;
     
-    public override void ManagerStart()
+
+    /// <summary>
+    /// Plays a music track based on a given AudioTrack class.
+    /// </summary>
+    /// <param name="track"></param>
+    public void PlayBackgroundMusic(AudioTrack track)
     {
-        //TODO: Having the music begin on start for now but obviously will need to be changed later. 
-        //TODO: We will also need different types of audio controllers to manage 3D sounds since managers arent in the scene
-        var music = FMODUnity.RuntimeManager.CreateInstance("event:/background_music");
-       music.start();
-       // _music.release();
+        _currentBackgroundMusic = FMODUnity.RuntimeManager.CreateInstance(track.AudioPath);
+        _currentBackgroundMusic.start();
     }
+    
+    /// <summary>
+    ///  Plays a music track based on a given AudioTrack class and overrides its current volume
+    /// </summary>
+    /// <param name="track"></param>
+    /// <param name="volumeOverride"></param>
+    public void PlayBackgroundMusic(AudioTrack track, float volumeOverride)
+    {
+        _currentBackgroundMusic = FMODUnity.RuntimeManager.CreateInstance(track.AudioPath);
+        _currentBackgroundMusic.start();
+        _currentBackgroundMusic.setVolume(volumeOverride);
+    }
+
+    /// <summary>
+    /// Plays a desired sound effect or music to play once.
+    /// </summary>
+    /// <param name="track"></param>
+    public void PlaySoundOnce(AudioTrack track) => FMODUnity.RuntimeManager.PlayOneShot(track.AudioPath);
+    
+
+    /// <summary>
+    /// Plays a desired sound effect or music to play once with a desired position for 3D sounds.
+    /// </summary>
+    /// <param name="track"></param>
+    /// <param name="position"></param>
+    public void PlaySoundOnce(AudioTrack track, Vector3 position) => FMODUnity.RuntimeManager.PlayOneShot(track.AudioPath,position);
+    
+
+    /// <summary>
+    /// Stops the current background song from playing.
+    /// </summary>
+    /// <param name="allowFadeOut"></param>
+    public void StopCurrentSong(bool allowFadeOut = false) => _currentBackgroundMusic.stop(!allowFadeOut ? STOP_MODE.IMMEDIATE : STOP_MODE.ALLOWFADEOUT);
+    
+    
 }
