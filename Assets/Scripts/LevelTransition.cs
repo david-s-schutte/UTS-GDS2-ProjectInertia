@@ -5,18 +5,37 @@ using UnityEngine;
 
 public class LevelTransition : MonoBehaviour
 {
-
+    static LevelTransition Instance;
     public Animator transition;
-    // Update is called once per frame
-    void Update()
+    
+    void Awake()
     {
-        DontDestroyOnLoad(this);
+        if (Instance != null) {
+            Destroy(gameObject);
+        } else {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
     }
 
-    public IEnumerator LoadLevel(int sceneIndex)
+    public static void LoadLevel(int sceneIndex) {
+        if (Instance) {
+            Instance.StartLoadCoroutine(sceneIndex);    
+        } else {
+            SceneManager.LoadScene(sceneIndex);
+        }
+    }
+
+    void StartLoadCoroutine(int sceneIndex) {
+        Instance.StartCoroutine(LoadLevelCoroutine(sceneIndex));
+    }
+
+    IEnumerator LoadLevelCoroutine(int sceneIndex)
     {
-        transition.SetTrigger("Start");
+        transition.SetBool("Loading", true);
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(sceneIndex);
+        AsyncOperation loadSceneAsync = SceneManager.LoadSceneAsync(sceneIndex);
+        yield return loadSceneAsync;
+        transition.SetBool("Loading", false);
     }
 }
