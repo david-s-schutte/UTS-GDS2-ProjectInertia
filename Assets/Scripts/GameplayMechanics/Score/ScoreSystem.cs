@@ -12,6 +12,7 @@ public class ScoreSystem : MonoBehaviour
     private float currentFlow = 0;              //Stores the player's current flow as per the TrickSystem
     private bool levelEnded = false;            //Controls whether or not to continue calculating score
     private float levelTimer = 0;               //Stores how much time has been spent in the level
+    private string finalRank = "E";             //Stores the player's rank
 
     [Header("Rank Benchmarks")]
     [SerializeField] private float sRankBenchmark;
@@ -85,25 +86,27 @@ public class ScoreSystem : MonoBehaviour
         
     }
 
-    private float CalculateFinalScore()
+    public float CalculateFinalScore()
     {
-        return currentScore += trickBonusMultiplier * noOfTrickChains;
+        Debug.Log(currentScore += (trickBonusMultiplier * noOfTrickChains) + maxTimeBonus);
+        return currentScore += (trickBonusMultiplier * noOfTrickChains) + maxTimeBonus;
     }
 
     public void CalculateFinalRank(float finalScore)
     {
         if (finalScore >= sRankBenchmark)
-            Debug.Log("S Rank!");
+            finalRank = "S";
         else if (finalScore < sRankBenchmark && finalScore >= aRankBenchmark)
-            Debug.Log("A Rank!");
+            finalRank = "A";
         else if (finalScore < aRankBenchmark && finalScore >= bRankBenchmark)
-            Debug.Log("B Rank!");
+            finalRank = "B";
         else if (finalScore < bRankBenchmark && finalScore >= cRankBenchmark)
-            Debug.Log("C Rank!");
+            finalRank = "C";
         else if (finalScore < cRankBenchmark && finalScore >= dRankBenchmark)
-            Debug.Log("D Rank!");
+            finalRank = "D";
         else
-            Debug.Log("E Rank!");
+            finalRank = "E";
+
     }
 
     private void SubtractScore(float scoreToSubtract)
@@ -139,5 +142,21 @@ public class ScoreSystem : MonoBehaviour
     public float GetCurrentScore()
     {
         return currentScore;
+    }
+
+    public string GetFinalRank()
+    {
+        return finalRank;
+    }
+
+    public void AddToScore(float adder)
+    {
+        if(currentScore > 0)
+            currentScore += adder;
+    }
+
+    public void EndLevel()
+    {
+        levelEnded = true;
     }
 }

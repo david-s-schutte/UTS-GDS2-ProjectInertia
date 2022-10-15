@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerTriggerChecker : MonoBehaviour
 {
     [SerializeField] private Vector3 respawnPos;
+    [SerializeField] private Camera playerCam;
+    bool finishedLevel = false;
 
     private void Start()
     {
@@ -17,29 +19,50 @@ public class PlayerTriggerChecker : MonoBehaviour
         {
             Transform animator = hit.gameObject.transform.Find("C");
             animator.GetComponent<Animator>().SetBool("isActivated", true);
-            respawnPos = hit.gameObject.transform.Find("RespawnPos").position;
+            if(!hit.gameObject.GetComponent<AudioSource>().isPlaying && respawnPos != hit.gameObject.transform.Find("RespawnPos").position)
+            {
+                hit.gameObject.GetComponent<AudioSource>().Play();
+                respawnPos = hit.gameObject.transform.Find("RespawnPos").position;
+                GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(60);
+            }
         }
-        
-        if(hit.gameObject.tag == "KillPlane")
+
+        if (hit.gameObject.tag == "KillPlane")
         {
             gameObject.transform.position = respawnPos;
             PlayerController.SetVelocity(Vector3.zero);
+            GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(-60);
         }
 
-        if(hit.gameObject.tag == "JumpPad")
+        if (hit.gameObject.tag == "JumpPad")
         {
             hit.gameObject.GetComponent<JumpPad>().LaunchPlayer();
-            gameObject.transform.Find("Bouncepad").transform.Find("Pattern").gameObject.GetComponent<Animator>().SetBool("isActivated", true);
+            if (!hit.gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                hit.gameObject.GetComponent<AudioSource>().Play();
+                GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(10);
+            }
+            //gameObject.transform.Find("Bouncepad").transform.Find("Pattern").gameObject.GetComponent<Animator>().SetBool("isActivated", true);
         }
 
-        if(hit.gameObject.tag == "Goal")
+        if (hit.gameObject.tag == "Goal")
         {
-            
+            //very bodge should change later lmao
+            if (!finishedLevel)
+            {
+                GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(10);
+                GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().EndLevel();
+                GameObject.FindWithTag("ScoreManager").GetComponent<ScoreUI>().ShowRankScreen();
+                playerCam.gameObject.transform.Find("Music").GetComponent<MusicManagerTemp>().playJingle();
+                finishedLevel = true;
+            }
         }
 
-        if(hit.gameObject.tag == "BoostPad")
+        if (hit.gameObject.tag == "BoostPad")
         {
-
+            GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(20);
         }
+
+
     }
 }
