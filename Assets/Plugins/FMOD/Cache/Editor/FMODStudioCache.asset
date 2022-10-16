@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9180499092770927558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/Inertia_lvl_music_2
+  m_EditorClassIdentifier: 
+  Path: event:/OST/Inertia_lvl_music_2
+  Guid:
+    Data1: -2138164325
+    Data2: 1305393953
+    Data3: -1218770035
+    Data4: 1712689701
+  Banks:
+  - {fileID: 4416030701848238856}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 79152
+--- !u!114 &-7465326701155236033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/background_music
+  m_EditorClassIdentifier: 
+  Path: event:/OST/background_music
+  Guid:
+    Data1: 8363880
+    Data2: 1211409749
+    Data3: -832967785
+    Data4: 1939261903
+  Banks:
+  - {fileID: 4416030701848238856}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 79152
 --- !u!114 &-7184626136200249250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,12 +69,12 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638013477850163718
+  lastModified: 638015698188176073
   FileSizes:
   - Name: Desktop
     Value: 40032
   Exists: 1
---- !u!114 &-6448349531004002076
+--- !u!114 &-5902473716460233963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30,23 +84,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Menu Navigation 1 Test
+  m_Name: event:/OST/Tutorial01
   m_EditorClassIdentifier: 
-  Path: event:/Menu Navigation 1 Test
+  Path: event:/OST/Tutorial01
   Guid:
-    Data1: -33327143
-    Data2: 1117432909
-    Data3: 1960747170
-    Data4: -916173254
+    Data1: -723356430
+    Data2: 1338988879
+    Data3: 339580342
+    Data4: -2029029856
   Banks:
-  - {fileID: -7184626136200249250}
-  IsStream: 0
+  - {fileID: 4815029032057160007}
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6738497252155659461}
+  - {fileID: -4107323822919926916}
   MinDistance: 1
   MaxDistance: 20
-  Length: 585
+  Length: 92444
 --- !u!114 &-5258916371878480410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +118,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638013477831117446
+  lastModified: 638015698187398158
   FileSizes:
   - Name: Desktop
-    Value: 1300
+    Value: 1546
   Exists: 1
 --- !u!114 &-4933527302870684314
 MonoBehaviour:
@@ -94,7 +150,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 120000
---- !u!114 &-2521374723575940078
+--- !u!114 &-4237685714520735307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,14 +160,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Menu Navigation 2 Test
+  m_Name: event:/UI SFX/Menu Navigation 1 Test
   m_EditorClassIdentifier: 
-  Path: event:/Menu Navigation 2 Test
+  Path: event:/UI SFX/Menu Navigation 1 Test
   Guid:
-    Data1: -46812871
-    Data2: 1295517297
-    Data3: -1686486649
-    Data4: 1058797717
+    Data1: -33327143
+    Data2: 1117432909
+    Data3: 1960747170
+    Data4: -916173254
   Banks:
   - {fileID: -7184626136200249250}
   IsStream: 0
@@ -120,7 +176,112 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 542
+  Length: 585
+--- !u!114 &-4107323822919926916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tutorial01/Checkpoint 1
+  m_EditorClassIdentifier: 
+  Name: Checkpoint 1
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3040641815
+    data2: 431953834
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-2725282835689283976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI SFX/Menu Selection 1 Test
+  m_EditorClassIdentifier: 
+  Path: event:/UI SFX/Menu Selection 1 Test
+  Guid:
+    Data1: -682979865
+    Data2: 1164705930
+    Data3: -1464454221
+    Data4: -1147662399
+  Banks:
+  - {fileID: -7184626136200249250}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 888
+--- !u!114 &-2452934314202276990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/Main Menu Music
+  m_EditorClassIdentifier: 
+  Path: event:/OST/Main Menu Music
+  Guid:
+    Data1: 654206625
+    Data2: 1128513779
+    Data3: -1178427233
+    Data4: -923615447
+  Banks:
+  - {fileID: 4815029032057160007}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 120000
+--- !u!114 &-1641927642765960898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/TutorialMusic
+  m_EditorClassIdentifier: 
+  Path: event:/OST/TutorialMusic
+  Guid:
+    Data1: -489097257
+    Data2: 1240269118
+    Data3: -721378113
+    Data4: 1280161097
+  Banks:
+  - {fileID: 4815029032057160007}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 79152
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,23 +301,27 @@ MonoBehaviour:
   - {fileID: 8091779226032073584}
   - {fileID: -7184626136200249250}
   EditorEvents:
-  - {fileID: 4717609610429662306}
-  - {fileID: 863244543849487186}
-  - {fileID: 7503887349039766561}
-  - {fileID: 6239287967171261187}
   - {fileID: -4933527302870684314}
-  - {fileID: -2521374723575940078}
-  - {fileID: 1004658825934140584}
-  - {fileID: -6448349531004002076}
-  - {fileID: 3413502498215152375}
-  EditorParameters: []
+  - {fileID: -7465326701155236033}
+  - {fileID: -9180499092770927558}
+  - {fileID: 2208864387584934081}
+  - {fileID: -2452934314202276990}
+  - {fileID: -1641927642765960898}
+  - {fileID: 6502954328174882150}
+  - {fileID: 4147760592996654960}
+  - {fileID: -4237685714520735307}
+  - {fileID: -2725282835689283976}
+  - {fileID: -5902473716460233963}
+  EditorParameters:
+  - {fileID: 7449291822003487038}
+  - {fileID: 8171270873111554252}
   MasterBanks:
   - {fileID: 4416030701848238856}
   StringsBanks:
   - {fileID: -5258916371878480410}
-  cacheTime: 638013477850163718
+  cacheTime: 638015698188176073
   cacheVersion: 131591
---- !u!114 &863244543849487186
+--- !u!114 &2208864387584934081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,24 +331,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/background_music
+  m_Name: event:/UI SFX/LVLCLEAR
   m_EditorClassIdentifier: 
-  Path: event:/background_music
+  Path: event:/UI SFX/LVLCLEAR
   Guid:
-    Data1: 8363880
-    Data2: 1211409749
-    Data3: -832967785
-    Data4: 1939261903
+    Data1: 971173277
+    Data2: 1290451447
+    Data3: -716929919
+    Data4: 1378911085
   Banks:
-  - {fileID: 4416030701848238856}
+  - {fileID: 4815029032057160007}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 79152
---- !u!114 &1004658825934140584
+  Length: 18000
+--- !u!114 &4147760592996654960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,9 +358,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Menu Selection 2 Test
+  m_Name: event:/UI SFX/Menu Selection 2 Test
   m_EditorClassIdentifier: 
-  Path: event:/Menu Selection 2 Test
+  Path: event:/UI SFX/Menu Selection 2 Test
   Guid:
     Data1: -333532095
     Data2: 1207474607
@@ -210,33 +375,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 610
---- !u!114 &3413502498215152375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Menu Selection 1 Test
-  m_EditorClassIdentifier: 
-  Path: event:/Menu Selection 1 Test
-  Guid:
-    Data1: -682979865
-    Data2: 1164705930
-    Data3: -1464454221
-    Data4: -1147662399
-  Banks:
-  - {fileID: -7184626136200249250}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 888
 --- !u!114 &4416030701848238856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,38 +390,11 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638013477831097429
+  lastModified: 638015698187358269
   FileSizes:
   - Name: Desktop
-    Value: 978848
+    Value: 979360
   Exists: 1
---- !u!114 &4717609610429662306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Inertia_lvl_music_2
-  m_EditorClassIdentifier: 
-  Path: event:/Inertia_lvl_music_2
-  Guid:
-    Data1: -2138164325
-    Data2: 1305393953
-    Data3: -1218770035
-    Data4: 1712689701
-  Banks:
-  - {fileID: 4416030701848238856}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 79152
 --- !u!114 &4815029032057160007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,12 +410,12 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638013477849728467
+  lastModified: 638015698187886837
   FileSizes:
   - Name: Desktop
-    Value: 2877664
+    Value: 4049216
   Exists: 1
---- !u!114 &6239287967171261187
+--- !u!114 &6502954328174882150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -314,24 +425,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/TutorialMusic
+  m_Name: event:/UI SFX/Menu Navigation 2 Test
   m_EditorClassIdentifier: 
-  Path: event:/TutorialMusic
+  Path: event:/UI SFX/Menu Navigation 2 Test
   Guid:
-    Data1: -489097257
-    Data2: 1240269118
-    Data3: -721378113
-    Data4: 1280161097
+    Data1: -46812871
+    Data2: 1295517297
+    Data3: -1686486649
+    Data4: 1058797717
   Banks:
-  - {fileID: 4815029032057160007}
-  IsStream: 1
+  - {fileID: -7184626136200249250}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 79152
---- !u!114 &7503887349039766561
+  Length: 542
+--- !u!114 &6738497252155659461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -340,24 +451,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/LVLCLEAR
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Tutorial01/Checkpoint 2
   m_EditorClassIdentifier: 
-  Path: event:/LVLCLEAR
-  Guid:
-    Data1: 971173277
-    Data2: 1290451447
-    Data3: -716929919
-    Data4: 1378911085
-  Banks:
-  - {fileID: 4815029032057160007}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 18000
+  Name: Checkpoint 2
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 657337920
+    data2: 2909976173
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &7449291822003487038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Checkpoint 1
+  m_EditorClassIdentifier: 
+  Name: Checkpoint 1
+  StudioPath: parameter:/Checkpoint 1
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3040641815
+    data2: 431953834
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &8091779226032073584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,8 +505,32 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638013477849748485
+  lastModified: 638015698187916760
   FileSizes:
   - Name: Desktop
     Value: 494
+  Exists: 1
+--- !u!114 &8171270873111554252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Checkpoint 2
+  m_EditorClassIdentifier: 
+  Name: Checkpoint 2
+  StudioPath: parameter:/Checkpoint 2
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 657337920
+    data2: 2909976173
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
