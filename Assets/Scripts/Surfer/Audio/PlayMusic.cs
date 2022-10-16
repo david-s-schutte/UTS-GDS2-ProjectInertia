@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using Mono.Cecil.Cil;
 
 namespace Surfer.Audio
@@ -10,11 +11,16 @@ namespace Surfer.Audio
 
             if (PlayOnAwake)
             {
-                if (overrideVolume)
-                    PlaySong(SelectedTrack, volumeOverrideAmount);
+                if (overrideVolume) 
+                     PlaySong(SelectedTrack, volumeOverrideAmount);
                 else
                     PlaySong(SelectedTrack);
             }
+        }
+        
+        internal void OnDisable()
+        {
+            _audioManager.StopCurrentSong();
         }
 
 

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using FMOD.Studio;
 using UnityEngine;
 
 #if UNITY_ADDRESSABLES_EXIST
@@ -1131,7 +1132,7 @@ retry:
             }
         }
 
-        public static void PlayOneShot(string path, Vector3 position = new Vector3())
+        public static void PlayOneShotVoid(string path, Vector3 position = new Vector3())
         {
             try
             {
@@ -1142,14 +1143,52 @@ retry:
                 RuntimeUtils.DebugLogWarning("[FMOD] Event not found: " + path);
             }
         }
+        
+        public static EventInstance PlayOneShot(string path, Vector3 position = new Vector3())
+        {
+            try
+            {
+               return PlayOneShot(PathToGUID(path), position);
+            }
+            catch (EventNotFoundException)
+            {
+                RuntimeUtils.DebugLogWarning("[FMOD] Event not found: " + path);
+            }
 
-        public static void PlayOneShot(FMOD.GUID guid, Vector3 position = new Vector3())
+            return new EventInstance();
+        }
+
+        public static EventInstance PlayOneShot(FMOD.GUID guid, Vector3 position = new Vector3())
         {
             var instance = CreateInstance(guid);
             instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
             instance.start();
             instance.release();
+            return instance;
         }
+        
+        public static void PlayOneShotVoid(string path, float volumeOverride,Vector3 position = new Vector3())
+        {
+            var instance = CreateInstance(PathToGUID(path));
+            instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
+            instance.setVolume(volumeOverride);
+            instance.start();
+            instance.release();
+        }
+        
+        public static EventInstance PlayOneShot(string path, float volumeOverride,Vector3 position = new Vector3())
+        {
+            var instance = CreateInstance(PathToGUID(path));
+            instance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
+            instance.setVolume(volumeOverride);
+            instance.start();
+            instance.release();
+            return instance;
+        }
+
+        
+     
+
 
         public static void PlayOneShotAttached(EventReference eventReference, GameObject gameObject)
         {
