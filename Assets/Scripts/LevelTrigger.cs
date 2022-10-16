@@ -21,6 +21,6 @@ public class LevelTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(sceneIndex);
+        LevelTransition.LoadLevel(sceneIndex);
     }
 }
