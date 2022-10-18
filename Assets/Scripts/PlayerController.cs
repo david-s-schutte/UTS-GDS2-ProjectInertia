@@ -338,6 +338,9 @@ public class PlayerController : MonoBehaviour
         EnterSurfer(velocity.magnitude);
     }
     void EnterSurfer (float overrideCarriedSpeed) {
+        // Force forward direction to be camera forward. 
+        if (cc.isGrounded) forwardDirection = Quaternion.LookRotation(FlattenAndNormalise3D(GetCameraForwardVector()), Vector3.up);
+
         GameCameraController.EnterSurfCam();
         surferModeCarriedSpeed = overrideCarriedSpeed;
         surferModeCurrentThrust = 0;
