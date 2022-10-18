@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638015764975041135
+  lastModified: 638017401519436730
   FileSizes:
   - Name: Desktop
     Value: 40032
@@ -103,6 +103,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 92444
+--- !u!114 &-5474767976015059478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment SFX/Boostpad
+  m_EditorClassIdentifier: 
+  Path: event:/Environment SFX/Boostpad
+  Guid:
+    Data1: -394842380
+    Data2: 1171542653
+    Data3: 1334108556
+    Data4: -1830389381
+  Banks:
+  - {fileID: 8091779226032073584}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1174
 --- !u!114 &-5258916371878480410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,11 +145,38 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638015764974333021
+  lastModified: 638017401492895606
   FileSizes:
   - Name: Desktop
-    Value: 1546
+    Value: 1694
   Exists: 1
+--- !u!114 &-5098004140578623927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environment SFX/Wind
+  m_EditorClassIdentifier: 
+  Path: event:/Environment SFX/Wind
+  Guid:
+    Data1: 865908904
+    Data2: 1284733406
+    Data3: 1562988419
+    Data4: 700840488
+  Banks:
+  - {fileID: 8091779226032073584}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8614
 --- !u!114 &-4933527302870684314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +366,9 @@ MonoBehaviour:
   - {fileID: -4237685714520735307}
   - {fileID: -2725282835689283976}
   - {fileID: -5902473716460233963}
+  - {fileID: -5098004140578623927}
+  - {fileID: -5474767976015059478}
+  - {fileID: 8694158843492635330}
   EditorParameters:
   - {fileID: 7449291822003487038}
   - {fileID: 8171270873111554252}
@@ -319,7 +376,7 @@ MonoBehaviour:
   - {fileID: 4416030701848238856}
   StringsBanks:
   - {fileID: -5258916371878480410}
-  cacheTime: 638015764975041135
+  cacheTime: 638017401519436730
   cacheVersion: 131591
 --- !u!114 &2208864387584934081
 MonoBehaviour:
@@ -390,7 +447,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638015764974303113
+  lastModified: 638017401492875662
   FileSizes:
   - Name: Desktop
     Value: 979360
@@ -410,10 +467,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638015764974781828
+  lastModified: 638017401518707309
   FileSizes:
   - Name: Desktop
-    Value: 4049312
+    Value: 5696736
   Exists: 1
 --- !u!114 &6502954328174882150
 MonoBehaviour:
@@ -505,10 +562,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638015764974811749
+  lastModified: 638017401519036415
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 126112
   Exists: 1
 --- !u!114 &8171270873111554252
 MonoBehaviour:
@@ -534,3 +591,30 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &8694158843492635330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/HUB WORLD DEMO
+  m_EditorClassIdentifier: 
+  Path: event:/OST/HUB WORLD DEMO
+  Guid:
+    Data1: -643619799
+    Data2: 1326925242
+    Data3: -2074832726
+    Data4: 1565531387
+  Banks:
+  - {fileID: 4815029032057160007}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 109906
