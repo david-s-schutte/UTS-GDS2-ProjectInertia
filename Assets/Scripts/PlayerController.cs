@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using Surfer.Input;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,9 +20,12 @@ public class PlayerController : MonoBehaviour
     // # Components    
     CharacterController cc;
     Camera playerCamera;
+
+    private PlayerAudio _playerAudio;
+    
     [Header("Components")]
     [SerializeField] GameObject characterObject;
-
+    
     // # Movement
     [Header("Movement")]
     // Speed of player walking
@@ -113,10 +118,21 @@ public class PlayerController : MonoBehaviour
     static MovementMode mode;
     RaycastHit floorCast;
     [SerializeField] float floorCastDist = 4;
+    
+    //Audio Variables
+    private float _distancedTravelledSinceLastStep;
+    private float currentDistanceTravelled;
+    private float _distanceTravelled;
+    private Vector3 _previousLocation;
 
     private void Awake() {
         Instance = this;
         cc = GetComponent<CharacterController>();
+        _playerAudio = GetComponentInChildren<PlayerAudio>();
+        
+        if (_playerAudio == null)
+            Debug.LogWarning("Warning player audio was not found! Player sound may not work as intended");
+        
         playerCamera = Camera.main;
         velocity = lastFrameVelocity = Vector3.zero;
     }
@@ -134,7 +150,6 @@ public class PlayerController : MonoBehaviour
         if ((IsSurferMode() || IsWalkingMode()) && IsFalling()) {
             BoxCastForFloorObstacles();
         }
-
 
         // INPUT COLLECTION
         // Get left stick / WSAD input
@@ -204,9 +219,28 @@ public class PlayerController : MonoBehaviour
         wasGrounded = cc.isGrounded;
         lastFrameVelocity = velocity;
 
+        if (velocity.x <= 0 && velocity.z <= 0)
+            _distancedTravelledSinceLastStep = 0f;
+        
         // Apply final movement
         cc.Move(velocity * Time.deltaTime);
         
+    }
+
+    private void RecordDistance()
+    {
+        _distanceTravelled += Vector3.Distance(transform.position, _previousLocation);
+        _distancedTravelledSinceLastStep += Vector3.Distance(transform.position, _previousLocation);
+
+        if (_distancedTravelledSinceLastStep >= _playerAudio._footstepParameters.StepDistance)
+        {
+            _distancedTravelledSinceLastStep = 0f;
+        //    _playerAudio.PlayFootstep();
+        }
+        
+        _previousLocation = transform.position;
+        
+        Debug.Log(_distancedTravelledSinceLastStep);
     }
 
     void SetMovementMode (MovementMode newMode) {
@@ -289,6 +323,8 @@ public class PlayerController : MonoBehaviour
 
         // Start by applying friction if we're on the ground
         if (cc.isGrounded) {
+            Debug.Log("grounded");
+            RecordDistance();
             WalkApplyFriction();
         } else {
             // cumulativeAirControl = CreateCameraRelativeMotionVector(input) * airControlSpeed;
@@ -481,6 +517,7 @@ public class PlayerController : MonoBehaviour
     void HandleLanding() {
         jumpCount = 0;
         airTime = 0;
+        _distancedTravelledSinceLastStep = 0f;
     }
 
     void TryJump () {

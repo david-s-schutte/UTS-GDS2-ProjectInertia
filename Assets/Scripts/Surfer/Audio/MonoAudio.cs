@@ -10,6 +10,7 @@ namespace Surfer.Audio
     /// <summary>
     /// The base class of an audio controller 
     /// </summary>
+    [Serializable]
     public class MonoAudio : MonoBehaviour
     {
         internal AudioManager _audioManager;

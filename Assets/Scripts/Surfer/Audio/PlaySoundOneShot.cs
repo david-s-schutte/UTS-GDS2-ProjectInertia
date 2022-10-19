@@ -1,5 +1,9 @@
+using System;
+using UnityEngine;
+
 namespace Surfer.Audio
 {
+    [Serializable]
     public class PlaySoundOneShot : MonoAudio
     {
         protected override void Awake()
