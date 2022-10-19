@@ -43,7 +43,13 @@ public class PlayerTriggerChecker : MonoBehaviour
 
         if (hit.gameObject.tag == "JumpPad")
         {
+            Transform FMOD = hit.gameObject.transform.Find("FMOD");
+            StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
+            Debug.Log(emitter);
+            emitter.Play();
+            
             hit.gameObject.GetComponent<JumpPad>().LaunchPlayer();
+            
             if (!hit.gameObject.GetComponent<AudioSource>().isPlaying)
             {
                 hit.gameObject.GetComponent<AudioSource>().Play();
