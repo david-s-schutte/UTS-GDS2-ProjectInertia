@@ -2391,6 +2391,7 @@ MonoBehaviour:
   airControlSpeed: 12
   directAirControl: 3
   airSlowTime: 0.5
+  maxRampDegrees: 60
   inputGravity: 5
   mouseSensitivity: 1
   floorCastDist: 4
