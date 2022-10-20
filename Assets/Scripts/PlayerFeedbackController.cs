@@ -35,6 +35,8 @@ public class PlayerFeedbackController : MonoBehaviour
     public static void OnJump() {
         if (!Instance.animator.GetBool("InTheAir"))
             Instance.animator.SetTrigger("Jump");
+        if (Instance.animator.GetBool("InTheAir"))
+            Instance.animator.SetTrigger("Double Jump");
     }
 
 }
