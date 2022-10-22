@@ -145,8 +145,6 @@ public class PlayerController : MonoBehaviour
         // Glide movement towards the current input value
         movementInput.x = Mathf.MoveTowards(movementInput.x, directMovementInput.x, inputGravity * Time.deltaTime);
         movementInput.y = Mathf.MoveTowards(movementInput.y, directMovementInput.y, inputGravity * Time.deltaTime);
-        // Get right stick / mouse input
-        Vector2 lookInput = GetLookInput();
 
         PlayerFeedbackController.UpdateMoveAmount(movementInput.sqrMagnitude);
 
@@ -661,11 +659,6 @@ public class PlayerController : MonoBehaviour
     // Note already clamps so diagonal motion should never be >1 - don't do this again later pls.
     Vector2 GetMoveInput() {
         return Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1);
-    }
-
-    // Gets right stick / mouse equivalent input as a Vector2.
-    Vector2 GetLookInput() {
-        return new Vector2(Input.GetAxis("Cam X"), -Input.GetAxis("Cam Y"));
     }
 
     bool GetJumpDown () {
