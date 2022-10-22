@@ -153,10 +153,13 @@ public class PlayerController : MonoBehaviour
         // Slowly rotate character towards forward motion direction
         characterObject.transform.rotation = Quaternion.RotateTowards(characterObject.transform.rotation, forwardDirection, characterModelTurnRate * Time.deltaTime);
 
-        if (mode == MovementMode.Grinding) {
+        if (mode == MovementMode.Grinding)
+        {
             PlayerFeedbackController.UpdateGrounded(true);
+            PlayerFeedbackController.SetGrind(true);
             return;
         }
+        else PlayerFeedbackController.SetGrind(false);
 
         PlayerFeedbackController.UpdateGrounded(cc.isGrounded);
 
