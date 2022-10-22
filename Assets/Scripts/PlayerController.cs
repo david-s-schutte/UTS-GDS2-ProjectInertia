@@ -159,8 +159,7 @@ public class PlayerController : MonoBehaviour
 
         PlayerFeedbackController.UpdateGrounded(cc.isGrounded);
 
-        // TODO: this is placeholder, we're obvs using the new input system and stuffs
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+        if (PlayerInputController.GetSwitchDown()) {
             SetMovementMode((IsWalkingMode()) ? MovementMode.Surfer : MovementMode.Walking);
             if (IsSurferMode()) EnterSurfer(velocity.magnitude * (1 + runningStartBoost / 10.0f));
             if (IsWalkingMode()) EnterWalking();
@@ -656,7 +655,7 @@ public class PlayerController : MonoBehaviour
     // Gets left stick / WSAD equivalent input as a Vector2.
     // Note already clamps so diagonal motion should never be >1 - don't do this again later pls.
     Vector2 GetMoveInput() {
-        return Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1);
+        return PlayerInputController.GetMoveInput();
     }
 
     bool GetJumpDown () {

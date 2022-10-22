@@ -7,6 +7,7 @@ using Surfer.Input;
 public class PlayerInputController {
     static PlayerControls playerControls;
     static InputAction leftStickMove;
+    static InputAction lookInputAction;
     static InputAction jump;
     static InputAction switchStyles;
 
@@ -25,6 +26,9 @@ public class PlayerInputController {
         leftStickMove = playerControls.Player.Move;
         leftStickMove.Enable();
 
+        lookInputAction = playerControls.Player.Look;
+        lookInputAction.Enable();
+
         jump = playerControls.Player.Jump;
         jump.Enable();
 
@@ -32,16 +36,26 @@ public class PlayerInputController {
         switchStyles.Enable();
     }
 
-    static void ProcessMoveInput(InputAction.CallbackContext ctx) {
-        lastMove = ctx.ReadValue<Vector2>();
+    public static Vector2 GetMoveInput() {
+        // sometimes this doesn't work and i don't know why
+        CheckInitialised();
+        // idfk why but this doesn't work unless i read the value twice.....
+        Vector2 input = Vector2.ClampMagnitude(leftStickMove.ReadValue<Vector2>(), 1);
+        //Debug.Log("returning: " + Vector2.ClampMagnitude(leftStickMove.ReadValue<Vector2>(), 1) );//+ ", playercontrols: " + playerControls );//+ ", move action: " + leftStickMove);
+        return Vector2.ClampMagnitude(leftStickMove.ReadValue<Vector2>(), 1);
     }
 
-    public static Vector2 GetMoveInput() {
-        return Vector2.ClampMagnitude(lastMove, 1);
+    public static Vector2 GetLookInput() {
+        CheckInitialised();
+        return lookInputAction.ReadValue<Vector2>();
     }
 
     public static bool GetJumpDown() {
         return jump.WasPressedThisFrame();
+    }
+
+    public static bool GetSwitchDown() {
+        return switchStyles.WasPressedThisFrame();
     }
 
 
