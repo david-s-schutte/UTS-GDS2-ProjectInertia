@@ -1,4 +1,5 @@
 using UnityEngine;
+using FMODUnity;
 
 namespace Surfer.Audio
 {
@@ -7,10 +8,13 @@ namespace Surfer.Audio
     {
 
         private BoostPad _boostPad;
+        private StudioEventEmitter emitter;
+        
 
         void Awake()
         {
             _boostPad = GetComponent<BoostPad>();
+            emitter = GetComponent<StudioEventEmitter>(); //we're doing this for now okay
         }
     
         void OnEnable()
@@ -23,7 +27,7 @@ namespace Surfer.Audio
             _boostPad.OnTriggeredPad -= PlaySound;
         }
 
-        public void PlaySound() => _audioManager.PlaySoundOnce(SelectedTrack, true);
+        public void PlaySound() => emitter.Play();
 
     }
 }

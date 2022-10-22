@@ -191,7 +191,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1741999947920076627}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &948896743821752377
 MonoBehaviour:
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelectedTrack:
+    ID: 0
     AudioKey: Footsteps Test
     AudioPath: event:/Player SFX/Footsteps Test
   SelectedItem: {fileID: -9101466709899821325, guid: 0e0f6e756a7c9744bb01a72eed61183c, type: 2}
@@ -312,12 +313,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537570311873196010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.1150002, z: -19.550018}
+  m_LocalPosition: {x: 0, y: 6.115002, z: -19.550018}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1741999947920076627}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &557147452462756461
 GameObject:
@@ -509,10 +510,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3534900936774626695}
-  - {fileID: 8521827769509837567}
   - {fileID: 4766395758072519273}
   - {fileID: 8288533242078159696}
   - {fileID: 6756743472110152658}
+  - {fileID: 8521827769509837567}
   m_Father: {fileID: 1456536528091119237}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2660,7 +2661,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1741999947920076627}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &7963429159239433154
 SkinnedMeshRenderer:
@@ -2922,7 +2923,7 @@ Transform:
   - {fileID: 521882443545669987}
   - {fileID: 6303679517973701429}
   m_Father: {fileID: 1741999947920076627}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &8433086700195191811
 GameObject:
