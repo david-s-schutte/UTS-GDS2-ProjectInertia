@@ -10,6 +10,11 @@ namespace Surfer.Audio
     public class AudioTrack
     {
         /// <summary>
+        /// The ID to uniquely identify each audio track
+        /// </summary>
+        public int ID;
+        
+        /// <summary>
         /// The string key to reference what audio you are wanting to update (think of it as a shortcut to the audio path)
         /// </summary>
         public string AudioKey;
