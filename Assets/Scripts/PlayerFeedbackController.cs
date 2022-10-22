@@ -39,4 +39,14 @@ public class PlayerFeedbackController : MonoBehaviour
             Instance.animator.SetTrigger("Double Jump");
     }
 
+    public static void SetGrind(bool isGrinding)
+    {
+        if (isGrinding)
+        {
+            if (!Instance.animator.GetBool("Grinding"))
+                Instance.animator.SetTrigger("Grind");
+        }
+        Instance.animator.SetBool("Grinding", isGrinding);
+    }
+
 }
