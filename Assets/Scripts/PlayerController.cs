@@ -122,6 +122,7 @@ public class PlayerController : MonoBehaviour
         cc = GetComponent<CharacterController>();
         playerCamera = Camera.main;
         velocity = lastFrameVelocity = Vector3.zero;
+        PlayerInputController.CheckInitialised();
     }
 
     private void Start() {
@@ -347,10 +348,7 @@ public class PlayerController : MonoBehaviour
         surferModeCurrentThrust = 0;
     }
 
-    // WARNING: THIS BIT IS VERY IN PROGRESS
-    // AND BROKEN
-    // LIKE FOR SOME REASON YOU SLIDE FASTER ON FLATS THAN ON STEEP HILLS
-    // I'M WORKING ON IT SMH
+    // WARNING: THIS BIT OF CODE WAS ACTUALLY WRITTEN BY A SMALL ALBINO GERBIL AND IS NOT VERY GOOD AT ALL WHEN COMPARED TO THAT WRITTEN BY HUMANS
     void MoveSurfer(Vector2 input) {
 
         // Vector3 motionUnprojected = new();
@@ -662,7 +660,8 @@ public class PlayerController : MonoBehaviour
     }
 
     bool GetJumpDown () {
-        return Input.GetKeyDown(KeyCode.Space);
+        // return Input.GetKeyDown(KeyCode.Space);
+        return PlayerInputController.GetJumpDown();
     }
 
     /*ADDITIONS - initiate new input system*/
