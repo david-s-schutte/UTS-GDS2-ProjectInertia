@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        PlayerFeedbackController.UpdateGrounded(cc.isGrounded);
+        PlayerFeedbackController.UpdateGrounded(IsGrounded());
 
         if (PlayerInputController.GetSwitchDown()) {
             SetMovementMode((IsWalkingMode()) ? MovementMode.Surfer : MovementMode.Walking);
@@ -166,7 +166,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // MOVEMENT HANDLING
-        if (cc.isGrounded) {
+        if (IsGrounded()) {
             if (!wasGrounded) HandleLanding();
         } else {
             if (wasGrounded) {
@@ -193,7 +193,7 @@ public class PlayerController : MonoBehaviour
             TryJump();
         }
         
-        if (!cc.isGrounded) {
+        if (!IsGrounded()) {
             // Clamp horizontal movement so that no excessive air control is possible
             Vector2 finalHorizontalMovement = Vector2.ClampMagnitude(new Vector2(velocity.x, velocity.z), lastGroundedSpeed);
             velocity.x = finalHorizontalMovement.x;
@@ -202,7 +202,7 @@ public class PlayerController : MonoBehaviour
 
         // Update wasGrounded in advance of applying movement so we can catch if the CC was grounded before jumping
         // Also store this frame's velocity
-        wasGrounded = cc.isGrounded;
+        wasGrounded = IsGrounded();
         lastFrameVelocity = velocity;
 
         // Apply final movement
@@ -280,7 +280,7 @@ public class PlayerController : MonoBehaviour
     void EnterWalking() {
         GameCameraController.EnterWalkCam();
         // If we aren't grounded then act like a liftoff so that momentum is properly carried 
-        if (!cc.isGrounded) {
+        if (!IsGrounded()) {
             HandleLiftoff();
         }
     }
@@ -289,7 +289,7 @@ public class PlayerController : MonoBehaviour
     public void MoveWalking(Vector2 input) {
 
         // Start by applying friction if we're on the ground
-        if (cc.isGrounded) {
+        if (IsGrounded()) {
             WalkApplyFriction();
         } else {
             // cumulativeAirControl = CreateCameraRelativeMotionVector(input) * airControlSpeed;
@@ -298,7 +298,7 @@ public class PlayerController : MonoBehaviour
 
         // Create motion vector
         Vector2 motion = CreateCameraRelativeMotionVector(input) * walkSpeed;
-        if (!cc.isGrounded) {
+        if (!IsGrounded()) {
             motion *= directAirControl;
             motion += cumulativeAirControl * airControl;
         }
@@ -308,7 +308,7 @@ public class PlayerController : MonoBehaviour
         if (input.sqrMagnitude > characterTurnThreshold)
             forwardDirection = Quaternion.LookRotation(motion3d, Vector3.up); 
         
-        if (cc.isGrounded) {
+        if (IsGrounded()) {
             if (velocity.y <= 0) velocity.y = 0;
             if (floorCast.transform != null) {
                 motion3d = Vector3.ProjectOnPlane(motion3d, floorCast.normal);
@@ -340,7 +340,7 @@ public class PlayerController : MonoBehaviour
     }
     void EnterSurfer (float overrideCarriedSpeed) {
         // Force forward direction to be camera forward. 
-        if (cc.isGrounded) forwardDirection = Quaternion.LookRotation(FlattenAndNormalise3D(GetCameraForwardVector()), Vector3.up);
+        if (IsGrounded()) forwardDirection = Quaternion.LookRotation(FlattenAndNormalise3D(GetCameraForwardVector()), Vector3.up);
 
         GameCameraController.EnterSurfCam();
         surferModeCarriedSpeed = overrideCarriedSpeed;
@@ -379,7 +379,7 @@ public class PlayerController : MonoBehaviour
 
         // This is a total mess due to getting it workable for sprint 3
 
-        if (!cc.isGrounded) lateralForward = FlattenAndNormalise3D(lastLiftoffDirection);
+        if (!IsGrounded()) lateralForward = FlattenAndNormalise3D(lastLiftoffDirection);
 
         Vector3 motion = new();
         motion += lateralForward * surferModeCurrentThrust;
@@ -387,7 +387,7 @@ public class PlayerController : MonoBehaviour
         surferModeCurrentThrust *= Mathf.Lerp(Mathf.Pow(surferModeThrustEaseOff, Time.deltaTime), 1, Mathf.Abs(input.y));
         
 
-        if (cc.isGrounded){
+        if (IsGrounded()){
             if (surferModeCarriedSpeed > 0) {
                 // Debug.Log("applied carried speed of " + surferModeCarriedSpeed);
                 surferModeCurrentThrust = surferModeCarriedSpeed;
@@ -407,7 +407,7 @@ public class PlayerController : MonoBehaviour
 
         // motion += Vector3.Project(motionUnprojected, lateralForward);
 
-        if (cc.isGrounded) {
+        if (IsGrounded()) {
             motion = Vector3.Project(motion, forwardDirection * Vector3.forward);
             // this is dreadful BUT
             // applies the speed when we switched to surfer mode then immediately resets that speed so it's only applied once 8-)
@@ -456,7 +456,7 @@ public class PlayerController : MonoBehaviour
         velocity.y += thisFrameGravity;
 
         // Ensure while grounded we never go beyond the base gravity rate
-        if (cc.isGrounded && velocity.y < 0) {
+        if (IsGrounded() && velocity.y < 0) {
             velocity.y = thisFrameGravity;
         }
         
