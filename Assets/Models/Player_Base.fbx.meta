@@ -118,6 +118,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Neon
+    second: {fileID: 2100000, guid: 5ff0c9a2d898a204384dde69a4b9b63f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Neon Blue
     second: {fileID: 2100000, guid: b0f8477fce91c0e41945073eea73cd37, type: 2}
   - first:
