@@ -23,20 +23,20 @@ public class MenuButtons : MonoBehaviour
 
     public void ExitGame()
     {
-        sfx.Play();
+        //sfx.Play();
         Application.Quit();
     }
 
     public void LoadScene(int sceneIndex)
     {
-        sfx.Play();
+        //sfx.Play();
         SceneManager.LoadScene(sceneIndex);
     }
 
     //this function is only used in demos - shows a quick diagram of the controls
     public void StartGame()
     {
-        sfx.Play();
+        //sfx.Play();
         howtoPlay.enabled = true;
         menuCanvas.enabled = false;
     }
