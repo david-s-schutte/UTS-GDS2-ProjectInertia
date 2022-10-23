@@ -39,8 +39,6 @@ public class PlayerController : MonoBehaviour
     // Railgrind stuff
     // TODO: I reckon this should be somewhere else and this script should mostly be reserved for direct player movement
     [SerializeField] Vector3 railOffset = new(0, 1, 0);
-    [SerializeField] float boxCastSize = 0.5f;
-    [SerializeField] float boxCastDistance = 3;
     [SerializeField] float railSpeed = 5;
     [SerializeField] float railLeaveBoost = 5;
 
@@ -103,6 +101,11 @@ public class PlayerController : MonoBehaviour
     Vector2 cumulativeAirControl = new Vector2();
 
     [Header("Collisions")]
+    // Distance for raycast targetting the floor
+    [SerializeField] float floorCastDist = 4;
+    // Values for boxcast targetting floor obstacles, like railgrinds
+    [SerializeField] float boxCastSize = 1;
+    [SerializeField] float boxCastDistance = 1;
     [SerializeField] float maxRampDegrees; // maximum degrees to allow player to continue sliding up a ramp (otherwise will treat like a wall)
     
     [Header("Controls")]
@@ -115,7 +118,6 @@ public class PlayerController : MonoBehaviour
     // Other
     static MovementMode mode;
     RaycastHit floorCast;
-    [SerializeField] float floorCastDist = 4;
 
     private void Awake() {
         Instance = this;
@@ -370,6 +372,9 @@ public class PlayerController : MonoBehaviour
 
         
         forwardDirection *= Quaternion.Euler(0, input.x * surferTurnRate * Time.deltaTime, 0);
+        if (!IsGrounded() && GetGrabButton()) {        
+            forwardDirection *= Quaternion.Euler(input.y * surferTurnRate * Time.deltaTime, 0, 0);
+        }
         Debug.DrawRay(transform.position, forwardDirection * Vector3.forward, Color.green);
 
         Vector3 lateralForward = forwardDirection * Vector3.forward;
@@ -498,7 +503,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump() {
         PlayerFeedbackController.OnJump();
-        velocity.y = jumpImpulse;
+        velocity.y = jumpImpulse;  //TODO: experiment with making jump relative to local up instead of world up (e.g. for half pipes)
         HandleLiftoff();
     }
 
@@ -664,12 +669,8 @@ public class PlayerController : MonoBehaviour
         return PlayerInputController.GetJumpDown();
     }
 
-    /*ADDITIONS - initiate new input system*/
-    private void InitiateInputActions()
-    {
-        leftStickMove = playerControls.Player.Move;
-        leftStickMove.Enable();
-        //leftStickMove.performed += SwitchCamera;
+    bool GetGrabButton () {
+        return Input.GetKey(KeyCode.LeftControl);
     }
 
     #endregion

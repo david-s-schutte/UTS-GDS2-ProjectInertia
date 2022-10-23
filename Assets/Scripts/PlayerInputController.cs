@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Surfer.Input;
 
-public class PlayerInputController {
+public class PlayerInputController : MonoBehaviour {
     static PlayerControls playerControls;
     static InputAction leftStickMove;
     static InputAction lookInputAction;
@@ -12,6 +12,10 @@ public class PlayerInputController {
     static InputAction switchStyles;
 
     static Vector2 lastMove;
+
+    private void Awake() {
+        InitiateInputActions();
+    }
 
     public static void CheckInitialised() {
         if (playerControls == null) {
