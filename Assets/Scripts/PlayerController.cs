@@ -629,7 +629,8 @@ public class PlayerController : MonoBehaviour
             node++;
         }
 
-        SetMovementMode(MovementMode.Surfer);
+        // If we've just run out of nodes and not jumped off, we'll change to surfer mode. If we've jumped off, change to walking.
+        SetMovementMode(!GetJumpDown() ? MovementMode.Surfer : MovementMode.Walking);
         if (!GetJumpDown()) surferModeCarriedSpeed = railLeaveBoost;
 
     }
