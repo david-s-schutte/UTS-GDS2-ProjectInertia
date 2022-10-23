@@ -1,3 +1,18 @@
 {
-	"name": "Surfer.Game"
+    "name": "Surfer.Game",
+    "rootNamespace": "",
+    "references": [
+        "GUID:61cb8055e9c264f4cb85ca6b81bd3675",
+        "GUID:607e5fc428cee124e9280c8cd460767b",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
