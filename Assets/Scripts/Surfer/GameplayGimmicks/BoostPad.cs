@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BoostPad : MonoBehaviour
 {
     [SerializeField] float boostSpeed;
@@ -10,6 +11,7 @@ public class BoostPad : MonoBehaviour
 
     public delegate void OnTriggered();
     public OnTriggered OnTriggeredPad;
+
     
     private void OnTriggerEnter(Collider other) {
         if (cooldown > 0) return;

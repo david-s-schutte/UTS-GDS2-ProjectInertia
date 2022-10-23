@@ -73,8 +73,21 @@ namespace Surfer.UI
 
         //Disables the new input system (Must be called if UI is disabled or moved away from front)
         public void DisableControls() => Controls.Disable();
-        
 
+        public void Resume()
+        {
+            DisableControls();
+        }
+
+        public void ReturnToMenu()
+        {
+
+        }
+
+        public void ReturnToHub()
+        {
+
+        }
         #endregion
     }
 }
