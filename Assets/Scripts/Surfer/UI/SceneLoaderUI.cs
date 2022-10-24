@@ -35,6 +35,10 @@ namespace Surfer.UI
         private PlayerControls _playerControls;
         private bool loadingCompletedFlag = false;
 
+        public void Test()
+        {
+            Debug.Log("BUTTON WORKS");
+        }
         protected override void OnInitialised()
         {
             DontDestroyOnLoad(gameObject);

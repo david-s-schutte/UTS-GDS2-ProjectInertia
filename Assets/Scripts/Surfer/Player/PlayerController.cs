@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Runtime.Remoting.Messaging;
 using UnityEngine.InputSystem;
 using Surfer.Input;
 using UnityEngine;
@@ -11,6 +13,16 @@ public class PlayerController : MonoBehaviour
     static PlayerController Instance;
     public enum MovementMode {Walking, Surfer, Grinding, Stopped};
 
+    #region Events for Audio Purposes
+    public delegate void ModeChanged(float currentSpeed, bool isSurfer);
+    public ModeChanged OnModeChanged;
+
+    public delegate void GrindState(bool grindStarted);
+    public GrindState OnGrindStateUpdated;
+
+    #endregion
+
+
     /*ADDITIONS MADE BY DAVID - new Inputs*/
     PlayerControls playerControls;
     InputAction leftStickMove;
@@ -20,6 +32,8 @@ public class PlayerController : MonoBehaviour
     // # Components    
     CharacterController cc;
     Camera playerCamera;
+    
+    public CharacterController Controller => cc;
 
     [Header("Components")]
     [SerializeField] GameObject characterObject;
@@ -154,6 +168,7 @@ public class PlayerController : MonoBehaviour
         characterObject.transform.rotation = Quaternion.RotateTowards(characterObject.transform.rotation, forwardDirection, characterModelTurnRate * Time.deltaTime);
 
         if (mode == MovementMode.Grinding) {
+            
             PlayerFeedbackController.UpdateGrounded(true);
             return;
         }
@@ -213,7 +228,13 @@ public class PlayerController : MonoBehaviour
     }
 
   
-    void SetMovementMode (MovementMode newMode) {
+    void SetMovementMode (MovementMode newMode)
+    {
+        MovementMode currentMode = mode;
+
+        if (currentMode == MovementMode.Grinding)
+            OnGrindStateUpdated?.Invoke(false);
+        
         mode = newMode;
         switch (mode) {
             case MovementMode.Walking : 
@@ -221,6 +242,7 @@ public class PlayerController : MonoBehaviour
             case MovementMode.Surfer : 
                 EnterSurfer(); break;
             case MovementMode.Grinding : 
+                OnGrindStateUpdated?.Invoke(true);
                 break;
             case MovementMode.Stopped : 
                 break;
@@ -291,6 +313,9 @@ public class PlayerController : MonoBehaviour
     // Movement function for adventure mode to be run on Update
     public void MoveWalking(Vector2 input) {
 
+        
+        OnModeChanged?.Invoke(cc.velocity.magnitude, false);
+
         // Start by applying friction if we're on the ground
         if (cc.isGrounded) {
             Debug.Log("grounded");
@@ -356,7 +381,7 @@ public class PlayerController : MonoBehaviour
 
         // Vector3 motionUnprojected = new();
 
-
+        OnModeChanged?.Invoke(cc.velocity.magnitude, true);
         if (floorCast.transform != null) {
             Vector3 groundNormal = floorCast.normal;
             Vector3 groundForward = Vector3.Cross(forwardDirection * Vector3.right, groundNormal);

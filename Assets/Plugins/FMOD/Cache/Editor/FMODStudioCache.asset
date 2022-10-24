@@ -97,7 +97,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638019551130506991
+  lastModified: 638022326225079471
   FileSizes:
   - Name: Desktop
     Value: 40032
@@ -173,10 +173,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638019551111748080
+  lastModified: 638022326224083611
   FileSizes:
   - Name: Desktop
-    Value: 1866
+    Value: 1984
   Exists: 1
 --- !u!114 &-5098004140578623927
 MonoBehaviour:
@@ -232,6 +232,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 120000
+--- !u!114 &-4460471056774687770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player SFX/Grinding_1
+  m_EditorClassIdentifier: 
+  Path: event:/Player SFX/Grinding_1
+  Guid:
+    Data1: 1962498250
+    Data2: 1300642417
+    Data3: -2128016744
+    Data4: 29567911
+  Banks:
+  - {fileID: 8091779226032073584}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1095002338463127291}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2199
 --- !u!114 &-4237685714520735307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +419,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 79152
+--- !u!114 &-1095002338463127291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Grinding_1/GrindState
+  m_EditorClassIdentifier: 
+  Name: GrindState
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2019974809
+    data2: 1568135502
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - GrindStarted
+  - Grinding
+  - GrindEnded
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,6 +481,7 @@ MonoBehaviour:
   - {fileID: 1596089085448596007}
   - {fileID: 4607430280301488450}
   - {fileID: 3286969427626169536}
+  - {fileID: -4460471056774687770}
   EditorParameters:
   - {fileID: 7449291822003487038}
   - {fileID: 8171270873111554252}
@@ -433,7 +489,7 @@ MonoBehaviour:
   - {fileID: 4416030701848238856}
   StringsBanks:
   - {fileID: -5258916371878480410}
-  cacheTime: 638019551130506991
+  cacheTime: 638022326225079471
   cacheVersion: 131591
 --- !u!114 &139754822084797369
 MonoBehaviour:
@@ -585,7 +641,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638019551111733068
+  lastModified: 638022326224063598
   FileSizes:
   - Name: Desktop
     Value: 979360
@@ -612,11 +668,12 @@ MonoBehaviour:
   - {fileID: 8091779226032073584}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7823776813768433152}
   MinDistance: 1
   MaxDistance: 20
-  Length: 8614
+  Length: 0
 --- !u!114 &4815029032057160007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,7 +689,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638019551128232229
+  lastModified: 638022326224443921
   FileSizes:
   - Name: Desktop
     Value: 5696736
@@ -712,6 +769,30 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &7823776813768433152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Wind/Speed
+  m_EditorClassIdentifier: 
+  Name: Speed
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3272807947
+    data2: 3449186669
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &8091779226032073584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,10 +808,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638019551130043779
+  lastModified: 638022326224889312
   FileSizes:
   - Name: Desktop
-    Value: 149152
+    Value: 172128
   Exists: 1
 --- !u!114 &8171270873111554252
 MonoBehaviour:
