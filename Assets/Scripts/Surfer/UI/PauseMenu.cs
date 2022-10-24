@@ -3,6 +3,8 @@ using Managers;
 using Surfer.Input;
 using Surfer.Managers;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
 namespace Surfer.UI
@@ -14,10 +16,19 @@ namespace Surfer.UI
     {
         //Inherited from IInteractable  
         public PlayerControls Controls { get; set; }
+        public static bool isPaused;
+        
 
         private void OnDisable()
         {
             _uiManager.UnRegisterUI(this);
+        }
+
+        protected override void OnEnable()
+        {
+            _uiManager.RegisterUI(this, false);
+            base.OnEnable();
+            EnableControls();
         }
 
         [ContextMenu("Bring To Back")]
@@ -38,10 +49,12 @@ namespace Surfer.UI
             // Registration simply refers to the UIManager caching a UIController so that it can update the layering for it.
             //This process should be done onEnable
             _uiManager.RegisterUI(this, false);
+
         }
 
         public override void OnFront()
         {
+            isPaused = true;
             EnableControls();
         }
 
@@ -74,19 +87,38 @@ namespace Surfer.UI
         //Disables the new input system (Must be called if UI is disabled or moved away from front)
         public void DisableControls() => Controls.Disable();
 
+        public void Pause(InputAction.CallbackContext context)
+        {
+            isPaused = !isPaused;
+            if (isPaused)
+            {
+                Time.timeScale = 0;
+                BringToFront();
+            }
+            else
+            {
+                BringToBack();
+            }
+        }
+
         public void Resume()
         {
+            Debug.Log("hello???");
+            BringToBack();
             DisableControls();
         }
 
+        public void Restart()
+        {
+        }
         public void ReturnToMenu()
         {
-
+          
         }
 
         public void ReturnToHub()
         {
-
+            
         }
         #endregion
     }

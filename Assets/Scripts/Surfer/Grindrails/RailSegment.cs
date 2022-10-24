@@ -118,39 +118,39 @@ public class RailSegment : MonoBehaviour
 
     }
 
-    //public void OnDrawGizmos()
-    //{
-    //    for (int i = 0; i < 4; i++)
-    //    {
-    //        Gizmos.DrawSphere(GetPos(i), 0.05f);
-    //    }
+    public void OnDrawGizmos()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            Gizmos.DrawSphere(GetPos(i), 0.05f);
+        }
 
-    //    OrientedPoint testPoint = GetBezierOP(t);
-    //    Handles.DrawBezier(GetPos(0), GetPos(3), GetPos(1), GetPos(2),
-    //        Color.white, EditorGUIUtility.whiteTexture, 2f);
+        OrientedPoint testPoint = GetBezierOP(t);
+        Handles.DrawBezier(GetPos(0), GetPos(3), GetPos(1), GetPos(2),
+            Color.white, EditorGUIUtility.whiteTexture, 2f);
 
-    //    //void DrawPoint(Vector2 localPos) => Gizmos.DrawSphere(testPoint.LocalToWorld(localPos), 0.1f);
+        //void DrawPoint(Vector2 localPos) => Gizmos.DrawSphere(testPoint.LocalToWorld(localPos), 0.1f);
 
-    //    Vector3[] verts = shape2D.vertices.Select(v => testPoint.LocalToWorld(v.vert)).ToArray();
-        
-    //    for(int i = 0; i < shape2D.vertices.Length; i+=2)
-    //    {
+        Vector3[] verts = shape2D.vertices.Select(v => testPoint.LocalToWorld(v.vert)).ToArray();
 
-    //        Vector3 a = verts[shape2D.lineIndices[i]];
-    //        Vector3 b = verts[shape2D.lineIndices[i + 1]];
-    //        Gizmos.DrawLine(a, b);
-    //    }
+        for (int i = 0; i < shape2D.vertices.Length; i += 2)
+        {
 
-    //    Gizmos.color = Color.red;
-       
-    //    Gizmos.DrawSphere(testPoint.pos, 0.03f);
+            Vector3 a = verts[shape2D.lineIndices[i]];
+            Vector3 b = verts[shape2D.lineIndices[i + 1]];
+            Gizmos.DrawLine(a, b);
+        }
 
-    //    Handles.PositionHandle(testPoint.pos, testPoint.rot);
-    //    Gizmos.DrawSphere(testPoint.LocalToWorld(Vector3.right * 0.2f), 0.01f);
+        Gizmos.color = Color.red;
 
-    //    Gizmos.color = Color.white;
+        Gizmos.DrawSphere(testPoint.pos, 0.03f);
 
-    //}
+        Handles.PositionHandle(testPoint.pos, testPoint.rot);
+        Gizmos.DrawSphere(testPoint.LocalToWorld(Vector3.right * 0.2f), 0.01f);
+
+        Gizmos.color = Color.white;
+
+    }
 
     public void GenerateNodes()
     {
@@ -163,9 +163,9 @@ public class RailSegment : MonoBehaviour
             {
                 Destroy(nodes.transform.GetChild(i));
             }
-            for (int i = 0; i < edgeCount; i++)
+            for (int i = 0; i < nodeCount; i++)
             {
-                float t = i / (edgeCount - 1f);
+                float t = i / (nodeCount - 1f);
                 OrientedPoint op = GetBezierOP(t);
                 Collider node = Instantiate(railNode, op.pos, op.rot);
                 node.transform.parent = nodes.transform;

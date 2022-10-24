@@ -1,6 +1,7 @@
 using System;
 using Managers;
 using Surfer.Input;
+using UnityEngine.InputSystem;
 
 namespace Surfer.UI
 {
@@ -14,8 +15,9 @@ namespace Surfer.UI
 
         protected override void OnEnable()
         {
+            _uiManager.RegisterUI(this, false);
             base.OnEnable();
-            uiManager.RegisterUI(this);
+            EnableControls();
         }
 
         protected override void OnInitialised()
@@ -49,6 +51,8 @@ namespace Surfer.UI
         {
             Controls.Disable();
         }
+
+       
 
         #endregion
     }
