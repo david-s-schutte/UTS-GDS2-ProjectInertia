@@ -53,8 +53,7 @@ public class GameCameraController : MonoBehaviour
         stateDrivenCamera.LookAt = GameObject.FindWithTag("Player").transform;
         //Automatically assign a CinemachineBrain to the main camera
         Camera camera = Camera.main;
-        Cursor.lockState = CursorLockMode.Locked;
-        if (!camera.gameObject.GetComponent<CinemachineBrain>())
+        if(!camera.gameObject.GetComponent<CinemachineBrain>())
             camera.gameObject.AddComponent<CinemachineBrain>();
     }
 

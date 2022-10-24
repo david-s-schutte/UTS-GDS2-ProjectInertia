@@ -74,7 +74,5 @@ namespace Surfer.UI
         /// Called when the UI is UnRegistered from UIManager
         /// </summary>
         public abstract void OnUnregistered();
-
-        
     }
 }

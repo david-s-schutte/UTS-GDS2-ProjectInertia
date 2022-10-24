@@ -64,15 +64,6 @@ namespace Surfer.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Pause"",
-                    ""type"": ""Button"",
-                    ""id"": ""a4f547ba-d8e8-46cd-a3a7-d7c738562bf2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -271,17 +262,6 @@ namespace Surfer.Input
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ChangeMode"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""27643258-541b-43e4-bc54-53ced9b75b47"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1095,7 +1075,6 @@ namespace Surfer.Input
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             m_Player_ChangeMode = m_Player.FindAction("ChangeMode", throwIfNotFound: true);
-            m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1176,7 +1155,6 @@ namespace Surfer.Input
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Jump;
         private readonly InputAction m_Player_ChangeMode;
-        private readonly InputAction m_Player_Pause;
         public struct PlayerActions
         {
             private @PlayerControls m_Wrapper;
@@ -1185,7 +1163,6 @@ namespace Surfer.Input
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Jump => m_Wrapper.m_Player_Jump;
             public InputAction @ChangeMode => m_Wrapper.m_Player_ChangeMode;
-            public InputAction @Pause => m_Wrapper.m_Player_Pause;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1207,9 +1184,6 @@ namespace Surfer.Input
                     @ChangeMode.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeMode;
                     @ChangeMode.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeMode;
                     @ChangeMode.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeMode;
-                    @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
-                    @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
-                    @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -1226,9 +1200,6 @@ namespace Surfer.Input
                     @ChangeMode.started += instance.OnChangeMode;
                     @ChangeMode.performed += instance.OnChangeMode;
                     @ChangeMode.canceled += instance.OnChangeMode;
-                    @Pause.started += instance.OnPause;
-                    @Pause.performed += instance.OnPause;
-                    @Pause.canceled += instance.OnPause;
                 }
             }
         }
@@ -1438,7 +1409,6 @@ namespace Surfer.Input
             void OnLook(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
             void OnChangeMode(InputAction.CallbackContext context);
-            void OnPause(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {
