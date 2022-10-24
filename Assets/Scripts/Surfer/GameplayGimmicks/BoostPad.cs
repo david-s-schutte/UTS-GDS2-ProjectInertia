@@ -11,6 +11,7 @@ public class BoostPad : MonoBehaviour
 
     public delegate void OnTriggered();
     public OnTriggered OnTriggeredPad;
+
     
     private void OnTriggerEnter(Collider other) {
         if (cooldown > 0) return;
