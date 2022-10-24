@@ -7,12 +7,16 @@ public class JumpPad : MonoBehaviour
 {
     [SerializeField] bool ignorePlayerEnterVelocity;
     [SerializeField] float strength = 20.0f;
+    StudioEventEmitter emitter;
+    private void Start()
+    {
+        //Transform FMOD = gameObject.transform.Find("FMOD");
+        emitter = GetComponent<StudioEventEmitter>();
+       
+    }
     private void OnTriggerEnter(Collider other) {
         if (other.GetComponent<PlayerController>()) {
-            Transform FMOD = gameObject.transform.Find("FMOD");
-            StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
-            Debug.Log(emitter);
-            emitter.Play();
+            
             if (ignorePlayerEnterVelocity) {
                 PlayerController.SetVelocity(new(0, strength, 0));
             } else {
@@ -32,7 +36,6 @@ public class JumpPad : MonoBehaviour
             PlayerController.ApplyVelocity(new(0, strength, 0));
         }
 
-        if (!GetComponent<AudioSource>().isPlaying) 
-            GetComponent<AudioSource>().Play();
+        emitter.Play();
     }
 }
