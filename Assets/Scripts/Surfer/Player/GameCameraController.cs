@@ -56,6 +56,9 @@ public class GameCameraController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         if (!camera.gameObject.GetComponent<CinemachineBrain>())
             camera.gameObject.AddComponent<CinemachineBrain>();
+        //Reset camera positions
+        walkingCamera.ForceCameraPosition(cameraResetPos, Quaternion.identity);
+        surfingCamera.ForceCameraPosition(cameraResetPos, Quaternion.identity);
     }
 
     #region Switching Cameras
