@@ -188,7 +188,7 @@ namespace Surfer.Player
             movementDirection = new Vector3(0, movementDirection.y, 0);
             _cameraRelativeMovement = new Vector3(0, _cameraRelativeMovement.y, 0);
         }
-
+        
         private void Jump(InputAction.CallbackContext ctx)
         {
             _isJumping = ctx.ReadValueAsButton();
