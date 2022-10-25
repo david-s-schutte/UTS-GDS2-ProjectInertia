@@ -1,0 +1,16 @@
+{
+    "name": "Surfer.GameplayGimmicks",
+    "rootNamespace": "",
+    "references": [
+        "Surfer.Player"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
