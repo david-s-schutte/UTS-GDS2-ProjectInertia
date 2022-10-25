@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{93571a42-679b-4479-b191-452f07a6c231}">
+		<property name="assetPath">
+			<value>LVLCLEAR.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>18</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1fb0bd20-ceaf-44cf-8a89-b5f3704bac3c}</destination>
+		</relationship>
+	</object>
+</objects>
