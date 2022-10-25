@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Runtime.Remoting.Messaging;
 using UnityEngine.InputSystem;
 using Surfer.Input;
 using UnityEngine;
@@ -13,16 +11,6 @@ public class PlayerController : MonoBehaviour
     static PlayerController Instance;
     public enum MovementMode {Walking, Surfer, Grinding, Stopped};
 
-    #region Events for Audio Purposes
-    public delegate void ModeChanged(float currentSpeed, bool isSurfer);
-    public ModeChanged OnModeChanged;
-
-    public delegate void GrindState(bool grindStarted);
-    public GrindState OnGrindStateUpdated;
-
-    #endregion
-
-
     /*ADDITIONS MADE BY DAVID - new Inputs*/
     PlayerControls playerControls;
     InputAction leftStickMove;
@@ -32,8 +20,6 @@ public class PlayerController : MonoBehaviour
     // # Components    
     CharacterController cc;
     Camera playerCamera;
-    
-    public CharacterController Controller => cc;
 
     [Header("Components")]
     [SerializeField] GameObject characterObject;
@@ -118,6 +104,9 @@ public class PlayerController : MonoBehaviour
     // Total air control input over this jump
     // Is set where relevant but currently isn't used.
     Vector2 cumulativeAirControl = new Vector2();
+
+    [Header("Collisions")]
+    [SerializeField] float maxRampDegrees; // maximum degrees to allow player to continue sliding up a ramp (otherwise will treat like a wall)
     
     [Header("Controls")]
     // "floatiness" of input - higher values will be snappier, lower values will be smoother.
@@ -167,11 +156,13 @@ public class PlayerController : MonoBehaviour
         // Slowly rotate character towards forward motion direction
         characterObject.transform.rotation = Quaternion.RotateTowards(characterObject.transform.rotation, forwardDirection, characterModelTurnRate * Time.deltaTime);
 
-        if (mode == MovementMode.Grinding) {
-            
+        if (mode == MovementMode.Grinding)
+        {
             PlayerFeedbackController.UpdateGrounded(true);
+            PlayerFeedbackController.SetGrind(true);
             return;
         }
+        else PlayerFeedbackController.SetGrind(false);
 
         PlayerFeedbackController.UpdateGrounded(cc.isGrounded);
 
@@ -228,13 +219,7 @@ public class PlayerController : MonoBehaviour
     }
 
   
-    void SetMovementMode (MovementMode newMode)
-    {
-        MovementMode currentMode = mode;
-
-        if (currentMode == MovementMode.Grinding)
-            OnGrindStateUpdated?.Invoke(false);
-        
+    void SetMovementMode (MovementMode newMode) {
         mode = newMode;
         switch (mode) {
             case MovementMode.Walking : 
@@ -242,7 +227,6 @@ public class PlayerController : MonoBehaviour
             case MovementMode.Surfer : 
                 EnterSurfer(); break;
             case MovementMode.Grinding : 
-                OnGrindStateUpdated?.Invoke(true);
                 break;
             case MovementMode.Stopped : 
                 break;
@@ -313,9 +297,6 @@ public class PlayerController : MonoBehaviour
     // Movement function for adventure mode to be run on Update
     public void MoveWalking(Vector2 input) {
 
-        
-        OnModeChanged?.Invoke(cc.velocity.magnitude, false);
-
         // Start by applying friction if we're on the ground
         if (cc.isGrounded) {
             Debug.Log("grounded");
@@ -368,6 +349,9 @@ public class PlayerController : MonoBehaviour
         EnterSurfer(velocity.magnitude);
     }
     void EnterSurfer (float overrideCarriedSpeed) {
+        // Force forward direction to be camera forward. 
+        if (cc.isGrounded) forwardDirection = Quaternion.LookRotation(FlattenAndNormalise3D(GetCameraForwardVector()), Vector3.up);
+
         GameCameraController.EnterSurfCam();
         surferModeCarriedSpeed = overrideCarriedSpeed;
         surferModeCurrentThrust = 0;
@@ -381,7 +365,7 @@ public class PlayerController : MonoBehaviour
 
         // Vector3 motionUnprojected = new();
 
-        OnModeChanged?.Invoke(cc.velocity.magnitude, true);
+
         if (floorCast.transform != null) {
             Vector3 groundNormal = floorCast.normal;
             Vector3 groundForward = Vector3.Cross(forwardDirection * Vector3.right, groundNormal);
@@ -529,6 +513,52 @@ public class PlayerController : MonoBehaviour
         PlayerFeedbackController.OnJump();
         velocity.y = jumpImpulse;
         HandleLiftoff();
+    }
+
+    #endregion
+
+    #region Collisions
+
+    bool IsGrounded() {
+        return cc.isGrounded;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit) {
+        // forward direction converted into player normal
+        Vector3 normalDirection = (forwardDirection * Quaternion.Euler(-90 * transform.right)) * Vector3.forward;
+        // Debug.DrawRay(transform.position, hit.normal, Color.yellow);
+        // Debug.DrawRay(transform.position, normalDirection, Color.red);
+        // Angle that we'd need to change by if we treat this is a ramp
+        float angleDif = Vector3.Angle(hit.normal, normalDirection);
+        // Debug.Log(angleDif);
+ 
+        if (hit.moveDirection.y > -0.3f && angleDif > maxRampDegrees) { // FIXME: arbitrary value for min move dir
+            
+            if (IsSurferMode()) {
+                // Speed of thrust
+                // Note DIVIDING by deltaTime to convert the single frame translation into a speed
+                float hitSpeed = (hit.moveLength / Time.deltaTime);
+                // The speed we'll retain from hitting the wall
+                // On a direct hit with a wall (i.e. surfer perpendicular to wall) this should be 1.0
+                // This value will approach 0 as the angle is closer to parallel.
+                float reboundAmount = Mathf.Cos(Vector3.Angle(FlattenAndNormalise3D(hit.normal), FlattenAndNormalise3D(hit.moveDirection)) * Mathf.Deg2Rad);
+                // Debug.Log(reboundAmount + ", " + hitSpeed);
+                // Adjust the current thrust by the speed of impact multiplied by the amount retained based on the angle
+                surferModeCurrentThrust += hitSpeed * reboundAmount;
+                // Restrict thrust to not go below 0. This means backing into a wall will instantly stop
+                // Mostly this is to prevent a weird chain reaction issue I was having. Could probably fix more properly
+                surferModeCurrentThrust = Mathf.Max(surferModeCurrentThrust, 0); 
+                // Set direction to run along the wall in the closest direction to forward
+                // FIXME: there's almost definitely a less scuffed way of doing this, this is just a way i know will give predictableish results
+                Quaternion alongLeft = Quaternion.LookRotation(hit.normal, Vector3.up) * Quaternion.Euler(0, -90, 0);
+                Quaternion alongRight = Quaternion.LookRotation(hit.normal, Vector3.up) * Quaternion.Euler(0, 90, 0);
+                if (Quaternion.Angle(alongLeft, forwardDirection) > Quaternion.Angle(alongRight, forwardDirection)) {
+                    forwardDirection = alongRight;
+                } else {
+                    forwardDirection = alongLeft;
+                }
+            }
+        }
     }
 
     #endregion

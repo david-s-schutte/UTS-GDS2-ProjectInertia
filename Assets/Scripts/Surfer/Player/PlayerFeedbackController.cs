@@ -35,6 +35,18 @@ public class PlayerFeedbackController : MonoBehaviour
     public static void OnJump() {
         if (!Instance.animator.GetBool("InTheAir"))
             Instance.animator.SetTrigger("Jump");
+        if (Instance.animator.GetBool("InTheAir"))
+            Instance.animator.SetTrigger("Double Jump");
+    }
+
+    public static void SetGrind(bool isGrinding)
+    {
+        if (isGrinding)
+        {
+            if (!Instance.animator.GetBool("Grinding"))
+                Instance.animator.SetTrigger("Grind");
+        }
+        Instance.animator.SetBool("Grinding", isGrinding);
     }
 
 }

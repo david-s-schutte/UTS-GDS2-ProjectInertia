@@ -227,6 +227,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8678975694273511563}
+  - component: {fileID: 1440291930495385118}
+  - component: {fileID: 7717761932459617918}
   m_Layer: 6
   m_Name: Checkpoint
   m_TagString: Checkpoint
@@ -250,6 +252,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1440291930495385118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921947400506482353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5e94cc14358f8b479fc61ff048274e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7717761932459617918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921947400506482353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Checkpoint
+  EventReference:
+    Guid:
+      Data1: -46812871
+      Data2: 1295517297
+      Data3: -1686486649
+      Data4: 1058797717
+    Path: event:/UI SFX/Menu Navigation 2 Test
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6463005214980283163
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,9 +303,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5979343985386570145}
-  - component: {fileID: 810591624376020244}
-  - component: {fileID: 3879684907283955170}
-  - component: {fileID: 4871940514504945784}
+  - component: {fileID: 2442240638816957079}
+  - component: {fileID: 1068702086678910724}
   m_Layer: 6
   m_Name: Model
   m_TagString: Checkpoint
@@ -288,40 +331,7 @@ Transform:
   m_Father: {fileID: 8678975694273511563}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &810591624376020244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6463005214980283163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5e94cc14358f8b479fc61ff048274e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3879684907283955170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6463005214980283163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c474bdee7f39b7c489e72c7172c5d678, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SelectedTrack:
-    ID: 0
-    AudioKey: Menu Selection 2 Test
-    AudioPath: event:/UI SFX/Menu Selection 2 Test
-  SelectedItem: {fileID: 4147760592996654960, guid: 0e0f6e756a7c9744bb01a72eed61183c, type: 2}
-  PlayOnAwake: 0
-  IsGlobal: 0
-  overrideVolume: 1
-  volumeOverrideAmount: 0.1
---- !u!65 &4871940514504945784
+--- !u!65 &2442240638816957079
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,8 +342,104 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4466653, y: 0.23, z: 3.24197}
-  m_Center: {x: -0.18333268, y: 0, z: -0.004720688}
+  m_Size: {x: 2.7806988, y: 0.4560386, z: 3.2625656}
+  m_Center: {x: -0.017457962, y: -0.0066208243, z: 0.01398468}
+--- !u!82 &1068702086678910724
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463005214980283163}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 31b9e1cdfc815154690a6ea46de4bf16, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8695419902512197996
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5081395381711493065}
+  - component: {fileID: 8700307059014283206}
   - component: {fileID: 7694431946958932121}
   m_Layer: 6
   m_Name: FMOD
@@ -366,6 +473,36 @@ Transform:
   m_Father: {fileID: 5979343985386570145}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8700307059014283206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695419902512197996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Checkpoint
+  EventReference:
+    Guid:
+      Data1: -333532095
+      Data2: 1207474607
+      Data3: 481961896
+      Data4: 32390878
+    Path: event:/UI SFX/Menu Selection 2 Test
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &7694431946958932121
 MonoBehaviour:
   m_ObjectHideFlags: 0

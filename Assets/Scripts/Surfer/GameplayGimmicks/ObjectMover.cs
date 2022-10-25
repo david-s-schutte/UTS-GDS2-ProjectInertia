@@ -8,6 +8,8 @@ public class ObjectMover : MonoBehaviour
     [SerializeField] private Transform[] nodes;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float distToChange;
+    [SerializeField] private float delayTime;
+    private float timeToNextMove;
 
     static Vector3 currentPosition;
     private int currentNodeIndex;
@@ -15,11 +17,12 @@ public class ObjectMover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timeToNextMove = delayTime;
         currentNodeIndex = 0;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (nodes.Length > 0)
         {
@@ -36,8 +39,14 @@ public class ObjectMover : MonoBehaviour
 
     private void GetNextNode()
     {
-        currentNodeIndex++;
-        if (currentNodeIndex >= nodes.Length)
-            currentNodeIndex = 0;
+        if (timeToNextMove >= 0)
+            timeToNextMove -= Time.deltaTime;
+        else
+        {
+            timeToNextMove = delayTime;
+            currentNodeIndex++;
+            if (currentNodeIndex >= nodes.Length)
+                currentNodeIndex = 0;
+        }
     }
 }

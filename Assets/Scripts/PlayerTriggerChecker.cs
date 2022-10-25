@@ -19,16 +19,16 @@ public class PlayerTriggerChecker : MonoBehaviour
         if(hit.gameObject.tag == "Checkpoint")
         {
             Transform animator = hit.gameObject.transform.Find("C");
-         //   Transform FMOD = hit.gameObject.transform.Find("FMOD");
-            // StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
-            // StudioGlobalParameterTrigger trigger = FMOD.GetComponent<StudioGlobalParameterTrigger>();
-            // //Debug.Log(emitter);
-            // emitter.Play();
-            // trigger.TriggerParameters();
+            Transform FMOD = hit.gameObject.transform.Find("FMOD");
+            StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
+            StudioGlobalParameterTrigger trigger = FMOD.GetComponent<StudioGlobalParameterTrigger>();
+            //Debug.Log(emitter);
+            emitter.Play();
+            trigger.TriggerParameters();
             animator.GetComponent<Animator>().SetBool("isActivated", true);
-            if( respawnPos != hit.gameObject.transform.Find("RespawnPos").position)
+            if(!hit.gameObject.GetComponent<AudioSource>().isPlaying && respawnPos != hit.gameObject.transform.Find("RespawnPos").position)
             {
-                hit.gameObject.GetComponent<Checkpoint>().PlaySound();
+                hit.gameObject.GetComponent<AudioSource>().Play();
                 respawnPos = hit.gameObject.transform.Find("RespawnPos").position;
                 GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(60);
             }
@@ -47,13 +47,14 @@ public class PlayerTriggerChecker : MonoBehaviour
             StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
             Debug.Log(emitter);
             emitter.Play();
-            //hit.gameObject.GetComponent<JumpPad>().LaunchPlayer();
+            
+            hit.gameObject.GetComponent<JumpPad>().LaunchPlayer();
+            
             if (!hit.gameObject.GetComponent<AudioSource>().isPlaying)
             {
                 hit.gameObject.GetComponent<AudioSource>().Play();
-                
+                GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(10);
             }
-            GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(10);
             //gameObject.transform.Find("Bouncepad").transform.Find("Pattern").gameObject.GetComponent<Animator>().SetBool("isActivated", true);
         }
 

@@ -1500,7 +1500,7 @@ namespace FMODUnity
 
         private void BrowseForSourceBankPathAndRefresh()
         {
-            if (BrowseForSourceBankPath(serializedObject, hasPlatforms.boolValue))
+            if (BrowseForSourceBankPath(serializedObject))
             {
                 Repaint();
             }
@@ -1983,7 +1983,7 @@ namespace FMODUnity
 
                 menu.AddSeparator(string.Empty);
 
-                IEnumerable<Platform> missingPlatforms = settings.Platforms
+                IEnumerable<Platform> missingPlatforms = settings.EnumeratePlatforms()
                     .Where(p => !p.Active)
                     .OrderBy(p => p.DisplayName, new NaturalComparer());
 
