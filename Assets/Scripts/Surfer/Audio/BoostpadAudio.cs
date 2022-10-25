@@ -1,5 +1,6 @@
 using Surfer.GameplayGimmicks;
 using UnityEngine;
+using FMODUnity;
 
 namespace Surfer.Audio
 {
@@ -8,6 +9,8 @@ namespace Surfer.Audio
     {           
 
         private BoostPad _boostPad;
+        private StudioEventEmitter emitter;
+        
 
         protected override void Awake()
         {
@@ -22,7 +25,7 @@ namespace Surfer.Audio
             _boostPad.OnTriggeredPad -= PlaySound;
         }
 
-        public void PlaySound() => _audioManager.PlaySoundOnce(SelectedTrack, true);
+        public void PlaySound() => emitter.Play();
 
     }
 }

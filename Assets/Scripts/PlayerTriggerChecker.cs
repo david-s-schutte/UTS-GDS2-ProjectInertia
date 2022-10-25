@@ -47,14 +47,13 @@ public class PlayerTriggerChecker : MonoBehaviour
             StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
             Debug.Log(emitter);
             emitter.Play();
-            
-            hit.gameObject.GetComponent<JumpPad>().LaunchPlayer();
-            
+            //hit.gameObject.GetComponent<JumpPad>().LaunchPlayer();
             if (!hit.gameObject.GetComponent<AudioSource>().isPlaying)
             {
                 hit.gameObject.GetComponent<AudioSource>().Play();
-                GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(10);
+                
             }
+            GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(10);
             //gameObject.transform.Find("Bouncepad").transform.Find("Pattern").gameObject.GetComponent<Animator>().SetBool("isActivated", true);
         }
 
