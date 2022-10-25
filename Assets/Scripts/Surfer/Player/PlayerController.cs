@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using Surfer.Input;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,10 +18,9 @@ public class PlayerController : MonoBehaviour
     // # Components    
     CharacterController cc;
     Camera playerCamera;
-
     [Header("Components")]
     [SerializeField] GameObject characterObject;
-    
+
     // # Movement
     [Header("Movement")]
     // Speed of player walking
@@ -42,8 +39,6 @@ public class PlayerController : MonoBehaviour
     // Railgrind stuff
     // TODO: I reckon this should be somewhere else and this script should mostly be reserved for direct player movement
     [SerializeField] Vector3 railOffset = new(0, 1, 0);
-    [SerializeField] float boxCastSize = 0.5f;
-    [SerializeField] float boxCastDistance = 3;
     [SerializeField] float railSpeed = 5;
     [SerializeField] float railLeaveBoost = 5;
 
@@ -106,6 +101,11 @@ public class PlayerController : MonoBehaviour
     Vector2 cumulativeAirControl = new Vector2();
 
     [Header("Collisions")]
+    // Distance for raycast targetting the floor
+    [SerializeField] float floorCastDist = 4;
+    // Values for boxcast targetting floor obstacles, like railgrinds
+    [SerializeField] float boxCastSize = 1;
+    [SerializeField] float boxCastDistance = 1;
     [SerializeField] float maxRampDegrees; // maximum degrees to allow player to continue sliding up a ramp (otherwise will treat like a wall)
     
     [Header("Controls")]
@@ -118,14 +118,13 @@ public class PlayerController : MonoBehaviour
     // Other
     static MovementMode mode;
     RaycastHit floorCast;
-    [SerializeField] float floorCastDist = 4;
- 
+
     private void Awake() {
         Instance = this;
         cc = GetComponent<CharacterController>();
-        
         playerCamera = Camera.main;
         velocity = lastFrameVelocity = Vector3.zero;
+        PlayerInputController.CheckInitialised();
     }
 
     private void Start() {
@@ -142,39 +141,34 @@ public class PlayerController : MonoBehaviour
             BoxCastForFloorObstacles();
         }
 
+
         // INPUT COLLECTION
         // Get left stick / WSAD input
         Vector2 directMovementInput = GetMoveInput();
         // Glide movement towards the current input value
         movementInput.x = Mathf.MoveTowards(movementInput.x, directMovementInput.x, inputGravity * Time.deltaTime);
         movementInput.y = Mathf.MoveTowards(movementInput.y, directMovementInput.y, inputGravity * Time.deltaTime);
-        // Get right stick / mouse input
-        Vector2 lookInput = GetLookInput();
 
         PlayerFeedbackController.UpdateMoveAmount(movementInput.sqrMagnitude);
 
         // Slowly rotate character towards forward motion direction
         characterObject.transform.rotation = Quaternion.RotateTowards(characterObject.transform.rotation, forwardDirection, characterModelTurnRate * Time.deltaTime);
 
-        if (mode == MovementMode.Grinding)
-        {
+        if (mode == MovementMode.Grinding) {
             PlayerFeedbackController.UpdateGrounded(true);
-            PlayerFeedbackController.SetGrind(true);
             return;
         }
-        else PlayerFeedbackController.SetGrind(false);
 
-        PlayerFeedbackController.UpdateGrounded(cc.isGrounded);
+        PlayerFeedbackController.UpdateGrounded(IsGrounded());
 
-        // TODO: this is placeholder, we're obvs using the new input system and stuffs
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+        if (PlayerInputController.GetSwitchDown()) {
             SetMovementMode((IsWalkingMode()) ? MovementMode.Surfer : MovementMode.Walking);
             if (IsSurferMode()) EnterSurfer(velocity.magnitude * (1 + runningStartBoost / 10.0f));
             if (IsWalkingMode()) EnterWalking();
         }
 
         // MOVEMENT HANDLING
-        if (cc.isGrounded) {
+        if (IsGrounded()) {
             if (!wasGrounded) HandleLanding();
         } else {
             if (wasGrounded) {
@@ -201,7 +195,7 @@ public class PlayerController : MonoBehaviour
             TryJump();
         }
         
-        if (!cc.isGrounded) {
+        if (!IsGrounded()) {
             // Clamp horizontal movement so that no excessive air control is possible
             Vector2 finalHorizontalMovement = Vector2.ClampMagnitude(new Vector2(velocity.x, velocity.z), lastGroundedSpeed);
             velocity.x = finalHorizontalMovement.x;
@@ -210,7 +204,7 @@ public class PlayerController : MonoBehaviour
 
         // Update wasGrounded in advance of applying movement so we can catch if the CC was grounded before jumping
         // Also store this frame's velocity
-        wasGrounded = cc.isGrounded;
+        wasGrounded = IsGrounded();
         lastFrameVelocity = velocity;
 
         // Apply final movement
@@ -218,7 +212,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-  
     void SetMovementMode (MovementMode newMode) {
         mode = newMode;
         switch (mode) {
@@ -289,7 +282,7 @@ public class PlayerController : MonoBehaviour
     void EnterWalking() {
         GameCameraController.EnterWalkCam();
         // If we aren't grounded then act like a liftoff so that momentum is properly carried 
-        if (!cc.isGrounded) {
+        if (!IsGrounded()) {
             HandleLiftoff();
         }
     }
@@ -298,8 +291,7 @@ public class PlayerController : MonoBehaviour
     public void MoveWalking(Vector2 input) {
 
         // Start by applying friction if we're on the ground
-        if (cc.isGrounded) {
-            Debug.Log("grounded");
+        if (IsGrounded()) {
             WalkApplyFriction();
         } else {
             // cumulativeAirControl = CreateCameraRelativeMotionVector(input) * airControlSpeed;
@@ -308,7 +300,7 @@ public class PlayerController : MonoBehaviour
 
         // Create motion vector
         Vector2 motion = CreateCameraRelativeMotionVector(input) * walkSpeed;
-        if (!cc.isGrounded) {
+        if (!IsGrounded()) {
             motion *= directAirControl;
             motion += cumulativeAirControl * airControl;
         }
@@ -318,7 +310,7 @@ public class PlayerController : MonoBehaviour
         if (input.sqrMagnitude > characterTurnThreshold)
             forwardDirection = Quaternion.LookRotation(motion3d, Vector3.up); 
         
-        if (cc.isGrounded) {
+        if (IsGrounded()) {
             if (velocity.y <= 0) velocity.y = 0;
             if (floorCast.transform != null) {
                 motion3d = Vector3.ProjectOnPlane(motion3d, floorCast.normal);
@@ -350,17 +342,14 @@ public class PlayerController : MonoBehaviour
     }
     void EnterSurfer (float overrideCarriedSpeed) {
         // Force forward direction to be camera forward. 
-        if (cc.isGrounded) forwardDirection = Quaternion.LookRotation(FlattenAndNormalise3D(GetCameraForwardVector()), Vector3.up);
+        if (IsGrounded()) forwardDirection = Quaternion.LookRotation(FlattenAndNormalise3D(GetCameraForwardVector()), Vector3.up);
 
         GameCameraController.EnterSurfCam();
         surferModeCarriedSpeed = overrideCarriedSpeed;
         surferModeCurrentThrust = 0;
     }
 
-    // WARNING: THIS BIT IS VERY IN PROGRESS
-    // AND BROKEN
-    // LIKE FOR SOME REASON YOU SLIDE FASTER ON FLATS THAN ON STEEP HILLS
-    // I'M WORKING ON IT SMH
+    // WARNING: THIS BIT OF CODE WAS ACTUALLY WRITTEN BY A SMALL ALBINO GERBIL AND IS NOT VERY GOOD AT ALL WHEN COMPARED TO THAT WRITTEN BY HUMANS
     void MoveSurfer(Vector2 input) {
 
         // Vector3 motionUnprojected = new();
@@ -383,6 +372,9 @@ public class PlayerController : MonoBehaviour
 
         
         forwardDirection *= Quaternion.Euler(0, input.x * surferTurnRate * Time.deltaTime, 0);
+        if (!IsGrounded() && GetGrabButton()) {        
+            forwardDirection *= Quaternion.Euler(input.y * surferTurnRate * Time.deltaTime, 0, 0);
+        }
         Debug.DrawRay(transform.position, forwardDirection * Vector3.forward, Color.green);
 
         Vector3 lateralForward = forwardDirection * Vector3.forward;
@@ -392,7 +384,7 @@ public class PlayerController : MonoBehaviour
 
         // This is a total mess due to getting it workable for sprint 3
 
-        if (!cc.isGrounded) lateralForward = FlattenAndNormalise3D(lastLiftoffDirection);
+        if (!IsGrounded()) lateralForward = FlattenAndNormalise3D(lastLiftoffDirection);
 
         Vector3 motion = new();
         motion += lateralForward * surferModeCurrentThrust;
@@ -400,7 +392,7 @@ public class PlayerController : MonoBehaviour
         surferModeCurrentThrust *= Mathf.Lerp(Mathf.Pow(surferModeThrustEaseOff, Time.deltaTime), 1, Mathf.Abs(input.y));
         
 
-        if (cc.isGrounded){
+        if (IsGrounded()){
             if (surferModeCarriedSpeed > 0) {
                 // Debug.Log("applied carried speed of " + surferModeCarriedSpeed);
                 surferModeCurrentThrust = surferModeCarriedSpeed;
@@ -420,7 +412,7 @@ public class PlayerController : MonoBehaviour
 
         // motion += Vector3.Project(motionUnprojected, lateralForward);
 
-        if (cc.isGrounded) {
+        if (IsGrounded()) {
             motion = Vector3.Project(motion, forwardDirection * Vector3.forward);
             // this is dreadful BUT
             // applies the speed when we switched to surfer mode then immediately resets that speed so it's only applied once 8-)
@@ -469,7 +461,7 @@ public class PlayerController : MonoBehaviour
         velocity.y += thisFrameGravity;
 
         // Ensure while grounded we never go beyond the base gravity rate
-        if (cc.isGrounded && velocity.y < 0) {
+        if (IsGrounded() && velocity.y < 0) {
             velocity.y = thisFrameGravity;
         }
         
@@ -511,7 +503,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump() {
         PlayerFeedbackController.OnJump();
-        velocity.y = jumpImpulse;
+        velocity.y = jumpImpulse;  //TODO: experiment with making jump relative to local up instead of world up (e.g. for half pipes)
         HandleLiftoff();
     }
 
@@ -611,7 +603,7 @@ public class PlayerController : MonoBehaviour
         // Debug.Log("landed on grindrail with " + railPoints.Count + " nodes");
 
         int node = 0;
-    
+
 
         while (node < railPoints.Count) {
             Vector3 startPosition = transform.position;
@@ -642,7 +634,8 @@ public class PlayerController : MonoBehaviour
             node++;
         }
 
-        SetMovementMode(MovementMode.Surfer);
+        // If we've just run out of nodes and not jumped off, we'll change to surfer mode. If we've jumped off, change to walking.
+        SetMovementMode(!GetJumpDown() ? MovementMode.Surfer : MovementMode.Walking);
         if (!GetJumpDown()) surferModeCarriedSpeed = railLeaveBoost;
 
     }
@@ -668,24 +661,16 @@ public class PlayerController : MonoBehaviour
     // Gets left stick / WSAD equivalent input as a Vector2.
     // Note already clamps so diagonal motion should never be >1 - don't do this again later pls.
     Vector2 GetMoveInput() {
-        return Vector2.ClampMagnitude(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), 1);
-    }
-
-    // Gets right stick / mouse equivalent input as a Vector2.
-    Vector2 GetLookInput() {
-        return new Vector2(Input.GetAxis("Cam X"), -Input.GetAxis("Cam Y"));
+        return PlayerInputController.GetMoveInput();
     }
 
     bool GetJumpDown () {
-        return Input.GetKeyDown(KeyCode.Space);
+        // return Input.GetKeyDown(KeyCode.Space);
+        return PlayerInputController.GetJumpDown();
     }
 
-    /*ADDITIONS - initiate new input system*/
-    private void InitiateInputActions()
-    {
-        leftStickMove = playerControls.Player.Move;
-        leftStickMove.Enable();
-        //leftStickMove.performed += SwitchCamera;
+    bool GetGrabButton () {
+        return Input.GetKey(KeyCode.LeftControl);
     }
 
     #endregion
