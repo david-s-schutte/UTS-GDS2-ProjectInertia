@@ -3,7 +3,7 @@
 /* Copyright (c), Firelight Technologies Pty, Ltd. 2004-2022.                               */
 /*                                                                                          */
 /* For more detail visit:                                                                   */
-/* https://fmod.com/resources/documentation-api?version=2.0&page=core-api.html              */
+/* https://fmod.com/docs/2.02/api/core-api.html                                             */
 /* ======================================================================================== */
 
 using System;
@@ -19,7 +19,7 @@ namespace FMOD
     */
     public partial class VERSION
     {
-        public const int    number = 0x00020207;
+        public const int    number = 0x00020209;
 #if !UNITY_2019_4_OR_NEWER
         public const string dll    = "fmod";
 #endif
@@ -341,6 +341,7 @@ namespace FMOD
         STREAM_FROM_UPDATE         = 0x00000001,
         MIX_FROM_UPDATE            = 0x00000002,
         _3D_RIGHTHANDED            = 0x00000004,
+        CLIP_OUTPUT                = 0x00000008,
         CHANNEL_LOWPASS            = 0x00000100,
         CHANNEL_DISTANCEFILTER     = 0x00000200,
         PROFILE_ENABLE             = 0x00010000,
@@ -533,6 +534,7 @@ namespace FMOD
         BUFFEREDNOMIX          = 0x00002000,
         DEVICEREINITIALIZE     = 0x00004000,
         OUTPUTUNDERRUN         = 0x00008000,
+        RECORDPOSITIONCHANGED  = 0x00010000,
         ALL                    = 0xFFFFFFFF,
     }
 
@@ -551,7 +553,7 @@ namespace FMOD
     public delegate RESULT FILE_SEEK_CALLBACK       (IntPtr handle, uint pos, IntPtr userdata);
     public delegate RESULT FILE_ASYNCREAD_CALLBACK  (IntPtr info, IntPtr userdata);
     public delegate RESULT FILE_ASYNCCANCEL_CALLBACK(IntPtr info, IntPtr userdata);
-    public delegate RESULT FILE_ASYNCDONE_FUNC      (IntPtr info, RESULT result);
+    public delegate void   FILE_ASYNCDONE_FUNC      (IntPtr info, RESULT result);
     public delegate IntPtr MEMORY_ALLOC_CALLBACK    (uint size, MEMORY_TYPE type, IntPtr sourcestr);
     public delegate IntPtr MEMORY_REALLOC_CALLBACK  (IntPtr ptr, uint size, MEMORY_TYPE type, IntPtr sourcestr);
     public delegate void   MEMORY_FREE_CALLBACK     (IntPtr ptr, MEMORY_TYPE type, IntPtr sourcestr);
@@ -634,7 +636,8 @@ namespace FMOD
 
     public struct PORT_INDEX
     {
-        public const ulong NONE = 0xFFFFFFFFFFFFFFFF;
+        public const ulong NONE               = 0xFFFFFFFFFFFFFFFF;
+        public const ulong FLAG_VR_CONTROLLER = 0x1000000000000000;
     }
 
     [StructLayout(LayoutKind.Sequential)]
@@ -1804,7 +1807,7 @@ namespace FMOD
         }
         public RESULT getTag(string name, int index, out TAG tag)
         {
-             using (StringHelper.ThreadSafeEncoding encoder = StringHelper.GetFreeHelper())
+            using (StringHelper.ThreadSafeEncoding encoder = StringHelper.GetFreeHelper())
             {
                 return FMOD5_Sound_GetTag(this.handle, encoder.byteFromStringUTF8(name), index, out tag);
             }
@@ -1812,7 +1815,16 @@ namespace FMOD
         public RESULT getOpenState(out OPENSTATE openstate, out uint percentbuffered, out bool starving, out bool diskbusy)
         {
             return FMOD5_Sound_GetOpenState(this.handle, out openstate, out percentbuffered, out starving, out diskbusy);
+        } 
+        public RESULT readData(byte[] buffer)
+        {
+            return FMOD5_Sound_ReadData(this.handle, buffer, (uint)buffer.Length, IntPtr.Zero);
         }
+        public RESULT readData(byte[] buffer, out uint read)
+        {
+            return FMOD5_Sound_ReadData(this.handle, buffer, (uint)buffer.Length, out read);
+        }
+        [Obsolete("Use Sound.readData(byte[], out uint) or Sound.readData(byte[]) instead.")]
         public RESULT readData(IntPtr buffer, uint length, out uint read)
         {
             return FMOD5_Sound_ReadData(this.handle, buffer, length, out read);
@@ -1969,6 +1981,10 @@ namespace FMOD
         private static extern RESULT FMOD5_Sound_GetTag                  (IntPtr sound, byte[] name, int index, out TAG tag);
         [DllImport(VERSION.dll)]
         private static extern RESULT FMOD5_Sound_GetOpenState            (IntPtr sound, out OPENSTATE openstate, out uint percentbuffered, out bool starving, out bool diskbusy);
+        [DllImport(VERSION.dll)]
+        private static extern RESULT FMOD5_Sound_ReadData                (IntPtr sound, byte[] buffer, uint length, IntPtr zero);
+        [DllImport(VERSION.dll)]
+        private static extern RESULT FMOD5_Sound_ReadData                (IntPtr sound, byte[] buffer, uint length, out uint read);
         [DllImport(VERSION.dll)]
         private static extern RESULT FMOD5_Sound_ReadData                (IntPtr sound, IntPtr buffer, uint length, out uint read);
         [DllImport(VERSION.dll)]

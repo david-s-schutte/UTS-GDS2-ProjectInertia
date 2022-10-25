@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing.Text;
 using System.Linq;
 using UnityEngine;
 using UnityEditor;
@@ -35,7 +34,6 @@ namespace FMODUnity
         public List<EditorParamRef> LocalParameters
         {
             get { return Parameters.Where(p => p.IsGlobal == false).OrderBy(p => p.Name).ToList(); }
-            private set => Parameters = value;
         }
 
         public List<EditorParamRef> GlobalParameters
