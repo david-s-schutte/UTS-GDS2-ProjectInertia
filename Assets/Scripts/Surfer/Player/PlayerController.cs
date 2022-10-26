@@ -649,6 +649,9 @@ public class PlayerController : MonoBehaviour
             Vector3 startPosition = transform.position;
             float t = 0;
             Transform target = railPoints[node];
+            // Calculate speed multiplier for this node transition (ensures node density doesn't affect speed)
+            // divided by a value to make values similar to when i first designed the system innit
+            float speedMultiplier = Vector3.SqrMagnitude(startPosition - target.position) / 10;
             // Debug.Log("on my way to node number " + node + " at " + target.position);
             while (t < 1) {
                 transform.position = Vector3.Lerp(startPosition, target.position + railOffset, t);
@@ -657,7 +660,7 @@ public class PlayerController : MonoBehaviour
                 if (node == 0) nextNodeDirection = FlattenAndNormalise3D(nextNodeDirection);
                 forwardDirection = Quaternion.LookRotation(nextNodeDirection, Vector3.up);
 
-                t += Time.deltaTime * railSpeed;
+                t += Time.deltaTime * railSpeed / speedMultiplier;
                 // Allow jumps to cancel the whole Coroutine
                 if (GetJumpDown()) {
                     velocity = lastFrameVelocity = Vector3.zero;
