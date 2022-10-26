@@ -2,14 +2,7 @@
     "name": "Surfer.UI",
     "rootNamespace": "",
     "references": [
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:61cb8055e9c264f4cb85ca6b81bd3675",
-        "GUID:f51ebe6a0ceec4240a699833d6309b23",
-        "GUID:e1c57f27053d48345981d331da96590a",
-        "GUID:607e5fc428cee124e9280c8cd460767b",
-        "GUID:2e142bb8e58dce749904cd426b194126",
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:9afd858ee92300f40bce51410066f080"
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

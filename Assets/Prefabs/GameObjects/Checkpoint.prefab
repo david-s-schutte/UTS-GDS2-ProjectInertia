@@ -228,7 +228,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8678975694273511563}
   - component: {fileID: 1440291930495385118}
-  - component: {fileID: 7717761932459617918}
   m_Layer: 6
   m_Name: Checkpoint
   m_TagString: Checkpoint
@@ -264,36 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e94cc14358f8b479fc61ff048274e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7717761932459617918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921947400506482353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Checkpoint
-  EventReference:
-    Guid:
-      Data1: -46812871
-      Data2: 1295517297
-      Data3: -1686486649
-      Data4: 1058797717
-    Path: event:/UI SFX/Menu Navigation 2 Test
-  Event: 
-  PlayEvent: 7
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 1
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &6463005214980283163
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +296,6 @@ Transform:
   - {fileID: 4942603933482016550}
   - {fileID: 5914937799431758927}
   - {fileID: 5912627154918424565}
-  - {fileID: 5081395381711493065}
   m_Father: {fileID: 8678975694273511563}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -440,82 +408,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &8695419902512197996
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5081395381711493065}
-  - component: {fileID: 8700307059014283206}
-  - component: {fileID: 7694431946958932121}
-  m_Layer: 6
-  m_Name: FMOD
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5081395381711493065
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695419902512197996}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5979343985386570145}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8700307059014283206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695419902512197996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Checkpoint
-  EventReference:
-    Guid:
-      Data1: -333532095
-      Data2: 1207474607
-      Data3: 481961896
-      Data4: 32390878
-    Path: event:/UI SFX/Menu Selection 2 Test
-  Event: 
-  PlayEvent: 7
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 1
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &7694431946958932121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695419902512197996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Checkpoint
-  Parameter: Checkpoint 1
-  TriggerEvent: 7
-  Value: 1

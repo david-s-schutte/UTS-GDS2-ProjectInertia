@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class PlayerTriggerChecker : MonoBehaviour
 {
@@ -19,12 +18,6 @@ public class PlayerTriggerChecker : MonoBehaviour
         if(hit.gameObject.tag == "Checkpoint")
         {
             Transform animator = hit.gameObject.transform.Find("C");
-            Transform FMOD = hit.gameObject.transform.Find("FMOD");
-            StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
-            StudioGlobalParameterTrigger trigger = FMOD.GetComponent<StudioGlobalParameterTrigger>();
-            //Debug.Log(emitter);
-            emitter.Play();
-            trigger.TriggerParameters();
             animator.GetComponent<Animator>().SetBool("isActivated", true);
             if(!hit.gameObject.GetComponent<AudioSource>().isPlaying && respawnPos != hit.gameObject.transform.Find("RespawnPos").position)
             {
@@ -43,13 +36,7 @@ public class PlayerTriggerChecker : MonoBehaviour
 
         if (hit.gameObject.tag == "JumpPad")
         {
-            Transform FMOD = hit.gameObject.transform.Find("FMOD");
-            StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
-            Debug.Log(emitter);
-            emitter.Play();
-            
             hit.gameObject.GetComponent<JumpPad>().LaunchPlayer();
-            
             if (!hit.gameObject.GetComponent<AudioSource>().isPlaying)
             {
                 hit.gameObject.GetComponent<AudioSource>().Play();
