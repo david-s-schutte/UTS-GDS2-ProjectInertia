@@ -47,7 +47,7 @@ public class GameCameraController : MonoBehaviour
         walkingCamera = (CinemachineFreeLook)stateDrivenCamera.ChildCameras[0];
         surfingCamera = (CinemachineFreeLook)stateDrivenCamera.ChildCameras[1];
         transitionController = stateDrivenCamera.gameObject.GetComponent<Animator>();
-        cameraResetPos = GameObject.FindWithTag("Player").transform.Find("Player_Logic").Find("Player_Base").Find("CameraResetPoint");
+        cameraResetPos = GameObject.FindWithTag("Player").GetComponentInChildren<CameraResetPosition>().gameObject.transform;
         //Initialise the camera to follow the player
         stateDrivenCamera.Follow = GameObject.FindWithTag("Player").transform;
         stateDrivenCamera.LookAt = GameObject.FindWithTag("Player").transform;
