@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Trick Name!
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bc84699a182b1d9479cf2e21ca11a548, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: c7081ad9806baca4ca746603ccf85183, type: 2}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -322,7 +322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1585809523276921243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -754,7 +754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1585809523360277371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1251,6 +1251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1585809525064101020}
+  - component: {fileID: 1731090469}
   m_Layer: 5
   m_Name: FlowScoreState
   m_TagString: Untagged
@@ -1280,6 +1281,40 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &1731090469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585809525064101023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deba3af91ad6a024a876829ac9b209ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flow: {fileID: 4165121773312662493}
+  stage: {fileID: 1585809523273615235}
+  textPrefab: {fileID: 730014428923159867, guid: de7741ef32404f143974aa7a7e2a7d05, type: 3}
+  textStart: {fileID: 1585809523206745169}
+  scoreStart: {fileID: 1585809523360277371}
+  timeSinceTrick: 0
+  stageLabels:
+  - {fileID: 21300000, guid: f2dc3337a42cc01419374ea96585602a, type: 3}
+  - {fileID: 21300000, guid: 7e162a67922220c43be51dd7fdc29761, type: 3}
+  - {fileID: 21300000, guid: a66c39baa2a822d478aa47ba608e2b62, type: 3}
+  - {fileID: 21300000, guid: e348f11e689414945a1fa7bb3afaf2f5, type: 3}
+  trickStage:
+  - 500
+  - 500
+  - 500
+  - 500
+  score: 0
+  currentFill: 0
+  decrementAmount: 1
+  fillspeed: 5
+  bufferamounts: 100
+  test: 0
 --- !u!1 &3795348819177997017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1386,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 0
   m_FillOrigin: 3
   m_UseSpriteMesh: 0

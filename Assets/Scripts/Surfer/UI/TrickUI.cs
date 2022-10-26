@@ -27,6 +27,8 @@ public class TrickUI : MonoBehaviour
     public float fillspeed;
     public float bufferamounts;
 
+    public bool test;
+
     private TrickSystem _trickManager;
     
 
@@ -58,6 +60,11 @@ public class TrickUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (test)
+        {
+            UpdateScore("test",200);
+            test = false;
+        }
         TimeSinceTrick += Time.deltaTime;
         score -= 100f * Time.deltaTime * decrementAmount;
         /*if (score < 0)
