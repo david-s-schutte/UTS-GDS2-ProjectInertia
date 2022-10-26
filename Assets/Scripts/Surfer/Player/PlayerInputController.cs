@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Surfer.Input;
 
-public class PlayerInputController : MonoBehaviour {
+public static class PlayerInputController  {
     static PlayerControls playerControls;
     static InputAction leftStickMove;
     static InputAction lookInputAction;
@@ -14,14 +14,15 @@ public class PlayerInputController : MonoBehaviour {
 
     static Vector2 lastMove;
 
-    private void Awake() {
-        InitiateInputActions();
-    }
+    public static void CheckInitialised() => InitiateInputActions();
+    
 
-    public static void CheckInitialised() {
-        if (playerControls == null) {
-            InitiateInputActions();
-        }
+    public static void UnInitialiseInput()
+    {
+        playerControls.Disable();
+        leftStickMove.Disable();
+        jump.Disable();
+        switchStyles.Disable();
     }
 
     static void InitiateInputActions()
@@ -41,17 +42,10 @@ public class PlayerInputController : MonoBehaviour {
         switchStyles.Enable();
     }
 
-    private void OnDisable()
-    {
-        leftStickMove.Disable();
-        lookInputAction.Disable();
-        jump.Disable();
-        switchStyles.Disable();
-    }
 
     public static Vector2 GetMoveInput() {
         // sometimes this doesn't work and i don't know why
-        CheckInitialised();
+      //  CheckInitialised();
         // idfk why but this doesn't work unless i read the value twice.....
         Vector2 input = Vector2.ClampMagnitude(leftStickMove.ReadValue<Vector2>(), 1);
         //Debug.Log("returning: " + Vector2.ClampMagnitude(leftStickMove.ReadValue<Vector2>(), 1) );//+ ", playercontrols: " + playerControls );//+ ", move action: " + leftStickMove);
@@ -59,7 +53,7 @@ public class PlayerInputController : MonoBehaviour {
     }
 
     public static Vector2 GetLookInput() {
-        CheckInitialised();
+        //CheckInitialised();
         return lookInputAction.ReadValue<Vector2>();
     }
 

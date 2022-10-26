@@ -148,6 +148,16 @@ public class PlayerController : MonoBehaviour
         SetMovementMode(MovementMode.Walking);
     }
 
+    private void OnEnable()
+    {
+        PlayerInputController.CheckInitialised();
+    }
+
+    private void OnDisable()
+    {
+        PlayerInputController.UnInitialiseInput();
+    }
+
     private void Update() {
 
         // Perform ground raycast at start of frame so it is only performed once.
