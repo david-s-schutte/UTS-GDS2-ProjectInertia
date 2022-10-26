@@ -133,7 +133,6 @@ public class PlayerController : MonoBehaviour
     // Other
     static MovementMode mode;
     RaycastHit floorCast;
-    [SerializeField] float floorCastDist = 4;
 
     private void Awake() {
         Instance = this;

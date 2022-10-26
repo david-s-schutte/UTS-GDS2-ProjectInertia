@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,6 +39,14 @@ public class PlayerInputController : MonoBehaviour {
 
         switchStyles = playerControls.Player.ChangeMode;
         switchStyles.Enable();
+    }
+
+    private void OnDisable()
+    {
+        leftStickMove.Disable();
+        lookInputAction.Disable();
+        jump.Disable();
+        switchStyles.Disable();
     }
 
     public static Vector2 GetMoveInput() {

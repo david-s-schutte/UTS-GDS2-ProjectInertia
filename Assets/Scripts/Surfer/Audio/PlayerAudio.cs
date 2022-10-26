@@ -68,12 +68,12 @@ public class PlayerAudio : MonoBehaviour
         if (grindingStarted)
         {
             if (!_grindInstance.isValid())
-                _grindInstance = soundPlayer[1].PlaySoundOnce(soundPlayer[2].SelectedTrack);
+                _grindInstance = soundPlayer[2].PlaySoundOnce(soundPlayer[2].SelectedTrack);
         }
         else
         {
             if (_grindInstance.isValid())
-                _grindInstance.setParameterByNameWithLabel("GrindState","GrindEnded");
+                _grindInstance.setParameterByNameWithLabel("Grinding", "Not Grinding");
         }
         
     }
