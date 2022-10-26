@@ -1,88 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9180499092770927558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/Inertia_lvl_music_2
-  m_EditorClassIdentifier: 
-  Path: event:/OST/Inertia_lvl_music_2
-  Guid:
-    Data1: -2138164325
-    Data2: 1305393953
-    Data3: -1218770035
-    Data4: 1712689701
-  Banks:
-  - {fileID: 4416030701848238856}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 79152
---- !u!114 &-9101466709899821325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player SFX/Footsteps Test
-  m_EditorClassIdentifier: 
-  Path: event:/Player SFX/Footsteps Test
-  Guid:
-    Data1: -1658756785
-    Data2: 1128118636
-    Data3: 137732789
-    Data4: -604413388
-  Banks:
-  - {fileID: 8091779226032073584}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -3930261995122597246}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-7465326701155236033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/background_music
-  m_EditorClassIdentifier: 
-  Path: event:/OST/background_music
-  Guid:
-    Data1: 8363880
-    Data2: 1211409749
-    Data3: -832967785
-    Data4: 1939261903
-  Banks:
-  - {fileID: 4416030701848238856}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 79152
---- !u!114 &-7184626136200249250
+--- !u!114 &-8528389689502323949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,17 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/UI.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/UI.bank
-  Name: UI
-  StudioPath: bank:/UI
-  lastModified: 638023420784447230
+  Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638023911388037160
   FileSizes:
   - Name: Desktop
-    Value: 40032
+    Value: 532832
   Exists: 1
---- !u!114 &-5902473716460233963
+--- !u!114 &-8319974585451164502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/sfx_soundevent_wall-slide/Wall Slide
+  m_EditorClassIdentifier: 
+  Name: Wall Slide
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1429172057
+    data2: 265754751
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Sliding
+  - Not Sliding
+  Exists: 1
+--- !u!114 &-7883837667689939642
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,25 +56,132 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/Tutorial01
+  m_Name: event:/Sound Effects/sfx_soundevent_grinding
   m_EditorClassIdentifier: 
-  Path: event:/OST/Tutorial01
+  Path: event:/Sound Effects/sfx_soundevent_grinding
   Guid:
-    Data1: -723356430
-    Data2: 1338988879
-    Data3: 339580342
-    Data4: -2029029856
+    Data1: 688374380
+    Data2: 1121918726
+    Data3: -1232835412
+    Data4: -1394667369
   Banks:
-  - {fileID: 4815029032057160007}
-  IsStream: 1
+  - {fileID: -8528389689502323949}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 6738497252155659461}
-  - {fileID: -4107323822919926916}
+  - {fileID: 1794663042528917333}
   MinDistance: 1
   MaxDistance: 20
-  Length: 92444
+  Length: 2160
+--- !u!114 &-7874324684249131930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/sfx_soundevent_wall-kick
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/sfx_soundevent_wall-kick
+  Guid:
+    Data1: -806860238
+    Data2: 1110648988
+    Data3: 2038523070
+    Data4: -588144441
+  Banks:
+  - {fileID: -8528389689502323949}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 165
+--- !u!114 &-6583627418396516749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/sfx_soundevent_sword-hits
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/sfx_soundevent_sword-hits
+  Guid:
+    Data1: 1310592055
+    Data2: 1087415644
+    Data3: -518247766
+    Data4: -965774505
+  Banks:
+  - {fileID: -8528389689502323949}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 516
+--- !u!114 &-5965099063454439848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/sfx_soundevent_jump
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/sfx_soundevent_jump
+  Guid:
+    Data1: -998350129
+    Data2: 1167235770
+    Data3: 1360620695
+    Data4: 541952235
+  Banks:
+  - {fileID: -8528389689502323949}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 165
+--- !u!114 &-5514453378608597858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/UI_soundevent_menu-navigation
+  m_EditorClassIdentifier: 
+  Path: event:/UI/UI_soundevent_menu-navigation
+  Guid:
+    Data1: -1670926115
+    Data2: 1291655515
+    Data3: -2098677085
+    Data4: -1386073625
+  Banks:
+  - {fileID: -8528389689502323949}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 542
 --- !u!114 &-5474767976015059478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +201,7 @@ MonoBehaviour:
     Data3: 1334108556
     Data4: -1830389381
   Banks:
-  - {fileID: 8091779226032073584}
+  - {fileID: 0}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -158,26 +209,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1174
---- !u!114 &-5258916371878480410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638023420784457240
-  FileSizes:
-  - Name: Desktop
-    Value: 1866
-  Exists: 1
 --- !u!114 &-5098004140578623927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +228,7 @@ MonoBehaviour:
     Data3: 1562988419
     Data4: 700840488
   Banks:
-  - {fileID: 8091779226032073584}
+  - {fileID: 0}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -205,7 +236,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8614
---- !u!114 &-4933527302870684314
+--- !u!114 &-4485924447712450221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,51 +246,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/TitleScreen
+  m_Name: event:/Sound Effects/sfx_soundevent_hovering
   m_EditorClassIdentifier: 
-  Path: event:/TitleScreen
+  Path: event:/Sound Effects/sfx_soundevent_hovering
   Guid:
-    Data1: -1576589587
-    Data2: 1147754143
-    Data3: -190909043
-    Data4: -446031161
+    Data1: -755608427
+    Data2: 1095190599
+    Data3: -1120870267
+    Data4: 617768473
   Banks:
-  - {fileID: 4815029032057160007}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 120000
---- !u!114 &-4237685714520735307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI SFX/Menu Navigation 1 Test
-  m_EditorClassIdentifier: 
-  Path: event:/UI SFX/Menu Navigation 1 Test
-  Guid:
-    Data1: -33327143
-    Data2: 1117432909
-    Data3: 1960747170
-    Data4: -916173254
-  Banks:
-  - {fileID: -7184626136200249250}
+  - {fileID: -8528389689502323949}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4744361611059259739}
   MinDistance: 1
   MaxDistance: 20
-  Length: 585
---- !u!114 &-4107323822919926916
+  Length: 6015
+--- !u!114 &-4193431595674222875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,48 +274,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Tutorial01/Checkpoint 1
+  m_Name: parameter:/Hovering
   m_EditorClassIdentifier: 
-  Name: Checkpoint 1
-  StudioPath: 
+  Name: Hovering
+  StudioPath: parameter:/Hovering
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 3040641815
-    data2: 431953834
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-3930261995122597246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Footsteps Test/Main Material [Temporary]
-  m_EditorClassIdentifier: 
-  Name: Main Material [Temporary]
-  StudioPath: 
-  Min: 0
-  Max: 2
-  Default: 0
-  ID:
-    data1: 353239402
-    data2: 471633587
+    data1: 226717594
+    data2: 972070694
   Type: 2
-  IsGlobal: 0
+  IsGlobal: 1
   Labels:
-  - Main Material
-  - Test Material One
-  - Test Material Two
+  - Hovering
+  - Not Hovering
   Exists: 1
---- !u!114 &-2725282835689283976
+--- !u!114 &-3389832467906691336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -320,24 +300,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI SFX/Menu Selection 1 Test
+  m_Name: event:/UI/UI_soundevent_menu-selection
   m_EditorClassIdentifier: 
-  Path: event:/UI SFX/Menu Selection 1 Test
+  Path: event:/UI/UI_soundevent_menu-selection
   Guid:
-    Data1: -682979865
-    Data2: 1164705930
-    Data3: -1464454221
-    Data4: -1147662399
+    Data1: 1368409328
+    Data2: 1250899320
+    Data3: -1443645033
+    Data4: -31419891
   Banks:
-  - {fileID: -7184626136200249250}
+  - {fileID: -8528389689502323949}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 888
---- !u!114 &-2452934314202276990
+  Length: 610
+--- !u!114 &-2570026096998470046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,24 +327,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/Main Menu Music
+  m_Name: event:/Sound Effects/sfx_soundevent_crouch
   m_EditorClassIdentifier: 
-  Path: event:/OST/Main Menu Music
+  Path: event:/Sound Effects/sfx_soundevent_crouch
   Guid:
-    Data1: 654206625
-    Data2: 1128513779
-    Data3: -1178427233
-    Data4: -923615447
+    Data1: -1800861568
+    Data2: 1284739620
+    Data3: 997646777
+    Data4: -1202353890
   Banks:
-  - {fileID: 4815029032057160007}
-  IsStream: 1
+  - {fileID: -8528389689502323949}
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 120000
---- !u!114 &-1641927642765960898
+  Length: 136
+--- !u!114 &-2076484128507043942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -374,23 +354,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/TutorialMusic
+  m_Name: event:/Sound Effects/sfx_soundevent_sword-swing
   m_EditorClassIdentifier: 
-  Path: event:/OST/TutorialMusic
+  Path: event:/Sound Effects/sfx_soundevent_sword-swing
   Guid:
-    Data1: -489097257
-    Data2: 1240269118
-    Data3: -721378113
-    Data4: 1280161097
+    Data1: -638504629
+    Data2: 1115706392
+    Data3: -1780566600
+    Data4: 691105519
   Banks:
-  - {fileID: 4815029032057160007}
-  IsStream: 1
+  - {fileID: -8528389689502323949}
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 79152
+  Length: 261
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,38 +384,37 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -5258916371878480410}
-  - {fileID: 4416030701848238856}
-  - {fileID: 4815029032057160007}
-  - {fileID: 8091779226032073584}
-  - {fileID: -7184626136200249250}
+  - {fileID: 4900196429290857804}
+  - {fileID: -8528389689502323949}
   EditorEvents:
-  - {fileID: -4933527302870684314}
-  - {fileID: -7465326701155236033}
-  - {fileID: -9180499092770927558}
-  - {fileID: 2208864387584934081}
-  - {fileID: -2452934314202276990}
-  - {fileID: -1641927642765960898}
-  - {fileID: 6502954328174882150}
-  - {fileID: 4147760592996654960}
-  - {fileID: -4237685714520735307}
-  - {fileID: -2725282835689283976}
-  - {fileID: -5902473716460233963}
-  - {fileID: -9101466709899821325}
-  - {fileID: 139754822084797369}
-  - {fileID: 1596089085448596007}
-  - {fileID: 4607430280301488450}
-  - {fileID: 3286969427626169536}
+  - {fileID: 9189940551429752246}
+  - {fileID: -7874324684249131930}
+  - {fileID: -6583627418396516749}
+  - {fileID: -2076484128507043942}
+  - {fileID: 930155016491512991}
+  - {fileID: 8161268338709218318}
+  - {fileID: 5043584214316166074}
+  - {fileID: -7883837667689939642}
+  - {fileID: -2570026096998470046}
+  - {fileID: 6787385681831271436}
+  - {fileID: -4485924447712450221}
+  - {fileID: 5424991607473377829}
+  - {fileID: 5571737998899479004}
+  - {fileID: -5965099063454439848}
+  - {fileID: 4894787186028642703}
+  - {fileID: -5514453378608597858}
+  - {fileID: -3389832467906691336}
   EditorParameters:
-  - {fileID: 7449291822003487038}
-  - {fileID: 8171270873111554252}
+  - {fileID: -4193431595674222875}
+  - {fileID: 5993278832383022342}
+  - {fileID: 8053272860055699441}
   MasterBanks:
-  - {fileID: 4416030701848238856}
+  - {fileID: -8528389689502323949}
   StringsBanks:
-  - {fileID: -5258916371878480410}
-  cacheTime: 638023420784837563
+  - {fileID: 4900196429290857804}
+  cacheTime: 638023911388057178
   cacheVersion: 131591
---- !u!114 &139754822084797369
+--- !u!114 &930155016491512991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -445,105 +424,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player SFX/Crouch
+  m_Name: event:/Sound Effects/sfx_soundevent_boostpad
   m_EditorClassIdentifier: 
-  Path: event:/Player SFX/Crouch
+  Path: event:/Sound Effects/sfx_soundevent_boostpad
   Guid:
-    Data1: 842713729
-    Data2: 1240737516
-    Data3: 1215016344
-    Data4: -284834226
+    Data1: 1320928341
+    Data2: 1161281045
+    Data3: -1397477457
+    Data4: 1911128455
   Banks:
-  - {fileID: 8091779226032073584}
+  - {fileID: -8528389689502323949}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 136
---- !u!114 &1596089085448596007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/HUB WORLD DEMO
-  m_EditorClassIdentifier: 
-  Path: event:/OST/HUB WORLD DEMO
-  Guid:
-    Data1: -643619799
-    Data2: 1326925242
-    Data3: -2074832726
-    Data4: 1565531387
-  Banks:
-  - {fileID: 4815029032057160007}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 109906
---- !u!114 &2208864387584934081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI SFX/LVLCLEAR
-  m_EditorClassIdentifier: 
-  Path: event:/UI SFX/LVLCLEAR
-  Guid:
-    Data1: 971173277
-    Data2: 1290451447
-    Data3: -716929919
-    Data4: 1378911085
-  Banks:
-  - {fileID: 4815029032057160007}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 18000
---- !u!114 &3286969427626169536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environment SFX/Boostpad
-  m_EditorClassIdentifier: 
-  Path: event:/Environment SFX/Boostpad
-  Guid:
-    Data1: -394842380
-    Data2: 1171542653
-    Data3: 1334108556
-    Data4: -1830389381
-  Banks:
-  - {fileID: 8091779226032073584}
-  IsStream: 0
-  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 1174
---- !u!114 &4147760592996654960
+--- !u!114 &1794663042528917333
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -552,45 +450,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI SFX/Menu Selection 2 Test
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/sfx_soundevent_grinding/Grinding
   m_EditorClassIdentifier: 
-  Path: event:/UI SFX/Menu Selection 2 Test
-  Guid:
-    Data1: -333532095
-    Data2: 1207474607
-    Data3: 481961896
-    Data4: 32390878
-  Banks:
-  - {fileID: -7184626136200249250}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 610
---- !u!114 &4416030701848238856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638023420784467250
-  FileSizes:
-  - Name: Desktop
-    Value: 979360
+  Name: Grinding
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2907604971
+    data2: 2509988605
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Grinding
+  - Not Grinding
   Exists: 1
---- !u!114 &4607430280301488450
+--- !u!114 &4744361611059259739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/sfx_soundevent_hovering/Hovering
+  m_EditorClassIdentifier: 
+  Name: Hovering
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 226717594
+    data2: 972070694
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - Hovering
+  - Not Hovering
+  Exists: 1
+--- !u!114 &4894787186028642703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -600,16 +503,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environment SFX/Wind
+  m_Name: event:/Sound Effects/sfx_soundevent_wind
   m_EditorClassIdentifier: 
-  Path: event:/Environment SFX/Wind
+  Path: event:/Sound Effects/sfx_soundevent_wind
   Guid:
-    Data1: 865908904
-    Data2: 1284733406
-    Data3: 1562988419
-    Data4: 700840488
+    Data1: 680857552
+    Data2: 1122527368
+    Data3: -1098464577
+    Data4: -239783984
   Banks:
-  - {fileID: 8091779226032073584}
+  - {fileID: -8528389689502323949}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -617,7 +520,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8614
---- !u!114 &4815029032057160007
+--- !u!114 &4900196429290857804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -627,17 +530,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 638023420784837563
+  Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638023911388057178
   FileSizes:
   - Name: Desktop
-    Value: 5696736
+    Value: 1664
   Exists: 1
---- !u!114 &6502954328174882150
+--- !u!114 &5043584214316166074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -647,24 +550,79 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI SFX/Menu Navigation 2 Test
+  m_Name: event:/Music/music_soundevent_level-clear
   m_EditorClassIdentifier: 
-  Path: event:/UI SFX/Menu Navigation 2 Test
+  Path: event:/Music/music_soundevent_level-clear
   Guid:
-    Data1: -46812871
-    Data2: 1295517297
-    Data3: -1686486649
-    Data4: 1058797717
+    Data1: -922955161
+    Data2: 1260289399
+    Data3: 1629663905
+    Data4: -406492686
   Banks:
-  - {fileID: -7184626136200249250}
+  - {fileID: -8528389689502323949}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16000
+--- !u!114 &5424991607473377829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/sfx_soundevent_wall-slide
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/sfx_soundevent_wall-slide
+  Guid:
+    Data1: 1736074430
+    Data2: 1228786850
+    Data3: -1444754269
+    Data4: -598610003
+  Banks:
+  - {fileID: -8528389689502323949}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8319974585451164502}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1940
+--- !u!114 &5571737998899479004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/sfx_soundevent_footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/sfx_soundevent_footsteps
+  Guid:
+    Data1: -72876599
+    Data2: 1074663560
+    Data3: -1282226810
+    Data4: -1977561103
+  Banks:
+  - {fileID: -8528389689502323949}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 542
---- !u!114 &6738497252155659461
+  Length: 676
+--- !u!114 &5993278832383022342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -674,21 +632,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Tutorial01/Checkpoint 2
+  m_Name: parameter:/Grinding
   m_EditorClassIdentifier: 
-  Name: Checkpoint 2
-  StudioPath: 
+  Name: Grinding
+  StudioPath: parameter:/Grinding
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 657337920
-    data2: 2909976173
-  Type: 0
+    data1: 2907604971
+    data2: 2509988605
+  Type: 2
   IsGlobal: 1
-  Labels: []
+  Labels:
+  - Grinding
+  - Not Grinding
   Exists: 1
---- !u!114 &7449291822003487038
+--- !u!114 &6787385681831271436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/sfx_soundevent_sword-clang
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/sfx_soundevent_sword-clang
+  Guid:
+    Data1: 712194187
+    Data2: 1335872381
+    Data3: -189157750
+    Data4: -658360480
+  Banks:
+  - {fileID: -8528389689502323949}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1015
+--- !u!114 &8053272860055699441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -698,21 +685,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Checkpoint 1
+  m_Name: parameter:/Wall Slide
   m_EditorClassIdentifier: 
-  Name: Checkpoint 1
-  StudioPath: parameter:/Checkpoint 1
+  Name: Wall Slide
+  StudioPath: parameter:/Wall Slide
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 3040641815
-    data2: 431953834
-  Type: 0
+    data1: 1429172057
+    data2: 265754751
+  Type: 2
   IsGlobal: 1
-  Labels: []
+  Labels:
+  - Sliding
+  - Not Sliding
   Exists: 1
---- !u!114 &8091779226032073584
+--- !u!114 &8161268338709218318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -721,41 +710,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/sfx_soundevent_sword-slash
   m_EditorClassIdentifier: 
-  Path: Assets/FMOD/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638023420784442227
-  FileSizes:
-  - Name: Desktop
-    Value: 149152
-  Exists: 1
---- !u!114 &8171270873111554252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Checkpoint 2
-  m_EditorClassIdentifier: 
-  Name: Checkpoint 2
-  StudioPath: parameter:/Checkpoint 2
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 657337920
-    data2: 2909976173
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
+  Path: event:/Sound Effects/sfx_soundevent_sword-slash
+  Guid:
+    Data1: 1873562208
+    Data2: 1178757100
+    Data3: -28026212
+    Data4: 492952879
+  Banks:
+  - {fileID: -8528389689502323949}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1360
 --- !u!114 &8694158843492635330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,7 +747,7 @@ MonoBehaviour:
     Data3: -2074832726
     Data4: 1565531387
   Banks:
-  - {fileID: 4815029032057160007}
+  - {fileID: 0}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -783,3 +755,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 109906
+--- !u!114 &9189940551429752246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/sfx_soundevent_rank
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/sfx_soundevent_rank
+  Guid:
+    Data1: 2059471621
+    Data2: 1076139643
+    Data3: -786112889
+    Data4: -1237246909
+  Banks:
+  - {fileID: -8528389689502323949}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 719
