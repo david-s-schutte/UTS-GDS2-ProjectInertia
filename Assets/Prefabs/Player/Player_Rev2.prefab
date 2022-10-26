@@ -2703,10 +2703,12 @@ MonoBehaviour:
   airControlSpeed: 12
   directAirControl: 3
   airSlowTime: 0.5
+  floorCastDist: 2
+  boxCastSize: 1
+  boxCastDistance: 1
   maxRampDegrees: 60
   inputGravity: 5
   mouseSensitivity: 1
-  floorCastDist: 4
 --- !u!143 &6725002459627622634
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2719,7 +2721,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.05
