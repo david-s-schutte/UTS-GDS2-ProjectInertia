@@ -11,6 +11,7 @@ public class TrickSystem : ScriptableObject
     private int depretiation = 0;
     private float chainTime = 3f;
     private int chainamount = 0;
+    private float currentScore = 0;
 
     public void InputTrick(Trick trick)
     {
@@ -41,9 +42,9 @@ public class TrickSystem : ScriptableObject
             chainamount++;
         }
         AppendTrick(trick);
-        
-        
-        ui.UpdateScore(trick.name, Mathf.Floor(trick.BaseScore * Depretiate(depretiation) * Chain(chainamount)));
+        float x = Mathf.Floor(trick.BaseScore * Depretiate(depretiation) * Chain(chainamount));
+        currentScore += x;
+        ui.UpdateScore(trick.name, x);
     }
 
 
