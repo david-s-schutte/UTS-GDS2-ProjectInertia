@@ -65,7 +65,7 @@ public class AudioManager : Manager
     /// </summary>
     /// <param name="track"></param>
     /// <param name="storeReference">Caches the sound event to be used/removed at a later point, should not be used for short often used sounds like footsteps</param>
-    public void PlaySoundOnce(AudioTrack track, bool storeReference = false)
+    public EventInstance PlaySoundOnce(AudioTrack track, bool storeReference = false)
     {
         track.ID = SoundTracker;
 
@@ -74,9 +74,10 @@ public class AudioManager : Manager
             EventInstance instance = FMODUnity.RuntimeManager.PlayOneShot(track.AudioPath);
             instance.setCallback(_eventCallback);
             _currentSounds.Add(instance, track);
+            return instance;
         }
         else
-            FMODUnity.RuntimeManager.PlayOneShot(track.AudioPath);
+            return FMODUnity.RuntimeManager.PlayOneShot(track.AudioPath);
     }
 
     /// <summary>

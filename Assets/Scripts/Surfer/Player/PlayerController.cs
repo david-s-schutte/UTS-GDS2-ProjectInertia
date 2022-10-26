@@ -24,6 +24,18 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     [SerializeField] GameObject characterObject;
     
+    #region Events for Audio Purposes
+    public delegate void ModeChanged(float currentSpeed, bool isSurfer);
+    public ModeChanged OnModeChanged;
+
+    public delegate void GrindState(bool grindStarted);
+    public GrindState OnGrindStateUpdated;
+    
+    public CharacterController Controller => cc;
+
+
+    #endregion
+    
     // # Movement
     [Header("Movement")]
     // Speed of player walking
@@ -219,7 +231,13 @@ public class PlayerController : MonoBehaviour
     }
 
   
-    void SetMovementMode (MovementMode newMode) {
+    void SetMovementMode (MovementMode newMode)
+    {
+        MovementMode currentMode = mode;
+
+        if (currentMode == MovementMode.Grinding)
+            OnGrindStateUpdated?.Invoke(false);
+        
         mode = newMode;
         switch (mode) {
             case MovementMode.Walking : 
@@ -227,6 +245,7 @@ public class PlayerController : MonoBehaviour
             case MovementMode.Surfer : 
                 EnterSurfer(); break;
             case MovementMode.Grinding : 
+                OnGrindStateUpdated?.Invoke(true);
                 break;
             case MovementMode.Stopped : 
                 break;
@@ -297,6 +316,9 @@ public class PlayerController : MonoBehaviour
     // Movement function for adventure mode to be run on Update
     public void MoveWalking(Vector2 input) {
 
+        OnModeChanged?.Invoke(cc.velocity.magnitude, false);
+
+        
         // Start by applying friction if we're on the ground
         if (cc.isGrounded) {
             Debug.Log("grounded");
@@ -365,6 +387,7 @@ public class PlayerController : MonoBehaviour
 
         // Vector3 motionUnprojected = new();
 
+        OnModeChanged?.Invoke(cc.velocity.magnitude, true);
 
         if (floorCast.transform != null) {
             Vector3 groundNormal = floorCast.normal;

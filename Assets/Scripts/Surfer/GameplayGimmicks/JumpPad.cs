@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
+//using FMODUnity;
 
 public class JumpPad : MonoBehaviour
 {
@@ -9,10 +9,10 @@ public class JumpPad : MonoBehaviour
     [SerializeField] float strength = 20.0f;
     private void OnTriggerEnter(Collider other) {
         if (other.GetComponent<PlayerController>()) {
-            Transform FMOD = gameObject.transform.Find("FMOD");
-            StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
-            Debug.Log(emitter);
-            emitter.Play();
+    //        Transform FMOD = gameObject.transform.Find("FMOD");
+           // StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
+         //   Debug.Log(emitter);
+        //    emitter.Play();
             if (ignorePlayerEnterVelocity) {
                 PlayerController.SetVelocity(new(0, strength, 0));
             } else {
@@ -32,7 +32,7 @@ public class JumpPad : MonoBehaviour
             PlayerController.ApplyVelocity(new(0, strength, 0));
         }
 
-        if (!GetComponent<AudioSource>().isPlaying) 
-            GetComponent<AudioSource>().Play();
+     //   if (!GetComponent<AudioSource>().isPlaying) 
+         //   GetComponent<AudioSource>().Play();
     }
 }

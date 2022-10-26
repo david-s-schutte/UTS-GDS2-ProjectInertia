@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    FMODUnity.StudioEventEmitter emitter;
+    //FMODUnity.StudioEventEmitter emitter;
 
     private void Start()
     {
-        emitter = GetComponent<FMODUnity.StudioEventEmitter>();
+//        emitter = GetComponent<FMODUnity.StudioEventEmitter>();
     }
     private void OnCollisionEnter(Collision collision)
     {
-        emitter.Play();
+   //     emitter.Play();
         Debug.Log(collision.gameObject.name);
 
     }
