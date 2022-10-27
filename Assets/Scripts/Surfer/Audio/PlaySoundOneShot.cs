@@ -25,8 +25,10 @@ namespace Surfer.Audio
             _audioManager.StopSound(SelectedTrack);
         }
 
-        public EventInstance PlaySoundOnce(AudioTrack track, bool storeReference = false) => overrideVolume ? PlaySoundOnce(SelectedTrack, volumeOverrideAmount) : _audioManager.PlaySoundOnce(track, storeReference);
+        public EventInstance PlaySoundOnce(AudioTrack track, bool storeReference = false) =>  _audioManager.PlaySoundOnce(track,storeReference);
+
         
-        public EventInstance PlaySoundOnce(AudioTrack track, float volumeOverride, bool storeReference = false) => _audioManager.PlaySoundOnce(track, volumeOverride,storeReference);
+
+        public void PlaySoundOnce(AudioTrack track, float volumeOverride, bool storeReference = false) => _audioManager.PlaySoundOnce(track, volumeOverride,storeReference);
     }
 }

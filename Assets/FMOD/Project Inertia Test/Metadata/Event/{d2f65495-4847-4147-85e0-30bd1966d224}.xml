@@ -5,7 +5,7 @@
 			<value>sfx_soundevent_hovering</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{f7b68961-8d67-4150-b570-b0eaf3330cdc}</destination>
@@ -332,7 +332,6 @@
 	<object class="MixerBusEffectChain" id="{37a64c14-c9b7-45cf-9417-bd7e9eb2036a}">
 		<relationship name="effects">
 			<destination>{abd8e4cf-56b2-41d7-b593-624351ea84cf}</destination>
-			<destination>{3a6a887a-249c-42af-8ef6-511c4417bd76}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5ecf5b7f-bc08-40ab-9489-5161af2c7f10}" />
@@ -390,7 +389,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{abd8e4cf-56b2-41d7-b593-624351ea84cf}" />
-	<object class="SpatialiserEffect" id="{3a6a887a-249c-42af-8ef6-511c4417bd76}" />
 	<object class="AutomationPoint" id="{41b3f804-ad76-46ab-b5a1-54580b868bf5}">
 		<property name="position">
 			<value>0</value>

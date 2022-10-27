@@ -21,13 +21,7 @@ namespace Surfer.Audio
             _boostPad.OnTriggeredPad -= PlaySound;
         }
 
-        public void PlaySound()
-        {
-            if (overrideVolume)
-                _audioManager.PlaySoundOnce(SelectedTrack,volumeOverrideAmount, true);
-            else
-                _audioManager.PlaySoundOnce(SelectedTrack, true);
-        } 
+        public void PlaySound() => _audioManager.PlaySoundOnce(SelectedTrack, true);
 
     }
 }

@@ -27,7 +27,7 @@ public class PlayerAudio : MonoBehaviour
         {
             _controller.OnModeChanged += PlayWind;
             _controller.OnGrindStateUpdated += PlayGrindingSound;
-            _controller.OnJumpOccured += PlayJumpSound;
+
         }
     }
 
@@ -36,7 +36,7 @@ public class PlayerAudio : MonoBehaviour
     {
         _controller.OnModeChanged -= PlayWind;
         _controller.OnGrindStateUpdated -= PlayGrindingSound;
-        _controller.OnJumpOccured -= PlayJumpSound;
+
     }
 
     public void PlayWind(float speedValue, bool isSurfer)
@@ -48,7 +48,8 @@ public class PlayerAudio : MonoBehaviour
         {
             if (windInstance.isValid())
             {
-                windInstance.setParameterByNameWithLabel("WindState", "NotBlowing");
+                windInstance.stop(STOP_MODE.ALLOWFADEOUT);
+                windInstance = new EventInstance();
             }
 
             return;
@@ -58,10 +59,8 @@ public class PlayerAudio : MonoBehaviour
             windInstance = soundPlayer[1].PlaySoundOnce(soundPlayer[1].SelectedTrack);
         
         Debug.Log(scaledSpeedValue);
-        windInstance.setParameterByName("Wind", scaledSpeedValue);
+        windInstance.setParameterByName("Speed", scaledSpeedValue);
     }
-
-    public void PlayJumpSound() => soundPlayer[3].PlaySoundOnce(soundPlayer[3].SelectedTrack);
 
     public void PlayGrindingSound(bool grindingStarted)
     {
