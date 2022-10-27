@@ -6,6 +6,7 @@ public class PlayerFeedbackController : MonoBehaviour
 {
     static PlayerFeedbackController Instance;
     [SerializeField] Animator animator;
+    public PlayerController playerController;
 
     private void Awake() {
         if (!animator) {
@@ -18,6 +19,18 @@ public class PlayerFeedbackController : MonoBehaviour
             Destroy(Instance);
         }
         Instance = this;
+    }
+
+    public void Update()
+    {
+        if (animator.GetBool("Intro") == true)
+        {
+            playerController.enabled = false;
+        }
+        if (animator.GetBool("Intro") == false)
+        {
+            playerController.enabled = true;
+        }
     }
 
     public static void UpdateMoveAmount (float inputSqrMagnitude) {
