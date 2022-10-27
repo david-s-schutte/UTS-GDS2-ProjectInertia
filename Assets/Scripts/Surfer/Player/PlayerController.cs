@@ -3,11 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using Surfer.Input;
+using Surfer.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerController : MonoBehaviour
 {
+
+    // if my future employers see this region i am fucked
+    #region variables
+
     static PlayerController Instance;
     public enum MovementMode {Walking, Surfer, Grinding, Stopped};
 
@@ -134,6 +139,10 @@ public class PlayerController : MonoBehaviour
     static MovementMode mode;
     RaycastHit floorCast;
 
+    TrickSystem trickSystem;
+
+    #endregion
+
     private void Awake() {
         Instance = this;
         cc = GetComponent<CharacterController>();
@@ -141,6 +150,8 @@ public class PlayerController : MonoBehaviour
         playerCamera = Camera.main;
         velocity = lastFrameVelocity = Vector3.zero;
         PlayerInputController.CheckInitialised();
+
+        trickSystem = Managers.ManagerLocator.Get<TrickSystem>();
     }
 
     private void Start() {
