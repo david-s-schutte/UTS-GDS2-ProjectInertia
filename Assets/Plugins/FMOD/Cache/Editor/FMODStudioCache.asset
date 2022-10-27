@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638024155722146413
+  lastModified: 638024767225431519
   FileSizes:
   - Name: Desktop
-    Value: 532832
+    Value: 531104
   Exists: 1
 --- !u!114 &-8319974585451164502
 MonoBehaviour:
@@ -236,6 +236,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8614
+--- !u!114 &-4568900616698538128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/sfx_soundevent_wind/WindState
+  m_EditorClassIdentifier: 
+  Name: WindState
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 577843956
+    data2: 3122790746
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - NotBlowing
+  - Blowing
+  Exists: 1
 --- !u!114 &-4485924447712450221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,12 +283,12 @@ MonoBehaviour:
   Banks:
   - {fileID: -8528389689502323949}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: 4744361611059259739}
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 30
   Length: 6015
 --- !u!114 &-4193431595674222875
 MonoBehaviour:
@@ -317,6 +343,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 610
+--- !u!114 &-2701958555510881682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/sfx_soundevent_wind/Wind
+  m_EditorClassIdentifier: 
+  Name: Wind
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 623057695
+    data2: 2359382793
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2570026096998470046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,13 +456,12 @@ MonoBehaviour:
   - {fileID: -3389832467906691336}
   EditorParameters:
   - {fileID: -4193431595674222875}
-  - {fileID: 5993278832383022342}
   - {fileID: 8053272860055699441}
   MasterBanks:
   - {fileID: -8528389689502323949}
   StringsBanks:
   - {fileID: 4900196429290857804}
-  cacheTime: 638024155722156385
+  cacheTime: 638024767225446538
   cacheVersion: 131591
 --- !u!114 &930155016491512991
 MonoBehaviour:
@@ -462,7 +511,7 @@ MonoBehaviour:
     data1: 2907604971
     data2: 2509988605
   Type: 2
-  IsGlobal: 1
+  IsGlobal: 0
   Labels:
   - Grinding
   - Not Grinding
@@ -515,8 +564,10 @@ MonoBehaviour:
   - {fileID: -8528389689502323949}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -2701958555510881682}
+  - {fileID: -4568900616698538128}
   MinDistance: 1
   MaxDistance: 20
   Length: 8614
@@ -535,10 +586,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638024155722156385
+  lastModified: 638024767225446538
   FileSizes:
   - Name: Desktop
-    Value: 1664
+    Value: 1756
   Exists: 1
 --- !u!114 &5043584214316166074
 MonoBehaviour:
@@ -621,33 +672,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 676
---- !u!114 &5993278832383022342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Grinding
-  m_EditorClassIdentifier: 
-  Name: Grinding
-  StudioPath: parameter:/Grinding
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2907604971
-    data2: 2509988605
-  Type: 2
-  IsGlobal: 1
-  Labels:
-  - Grinding
-  - Not Grinding
-  Exists: 1
+  Length: 250
 --- !u!114 &6787385681831271436
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     public delegate void GrindState(bool grindStarted);
     public GrindState OnGrindStateUpdated;
     
+    public delegate void JumpOccured();
+    public JumpOccured OnJumpOccured;
+    
     public CharacterController Controller => cc;
 
 
@@ -571,6 +574,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Jump() {
+        OnJumpOccured?.Invoke();
         PlayerFeedbackController.OnJump();
         velocity.y = jumpImpulse;  //TODO: experiment with making jump relative to local up instead of world up (e.g. for half pipes)
         HandleLiftoff();
