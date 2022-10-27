@@ -154,6 +154,8 @@ public class PlayerController : MonoBehaviour
     // the frequency to input held tricks like grinding or airtime
     // TODO: tricksystem should handle this
     [SerializeField] int timedTricksFreq = 1;
+    float airTimeTrickTimer;
+    [SerializeField] float airTimeTrickThreshold = 4;
     TrickSystem trickSystem;
 
     #endregion
@@ -235,7 +237,13 @@ public class PlayerController : MonoBehaviour
             airHorizontalMomentumVel.x = Mathf.MoveTowards(airHorizontalMomentumVel.x, 0, airSlowTime * Time.deltaTime);
             airHorizontalMomentumVel.y = Mathf.MoveTowards(airHorizontalMomentumVel.y, 0, airSlowTime * Time.deltaTime);
 
+            airTimeTrickTimer += Time.deltaTime;
+            if (airTimeTrickTimer > timedTricksFreq) {
+                if (airTime > airTimeTrickThreshold) trickSystem.InputTrick(trickAir); // this is kinda dumb ay
+                airTimeTrickTimer = 0;
+            }
             // movementInput = cumulativeAirControl;
+
         }
         // Apply movement functions for each mode
         ApplyGravity();
@@ -551,6 +559,9 @@ public class PlayerController : MonoBehaviour
         lastGroundedSpeed = Mathf.Max(new Vector2(airHorizontalMomentumVel.x, airHorizontalMomentumVel.y).magnitude, directAirControl);
 
         lastLiftoffDirection = lastFrameVelocity.normalized;
+
+        // reset airtime timer
+        airTimeTrickTimer = 0;
 
         if (jumpCount == 0) jumpCount++;
     }

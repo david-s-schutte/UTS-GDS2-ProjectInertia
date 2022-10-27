@@ -2685,8 +2685,9 @@ MonoBehaviour:
   trickFrontFlip: {fileID: 0}
   trickBackFlip: {fileID: 0}
   trickGrind: {fileID: 11400000, guid: 60b55d50d35df044f9dd4b14b6c7568d, type: 2}
-  trickAir: {fileID: 0}
+  trickAir: {fileID: 11400000, guid: 41b53f7031186524fb59add8813c6e3b, type: 2}
   timedTricksFreq: 1
+  airTimeTrickThreshold: 4
 --- !u!143 &6725002459627622634
 CharacterController:
   m_ObjectHideFlags: 0
