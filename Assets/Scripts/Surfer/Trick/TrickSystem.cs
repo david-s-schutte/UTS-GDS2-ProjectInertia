@@ -55,7 +55,7 @@ public class TrickSystem : Manager
         }
         
         AppendTrick(trick);
-        OnTrickScoreUpdated?.Invoke(trick.name, Mathf.Floor(trick.BaseScore * Depretiate(depretiation) * Chain(chainamount)));
+        OnTrickScoreUpdated?.Invoke(trick.TrickName, Mathf.Floor(trick.BaseScore * Depretiate(depretiation) * Chain(chainamount)));
     }
 
 
