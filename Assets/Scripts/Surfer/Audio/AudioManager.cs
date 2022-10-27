@@ -85,16 +85,17 @@ public class AudioManager : Manager
     /// </summary>
     /// <param name="track"></param>
     /// <param name="volumeOverride"></param>
-    public void PlaySoundOnce(AudioTrack track, float volumeOverride, bool storeReference = false)
+    public EventInstance PlaySoundOnce(AudioTrack track, float volumeOverride, bool storeReference = false)
     {
         if (storeReference)
         {
             EventInstance instance = FMODUnity.RuntimeManager.PlayOneShot(track.AudioPath,volumeOverride);
             instance.setCallback(_eventCallback);
             _currentSounds.Add(instance, track);
+            return instance;
         }
         else
-            FMODUnity.RuntimeManager.PlayOneShot(track.AudioPath);
+           return  FMODUnity.RuntimeManager.PlayOneShot(track.AudioPath, volumeOverride);
     }
 
 
