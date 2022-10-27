@@ -301,6 +301,7 @@ public class PlayerController : MonoBehaviour
                 EnterSurfer(); break;
             case MovementMode.Grinding : 
                 OnGrindStateUpdated?.Invoke(true);
+                jumpCount = 0;
                 break;
             case MovementMode.Stopped :
                 break;
