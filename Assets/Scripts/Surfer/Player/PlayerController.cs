@@ -307,13 +307,14 @@ public class PlayerController : MonoBehaviour
         velocity.y = yVel;
     }
 
-    public static void SurfBoost (float boostSpeed, Quaternion forward) {
+    public static void SurfBoost (float boostSpeed, Quaternion forward, bool additive) {
         if (!IsSurferMode()) {
             Instance.SetMovementMode(MovementMode.Surfer);
         }
         Instance.forwardDirection = forward;
         velocity = lastFrameVelocity = Vector3.zero;
-        Instance.surferModeCurrentThrust = boostSpeed;
+        // set to boost speed or add current thrust if additive mode
+        Instance.surferModeCurrentThrust = boostSpeed + (additive ? Instance.surferModeCurrentThrust : 0);
     }
 
     public static bool IsFalling () {
