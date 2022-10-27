@@ -139,6 +139,18 @@ public class PlayerController : MonoBehaviour
     static MovementMode mode;
     RaycastHit floorCast;
 
+
+    // TODO: This should not be chillin in playercontroller lmao
+    [Header("Tricks")]
+    [SerializeField] Trick trick180;
+    [SerializeField] Trick trick360;
+    [SerializeField] Trick trickFrontFlip;
+    [SerializeField] Trick trickBackFlip;
+    [SerializeField] Trick trickGrind;
+    [SerializeField] Trick trickAir;
+    // the frequency to input held tricks like grinding or airtime
+    // TODO: tricksystem should handle this
+    [SerializeField] int timedTricksFreq = 1;
     TrickSystem trickSystem;
 
     #endregion
@@ -660,7 +672,7 @@ public class PlayerController : MonoBehaviour
         // Debug.Log("landed on grindrail with " + railPoints.Count + " nodes");
 
         int node = 0;
-
+        float grindTime = 0;
 
         while (node < railPoints.Count) {
             Vector3 startPosition = transform.position;
@@ -678,6 +690,15 @@ public class PlayerController : MonoBehaviour
                 forwardDirection = Quaternion.LookRotation(nextNodeDirection, Vector3.up);
 
                 t += Time.deltaTime * railSpeed / speedMultiplier;
+            
+                // Handle awarding of trick
+                // TODO: This won't give perfect results, ideally we should be using a system on TrickSystem where you can begin and end repeating tricks
+                grindTime += Time.deltaTime;
+                if (grindTime > timedTricksFreq) {
+                    trickSystem.InputTrick(trickGrind);
+                    grindTime = 0;
+                }
+
                 // Allow jumps to cancel the whole Coroutine
                 if (GetJumpDown()) {
                     velocity = lastFrameVelocity = Vector3.zero;
