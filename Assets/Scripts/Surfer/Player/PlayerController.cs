@@ -263,6 +263,12 @@ public class PlayerController : MonoBehaviour
         PlayerFeedbackController.OnChangeMovementMode();
     }
 
+    // TODO: this function is mostly just so jumppads can set the player's mode to walking
+    // this probs shouldn't be how this is handled if we do any further development
+    public static void SetWalkingMode() {
+        Instance.SetMovementMode(MovementMode.Walking);
+    }
+
     #region Static motion functions
 
     public static void ApplyVelocity(Vector3 v) {
