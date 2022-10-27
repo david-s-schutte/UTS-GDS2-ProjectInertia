@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2915d0b56b7bdc048a65375d08f008b9, type: 3}
   m_Name: Grind
   m_EditorClassIdentifier: 
-  TrickName: 
-  Type: 0
-  BaseScore: 0
+  TrickName: Grindrail
+  Type: 1
+  BaseScore: 50
   TrickAnim: {fileID: 0}
