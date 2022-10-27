@@ -101,6 +101,8 @@ public class PlayerController : MonoBehaviour
     // The jump we're currently on
     int jumpCount = 0;
 
+    Vector3 cumulativeMidairRotation;
+
     // # Air movement (WALKING)
     // Carried velocity whilst in air
     Vector2 airHorizontalMomentumVel;
@@ -452,10 +454,16 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        forwardDirection *= Quaternion.Euler(0, input.x * surferTurnRate * Time.deltaTime, 0);
+        Quaternion turnRotation = Quaternion.identity;
+        turnRotation *= Quaternion.Euler(0, input.x * surferTurnRate * Time.deltaTime, 0);
+        cumulativeMidairRotation += Vector3.up * input.x * surferTurnRate * Time.deltaTime;
         if (!IsGrounded() && GetGrabButton()) {
-            forwardDirection *= Quaternion.Euler(input.y * surferTurnRate * Time.deltaTime, 0, 0);
+            turnRotation *= Quaternion.Euler(input.y * surferTurnRate * Time.deltaTime, 0, 0);
+            cumulativeMidairRotation += Vector3.right * input.y * surferTurnRate * Time.deltaTime;
         }
+
+        forwardDirection *= turnRotation;
+
         Debug.DrawRay(transform.position, forwardDirection * Vector3.forward, Color.green);
 
         Vector3 lateralForward = forwardDirection * Vector3.forward;
@@ -562,6 +570,9 @@ public class PlayerController : MonoBehaviour
 
         // reset airtime timer
         airTimeTrickTimer = 0;
+        // reset air rotation
+        // FIXME: this might make fancy double jump moves don't count which is a shame
+        cumulativeMidairRotation = Vector3.zero;
 
         if (jumpCount == 0) jumpCount++;
     }
@@ -571,6 +582,18 @@ public class PlayerController : MonoBehaviour
     void HandleLanding() {
         jumpCount = 0;
         airTime = 0;
+
+        LandingTricks(cumulativeMidairRotation);
+    }
+
+    void LandingTricks (Vector3 rotation) {
+        int halfTurns = Mathf.Abs(Mathf.FloorToInt(rotation.y / 180.0f));
+        if (halfTurns >= 1) {
+            Trick rotationTrick = new Trick();
+            rotationTrick.BaseScore = trick180.BaseScore * halfTurns;
+            rotationTrick.TrickName = (halfTurns * 180).ToString();
+            trickSystem.InputTrick(rotationTrick);
+        }
     }
 
     void TryJump () {

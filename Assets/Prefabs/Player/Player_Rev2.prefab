@@ -2680,7 +2680,7 @@ MonoBehaviour:
   maxRampDegrees: 60
   inputGravity: 5
   mouseSensitivity: 1
-  trick180: {fileID: 0}
+  trick180: {fileID: 11400000, guid: 3ce0b4f06dca27745bdbc81ec800379c, type: 2}
   trick360: {fileID: 0}
   trickFrontFlip: {fileID: 0}
   trickBackFlip: {fileID: 0}
