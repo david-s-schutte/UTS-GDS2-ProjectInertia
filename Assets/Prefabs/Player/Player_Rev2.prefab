@@ -2680,6 +2680,13 @@ MonoBehaviour:
   maxRampDegrees: 60
   inputGravity: 5
   mouseSensitivity: 1
+  trick180: {fileID: 0}
+  trick360: {fileID: 0}
+  trickFrontFlip: {fileID: 0}
+  trickBackFlip: {fileID: 0}
+  trickGrind: {fileID: 11400000, guid: 60b55d50d35df044f9dd4b14b6c7568d, type: 2}
+  trickAir: {fileID: 0}
+  timedTricksFreq: 1
 --- !u!143 &6725002459627622634
 CharacterController:
   m_ObjectHideFlags: 0
