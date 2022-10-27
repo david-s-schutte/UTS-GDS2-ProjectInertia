@@ -18,6 +18,7 @@ public class PlayerTriggerChecker : MonoBehaviour
     {
         if(hit.gameObject.tag == "Checkpoint")
         {
+            Debug.Log("ass");
             Transform animator = hit.gameObject.transform.Find("C");
             Transform FMOD = hit.gameObject.transform.Find("FMOD");
             StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
@@ -26,9 +27,9 @@ public class PlayerTriggerChecker : MonoBehaviour
             emitter.Play();
             trigger.TriggerParameters();
             animator.GetComponent<Animator>().SetBool("isActivated", true);
-            if(!hit.gameObject.GetComponent<AudioSource>().isPlaying && respawnPos != hit.gameObject.transform.Find("RespawnPos").position)
+            if(/*!hit.gameObject.GetComponent<AudioSource>().isPlaying && */respawnPos != hit.gameObject.transform.Find("RespawnPos").position)
             {
-                hit.gameObject.GetComponent<AudioSource>().Play();
+                //hit.gameObject.GetComponent<AudioSource>().Play();
                 respawnPos = hit.gameObject.transform.Find("RespawnPos").position;
                 GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(60);
             }

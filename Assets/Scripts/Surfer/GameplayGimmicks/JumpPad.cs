@@ -6,6 +6,7 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     [SerializeField] bool ignorePlayerEnterVelocity;
+    [SerializeField] bool switchToWalking = true;
     [SerializeField] float strength = 20.0f;
     private void OnTriggerEnter(Collider other) {
         if (other.GetComponent<PlayerController>()) {
@@ -13,16 +14,13 @@ public class JumpPad : MonoBehaviour
            // StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
          //   Debug.Log(emitter);
         //    emitter.Play();
-            if (ignorePlayerEnterVelocity) {
-                PlayerController.SetVelocity(new(0, strength, 0));
-            } else {
-                PlayerController.ApplyVelocity(new(0, strength, 0));
-            }
+        LaunchPlayer();
         }
     }
 
     public void LaunchPlayer()
     {
+        PlayerController.SetWalkingMode();
         if (ignorePlayerEnterVelocity)
         {
             PlayerController.SetVelocity(new(0, strength, 0));

@@ -2646,7 +2646,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6725002459627622639}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d25ebcfa1edda44fa5770bfbc0f3311, type: 3}
   m_Name: 
@@ -2680,6 +2680,27 @@ MonoBehaviour:
   maxRampDegrees: 60
   inputGravity: 5
   mouseSensitivity: 1
+  trick180: {fileID: 11400000, guid: 3ce0b4f06dca27745bdbc81ec800379c, type: 2}
+  trick360: {fileID: 0}
+  trickFrontFlip: {fileID: 11400000, guid: 9a752337b878c0942b0f34f295e22766, type: 2}
+  trickBackFlip: {fileID: 11400000, guid: f3743f22ff3d30d49b72366583ae7ac3, type: 2}
+  trickGrind: {fileID: 11400000, guid: 60b55d50d35df044f9dd4b14b6c7568d, type: 2}
+  trickAir: {fileID: 11400000, guid: 41b53f7031186524fb59add8813c6e3b, type: 2}
+  timedTricksFreq: 1
+  airTimeTrickThreshold: 4
+  frontFlipFudgeAngle: 20
+  crashAngle: 90
+  flipTrickPrefixes:
+  - 
+  - Double
+  - Triple
+  - Quadruple
+  - Quintuple
+  - Sextuple
+  - Septuple
+  - Octuple
+  - Nonuple
+  - Decuple
 --- !u!143 &6725002459627622634
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2711,6 +2732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 553473503001598791}
+  playerController: {fileID: 6725002459627622633}
 --- !u!114 &1306443610187945938
 MonoBehaviour:
   m_ObjectHideFlags: 0
