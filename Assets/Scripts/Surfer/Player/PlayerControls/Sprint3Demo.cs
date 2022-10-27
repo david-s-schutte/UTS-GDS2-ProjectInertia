@@ -36,6 +36,7 @@ public class Sprint3Demo: MonoBehaviour
         {
             Invoke("EndDemo", 2.0f);
         }
+
     }
 
     //private void OnControllerColliderHit(ControllerColliderHit hit)

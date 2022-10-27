@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3be46d5f-86c5-46cc-844d-223df8ee84ea}">
+		<property name="assetPath">
+			<value>HUBWORLDMUSIC_INSIDE.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>53.864479166666669</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6805cd97-0b78-42e1-ad0c-6c585f60ab5a}</destination>
+		</relationship>
+	</object>
+</objects>

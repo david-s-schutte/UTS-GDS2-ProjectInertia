@@ -12,6 +12,7 @@ TagManager:
   - JumpPad
   - BoostPad
   - ScoreManager
+  - HubTrigger
   layers:
   - Default
   - TransparentFX
