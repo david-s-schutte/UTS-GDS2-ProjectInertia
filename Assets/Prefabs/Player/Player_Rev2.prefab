@@ -2682,12 +2682,25 @@ MonoBehaviour:
   mouseSensitivity: 1
   trick180: {fileID: 11400000, guid: 3ce0b4f06dca27745bdbc81ec800379c, type: 2}
   trick360: {fileID: 0}
-  trickFrontFlip: {fileID: 0}
-  trickBackFlip: {fileID: 0}
+  trickFrontFlip: {fileID: 11400000, guid: 9a752337b878c0942b0f34f295e22766, type: 2}
+  trickBackFlip: {fileID: 11400000, guid: f3743f22ff3d30d49b72366583ae7ac3, type: 2}
   trickGrind: {fileID: 11400000, guid: 60b55d50d35df044f9dd4b14b6c7568d, type: 2}
   trickAir: {fileID: 11400000, guid: 41b53f7031186524fb59add8813c6e3b, type: 2}
   timedTricksFreq: 1
   airTimeTrickThreshold: 4
+  frontFlipFudgeAngle: 20
+  crashAngle: 90
+  flipTrickPrefixes:
+  - 
+  - Double
+  - Triple
+  - Quadruple
+  - Quintuple
+  - Sextuple
+  - Septuple
+  - Octuple
+  - Nonuple
+  - Decuple
 --- !u!143 &6725002459627622634
 CharacterController:
   m_ObjectHideFlags: 0

@@ -158,6 +158,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int timedTricksFreq = 1;
     float airTimeTrickTimer;
     [SerializeField] float airTimeTrickThreshold = 4;
+    // Number of degrees off from a full flip that still counts
+    [SerializeField] float frontFlipFudgeAngle = 20;
+    // Angle at which the player has cocked up and had a crash innit
+    [SerializeField] float crashAngle = 90;
+
+    [SerializeField] string[] flipTrickPrefixes = { "", "Double", "Triple", "Quadruple", "Quintuple", "Sextuple", "Septuple", "Octuple", "Nonuple", "Decuple" };
+
+    bool collisionThisAirTime = false;
+
     TrickSystem trickSystem;
 
     #endregion
@@ -438,6 +447,12 @@ public class PlayerController : MonoBehaviour
 
         OnModeChanged?.Invoke(cc.velocity.magnitude, true);
 
+        // Perform y rotation (turning) to turnRotation that will carry the total controlled turn for this frame.
+        Quaternion turnRotation = Quaternion.identity;
+        turnRotation *= Quaternion.Euler(0, input.x * surferTurnRate * Time.deltaTime, 0);
+        cumulativeMidairRotation += Vector3.up * input.x * surferTurnRate * Time.deltaTime; // Add to the cumulative rotation for tricks
+        
+        // If we're in range of the floor then either rotate to follow the surface or prepare to land
         if (floorCast.transform != null) {
             Vector3 groundNormal = floorCast.normal;
             Vector3 groundForward = Vector3.Cross(forwardDirection * Vector3.right, groundNormal);
@@ -451,20 +466,24 @@ public class PlayerController : MonoBehaviour
 
             //add a force to slide downhill - disabled to get something workable for the sprint submission
             // motionUnprojected += downhillDirection * slideAmount;
+            
+        } else {
+
+            // Rotating on the X axis when we're not in range of the floor
+            if (!IsGrounded() && GetGrabButton()) {
+                turnRotation *= Quaternion.Euler(input.y * surferTurnRate * Time.deltaTime, 0, 0);
+                // Note: while Y is always counted for cumulative rotation, X is only counted when in floor range.
+                // This is cause Y rotation isn't affected by the floorCast result while X rotation is
+                cumulativeMidairRotation += Vector3.right * input.y * surferTurnRate * Time.deltaTime;
+            }
+
         }
 
-
-        Quaternion turnRotation = Quaternion.identity;
-        turnRotation *= Quaternion.Euler(0, input.x * surferTurnRate * Time.deltaTime, 0);
-        cumulativeMidairRotation += Vector3.up * input.x * surferTurnRate * Time.deltaTime;
-        if (!IsGrounded() && GetGrabButton()) {
-            turnRotation *= Quaternion.Euler(input.y * surferTurnRate * Time.deltaTime, 0, 0);
-            cumulativeMidairRotation += Vector3.right * input.y * surferTurnRate * Time.deltaTime;
-        }
-
+        // Apply final turn rotation
         forwardDirection *= turnRotation;
 
-        Debug.DrawRay(transform.position, forwardDirection * Vector3.forward, Color.green);
+
+        // Debug.DrawRay(transform.position, forwardDirection * Vector3.forward, Color.green);
 
         Vector3 lateralForward = forwardDirection * Vector3.forward;
         lateralForward.y = 0;
@@ -570,9 +589,6 @@ public class PlayerController : MonoBehaviour
 
         // reset airtime timer
         airTimeTrickTimer = 0;
-        // reset air rotation
-        // FIXME: this might make fancy double jump moves don't count which is a shame
-        cumulativeMidairRotation = Vector3.zero;
 
         if (jumpCount == 0) jumpCount++;
     }
@@ -584,15 +600,51 @@ public class PlayerController : MonoBehaviour
         airTime = 0;
 
         LandingTricks(cumulativeMidairRotation);
+        // Reset midair rotation value
+        cumulativeMidairRotation = Vector3.zero;
     }
 
     void LandingTricks (Vector3 rotation) {
+        // If we've had a collision, ignore this landing
+        if (collisionThisAirTime) {
+            collisionThisAirTime = false;
+            return;
+        }
+
+        // 180s, 360s, and beyond
+        // The number of turns (180s) we've done this landing
         int halfTurns = Mathf.Abs(Mathf.FloorToInt(rotation.y / 180.0f));
         if (halfTurns >= 1) {
             Trick rotationTrick = new Trick();
             rotationTrick.BaseScore = trick180.BaseScore * halfTurns;
             rotationTrick.TrickName = (halfTurns * 180).ToString();
             trickSystem.InputTrick(rotationTrick);
+        }
+
+        // Flips
+        // If any, the number of flips we achieved this jump
+        int flips = Mathf.FloorToInt(Mathf.Abs(rotation.x - frontFlipFudgeAngle) / 360.0f);
+        if (flips >= 1) {
+            bool frontFlip = rotation.x > 0;
+            Trick baseFlipTrick = frontFlip ? trickFrontFlip : trickBackFlip;
+
+            Trick flipTrick = new Trick();
+            flipTrick.BaseScore = baseFlipTrick.BaseScore * flips;
+
+            // Generate the trick's name with a prefix based on how many flips were achieved
+            string trickName = "";
+            if (flips > 1) {
+                if (flipTrickPrefixes.GetLength(0) > flips - 1) {
+                    trickName = flipTrickPrefixes[flips - 1] + " ";
+                } else {
+                    trickName = flips + "x ";
+                }
+            }
+            trickName += baseFlipTrick.name;
+            flipTrick.TrickName = trickName;
+            Debug.Log(trickName);
+    
+            trickSystem.InputTrick(flipTrick);
         }
     }
 
@@ -633,7 +685,7 @@ public class PlayerController : MonoBehaviour
         // Debug.Log(angleDif);
 
         if (hit.moveDirection.y > -0.3f && angleDif > maxRampDegrees) { // FIXME: arbitrary value for min move dir
-
+            collisionThisAirTime = true;
             if (IsSurferMode()) {
                 // Speed of thrust
                 // Note DIVIDING by deltaTime to convert the single frame translation into a speed
@@ -712,6 +764,9 @@ public class PlayerController : MonoBehaviour
 
         int node = 0;
         float grindTime = 0;
+        
+        // Initial rail grind trick reward
+        trickSystem.InputTrick(trickGrind);
 
         while (node < railPoints.Count) {
             Vector3 startPosition = transform.position;
