@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Managers;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,11 +27,45 @@ public class TrickUI : MonoBehaviour
     public float fillspeed;
     public float bufferamounts;
 
+    public bool test;
+
+    private TrickSystem _trickManager;
+    
+
+    public float TimeSinceTrick
+    {
+        get => timeSinceTrick;
+        set
+        {
+            timeSinceTrick = value;
+            _trickManager.TimeSinceTrack = timeSinceTrick;
+        }
+    }
+
+    private void Awake()
+    {
+        _trickManager = ManagerLocator.Get<TrickSystem>();
+    }
+
+    private void OnEnable()
+    {
+        _trickManager.OnTrickScoreUpdated += UpdateScore;
+    }
+
+    private void OnDisable()
+    {
+        _trickManager.OnTrickScoreUpdated -= UpdateScore;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        timeSinceTrick += Time.deltaTime;
+        if (test)
+        {
+            UpdateScore("test",200);
+            test = false;
+        }
+        TimeSinceTrick += Time.deltaTime;
         score -= 100f * Time.deltaTime * decrementAmount;
         /*if (score < 0)
         {
@@ -76,7 +113,7 @@ public class TrickUI : MonoBehaviour
 
     public void UpdateScore(string name, float addScore)
     {
-        timeSinceTrick = 0f;
+        TimeSinceTrick = 0f;
         score += addScore;
         /*if (score > trickStage[currentStage])
         {
