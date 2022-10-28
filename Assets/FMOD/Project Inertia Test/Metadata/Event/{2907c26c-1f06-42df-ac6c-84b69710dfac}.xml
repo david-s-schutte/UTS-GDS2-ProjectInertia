@@ -122,6 +122,9 @@
 		<property name="timelockedOffset">
 			<value>0.85000000000000009</value>
 		</property>
+		<property name="volume">
+			<value>5.5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{9db5ea3b-f8bd-4411-ae45-aaa51f04e925}</destination>
 		</relationship>
@@ -146,6 +149,9 @@
 		</property>
 		<property name="length">
 			<value>0.85000000000000009</value>
+		</property>
+		<property name="volume">
+			<value>1</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{9db5ea3b-f8bd-4411-ae45-aaa51f04e925}</destination>
@@ -174,6 +180,9 @@
 		</property>
 		<property name="timelockedOffset">
 			<value>1.24</value>
+		</property>
+		<property name="volume">
+			<value>3.5</value>
 		</property>
 		<relationship name="fadeOutCurve">
 			<destination>{3402c42a-8dfd-4624-8cb0-76beb8bed56f}</destination>
