@@ -2,7 +2,7 @@
     "name": "Surfer.Trick",
     "rootNamespace": "",
     "references": [
-        "Surfer.UI"
+        "Surfer.Managers"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

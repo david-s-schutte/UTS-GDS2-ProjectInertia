@@ -10,15 +10,15 @@ public class TempTrickTestScript : MonoBehaviour
     public Canvas canvas;
     public Trick trick1;
     public Trick trick2;
-    public Trick trick3;
+    public Trick trick3;    
     public bool bool1;
     public bool bool2;
     public bool bool3;
     
     void Start()
     {
-        trickManager = ScriptableObject.CreateInstance<TrickSystem>();
-        trickManager.ui = Instantiate(trickUI,canvas.transform);
+     // trickManager = ScriptableObject.CreateInstance<TrickSystem>();
+       // trickManager = Instantiate(trickUI,canvas.transform);
     }
 
     // Update is called once per frame

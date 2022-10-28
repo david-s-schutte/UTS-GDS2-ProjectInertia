@@ -160,72 +160,6 @@ Transform:
   m_Father: {fileID: 3394595617653994609}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.000005937599, y: 97.994354, z: -0.000028871209}
---- !u!1 &362099314125911089
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6756743472110152658}
-  - component: {fileID: 948896743821752377}
-  - component: {fileID: 948896743821752379}
-  m_Layer: 0
-  m_Name: Player Audio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6756743472110152658
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362099314125911089}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -24.84, z: 33.75}
-  m_LocalScale: {x: 5, y: 5, z: 5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1741999947920076627}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &948896743821752377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362099314125911089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daf75042ed987bd48bd071da49425fdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _footstepParameters: {fileID: 11400000, guid: 1ce08b7b66be0cb4fad22a0f5edd455e, type: 2}
---- !u!114 &948896743821752379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362099314125911089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c474bdee7f39b7c489e72c7172c5d678, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SelectedTrack:
-    AudioKey: Footsteps Test
-    AudioPath: event:/Player SFX/Footsteps Test
-  SelectedItem: {fileID: -9101466709899821325, guid: 0e0f6e756a7c9744bb01a72eed61183c, type: 2}
-  PlayOnAwake: 0
-  IsGlobal: 0
-  overrideVolume: 1
-  volumeOverrideAmount: 0.6
 --- !u!1 &397611867393944515
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,8 +423,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1741999947920076627}
   - component: {fileID: 5678194076440835369}
+  - component: {fileID: 3534590832805044998}
+  - component: {fileID: 3543361903382887518}
+  - component: {fileID: 8287620254782029187}
+  - component: {fileID: 1334105752059418398}
   m_Layer: 0
-  m_Name: Player_Base
+  m_Name: Player_Base & Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -512,7 +450,6 @@ Transform:
   - {fileID: 8521827769509837567}
   - {fileID: 4766395758072519273}
   - {fileID: 8288533242078159696}
-  - {fileID: 6756743472110152658}
   m_Father: {fileID: 1456536528091119237}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -536,6 +473,83 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3534590832805044998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398089600269170153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf75042ed987bd48bd071da49425fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _footstepParameters: {fileID: 0}
+  soundPlayer: []
+--- !u!114 &3543361903382887518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398089600269170153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c474bdee7f39b7c489e72c7172c5d678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectedTrack:
+    ID: 0
+    AudioKey: 
+    AudioPath: 
+  SelectedItem: {fileID: 0}
+  PlayOnAwake: 0
+  IsGlobal: 0
+  overrideVolume: 0
+  volumeOverrideAmount: 0
+--- !u!114 &8287620254782029187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398089600269170153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c474bdee7f39b7c489e72c7172c5d678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectedTrack:
+    ID: 0
+    AudioKey: 
+    AudioPath: 
+  SelectedItem: {fileID: 0}
+  PlayOnAwake: 0
+  IsGlobal: 0
+  overrideVolume: 0
+  volumeOverrideAmount: 0
+--- !u!114 &1334105752059418398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398089600269170153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c474bdee7f39b7c489e72c7172c5d678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectedTrack:
+    ID: 0
+    AudioKey: 
+    AudioPath: 
+  SelectedItem: {fileID: 0}
+  PlayOnAwake: 0
+  IsGlobal: 0
+  overrideVolume: 0
+  volumeOverrideAmount: 0
 --- !u!1 &1456536528091119233
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +676,7 @@ MonoBehaviour:
   airControlSpeed: 12
   directAirControl: 3
   airSlowTime: 0.5
+  maxRampDegrees: 0
   inputGravity: 5
   mouseSensitivity: 1
   floorCastDist: 4
