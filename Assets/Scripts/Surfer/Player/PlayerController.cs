@@ -72,6 +72,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float surferModeThrustEaseOff = 0.95f;
     // Speed to accelerate the player in surfer mode (units/s^2)
     [SerializeField] float surferModeAcceleration = 2.0f;
+    // braking divisor innit
+    [SerializeField] float surferModeBrakeAmount = 2.0f;
     // Amount to slow surfer mode speed over time
     [SerializeField] float surferModeDrag = 2f;
     [SerializeField] float surferModeFriction = 0.2f;
@@ -498,7 +500,12 @@ public class PlayerController : MonoBehaviour
         Vector3 motion = new();
         motion += lateralForward * surferModeCurrentThrust;
 
-        surferModeCurrentThrust *= Mathf.Lerp(Mathf.Pow(surferModeThrustEaseOff, Time.deltaTime), 1, Mathf.Abs(input.y));
+        // Preconfigure thrust and brake input amounts
+        float thrustInput = Mathf.Max(0, input.y);
+        float brakeInput = Mathf.Abs(Mathf.Min(0, input.y));
+        
+        surferModeCurrentThrust *= Mathf.Lerp(Mathf.Pow(surferModeThrustEaseOff, Time.deltaTime), 1, Mathf.Abs(thrustInput));
+        
 
 
         if (IsGrounded()){
@@ -507,7 +514,9 @@ public class PlayerController : MonoBehaviour
                 surferModeCurrentThrust = surferModeCarriedSpeed;
                 surferModeCarriedSpeed = 0;
             }
-            surferModeCurrentThrust += input.y * surferModeAcceleration * Time.deltaTime;
+            surferModeCurrentThrust += thrustInput * surferModeAcceleration * Time.deltaTime;
+            if (brakeInput > 0) surferModeCurrentThrust -= Time.deltaTime * Mathf.Log(surferModeBrakeAmount) * surferModeCurrentThrust;
+            surferModeCurrentThrust = Mathf.Max(surferModeCurrentThrust , 0);
             velocity = Vector3.MoveTowards(velocity, Vector3.zero, surferModeFriction * Time.deltaTime);
             // motionUnprojected.x += velocity.x;
             // motionUnprojected.y += velocity.y;
