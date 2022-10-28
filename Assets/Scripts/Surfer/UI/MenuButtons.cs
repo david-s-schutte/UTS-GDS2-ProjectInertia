@@ -31,7 +31,7 @@ public class MenuButtons : MonoBehaviour
     public void LoadScene(int sceneIndex)
     {
         //sfx.Play();
-        SceneManager.LoadScene(_reference.ScenePath);
+        SceneManager.LoadScene(1);  
     }
 
     //this function is only used in demos - shows a quick diagram of the controls
