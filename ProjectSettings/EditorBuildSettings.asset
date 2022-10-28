@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Scenes/HubWorld.unity
     guid: de0f20862c49350418d687502295c635
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/1_CyberSpace.unity
+    path: Assets/Scenes/Final Scenes/TutorialLevel.unity
     guid: d1d6ad51f0aa9f94da081b4b4fe3cc19
   - enabled: 1
     path: Assets/Scenes/Final Scenes/RankScreen.unity
