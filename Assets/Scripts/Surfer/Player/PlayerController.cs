@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
     // TODO: I reckon this should be somewhere else and this script should mostly be reserved for direct player movement
     [SerializeField] Vector3 railOffset = new(0, 1, 0);
     [SerializeField] float railSpeed = 5;
+    [SerializeField] float railPushAmount = 5; // Amount you can speed up on rails by holding forward
     [SerializeField] float railLeaveBoost = 5;
 
     // Speed carried between frames
@@ -746,9 +747,13 @@ public class PlayerController : MonoBehaviour
         if (Physics.BoxCast(transform.position - Vector3.up * cc.height/2, new(boxCastSize, boxCastSize, boxCastSize), Vector3.down, out boxHit, forwardDirection, boxCastDistance)) {
             if (boxHit.transform.tag == "GrindrailNode") {
                 GrindRailController grindRailController = boxHit.collider.gameObject.GetComponentInParent<GrindRailController>();
-                if (grindRailController) StartCoroutine(RailGrindCoroutine(grindRailController));
+                if (grindRailController) EnterGrindRail(grindRailController);
             }
         }
+    }
+
+    public static void EnterGrindRail(GrindRailController grindRail) {
+        if (grindRail) Instance.StartCoroutine(Instance.RailGrindCoroutine(grindRail));
     }
 
     // alpha - this is probs not how it'll work in the final game
@@ -783,7 +788,9 @@ public class PlayerController : MonoBehaviour
                 if (node == 0) nextNodeDirection = FlattenAndNormalise3D(nextNodeDirection);
                 forwardDirection = Quaternion.LookRotation(nextNodeDirection, Vector3.up);
 
-                t += Time.deltaTime * railSpeed / speedMultiplier;
+                // Rail speed = base speed on rails
+                // Push speed is added multiplied by the forward movement vector.
+                t += Time.deltaTime * (railSpeed + railPushAmount * Mathf.Max(GetMoveInput().y, 0));
             
                 // Handle awarding of trick
                 // TODO: This won't give perfect results, ideally we should be using a system on TrickSystem where you can begin and end repeating tricks
@@ -793,6 +800,7 @@ public class PlayerController : MonoBehaviour
                     grindTime = 0;
                 }
 
+                
                 // Allow jumps to cancel the whole Coroutine
                 if (GetJumpDown()) {
                     velocity = lastFrameVelocity = Vector3.zero;

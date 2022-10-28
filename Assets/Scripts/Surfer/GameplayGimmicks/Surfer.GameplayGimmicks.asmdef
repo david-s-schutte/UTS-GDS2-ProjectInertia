@@ -3,7 +3,8 @@
     "rootNamespace": "",
     "references": [
         "Surfer.Player",
-        "FMODUnity"
+        "FMODUnity",
+        "Surfer.Grindrails"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
