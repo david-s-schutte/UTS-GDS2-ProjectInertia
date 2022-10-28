@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{de137d72-5677-498d-9ca9-ad6f06a9c5ea}">
+		<property name="assetPath">
+			<value>MTNLVLSTEM1.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>93.405416666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1fb0bd20-ceaf-44cf-8a89-b5f3704bac3c}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1157,59 +1157,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408658854}
   m_CullTransparentMesh: 1
---- !u!1 &413772013
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 413772015}
-  - component: {fileID: 413772016}
-  m_Layer: 0
-  m_Name: MusicController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &413772015
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413772013}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.8383827, y: -5.373396, z: -6.8797884}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &413772016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413772013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f541187b4fcf43c41accf3156c53c445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SelectedTrack:
-    ID: 0
-    AudioKey: TitleScreen
-    AudioPath: event:/TitleScreen
-  SelectedItem: {fileID: -4933527302870684314, guid: 0e0f6e756a7c9744bb01a72eed61183c, type: 2}
-  PlayOnAwake: 1
-  IsGlobal: 1
-  overrideVolume: 0
-  volumeOverrideAmount: 0.129
 --- !u!1 &468583414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,11 +2231,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1576589587
-      Data2: 1147754143
-      Data3: -190909043
-      Data4: -446031161
-    Path: event:/TitleScreen
+      Data1: -1092500317
+      Data2: 1203661398
+      Data3: -589199452
+      Data4: -1153764397
+    Path: event:/Music/Main Menu Music
   Event: 
   PlayEvent: 1
   StopEvent: 2
