@@ -142,7 +142,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1497979813543948954}
-  - component: {fileID: 953460632448543448}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -166,27 +165,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &953460632448543448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513990629553718182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c474bdee7f39b7c489e72c7172c5d678, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SelectedTrack:
-    ID: 0
-    AudioKey: sfx_soundevent_hovering
-    AudioPath: event:/Sound Effects/sfx_soundevent_hovering
-  SelectedItem: {fileID: -4485924447712450221, guid: 0e0f6e756a7c9744bb01a72eed61183c, type: 2}
-  PlayOnAwake: 1
-  IsGlobal: 0
-  overrideVolume: 0
-  volumeOverrideAmount: 1
 --- !u!1 &2796141942690599761
 GameObject:
   m_ObjectHideFlags: 0

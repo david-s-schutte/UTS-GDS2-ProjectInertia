@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrickName: 
   Type: 0
-  BaseScore: 0
+  BaseScore: -100
   TrickAnim: {fileID: 0}

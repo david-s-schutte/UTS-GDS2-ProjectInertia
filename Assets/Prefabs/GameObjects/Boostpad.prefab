@@ -160,10 +160,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectedTrack:
     ID: 0
-    AudioKey: sfx_soundevent_boostpad
-    AudioPath: event:/Sound Effects/sfx_soundevent_boostpad
-  SelectedItem: {fileID: 930155016491512991, guid: 0e0f6e756a7c9744bb01a72eed61183c, type: 2}
+    AudioKey: Boostpad
+    AudioPath: event:/Environment SFX/Boostpad
+  SelectedItem: {fileID: 3286969427626169536, guid: 0e0f6e756a7c9744bb01a72eed61183c, type: 2}
   PlayOnAwake: 0
   IsGlobal: 0
-  overrideVolume: 1
-  volumeOverrideAmount: 0.1
+  overrideVolume: 0
+  volumeOverrideAmount: 0
