@@ -181,13 +181,14 @@ public class PlayerController : MonoBehaviour
         playerCamera = Camera.main;
         velocity = lastFrameVelocity = Vector3.zero;
         PlayerInputController.CheckInitialised();
-
         trickSystem = Managers.ManagerLocator.Get<TrickSystem>();
     }
 
     private void Start() {
         GameCameraController.InitialiseGameCamera();
         SetMovementMode(MovementMode.Walking);
+        this.enabled = true;
+
     }
 
     private void OnEnable()
@@ -202,6 +203,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update() {
 
+        print("test");
         // Perform ground raycast at start of frame so it is only performed once.
         Physics.Raycast(transform.position, -transform.up, out floorCast, cc.height / 2 + floorCastDist);
         // Perform box cast for floor obstacles omg what a sick function name
