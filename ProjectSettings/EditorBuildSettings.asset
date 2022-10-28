@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/2_RiskyRails.unity
-    guid: 646daeaf86dbddc4685c364ed56b5758
-  - enabled: 1
     path: Assets/Scenes/Final Scenes/TitleScreen.unity
     guid: 6c315584e1dc92746a02da7e54f260aa
   - enabled: 1
@@ -17,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Scenes/1_CyberSpace.unity
     guid: d1d6ad51f0aa9f94da081b4b4fe3cc19
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/2_RiskyRails.unity
+    guid: 646daeaf86dbddc4685c364ed56b5758
   - enabled: 1
     path: Assets/Scenes/Final Scenes/RankScreen.unity
     guid: 192fd56efacf65243adf8204e48e15c5
