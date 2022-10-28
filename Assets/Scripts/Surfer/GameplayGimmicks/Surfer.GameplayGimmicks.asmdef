@@ -4,6 +4,7 @@
     "references": [
         "Surfer.Player",
         "Surfer.Grindrails"
+        "FMODUnity"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
