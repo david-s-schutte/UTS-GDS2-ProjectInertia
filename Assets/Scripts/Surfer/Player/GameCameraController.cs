@@ -9,7 +9,7 @@ public class GameCameraController : MonoBehaviour
     static CinemachineStateDrivenCamera stateDrivenCamera;
     static CinemachineFreeLook walkingCamera;
     static CinemachineFreeLook surfingCamera;
-    static Transform cameraResetPos;
+    static Vector3 cameraResetPos;
     //static PlayerController player;
     static Animator transitionController;
 
@@ -23,22 +23,22 @@ public class GameCameraController : MonoBehaviour
         isWalkingDebug = true;
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.L))
-    //    {
-    //        ResetCamera();
-    //    }
-    //    if (Input.GetKeyDown(KeyCode.LeftShift))
-    //    {
-    //        isWalkingDebug = !isWalkingDebug;
-    //        if (isWalkingDebug)
-    //            EnterWalkCam();
-    //        else
-    //            EnterSurfCam();
-    //    }
-    //    //Debug.Log("Current Active Camera: " + stateDrivenCamera.LiveChild);
-    //}
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            ResetCamera();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isWalkingDebug = !isWalkingDebug;
+            if (isWalkingDebug)
+                EnterWalkCam();
+            else
+                EnterSurfCam();
+        }
+        //Debug.Log("Current Active Camera: " + stateDrivenCamera.LiveChild);
+    }
 
     public static void InitialiseGameCamera()
     {
@@ -47,7 +47,7 @@ public class GameCameraController : MonoBehaviour
         walkingCamera = (CinemachineFreeLook)stateDrivenCamera.ChildCameras[0];
         surfingCamera = (CinemachineFreeLook)stateDrivenCamera.ChildCameras[1];
         transitionController = stateDrivenCamera.gameObject.GetComponent<Animator>();
-        cameraResetPos = GameObject.FindWithTag("Player").GetComponentInChildren<CameraResetPosition>().gameObject.transform;
+        cameraResetPos = GameObject.FindWithTag("Player").transform.Find("Player_Logic").Find("Player_Base").Find("CameraResetPoint").position;
         //Initialise the camera to follow the player
         stateDrivenCamera.Follow = GameObject.FindWithTag("Player").transform;
         stateDrivenCamera.LookAt = GameObject.FindWithTag("Player").transform;
@@ -56,8 +56,6 @@ public class GameCameraController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         if (!camera.gameObject.GetComponent<CinemachineBrain>())
             camera.gameObject.AddComponent<CinemachineBrain>();
-        //Reset camera positions
-        ResetCameras();
     }
 
     #region Switching Cameras
@@ -78,13 +76,12 @@ public class GameCameraController : MonoBehaviour
     private static void SwitchCameras(bool isWalking)
     {
         transitionController.SetBool("isWalking", isWalking);
+        ResetCamera();
     }
 
-    public static void ResetCameras()
+    private static void ResetCamera()
     {
         //surfingCamera.ForceCameraPosition(cameraResetPos, Quaternion.identity);
-        walkingCamera.ForceCameraPosition(cameraResetPos.position, cameraResetPos.rotation);
-        surfingCamera.ForceCameraPosition(cameraResetPos.position, cameraResetPos.rotation);
     }
 
     private static void DebugVariables()

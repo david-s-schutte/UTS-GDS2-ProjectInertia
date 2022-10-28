@@ -1,34 +1,21 @@
-using Surfer.Managers;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class TrickSystem : Manager
+public class TrickSystem : ScriptableObject
 {
     // Start is called before the first frame update
     [SerializeField] private Trick[] trickQueue = new Trick[3];
+    public TrickUI ui;
     private int depretiation = 0;
     private float chainTime = 3f;
     private int chainamount = 0;
-    private float timeSinceTrick;
-    
-    public delegate void TrickScore(string name,float value);
-    public TrickScore OnTrickScoreUpdated;
-
-    public float TimeSinceTrack
-    {
-        get => timeSinceTrick;
-        set => timeSinceTrick = value;
-    }
-
-    
-    public override void ManagerStart()
-    {
-        base.ManagerStart();
-    }
-
 
     public void InputTrick(Trick trick)
     {
-        if(timeSinceTrick > chainTime)
+
+        if(ui.timeSinceTrick > chainTime)
         {
             ResetQueue();
             depretiation = 0;
@@ -53,9 +40,10 @@ public class TrickSystem : Manager
             }
             chainamount++;
         }
-        
         AppendTrick(trick);
-        OnTrickScoreUpdated?.Invoke(trick.name, Mathf.Floor(trick.BaseScore * Depretiate(depretiation) * Chain(chainamount)));
+        
+        
+        ui.UpdateScore(trick.name, Mathf.Floor(trick.BaseScore * Depretiate(depretiation) * Chain(chainamount)));
     }
 
 
