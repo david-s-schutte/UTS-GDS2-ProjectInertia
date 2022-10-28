@@ -1,25 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
-using FMOD.Studio;
-using Surfer.Audio;
 using UnityEngine;
 
 
 public class Checkpoint : MonoBehaviour
 {
-    private PlaySoundOneShot _soundPlayer;
+    FMODUnity.StudioEventEmitter emitter;
 
     private void Start()
     {
-        _soundPlayer = GetComponent<PlaySoundOneShot>();
-        
+        emitter = GetComponent<FMODUnity.StudioEventEmitter>();
     }
-
-    public void PlaySound()
+    private void OnCollisionEnter(Collision collision)
     {
-        EventInstance instance = _soundPlayer.PlaySoundOnce(_soundPlayer.SelectedTrack);
+        emitter.Play();
+        Debug.Log(collision.gameObject.name);
+
     }
 
-
-
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        //Debug.Log(hit.gameObject.name);
+    }
 }
