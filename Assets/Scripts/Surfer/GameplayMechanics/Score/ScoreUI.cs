@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreUI : MonoBehaviour
 {
     private ScoreSystem scoreSystem;
 
+    [SerializeField] private SceneReference _reference;
     [SerializeField] private TextMeshProUGUI timer;
     [SerializeField] private TextMeshProUGUI currentScore;
     [SerializeField] private TextMeshProUGUI rank;
@@ -44,10 +46,19 @@ public class ScoreUI : MonoBehaviour
         timer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
 
-    public void ShowRankScreen()
+    public async void ShowRankScreen()
     {
         ingameUI.enabled = false;
         rankUI.enabled = true;
-        //rank.text = GetComponent<ScoreSystem>().GetFinalRank();
+        StartCoroutine(LoadSceneDelayCoroutine());
+        rank.text = GetComponent<ScoreSystem>().GetFinalRank();
+    }
+    
+    
+    //Unfortunate fix to load new scene
+    public IEnumerator LoadSceneDelayCoroutine()
+    {
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadScene(_reference.ScenePath);
     }
 }

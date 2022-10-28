@@ -9,6 +9,7 @@ using UnityEngine.Events;
 public class MenuButtons : MonoBehaviour
 {
 
+    [SerializeField]private SceneReference _reference;
     public Canvas howtoPlay;
     public Canvas menuCanvas;
     public AudioSource sfx;
@@ -30,7 +31,7 @@ public class MenuButtons : MonoBehaviour
     public void LoadScene(int sceneIndex)
     {
         //sfx.Play();
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(_reference.ScenePath);
     }
 
     //this function is only used in demos - shows a quick diagram of the controls

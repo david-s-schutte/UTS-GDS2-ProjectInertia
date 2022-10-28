@@ -21,7 +21,7 @@ public class PlayerTriggerChecker : MonoBehaviour
         GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(-60);
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    private  void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(hit.gameObject.tag == "Checkpoint")
         {
