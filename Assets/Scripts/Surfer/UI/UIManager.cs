@@ -43,7 +43,7 @@ namespace Surfer.UI
             }
 
             uiController.OnRegistered();
-            DebugValues(UI);
+            //DebugValues(UI);
 
             if (bringToFront && UI.Count > 1)
                 BringUIToFront(uiController);
@@ -85,7 +85,7 @@ namespace Surfer.UI
                 });
 
                 UI = leftAdjustedDict.Concat(rightAdjustedDict) as Dictionary<int, MonoUI>;
-                DebugValues(UI);
+                //DebugValues(UI);
                 return;
             }
 
@@ -139,7 +139,7 @@ namespace Surfer.UI
                 UI.Remove(lowestValue);
             }
 
-            DebugValues(adjustedDict);
+            //DebugValues(adjustedDict);
             ForceUpdateUI();
             UI = adjustedDict;
 
@@ -186,7 +186,7 @@ namespace Surfer.UI
                 UI.Remove(currentHighestValue);
             }
 
-            DebugValues(adjustedDict);
+            //DebugValues(adjustedDict);
             ForceUpdateUI();
             UI = adjustedDict;
             ForceUpdateUI();
