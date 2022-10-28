@@ -2,7 +2,8 @@
     "name": "Surfer.GameplayGimmicks",
     "rootNamespace": "",
     "references": [
-        "Surfer.Player"
+        "Surfer.Player",
+        "Surfer.Grindrails"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

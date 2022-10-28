@@ -628,9 +628,13 @@ public class PlayerController : MonoBehaviour
         if (Physics.BoxCast(transform.position - Vector3.up * cc.height/2, new(boxCastSize, boxCastSize, boxCastSize), Vector3.down, out boxHit, forwardDirection, boxCastDistance)) {
             if (boxHit.transform.tag == "GrindrailNode") {
                 GrindRailController grindRailController = boxHit.collider.gameObject.GetComponentInParent<GrindRailController>();
-                if (grindRailController) StartCoroutine(RailGrindCoroutine(grindRailController));
+                if (grindRailController) EnterGrindRail(grindRailController);
             }
         }
+    }
+
+    public static void EnterGrindRail(GrindRailController grindRail) {
+        if (grindRail) Instance.StartCoroutine(Instance.RailGrindCoroutine(grindRail));
     }
 
     // alpha - this is probs not how it'll work in the final game
