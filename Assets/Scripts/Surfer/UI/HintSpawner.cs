@@ -9,4 +9,6 @@ public class HintSpawner : MonoBehaviour
 {
     [SerializeField] private string hint;
     [SerializeField] private Sprite controller;
+    [SerializeField] private Sprite keyboard;
+
 }
