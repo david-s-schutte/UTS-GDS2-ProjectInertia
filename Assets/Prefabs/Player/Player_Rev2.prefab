@@ -2467,7 +2467,7 @@ MonoBehaviour:
   PlayOnAwake: 0
   IsGlobal: 0
   overrideVolume: 1
-  volumeOverrideAmount: 0.333
+  volumeOverrideAmount: 0.723
 --- !u!114 &3102163503610879645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2488,7 +2488,7 @@ MonoBehaviour:
   PlayOnAwake: 0
   IsGlobal: 0
   overrideVolume: 1
-  volumeOverrideAmount: 0.25
+  volumeOverrideAmount: 0.5
 --- !u!114 &1316242989
 MonoBehaviour:
   m_ObjectHideFlags: 0

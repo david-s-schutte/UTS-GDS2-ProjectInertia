@@ -154,9 +154,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{c7dee51c-3990-49bd-ab67-39f85cc48d61}">
-		<property name="volume">
-			<value>-6.5</value>
-		</property>
 		<property name="name">
 			<value>Start Up 1</value>
 		</property>
@@ -182,9 +179,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{b9436967-45aa-4d18-8535-ab9f2193cba0}">
-		<property name="volume">
-			<value>-3.5</value>
-		</property>
 		<property name="name">
 			<value>Start Up 2</value>
 		</property>
@@ -214,7 +208,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{b9275b0a-73db-4690-9229-5c5063b8785b}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-0.5</value>
 		</property>
 		<property name="name">
 			<value>Loop 1</value>
@@ -242,7 +236,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{1dc1193d-a2eb-41d4-815c-d2532bc37dde}">
 		<property name="volume">
-			<value>-4.5</value>
+			<value>-2</value>
 		</property>
 		<property name="name">
 			<value>Loop 2</value>
@@ -272,6 +266,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f1e310e9-2981-4667-b9d5-a8a34417c67a}">
+		<property name="volume">
+			<value>2.5</value>
+		</property>
 		<property name="name">
 			<value>End</value>
 		</property>
