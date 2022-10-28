@@ -227,6 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8678975694273511563}
+  - component: {fileID: 1440291930495385118}
   - component: {fileID: 7717761932459617918}
   m_Layer: 6
   m_Name: Checkpoint
@@ -251,6 +252,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1440291930495385118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921947400506482353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5e94cc14358f8b479fc61ff048274e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7717761932459617918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,11 +279,11 @@ MonoBehaviour:
   CollisionTag: Checkpoint
   EventReference:
     Guid:
-      Data1: -1670926115
-      Data2: 1291655515
-      Data3: -2098677085
-      Data4: -1386073625
-    Path: event:/UI/UI_soundevent_menu-navigation
+      Data1: -46812871
+      Data2: 1295517297
+      Data3: -1686486649
+      Data4: 1058797717
+    Path: event:/UI SFX/Menu Navigation 2 Test
   Event: 
   PlayEvent: 7
   StopEvent: 0

@@ -2,8 +2,7 @@
     "name": "Surfer.GameplayGimmicks",
     "rootNamespace": "",
     "references": [
-        "Surfer.Player",
-        "FMODUnity"
+        "Surfer.Player"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
