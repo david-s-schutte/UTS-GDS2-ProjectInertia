@@ -43,6 +43,7 @@ public class PlayerTriggerChecker : MonoBehaviour
 
         if (hit.gameObject.tag == "KillPlane")
         {
+            Debug.Log(hit.gameObject);
             RespawnPlayer();
         }
 
