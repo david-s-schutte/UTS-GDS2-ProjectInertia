@@ -643,7 +643,7 @@ public class PlayerController : MonoBehaviour
             }
             trickName += baseFlipTrick.name;
             flipTrick.TrickName = trickName;
-            Debug.Log(trickName);
+            // Debug.Log(trickName);
     
             trickSystem.InputTrick(flipTrick);
         }
@@ -853,5 +853,4 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-
 }
