@@ -20,10 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Scenes/RankScreen.unity
     guid: 192fd56efacf65243adf8204e48e15c5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Final Scenes/HubWorld.unity
     guid: de0f20862c49350418d687502295c635
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ToonTesting.unity
     guid: d0913262e78d5b4419c4d6153a085f7f
   m_configObjects:

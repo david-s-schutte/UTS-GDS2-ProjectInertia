@@ -475,11 +475,11 @@ MonoBehaviour:
   CollisionTag: Checkpoint
   EventReference:
     Guid:
-      Data1: -333532095
-      Data2: 1207474607
-      Data3: 481961896
-      Data4: 32390878
-    Path: event:/UI SFX/Menu Selection 2 Test
+      Data1: -1670926115
+      Data2: 1291655515
+      Data3: -2098677085
+      Data4: -1386073625
+    Path: event:/UI/UI_soundevent_menu-navigation
   Event: 
   PlayEvent: 7
   StopEvent: 0
