@@ -3068,6 +3068,8 @@ GameObject:
   - component: {fileID: 8234527287699949835}
   - component: {fileID: 1795334974217850916}
   - component: {fileID: 692553784679134217}
+  - component: {fileID: 5858808791946901290}
+  - component: {fileID: 3639609189237521661}
   m_Layer: 0
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -3173,6 +3175,8 @@ MonoBehaviour:
   _soundSlider: {fileID: 9055419818909064835}
   _sfxSlider: {fileID: 5555126406956604514}
   _musicSlider: {fileID: 1924085785764405709}
+  buttonPress: {fileID: 3639609189237521661}
+  buttonPress2: {fileID: 5858808791946901290}
 --- !u!114 &692553784679134217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3190,6 +3194,66 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5858808791946901290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7448616269662108883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1670926115
+      Data2: 1291655515
+      Data3: -2098677085
+      Data4: -1386073625
+    Path: event:/UI/UI_soundevent_menu-navigation
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &3639609189237521661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7448616269662108883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1368409328
+      Data2: 1250899320
+      Data3: -1443645033
+      Data4: -31419891
+    Path: event:/UI/UI_soundevent_menu-selection
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8242977156640071622
 GameObject:
   m_ObjectHideFlags: 0

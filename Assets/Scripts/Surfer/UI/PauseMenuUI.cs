@@ -23,6 +23,9 @@ namespace Surfer.UI
         private FMOD.Studio.Bus _sfxBus;
         private FMOD.Studio.Bus _musicBus;
 
+        [SerializeField] private StudioEventEmitter buttonPress;
+        [SerializeField] private StudioEventEmitter buttonPress2;
+
         public PlayerControls Controls { get; set; }
 
         protected override void OnEnable()
@@ -63,17 +66,20 @@ namespace Surfer.UI
 
         public void Continue()
         {
+            buttonPress.Play();
            _uiManager.UnRegisterUI(this);
         }
 
         public void OpenSettingsMenu()
         {
+            buttonPress2.Play();
             _pauseMenu.SetActive(false);
             _settingsMenu.SetActive(true);
         }
 
         public void BackToPauseMenu()
         {
+            buttonPress2.Play();
             _pauseMenu.SetActive(true);
             _settingsMenu.SetActive(false);
         }

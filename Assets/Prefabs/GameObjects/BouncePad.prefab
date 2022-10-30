@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignorePlayerEnterVelocity: 1
+  switchToWalking: 1
   strength: 20
 --- !u!82 &1099526512431124827
 AudioSource:
@@ -206,11 +207,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -394842380
-      Data2: 1171542653
-      Data3: 1334108556
-      Data4: -1830389381
-    Path: event:/Environment SFX/Boostpad
+      Data1: 1320928341
+      Data2: 1161281045
+      Data3: -1397477457
+      Data4: 1911128455
+    Path: event:/Sound Effects/sfx_soundevent_boostpad
   Event: 
   PlayEvent: 7
   StopEvent: 0

@@ -2361,6 +2361,7 @@ GameObject:
   - component: {fileID: 1316242989}
   - component: {fileID: 1316242996}
   - component: {fileID: 1316243003}
+  - component: {fileID: 219530205308539832}
   m_Layer: 0
   m_Name: Player_Base & Audio
   m_TagString: Untagged
@@ -2426,6 +2427,7 @@ MonoBehaviour:
   - {fileID: 1434121074773979682}
   - {fileID: 3102163503610879645}
   - {fileID: 1316242989}
+  - {fileID: 0}
 --- !u!114 &1407981822174044809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2446,7 +2448,7 @@ MonoBehaviour:
   PlayOnAwake: 0
   IsGlobal: 0
   overrideVolume: 1
-  volumeOverrideAmount: 0.083
+  volumeOverrideAmount: 0.4
 --- !u!114 &1434121074773979682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2535,6 +2537,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5208bad331212724cafc7ad4470d4c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &219530205308539832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486776999037492103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c474bdee7f39b7c489e72c7172c5d678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectedTrack:
+    ID: 0
+    AudioKey: sfx_soundevent_hovering
+    AudioPath: event:/Sound Effects/sfx_soundevent_hovering
+  SelectedItem: {fileID: -4485924447712450221, guid: 0e0f6e756a7c9744bb01a72eed61183c, type: 2}
+  PlayOnAwake: 0
+  IsGlobal: 0
+  overrideVolume: 1
+  volumeOverrideAmount: 0.456
 --- !u!1 &6631707335516910664
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8938392910081124355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/sfx_soundevent_wind 2
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/sfx_soundevent_wind 2
+  Guid:
+    Data1: 1640097823
+    Data2: 1173401495
+    Data3: 132421805
+    Data4: 1182940228
+  Banks:
+  - {fileID: -8528389689502323949}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3378846058121861550}
+  - {fileID: -578634825411819916}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8614
 --- !u!114 &-8528389689502323949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +44,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638027670460377281
+  lastModified: 638027711653990302
   FileSizes:
   - Name: Desktop
-    Value: 13272576
+    Value: 13288800
   Exists: 1
 --- !u!114 &-8319974585451164502
 MonoBehaviour:
@@ -405,7 +434,7 @@ MonoBehaviour:
   StudioPath: parameter:/Hovering
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
     data1: 226717594
     data2: 972070694
@@ -442,6 +471,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 610
+--- !u!114 &-3378846058121861550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/sfx_soundevent_wind 2/WindState
+  m_EditorClassIdentifier: 
+  Name: WindState
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 577843956
+    data2: 3122790746
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - NotBlowing
+  - Blowing
+  Exists: 1
 --- !u!114 &-2701958555510881682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,6 +623,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 261
+--- !u!114 &-578634825411819916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/sfx_soundevent_wind 2/Wind
+  m_EditorClassIdentifier: 
+  Name: Wind
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 623057695
+    data2: 2359382793
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,6 +686,7 @@ MonoBehaviour:
   - {fileID: -6616233721875118301}
   - {fileID: 7642152141077679218}
   - {fileID: 7774098500046507805}
+  - {fileID: -8938392910081124355}
   EditorParameters:
   - {fileID: -4193431595674222875}
   - {fileID: 8053272860055699441}
@@ -618,7 +698,7 @@ MonoBehaviour:
   - {fileID: -8528389689502323949}
   StringsBanks:
   - {fileID: 4900196429290857804}
-  cacheTime: 638027670460417178
+  cacheTime: 638027711654020220
   cacheVersion: 131591
 --- !u!114 &576099801587874124
 MonoBehaviour:
@@ -793,7 +873,7 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
     data1: 226717594
     data2: 972070694
@@ -847,10 +927,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638027670460417178
+  lastModified: 638027711654020220
   FileSizes:
   - Name: Desktop
-    Value: 2386
+    Value: 2430
   Exists: 1
 --- !u!114 &4916557262961613973
 MonoBehaviour:
@@ -1004,7 +1084,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -8528389689502323949}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters:
   - {fileID: 5742706545414359552}

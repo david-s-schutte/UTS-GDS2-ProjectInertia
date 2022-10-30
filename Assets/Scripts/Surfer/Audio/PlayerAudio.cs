@@ -17,6 +17,7 @@ public class PlayerAudio : MonoBehaviour
     
     private EventInstance windInstance;
     private EventInstance _grindInstance;
+    private EventInstance hoverInstance;
 
     private void Start()
     {
@@ -51,14 +52,23 @@ public class PlayerAudio : MonoBehaviour
                 windInstance.setParameterByNameWithLabel("WindState", "NotBlowing");
             }
 
+            if (hoverInstance.isValid())
+            {
+                hoverInstance.setParameterByNameWithLabel("Hovering", "Not Hovering");
+            }
+
             return;
         }
 
         if (!windInstance.isValid()) // null checks for event instances
             windInstance = soundPlayer[1].PlaySoundOnce(soundPlayer[1].SelectedTrack);
+
+        if (!hoverInstance.isValid())
+            hoverInstance = soundPlayer[4].PlaySoundOnce(soundPlayer[4].SelectedTrack);
         
         Debug.Log(scaledSpeedValue);
         windInstance.setParameterByName("Wind", scaledSpeedValue);
+        hoverInstance.setParameterByNameWithLabel("Hovering", "Hovering");
     }
 
     public void PlayJumpSound() => soundPlayer[3].PlaySoundOnce(soundPlayer[3].SelectedTrack);
@@ -78,6 +88,7 @@ public class PlayerAudio : MonoBehaviour
         }
         
     }
+
 
     public void PlayFootstep() => soundPlayer[0].PlaySoundOnce(soundPlayer[0].SelectedTrack);
 }
