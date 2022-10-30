@@ -174,6 +174,13 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    #region Just adding on it really, love it
+
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _currentPauseMenuInstance;
+
+    #endregion
+
     private void Awake() {
         Instance = this;
         cc = GetComponent<CharacterController>();
@@ -188,17 +195,21 @@ public class PlayerController : MonoBehaviour
         GameCameraController.InitialiseGameCamera();
         SetMovementMode(MovementMode.Walking);
         this.enabled = true;
-
+        PlayerInputController.playerControls.Player.Pause.performed += OpenClosePauseMenu;
     }
-
+    
     private void OnEnable()
     {
         PlayerInputController.CheckInitialised();
+
     }
 
     private void OnDisable()
     {
+        
+        PlayerInputController.playerControls.Player.Pause.performed -= OpenClosePauseMenu;
         PlayerInputController.UnInitialiseInput();
+
     }
 
     private void Update() {
@@ -288,6 +299,15 @@ public class PlayerController : MonoBehaviour
         // Apply final movement
         cc.Move(velocity * Time.deltaTime);
 
+    }
+
+    public void OpenClosePauseMenu(InputAction.CallbackContext ctx)
+    {
+        if (!ctx.performed)
+            return;
+
+        if (_currentPauseMenuInstance == null)
+         _currentPauseMenuInstance = Instantiate(_pauseMenu);
     }
 
   

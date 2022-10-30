@@ -86,6 +86,7 @@ namespace Surfer.UI
 
                 UI = leftAdjustedDict.Concat(rightAdjustedDict) as Dictionary<int, MonoUI>;
                 //DebugValues(UI);
+                uiController.OnUnregistered();
                 return;
             }
 
@@ -94,6 +95,7 @@ namespace Surfer.UI
             if (UI.Any(x => x.Key == target))
             {
                 UI.Remove(target);
+                uiController.OnUnregistered();
                 return;
             }
 

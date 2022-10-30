@@ -2710,6 +2710,8 @@ MonoBehaviour:
   - Octuple
   - Nonuple
   - Decuple
+  _pauseMenu: {fileID: 7448616269662108883, guid: 8112bcb3560b07e45a0a040ed614797f, type: 3}
+  _currentPauseMenuInstance: {fileID: 0}
 --- !u!143 &6725002459627622634
 CharacterController:
   m_ObjectHideFlags: 0

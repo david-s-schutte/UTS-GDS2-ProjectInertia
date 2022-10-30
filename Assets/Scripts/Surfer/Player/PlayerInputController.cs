@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 using Surfer.Input;
 
 public static class PlayerInputController  {
-    static PlayerControls playerControls;
+    public static PlayerControls playerControls;
     static InputAction leftStickMove;
     static InputAction lookInputAction;
     static InputAction jump;
@@ -28,6 +28,7 @@ public static class PlayerInputController  {
     static void InitiateInputActions()
     {
         playerControls = new PlayerControls();
+        playerControls.Enable();
 
         leftStickMove = playerControls.Player.Move;
         leftStickMove.Enable();

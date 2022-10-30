@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638025974625940354
+  lastModified: 638027447697509484
   FileSizes:
   - Name: Desktop
-    Value: 13154496
+    Value: 13286848
   Exists: 1
 --- !u!114 &-8319974585451164502
 MonoBehaviour:
@@ -606,6 +606,7 @@ MonoBehaviour:
   - {fileID: 4144240583306923759}
   - {fileID: -6616233721875118301}
   - {fileID: 7642152141077679218}
+  - {fileID: 7774098500046507805}
   EditorParameters:
   - {fileID: -4193431595674222875}
   - {fileID: 8053272860055699441}
@@ -617,7 +618,7 @@ MonoBehaviour:
   - {fileID: -8528389689502323949}
   StringsBanks:
   - {fileID: 4900196429290857804}
-  cacheTime: 638025974625970370
+  cacheTime: 638027447697544511
   cacheVersion: 131591
 --- !u!114 &576099801587874124
 MonoBehaviour:
@@ -846,10 +847,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638025974625970370
+  lastModified: 638027447697544511
   FileSizes:
   - Name: Desktop
-    Value: 2196
+    Value: 2386
   Exists: 1
 --- !u!114 &4916557262961613973
 MonoBehaviour:
@@ -1090,6 +1091,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 85333
+--- !u!114 &7774098500046507805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/sfx_soundevent_floating-platforms
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/sfx_soundevent_floating-platforms
+  Guid:
+    Data1: 2029071868
+    Data2: 1299685636
+    Data3: -1741759317
+    Data4: -709147347
+  Banks:
+  - {fileID: -8528389689502323949}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1340
 --- !u!114 &8053272860055699441
 MonoBehaviour:
   m_ObjectHideFlags: 0
