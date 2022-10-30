@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     
     public delegate void JumpOccured();
     public JumpOccured OnJumpOccured;
+
     
     public CharacterController Controller => cc;
 
