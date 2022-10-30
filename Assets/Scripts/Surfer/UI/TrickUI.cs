@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 //using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class TrickUI : MonoBehaviour
 {
@@ -30,7 +31,8 @@ public class TrickUI : MonoBehaviour
     public bool test;
 
     private TrickSystem _trickManager;
-    
+
+    [SerializeField] StudioEventEmitter emitter;
 
     public float TimeSinceTrick
     {
@@ -60,6 +62,7 @@ public class TrickUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Flow", currentStage);
         if (test)
         {
             UpdateScore("test",200);
@@ -91,6 +94,7 @@ public class TrickUI : MonoBehaviour
                 currentFill -= (trickStage[currentStage]);
                 score -= (trickStage[currentStage]- bufferamounts);
                 currentStage++;
+                emitter.Play();
                 StageChange();
             }
         }
@@ -134,6 +138,7 @@ public class TrickUI : MonoBehaviour
     private void StageChange()
     {
         stage.sprite = stageLabels[currentStage];
+
     }
     
     private float Lerp(float fill, float frac) 

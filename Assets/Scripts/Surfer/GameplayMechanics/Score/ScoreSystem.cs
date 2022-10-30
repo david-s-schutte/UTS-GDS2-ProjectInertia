@@ -55,6 +55,7 @@ public class ScoreSystem : MonoBehaviour
 
     private void Update()
     {
+
         if (!levelEnded)
         {
             levelTimer += Time.deltaTime;
@@ -121,16 +122,16 @@ public class ScoreSystem : MonoBehaviour
 
     private void CalculateTrickChainBonus(float bonusToAdd)
     {
-        //currentScore += bonusToAdd * trickBonusMultiplier;
+        currentScore += bonusToAdd * trickBonusMultiplier;
     }
 
     private void CalculateFlowBonus()
     {
         //if (currentFlow >= flowLvl3Threshold)
         //    currentScore += Time.deltaTime * flowLvl3BonusMultiplier;
-        //else if(currentFlow < flowLvl3Threshold && currentFlow >= flowLvl2Threshold)
+        //else if (currentFlow < flowLvl3Threshold && currentFlow >= flowLvl2Threshold)
         //    currentScore += Time.deltaTime * flowLvl2BonusMultiplier;
-        //else if(currentFlow < flowLvl2Threshold && currentFlow >= flowLvl1Threshold)
+        //else if (currentFlow < flowLvl2Threshold && currentFlow >= flowLvl1Threshold)
         //    currentScore += Time.deltaTime * flowLvl1BonusMultiplier;
     }
 

@@ -72,7 +72,7 @@ public class PlayerTriggerChecker : MonoBehaviour
                 GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(10);
                 GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().EndLevel();
                 GameObject.FindWithTag("ScoreManager").GetComponent<ScoreUI>().ShowRankScreen();
-                playerCam.gameObject.transform.Find("Music").GetComponent<MusicManagerTemp>().playJingle();
+                //playerCam.gameObject.transform.Find("Music").GetComponent<MusicManagerTemp>().playJingle();
                 finishedLevel = true;
             }
         }

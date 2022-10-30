@@ -29,6 +29,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8614
+--- !u!114 &-8755568694151045867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Flow
+  m_EditorClassIdentifier: 
+  Name: Flow
+  StudioPath: parameter:/Flow
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 3783144600
+    data2: 3513264249
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-8528389689502323949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,10 +68,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638027715368067216
+  lastModified: 638027802993636035
   FileSizes:
   - Name: Desktop
-    Value: 13288800
+    Value: 13274976
   Exists: 1
 --- !u!114 &-8319974585451164502
 MonoBehaviour:
@@ -250,13 +274,13 @@ MonoBehaviour:
   Name: Flow
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 10
   Default: 0
   ID:
     data1: 3783144600
     data2: 3513264249
   Type: 0
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-5514453378608597858
@@ -687,6 +711,7 @@ MonoBehaviour:
   - {fileID: 7642152141077679218}
   - {fileID: 7774098500046507805}
   - {fileID: -8938392910081124355}
+  - {fileID: 445312587776083420}
   EditorParameters:
   - {fileID: -4193431595674222875}
   - {fileID: 8053272860055699441}
@@ -694,12 +719,40 @@ MonoBehaviour:
   - {fileID: -2578043593616718597}
   - {fileID: -4288853102958160980}
   - {fileID: 576099801587874124}
+  - {fileID: -8755568694151045867}
   MasterBanks:
   - {fileID: -8528389689502323949}
   StringsBanks:
   - {fileID: 4900196429290857804}
-  cacheTime: 638027715368067216
+  cacheTime: 638027802993715837
   cacheVersion: 131591
+--- !u!114 &445312587776083420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/sfx_soundevent_platform
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/sfx_soundevent_platform
+  Guid:
+    Data1: 1740290170
+    Data2: 1204290442
+    Data3: 1926300054
+    Data4: -456181738
+  Banks:
+  - {fileID: -8528389689502323949}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1340
 --- !u!114 &576099801587874124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,10 +980,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638027715105853597
+  lastModified: 638027802993715837
   FileSizes:
   - Name: Desktop
-    Value: 2430
+    Value: 2470
   Exists: 1
 --- !u!114 &4916557262961613973
 MonoBehaviour:
@@ -1054,13 +1107,13 @@ MonoBehaviour:
   Name: Flow
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 10
   Default: 0
   ID:
     data1: 3783144600
     data2: 3513264249
   Type: 0
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &6638356258788094765

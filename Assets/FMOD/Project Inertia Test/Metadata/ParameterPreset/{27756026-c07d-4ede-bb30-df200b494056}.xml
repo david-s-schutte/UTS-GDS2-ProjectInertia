@@ -13,10 +13,16 @@
 	</object>
 	<object class="GameParameter" id="{aa9a205f-dcbc-443f-a68b-e2d541ce81ac}">
 		<property name="maximum">
-			<value>3</value>
+			<value>10</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
 		</property>
 	</object>
 </objects>
