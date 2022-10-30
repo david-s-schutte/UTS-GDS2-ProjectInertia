@@ -7,8 +7,15 @@ using TMPro;
 
 public class HintSpawner : MonoBehaviour
 {
-    [SerializeField] private string hint;
-    [SerializeField] private Sprite controller;
-    [SerializeField] private Sprite keyboard;
+    [SerializeField] private GameObject hintToSpawn;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag("Hint"))
+                Destroy(g);
+            Instantiate(hintToSpawn);
+        }
+    }
 }
