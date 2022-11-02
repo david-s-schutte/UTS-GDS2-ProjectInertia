@@ -68,7 +68,11 @@ MonoBehaviour:
   Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< HEAD
   lastModified: 638027835372335959
+=======
+  lastModified: 638028145742719496
+>>>>>>> DevelopmentSafetyNet
   FileSizes:
   - Name: Desktop
     Value: 13274976
@@ -724,7 +728,11 @@ MonoBehaviour:
   - {fileID: -8528389689502323949}
   StringsBanks:
   - {fileID: 4900196429290857804}
+<<<<<<< HEAD
   cacheTime: 638027835372335959
+=======
+  cacheTime: 638028145742719496
+>>>>>>> DevelopmentSafetyNet
   cacheVersion: 131591
 --- !u!114 &445312587776083420
 MonoBehaviour:
@@ -980,7 +988,11 @@ MonoBehaviour:
   Path: Assets/FMOD/Project Inertia Test/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< HEAD
   lastModified: 638027835371768014
+=======
+  lastModified: 638028145742719496
+>>>>>>> DevelopmentSafetyNet
   FileSizes:
   - Name: Desktop
     Value: 2470
