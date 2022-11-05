@@ -475,11 +475,11 @@ MonoBehaviour:
   CollisionTag: Checkpoint
   EventReference:
     Guid:
-      Data1: -1670926115
-      Data2: 1291655515
-      Data3: -2098677085
-      Data4: -1386073625
-    Path: event:/UI/UI_soundevent_menu-navigation
+      Data1: -1145407437
+      Data2: 1322814329
+      Data3: -1073900901
+      Data4: -543597951
+    Path: event:/Sound Effects/sfx_soundevent_checkpoint
   Event: 
   PlayEvent: 7
   StopEvent: 0

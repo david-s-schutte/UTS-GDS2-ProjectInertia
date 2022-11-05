@@ -8,6 +8,7 @@ public class PlayerTriggerChecker : MonoBehaviour
     [SerializeField] private Vector3 respawnPos;
     [SerializeField] private Camera playerCam;
     bool finishedLevel = false;
+    [SerializeField] StudioEventEmitter music;
 
     private void Start()
     {
@@ -72,6 +73,13 @@ public class PlayerTriggerChecker : MonoBehaviour
                 GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().AddToScore(10);
                 GameObject.FindWithTag("ScoreManager").GetComponent<ScoreSystem>().EndLevel();
                 GameObject.FindWithTag("ScoreManager").GetComponent<ScoreUI>().ShowRankScreen();
+                gameObject.GetComponent<PlayerController>().enabled = false;
+
+                Destroy(music.gameObject);
+                Transform FMOD = hit.gameObject.transform.Find("FMOD");
+                StudioEventEmitter emitter = FMOD.GetComponent<StudioEventEmitter>();
+                emitter.Play();
+
                 //playerCam.gameObject.transform.Find("Music").GetComponent<MusicManagerTemp>().playJingle();
                 finishedLevel = true;
             }

@@ -93,7 +93,7 @@
 			<value>16</value>
 		</property>
 		<property name="timelockedOffset">
-			<value>0.5</value>
+			<value>0.49999999999999994</value>
 		</property>
 		<relationship name="fadeInCurve">
 			<destination>{08d6dc7b-6927-4811-b4c8-73058c6c81a0}</destination>
@@ -176,7 +176,7 @@
 			<value>1</value>
 		</property>
 		<property name="curveShape">
-			<value>-0.0379615165</value>
+			<value>-0.313708812</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{b24f887c-b93e-4ee1-b300-0d98189e04df}">

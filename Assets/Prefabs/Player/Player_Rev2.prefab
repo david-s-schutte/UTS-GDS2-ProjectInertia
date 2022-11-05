@@ -2427,7 +2427,7 @@ MonoBehaviour:
   - {fileID: 1434121074773979682}
   - {fileID: 3102163503610879645}
   - {fileID: 1316242989}
-  - {fileID: 0}
+  - {fileID: 219530205308539832}
 --- !u!114 &1407981822174044809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2469,7 +2469,7 @@ MonoBehaviour:
   PlayOnAwake: 0
   IsGlobal: 0
   overrideVolume: 1
-  volumeOverrideAmount: 0.723
+  volumeOverrideAmount: 0.304
 --- !u!114 &3102163503610879645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2557,7 +2557,7 @@ MonoBehaviour:
   PlayOnAwake: 0
   IsGlobal: 0
   overrideVolume: 1
-  volumeOverrideAmount: 0.456
+  volumeOverrideAmount: 0.725
 --- !u!1 &6631707335516910664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2812,6 +2812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPos: {x: 0, y: 0, z: 0}
   playerCam: {fileID: 0}
+  music: {fileID: 0}
 --- !u!1 &6880227610220671689
 GameObject:
   m_ObjectHideFlags: 0

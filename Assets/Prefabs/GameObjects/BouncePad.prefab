@@ -207,11 +207,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1320928341
-      Data2: 1161281045
-      Data3: -1397477457
-      Data4: 1911128455
-    Path: event:/Sound Effects/sfx_soundevent_boostpad
+      Data1: 1300657072
+      Data2: 1106235571
+      Data3: -1240378752
+      Data4: -1038156900
+    Path: event:/Sound Effects/sfx_soundevent_bouncepad
   Event: 
   PlayEvent: 7
   StopEvent: 0

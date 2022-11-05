@@ -58,7 +58,7 @@ public class ScoreUI : MonoBehaviour
     //Unfortunate fix to load new scene
     public IEnumerator LoadSceneDelayCoroutine()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(8f);
         SceneManager.LoadScene(_reference.ScenePath);
     }
 }
